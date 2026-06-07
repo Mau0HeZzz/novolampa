@@ -1,0 +1,115 @@
+/**
+ * @fileOverview Стили страницы ошибки 404.
+ */
+
+@use "base/mixins";
+@use "variables";
+@use "sass:math";
+
+.error-page {
+  padding: mixins.toRem(12) mixins.toRem(12) mixins.toRem(20);
+
+  &__hero {
+    overflow: hidden;
+    border-radius: mixins.toRem(12);
+    background-color: #f5f6f7;
+  }
+
+  &__container {
+    max-width: mixins.toRem(1120);
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+    gap: mixins.toRem(32);
+
+    @include mixins.adaptiveValue("padding-top", 82, 54, 1920, 768);
+    @include mixins.adaptiveValue("padding-bottom", 70, 48, 1920, 768);
+  }
+
+  &__message {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__number {
+    color: var(--text-green-color);
+    font-size: mixins.toRem(250);
+    font-weight: 500;
+    line-height: 0.76;
+    letter-spacing: -0.08em;
+  }
+
+  &__text {
+    max-width: mixins.toRem(500);
+    margin-top: mixins.toRem(58);
+    color: var(--text-main-color);
+    font-size: mixins.toRem(24);
+    line-height: math.div(34, 24);
+
+    p + p {
+      margin-top: mixins.toRem(14);
+    }
+
+    a {
+      display: block;
+      width: fit-content;
+      color: var(--text-green-color);
+      transition: color 0.3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--text-accent-color);
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    align-self: end;
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    padding: 0 0 mixins.toRem(12);
+
+    &__hero {
+      border-radius: 0;
+    }
+
+    &__container {
+      max-width: none;
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: mixins.toRem(52) 0 0;
+    }
+
+    &__message {
+      padding-inline: mixins.toRem(16);
+      text-align: center;
+    }
+
+    &__number {
+      font-size: mixins.toRem(128);
+      line-height: 0.78;
+    }
+
+    &__text {
+      max-width: none;
+      margin-top: mixins.toRem(48);
+      font-size: mixins.toRem(24);
+      line-height: math.div(30, 24);
+
+      p + p {
+        margin-top: mixins.toRem(14);
+      }
+
+      a {
+        margin-inline: auto;
+      }
+    }
+
+    &__image {
+      margin-top: mixins.toRem(56);
+    }
+  }
+}

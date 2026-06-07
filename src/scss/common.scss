@@ -1,0 +1,471 @@
+// Заголовки, общие БЄМ блоки и прочее...
+@use "base/mixins";
+@use "sass:math";
+@use "sass:list";
+
+@use "variables";
+
+// Заголовки, общие БЄМ блоки и прочее...
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+._md1dn {
+  @media (max-width:mixins.toEm(variables.$pc)){
+    display: none !important;
+  }
+}
+
+._mmd1dn {
+  @media (min-width:mixins.toEm(variables.$pc)){
+    display: none !important;
+  }
+}
+
+._md2dn {
+  @media (max-width:mixins.toEm(variables.$tablet)){
+    display: none !important;
+  }
+}
+
+._mmd2dn {
+  @media (min-width:mixins.toEm(variables.$tablet)){
+    display: none !important;
+  }
+}
+
+._md3dn {
+  @media (max-width:mixins.toEm(variables.$mobile)){
+    display: none !important;
+  }
+}
+
+._mmd3dn {
+  @media (min-width:mixins.toEm(variables.$mobile)){
+    display: none !important;
+  }
+}
+
+._md4dn {
+  @media (max-width:mixins.toEm(variables.$mobileSmall)){
+    display: none !important;
+  }
+}
+
+._mmd4dn {
+  @media (min-width:mixins.toEm(variables.$mobileSmall)){
+    display: none !important;
+  }
+}
+
+._pen {
+  pointer-events: none;
+}
+
+._skeleton {
+  overflow: hidden;
+  position: relative;
+  pointer-events: none;
+  >* {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    z-index: 2;
+    opacity: var(--opacity, 1);
+  }
+  
+  &::after{
+    content:'';
+    position: absolute;
+    top: -5%;
+    left: calc(100% + mixins.toRem(60));
+    width: mixins.toRem(40);
+    height: 110%;
+    rotate: 15deg;
+    background-color: #fff;
+    box-shadow: 0px 0px mixins.toRem(10) mixins.toRem(10) rgba(255, 255, 255, 1);
+    z-index: 3;
+    opacity: 0.4;
+    animation: skeletonAfterAnim 1s ease infinite;
+  }
+}
+
+@keyframes skeletonAfterAnim {
+  from {
+      left: -3.75rem
+  }
+}
+
+
+$indent-variants: (
+  "35-16": (35, 24, 16),
+  "25-16": (25, 20, 16),
+  "25-6": (25, 20, 6),
+  "20-10": (20, 14, 10),
+  "16-6": (16, 12, 6),
+  "14-6": (14, 8, 6),
+  "12-8": (12.5, 10, 8),
+  "10-6": (10, 8, 6),
+  "10-3": (10, 8, 3),
+  "8-4": (8, 6, 4),
+  "6-3": (6, 4, 3),
+  "6-4": (6, 6, 4),
+  "4-3": (4, 4, 3),
+  "4-2": (4, 3, 2),
+  "3-2": (3, 3, 2),
+  "2-1": (2, 2, 1),
+  "1-05": (1, 1, 0.5),
+  "6-2": (6, 4, 2),
+  "4-4-2": (4, 4, 2),
+  "3-1": (3, 2, 1),
+  "2-2-1": (2, 2, 1),
+  "1": (1, 1, 1),
+);
+
+$indent-direction-properties: (
+  pt: padding-top,
+  pb: padding-bottom,
+  mt: margin-top,
+  mb: margin-bottom,
+  pl: padding-left,
+  pr: padding-right,
+  ml: margin-left,
+  mr: margin-right,
+  p : padding,
+  gap : gap,
+);
+
+@function indent-size($multiplier) {
+  @return calc(var(--base-indent) * #{$multiplier});
+}
+
+@mixin responsive-indent($property, $desktop, $tablet, $mobile) {
+  #{$property}: indent-size($desktop);
+
+  @if $tablet != $desktop {
+    @media (width < #{mixins.toEm(variables.$tablet)}) {
+      #{$property}: indent-size($tablet);
+    }
+  }
+
+  @if $mobile != $tablet {
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      #{$property}: indent-size($mobile);
+    }
+  }
+}
+
+@mixin responsive-indent-values($property, $values) {
+  @include responsive-indent(
+    $property,
+    list.nth($values, 1),
+    list.nth($values, 2),
+    list.nth($values, 3)
+  );
+}
+
+.indents-design-system {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: mixins.toRem(50);
+
+  &._horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: mixins.toRem(6);
+    font-family: Atyp Text;
+    line-height: math.div(24 , 16);
+    font-weight: 600;
+
+    ._indent {
+      aspect-ratio: 1;
+      background-color: #AF0056;
+      ._horizontal & {
+        background-color: #AF0056;
+      }
+
+      &-35-16 {
+        background-color: #AF0056;
+      }
+
+      &-20-10 {
+        background-color: #5300AF;
+      }
+
+      &-14-6 {
+        background-color: #006CAF;
+      }
+
+      &-10-6 {
+        background-color: #00AF8A;
+      }
+
+      &-8-4 {
+        background-color: #6BAF00;
+      }
+
+      &-6-3 {
+        background-color: #FF9C3A;
+      }
+
+      &-4-2 {
+        background-color: #DA7946;
+      }
+
+      &-3-2 {
+        background-color: #EEC014;
+      }
+
+      &-2-1 {
+        background-color: #A869FF;
+      }
+
+      &-1-05 {
+        background-color: #79DAFF;
+      }
+    }
+  }
+}
+
+._indent {
+  --indent: var(--base-indent);
+  display: block;
+
+  &.pt {
+    padding-top: var(--indent);
+  }
+  &.pb {
+    padding-bottom: var(--indent);
+  }
+  &.mt {
+    margin-top: var(--indent);
+  }
+  &.mb {
+    margin-bottom: var(--indent);
+  }
+  &.mbl {
+    &:not(:last-child) {
+      margin-bottom: var(--indent);
+    }
+  }
+  &.pl {
+    padding-left: var(--indent);
+  }
+  &.pr {
+    padding-right: var(--indent);
+  }
+  &.ml {
+    margin-left: var(--indent);
+  }
+  &.mr {
+    margin-right: var(--indent);
+  }
+
+  @each $name, $values in $indent-variants {
+    &-#{$name} {
+      @include responsive-indent-values("--indent", $values);
+    }
+  }
+}
+
+@each $direction, $property in $indent-direction-properties {
+  @each $name, $values in $indent-variants {
+    .#{$direction}-#{$name} {
+      @include responsive-indent-values($property, $values);
+    }
+  }
+}
+
+@each $name, $values in $indent-variants {
+  .mbl-#{$name} {
+    &:not(:last-child) {
+      margin-bottom: indent-size(list.nth($values, 1));
+    }
+
+    @if list.nth($values, 2) != list.nth($values, 1) {
+      @media (width < #{mixins.toEm(variables.$tablet)}) {
+        &:not(:last-child):not([class*="mbl-"]) {
+          margin-bottom: indent-size(list.nth($values, 2));
+        }
+      }
+    }
+
+    @if list.nth($values, 3) != list.nth($values, 2) {
+      @media (width < #{mixins.toEm(variables.$mobile)}) {
+        &:not(:last-child):not([class*="mbl-"]) {
+          margin-bottom: indent-size(list.nth($values, 3));
+        }
+      }
+    }
+  }
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-start {
+  align-items: start;
+}
+.items-end {
+  align-items: end;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-self-start {
+  align-self: start;
+}
+.grow {
+  flex: 1 1 100%;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.text {
+  &-right {
+    text-align: right;
+  }
+  &-center {
+    text-align: center;
+  }
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+.ml-0 {
+  margin-left: 0;
+}
+.mr-0 {
+  margin-right: 0;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.max-w-none {
+  max-width: none !important;
+}
+
+.decoration {
+  text-decoration: underline;
+}
+
+.w-full {
+  width: 100% !important;
+}
+.w-fit {
+  width: fit-content !important;
+}
+.h-full {
+  height: 100%;
+}
+
+.gradtext {
+  background: 
+    radial-gradient(61.96% 570.86% at 26.52% 100%, rgba(46, 134, 235, 0.8) 0%, rgba(46, 134, 235, 0) 100%),
+    linear-gradient(0deg, #2E257B, #2E257B),
+    linear-gradient(0deg, #15202E, #15202E);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pin-cards {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, var(--item-size));
+  overflow: auto clip;
+  scroll-snap-type: x mandatory;
+  max-width: calc(100vw - mixins.toRem(30) - var(--padding, 0px));
+  padding-right: var(--padding, 0px);
+
+  @include mixins.adaptiveValue("--item-size", 318, 240, 767, 480);
+  @include mixins.adaptiveValue("gap", 16, 12, 767, 480);
+  @include mixins.adaptiveValue("min-height", 180, 108, 800, 480);
+
+  &__item {
+    width: var(--item-size);
+    background-color: var(--bg-white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: mixins.toRem(1) solid var(--monochrome-light-color-15);
+    scroll-snap-align: start;
+
+    @include mixins.adaptiveValue("border-radius", 24, 12, 767, 480);
+    @include mixins.adaptiveValue("padding", 16, 8, 767, 480);
+    @include mixins.adaptiveValue("gap", 12, 8, 767, 480);
+
+    >svg {
+      color: var(--main-blue-color);
+
+      @include mixins.adaptiveValue("max-height", 40, 24, 767, 480);
+    }
+
+    .btn {
+      &:nth-child(1 of &) {
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+.object-center {
+  object-position: center !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.sqare {
+  aspect-ratio: 1;
+}

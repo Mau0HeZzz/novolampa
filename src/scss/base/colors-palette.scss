@@ -1,0 +1,52 @@
+/**
+ * @fileOverview Палитра цветов проекта NOVOLAMPA
+ */
+
+// ===============
+// colors palette
+// ===============
+:root {
+  // --- Фоны ---
+  --bg-main-color: #ffffff;
+  --bg-section-color: #f7f8fa;
+  --bg-dark-color: #1e2630;
+  --bg-dark-secondary-color: #343b44;
+  --bg-dark-deep-color: #002233;
+  --bg-green-color: #2dc964;
+  --bg-card-color: #ffffff;
+  --bg-header-glass-color: rgba(30, 38, 48, 0.6);
+  --bg-catalog-btn-color: rgba(255, 255, 255, 0.14);
+  --bg-social-color: rgba(255, 255, 255, 0.05);
+  --bg-glass-color: rgba(255, 255, 255, 0.08);
+  --bg-glass-fill-color: rgba(255, 255, 255, 0.1);
+  --bg-overlay-dark-color: rgba(0, 0, 0, 0.2);
+  --bg-overlay-light-color: rgba(0, 0, 0, 0.15);
+  --bg-placeholder-color: #d9d9d9;
+  --bg-menu-color: #E0E4EB;
+
+  // --- Тексты ---
+  --text-main-color: #1f2326;
+  --text-secondary-color: #667685;
+  --text-muted-color: #798181;
+  --text-hint-color: #929292;
+  --text-light-color: #ffffff;
+  --text-green-color: #2dc964;
+  --text-accent-color: #3ac170;
+  --text-error-color: #d94545;
+
+  // --- Границы ---
+  --border-light-color: #f7f8fa;
+  --border-white-color: #ffffff;
+  --border-green-color: #2dc964;
+  --border-input-color: #d0d0d0;
+
+  // --- Кнопки ---
+  --btn-green-color: #2dc964;
+  --btn-green-text-color: #ffffff;
+  --btn-outline-green-color: #2dc964;
+  --btn-outline-white-color: #ffffff;
+
+  // --- Тени ---
+  --shadow-card-color: rgba(112, 110, 132, 0.08);
+  --shadow-input-color: rgba(57, 72, 84, 0.15);
+}

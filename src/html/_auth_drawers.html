@@ -1,0 +1,152 @@
+<!--
+  @fileOverview Разметка drawer авторизации, регистрации и восстановления пароля.
+-->
+
+<div id="authDrawer" aria-hidden="true" class="popup drawer authDrawer" data-nohash>
+  <div class="popup__wrapper authDrawer__wrapper">
+    <div class="popup__content authDrawer__content">
+      <button type="button" class="drawer__close" aria-label="Закрыть" data-close></button>
+      <div class="popup__body authDrawer__body">
+        <div class="auth-drawer">
+          <h2 class="auth-drawer__title">Ваш кабинет</h2>
+
+          <div class="auth-tabs" data-tabs>
+            <nav class="auth-tabs__navigation" data-tabs-titles>
+              <button type="button" class="auth-tabs__title _tab-active">Войти</button>
+              <button type="button" class="auth-tabs__title">Зарегистрироваться</button>
+            </nav>
+            <div class="auth-tabs__content" data-tabs-body>
+              <div class="auth-tabs__body">
+                <form action="" class="form auth-form" data-dev="success" data-dev-delay="0" data-timeout="0">
+                  <label class="form__item">
+                    <input type="email" name="email" class="form__input" data-required="email" data-validate data-error="Введите корректный email">
+                    <span class="form__placeholder">Email</span>
+                  </label>
+
+                  <label class="form__item">
+                    <input type="password" name="password" class="form__input" data-required data-error="Введите пароль">
+                    <span class="form__placeholder">Пароль</span>
+                    <i class="form__viewpass">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#eye"></use></svg>
+                    </i>
+                  </label>
+
+                  <div class="auth-form__options">
+                    <label class="form__boxwrap">
+                      <input type="checkbox" name="remember">
+                      <i class="form__box"></i>
+                      <span class="form__label">Запомнить меня</span>
+                    </label>
+                    <button type="button" class="auth-form__link" data-popup="#forgotPasswordDrawer">Забыли пароль?</button>
+                  </div>
+
+                  <button type="submit" class="action-button action-button_primary form__submit">
+                    <span>Войти</span>
+                    <i>
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg>
+                    </i>
+                  </button>
+                </form>
+              </div>
+
+              <div class="auth-tabs__body">
+                <form action="" class="form auth-form" data-dev="success" data-dev-delay="0" data-timeout="0">
+                  <label class="form__item">
+                    <input type="email" name="email" class="form__input" data-required="email" data-validate data-error="Введите корректный email">
+                    <span class="form__placeholder">Email *</span>
+                  </label>
+
+                  <label class="form__item">
+                    <input type="password" name="password" class="form__input" data-required="password" data-error="Введите пароль">
+                    <span class="form__placeholder">Пароль *</span>
+                    <i class="form__viewpass">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#eye"></use></svg>
+                    </i>
+                  </label>
+
+                  <label class="form__item">
+                    <input type="password" name="password_confirmation" class="form__input" data-required="password" data-error="Подтвердите пароль">
+                    <span class="form__placeholder">Подтвердите пароль *</span>
+                    <i class="form__viewpass">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#eye"></use></svg>
+                    </i>
+                  </label>
+
+                  <label class="form__item">
+                    <input type="text" name="name" class="form__input">
+                    <span class="form__placeholder">Имя и фамилия</span>
+                  </label>
+
+                  <label class="form__boxwrap auth-form__agreement">
+                    <input type="checkbox" name="agreement" data-required data-error="Необходимо принять условия">
+                    <i class="form__box"></i>
+                    <span class="form__label">Я даю согласие на обработку персональных данных и соглашаюсь с Политикой конфиденциальности и Пользовательским соглашением</span>
+                  </label>
+
+                  <button type="submit" class="action-button action-button_primary form__submit">
+                    <span>Зарегистрироваться</span>
+                    <i>
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg>
+                    </i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="forgotPasswordDrawer" aria-hidden="true" class="popup drawer authDrawer" data-nohash>
+  <div class="popup__wrapper authDrawer__wrapper">
+    <div class="popup__content authDrawer__content">
+      <button type="button" class="drawer__close" aria-label="Закрыть" data-close></button>
+      <div class="popup__body authDrawer__body">
+        <div class="auth-drawer auth-drawer_compact">
+          <h2 class="auth-drawer__title">Забыли пароль?</h2>
+          <p class="auth-drawer__text">Введите свою почту, которую вы указывали при регистрации и мы вам пришлём новый пароль</p>
+
+          <form action="" class="form auth-form" data-dev="success" data-dev-delay="0" data-popup-success="#forgotPasswordSuccessDrawer" data-popup-autoclose="false">
+            <label class="form__item">
+              <input type="email" name="email" class="form__input" data-required="email" data-validate data-error="Введите корректный email">
+              <span class="form__placeholder">Email</span>
+            </label>
+
+            <button type="submit" class="action-button action-button_primary form__submit">
+              <span>Восстановить пароль</span>
+              <i>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg>
+              </i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="forgotPasswordSuccessDrawer" aria-hidden="true" class="popup drawer authDrawer" data-nohash>
+  <div class="popup__wrapper authDrawer__wrapper">
+    <div class="popup__content authDrawer__content">
+      <button type="button" class="drawer__close" aria-label="Закрыть" data-close></button>
+      <div class="popup__body authDrawer__body">
+        <div class="auth-drawer auth-drawer_success">
+          <div class="auth-drawer__status">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/colored.svg#key-square"></use></svg>
+          </div>
+          <h2 class="auth-drawer__title">Готово!</h2>
+          <p class="auth-drawer__text">Контрольная строка для смены пароля, а также ваши регистрационные данные высланы вам на email.</p>
+
+          <button type="button" class="action-button action-button_primary form__submit" data-close>
+            <span>Закрыть окно</span>
+            <i>
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg>
+            </i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

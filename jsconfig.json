@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "~html/*": [
+                "src/html/*"
+            ],
+            "~js/*": [
+                "src/js/*"
+            ],
+            "~scss/*": [
+                "src/scss/*"
+            ],
+            "~/*": [
+                "src/*"
+            ],
+            "@html/*": [
+                "src/html/*"
+            ],
+            "@js/*": [
+                "src/js/*"
+            ],
+            "@scss/*": [
+                "src/scss/*"
+            ],
+            "@/*": [
+                "src/*"
+            ]
+        }
+    }
+}

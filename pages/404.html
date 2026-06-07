@@ -1,0 +1,29 @@
+<!--
+  @fileOverview Страница ошибки 404.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+	<include src="src/html/_head.html" locals='{"title": "404"}'></include>
+	<body>
+		<div class="wrapper">
+      <include src="src/html/_header.html"></include>
+			<main class="error-page">
+        <section class="error-page__hero">
+          <div class="error-page__container">
+            <div class="error-page__message">
+              <h1 class="error-page__number">404</h1>
+              <div class="error-page__text">
+                <p>Вы немного заблудились, но это не беда.</p>
+                <p>Вы всегда можете вернуться <a href="/pages/home.html">на главную страницу.</a></p>
+              </div>
+            </div>
+            <img src="/img/404/cat.png" alt="Грустный котёнок рядом с разбитой лампочкой" class="error-page__image">
+          </div>
+        </section>
+			</main>
+      <include src="src/html/_footer.html"></include>
+		</div>
+    <include src="src/html/_js.html"></include>
+	</body>
+</html>

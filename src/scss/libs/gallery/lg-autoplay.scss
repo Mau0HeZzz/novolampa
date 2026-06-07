@@ -1,0 +1,43 @@
+@use 'lg-variables';
+@use 'lg-mixins';
+.lg-progress-bar {
+    background-color: lg-variables.$lg-progress-bar-bg;
+    height: lg-variables.$lg-progress-bar-height;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: lg-variables.$zindex-progressbar;
+    opacity: 0;
+    will-change: opacity;
+    @include lg-mixins.transitionCustom(opacity 0.08s ease 0s);
+
+    .lg-progress {
+        background-color: lg-variables.$lg-progress-bar-active-bg;
+        height: lg-variables.$lg-progress-bar-height;
+        width: 0;
+    }
+
+    &.lg-start {
+        .lg-progress {
+            width: 100%;
+        }
+    }
+
+    .lg-show-autoplay & {
+        opacity: 1;
+    }
+}
+
+.lg-autoplay-button {
+    &:after {
+        .lg-show-autoplay & {
+            content: '\e01a';
+        }
+        content: '\e01d';
+    }
+    .lg-single-item & {
+        opacity: lg-variables.$lg-toolbar-icon-disabled-opacity;
+        pointer-events: none;
+    }
+}

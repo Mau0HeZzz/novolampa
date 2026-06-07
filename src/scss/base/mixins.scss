@@ -1,0 +1,227 @@
+@use "../variables";
+@use "sass:math";
+
+//Подключение шрифта
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src:
+			url("../fonts/#{$file_name}.woff2") format("woff2"),
+			url("../fonts/#{$file_name}.woff") format("woff");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+//Percent
+@function percent($px, $from: 100) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+
+@function vw($px, $from: 100) {
+	$result: math.div($px, $from) * 100vw;
+	@return $result;
+}
+
+@function vh($px, $from: 100) {
+	$result: math.div($px, $from) * 100vh;
+	@return $result;
+}
+
+@function lsp($percents) {
+	$result: calc((var(--font-size) / 100) * $percents);
+	@return $result;
+}
+//REM
+@function toRem($px, $current: 16) {
+	$result: math.div($px, $current) + rem;
+	@return $result;
+}
+//EM
+@function toEm($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+
+//Currency
+@mixin currency($sym) {
+	&::after {
+		content: "#{$sym}";
+	}
+}
+
+// Треугольник
+@mixin triangle($direction, $color, $size, $size2: $size) {
+	@if $direction == left {
+		border: toRem($size2) solid transparent;
+		border-right: toRem($size) solid $color;
+	}
+	@if $direction == right {
+		border: toRem($size2) solid transparent;
+		border-left: toRem($size) solid $color;
+	}
+	@if $direction == top {
+		border: toRem($size2) solid transparent;
+		border-bottom: toRem($size) solid $color;
+	}
+	@if $direction == bottom {
+		border: toRem($size2) solid transparent;
+		border-top: toRem($size) solid $color;
+	}
+}
+
+// Grids
+@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+	display: grid;
+	gap: $gap;
+	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+}
+
+// Адаптивное свойство (clamp)
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: 1920, $widthTo: 360, $keepSize: 0, $isContainer: 0) {
+	@if ($startSize==0) {
+		$startSize: 0.000001;
+	}
+	@if ($minSize==0) {
+		$minSize: 0.000001;
+	}
+
+	// Для calc();
+	$addSize: math.div($startSize - $minSize, 16);
+
+	@if ($widthFrom == variables.$containerWidth and variables.$maxWidthContainer == 0) {
+		$widthFrom: variables.$maxWidth;
+	}
+
+	// Брейк поинты в EM
+	$widthFromMedia: toEm($widthFrom);
+	$widthToMedia: toEm($widthTo);
+
+	// Формула плавающего значения
+	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+	$yIntersection: -$widthTo * $slope + $minSize;
+	@if ($yIntersection==0) {
+		$yIntersection: 0.000001;
+	}
+	$flyValue: #{toRem($yIntersection)}" + " #{$slope * 100}vw;
+
+	// Получение значения свойства
+	$propertyValue: #{"clamp(" toRem($minSize) "," $flyValue "," toRem($startSize) ")"};
+	// Если отрицательные значения
+	@if ($minSize > $startSize) {
+		$propertyValue: #{"clamp(" toRem($startSize) "," $flyValue "," toRem($minSize) ")"};
+	}
+
+  @if ($isContainer != 1) {
+    // Устанавливаем значение по умолчанию
+    @if $keepSize != 1 and $keepSize != 3 {
+      @media (min-width: $widthFromMedia) {
+        #{$property}: toRem($startSize);
+      }
+    }
+    // Адаптируем размер в промежутке между указанными ширинами вьюпорта
+    @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+      #{$property}: $propertyValue;
+    }
+    @if $keepSize != 1 and $keepSize != 2 {
+      @media (max-width: $widthToMedia) {
+        #{$property}: toRem($minSize);
+      }
+    }
+  } @else {
+    @if $keepSize != 1 and $keepSize != 3 {
+      @container (width > #{$widthFromMedia}) {
+        #{$property}: toRem($startSize);
+      }
+    }
+    // Адаптируем размер в промежутке между указанными ширинами вьюпорта
+    @container (#{$widthFromMedia} > width > #{$widthToMedia}) {
+      #{$property}: $propertyValue;
+    }
+  
+    @if $keepSize != 1 and $keepSize != 2 {
+      @container (width < #{$widthToMedia}) {
+        #{$property}: toRem($minSize);
+      }
+    }
+  }
+}
+
+@mixin adaptiveValueContainer($property, $startSize, $minSize, $widthFrom: 1920, $widthTo: 360, $keepSize: 0, $isContainer: 0) {
+	@if ($startSize==0) {
+		$startSize: 0.000001;
+	}
+	@if ($minSize==0) {
+		$minSize: 0.000001;
+	}
+
+	// Для calc();
+	$addSize: math.div($startSize - $minSize, 16);
+
+	@if ($widthFrom == variables.$containerWidth and variables.$maxWidthContainer == 0) {
+		$widthFrom: variables.$maxWidth;
+	}
+
+	// Брейк поинты в EM
+	$widthFromMedia: toEm($widthFrom);
+	$widthToMedia: toEm($widthTo);
+
+	// Формула плавающего значения
+	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+	$yIntersection: -$widthTo * $slope + $minSize;
+	@if ($yIntersection==0) {
+		$yIntersection: 0.000001;
+	}
+	$flyValue: #{toRem($yIntersection)}" + " #{$slope * 100}cqw;
+
+	// Получение значения свойства
+	$propertyValue: #{"clamp(" toRem($minSize) "," $flyValue "," toRem($startSize) ")"};
+	// Если отрицательные значения
+	@if ($minSize > $startSize) {
+		$propertyValue: #{"clamp(" toRem($startSize) "," $flyValue "," toRem($minSize) ")"};
+	}
+
+  @if $keepSize != 1 and $keepSize != 3 {
+    @container (width > #{$widthFromMedia}) {
+      #{$property}: toRem($startSize);
+    }
+  }
+  // Адаптируем размер в промежутке между указанными ширинами вьюпорта
+  @container (#{$widthFromMedia} > width > #{$widthToMedia}) {
+    #{$property}: $propertyValue;
+  }
+
+  @if $keepSize != 1 and $keepSize != 2 {
+    @container (width < #{$widthToMedia}) {
+      #{$property}: toRem($minSize);
+    }
+  }
+}
+
+// Grid-контейнер
+@mixin gridContainer($type: 0, $container: variables.$maxWidthContainer, $paddingStart: math.div(variables.$containerPadding, 2), $paddingEnd: math.div(variables.$containerPadding, 2)) {
+	display: grid;
+	min-width: 0;
+	grid-template-columns: toRem($paddingStart) 1fr minmax(auto, toRem($container)) 1fr toRem($paddingEnd);
+	> * {
+		min-width: 0;
+		@if $type==1 {
+			grid-column: 1 / 6;
+		} @else if $type==2 {
+			grid-column: 2 / 5;
+		} @else if $type==3 {
+			grid-column: 3 / 6;
+		} @else if $type==4 {
+			grid-column: 1 / 4;
+		} @else if $type==5 {
+			grid-column: 2 / 4;
+		} @else if $type==6 {
+			grid-column: 3 / 5;
+		} @else {
+			grid-column: 3 / 4;
+		}
+	}
+}

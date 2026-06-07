@@ -1,0 +1,251 @@
+/**
+ * @fileOverview Базовые стили всплывающих окон и выдвижных панелей.
+ */
+
+@use "/src/scss/base/mixins.scss";
+@use "/src/scss/variables.scss";
+@use "sass:math";
+
+body::after {
+	content: "";
+	position: fixed;
+  background-color: var(--modal-bg);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.8s ease 0s;
+	pointer-events: none;
+	z-index: 149;
+  backdrop-filter: blur(mixins.toRem(5));
+
+  .loaded & {
+    transition: all 0.3s ease 0s;
+  }
+}
+.popup-show body::after {
+	opacity: 1;
+}
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transition: visibility 0.8s ease 0s;
+	visibility: hidden;
+	pointer-events: none;
+  ._isChrome &::-webkit-scrollbar {
+    width: mixins.toRem(4);
+  }
+  ._isChrome &::-webkit-scrollbar-thumb {
+    border-color: transparent;
+  }
+  &_show {
+    z-index: 150;
+    visibility: visible;
+    overflow: auto;
+    pointer-events: auto;
+    overscroll-behavior: contain;
+  }
+  @media (max-width:mixins.toEm(variables.$mobile)){
+    ._isChrome &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    @media (min-width:mixins.toEm(variables.$mobile)){
+      justify-content: center;
+      padding: mixins.toRem(30) mixins.toRem(10);
+    }
+    @media (max-width:mixins.toEm(variables.$mobile)){
+      justify-content: flex-end;
+      padding-top: mixins.toRem(30);
+      // height: 100%;
+      // overflow: hidden;
+    }
+  }
+
+  &__content {
+    // visibility: hidden;
+    background-color: var(--bg);
+    border-radius: mixins.toRem(20);
+    padding-top: mixins.toRem(30);
+    width: 100%;
+    max-width: mixins.toRem(900);
+    position: relative;
+    @include mixins.adaptiveValue("padding-bottom", 40, 36);
+    @include mixins.adaptiveValue("padding-left", 30, 16);
+    @include mixins.adaptiveValue("padding-right", 30, 16);
+    .loaded & {
+      transition: all 0.3s linear 0s;
+    }
+
+    @media (min-width: mixins.toEm(variables.$mobile) ){
+      opacity: 0;
+      translate: 0 mixins.toRem(20);
+    }
+    @media (max-width: mixins.toEm(variables.$mobile) ){
+      // max-height: 100%;
+      border-radius: mixins.toRem(20) mixins.toRem(20) 0 0;
+      translate: 0 100%;
+      min-height: 80vh;
+      // overflow: auto;
+      display: flex;
+      flex-direction: column;
+      padding-top: mixins.toRem(44);
+    }
+
+    .popup_show & {
+      visibility: visible;
+      @media (min-width:mixins.toEm(variables.$mobile)){
+        opacity: 1;
+        translate: none;
+      }
+      @media (max-width:mixins.toEm(variables.$mobile)){
+        translate: 0 var(--translateY, 0px);
+      }
+    }
+    ._close & {
+      @media (min-width:mixins.toEm(variables.$mobile)){
+        opacity: 0;
+        translate: 0 mixins.toRem(-20);
+      }
+    }
+  }
+
+  &__body {
+    @media (max-width:mixins.toEm(variables.$mobile)){
+      // max-height: 100%;
+      // overflow: auto;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__close {
+    outline: none;
+    &.btn {
+      --btncolor: var(--mainColor);
+      position: absolute;
+      @media (min-width:mixins.toEm(variables.$mobile)){
+        --btnbg: var(--tab_bg);
+        --btnbdclr: var(--tab_bg);
+      }
+      @media (max-width:mixins.toEm(variables.$mobile)){
+        --btnbg: var(--bg);
+        --btnbdclr: var(--bg);
+      }
+    }
+    @media (min-width:mixins.toEm(variables.$mobile)){
+      top: 0;
+      left: calc(100% + mixins.toRem(20));
+    }
+    @media (max-width:mixins.toEm(variables.$mobile)){
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__dragclose {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: mixins.toRem(52);
+    outline: none;
+    &::before{
+      content:'';
+      position: absolute;
+      width: 30%;
+      height: mixins.toRem(5);
+      border-radius: mixins.toRem(9999);
+      background-color: rgba(0, 0, 0, 0.5);
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+    }
+
+    @media (min-width:mixins.toEm(variables.$mobile)){
+      display: none;
+    }
+  }
+}
+
+// ===============
+// Drawer (боковая панель)
+// ===============
+.drawer {
+  .popup__wrapper {
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+
+  .popup__content {
+    max-width: mixins.toRem(480);
+    border-radius: 0;
+    min-height: 100%;
+    padding-top: mixins.toRem(24);
+    translate: 15% 0;
+    margin-left: auto;
+
+    @media (max-width: mixins.toEm(variables.$mobile)) {
+      max-width: 100%;
+      translate: 15% 0;
+      min-height: 100%;
+      border-radius: 0;
+    }
+
+    .loaded & {
+      transition: all 0.3s ease;
+    }
+  }
+
+  &.popup_show .popup__content {
+    translate: 0 0;
+  }
+  &._close .popup__content {
+    translate: 15% 0;
+  }
+
+  .drawer__close {
+    position: absolute;
+    top: mixins.toRem(16);
+    right: mixins.toRem(16);
+    width: mixins.toRem(40);
+    height: mixins.toRem(40);
+    background: none;
+    cursor: pointer;
+    outline: none;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: mixins.toRem(20);
+      height: mixins.toRem(2);
+      border-radius: mixins.toRem(2);
+      background-color: var(--text-main-color, #1f2326);
+    }
+    &::before {
+      translate: -50% -50%;
+      rotate: 45deg;
+    }
+    &::after {
+      translate: -50% -50%;
+      rotate: -45deg;
+    }
+  }
+}

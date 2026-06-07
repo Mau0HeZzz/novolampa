@@ -1,0 +1,47 @@
+{
+  "public\\fonts\\Onest-Bold.ttf": {
+    "hash": "99cf5fe8b0a58c1408ebebeaeff7a1b6",
+    "metadata": {
+      "family": "Onest",
+      "weight": 700,
+      "style": "normal",
+      "isVariable": false
+    }
+  },
+  "public\\fonts\\Onest-Medium.ttf": {
+    "hash": "4bb7ad08749e0c3acc8cd702722fb9a6",
+    "metadata": {
+      "family": "Onest",
+      "weight": 500,
+      "style": "normal",
+      "isVariable": false
+    }
+  },
+  "public\\fonts\\Onest-Regular.ttf": {
+    "hash": "c3dd47ab44dd1d30a1235f27103deb13",
+    "metadata": {
+      "family": "Onest",
+      "weight": 400,
+      "style": "normal",
+      "isVariable": false
+    }
+  },
+  "public\\fonts\\TikTokSans_24pt_SemiExpanded-ExtraBold.ttf": {
+    "hash": "080a97289ae31fc63f0fcbb4747a10df",
+    "metadata": {
+      "family": "TikTok Sans 24pt SemiExpanded",
+      "weight": 800,
+      "style": "normal",
+      "isVariable": false
+    }
+  },
+  "public\\fonts\\TikTokSans_24pt_SemiExpanded-Medium.ttf": {
+    "hash": "a0330a023339c28453bee84d7c4f1887",
+    "metadata": {
+      "family": "TikTok Sans 24pt SemiExpanded",
+      "weight": 500,
+      "style": "normal",
+      "isVariable": false
+    }
+  }
+}

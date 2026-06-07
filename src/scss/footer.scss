@@ -1,0 +1,251 @@
+/**
+ * @fileOverview Стили общего футера сайта.
+ */
+
+@use "base/mixins";
+@use "variables";
+@use "sass:math";
+
+.footer {
+  color: var(--text-light-color);
+  background-color: var(--bg-dark-color);
+
+  @include mixins.adaptiveValue("padding-top", 76, 42);
+  @include mixins.adaptiveValue("padding-bottom", 66, 52);
+
+  &__logo {
+    display: block;
+    width: mixins.toRem(166);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 0.78fr) minmax(0, 1fr) minmax(0, 0.92fr);
+    align-items: start;
+
+    @include mixins.adaptiveValue("gap", 74, 30, 1410, 992);
+    @include mixins.adaptiveValue("margin-top", 54, 40);
+  }
+
+  &__nav {
+    &_mobile {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    display: grid;
+    gap: mixins.toRem(22);
+    font-size: mixins.toRem(16);
+    line-height: math.div(22, 16);
+
+    a {
+      transition: color 0.3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--text-green-color);
+        }
+      }
+    }
+  }
+
+  &__phones,
+  &__emails,
+  &__showrooms {
+    display: grid;
+  }
+
+  &__phones {
+    gap: mixins.toRem(38);
+  }
+
+  &__emails {
+    gap: mixins.toRem(34);
+  }
+
+  &__showrooms {
+    gap: mixins.toRem(26);
+  }
+
+  &__phone,
+  &__contact,
+  &__showroom {
+    display: grid;
+    gap: mixins.toRem(10);
+  }
+
+  &__label {
+    color: var(--text-muted-color);
+    font-size: mixins.toRem(15);
+    line-height: math.div(22, 15);
+  }
+
+  &__value {
+    width: fit-content;
+    font-size: mixins.toRem(22);
+    font-weight: 500;
+    line-height: math.div(28, 22);
+    transition: color 0.3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-green-color);
+      }
+    }
+  }
+
+  &__title {
+    font-size: mixins.toRem(22);
+    font-weight: 500;
+    line-height: math.div(28, 22);
+  }
+
+  &__address {
+    font-size: mixins.toRem(16);
+    line-height: math.div(22, 16);
+  }
+
+  &__socials {
+    display: flex;
+    gap: mixins.toRem(14);
+    margin-top: mixins.toRem(6);
+
+    .action-button_social {
+      width: mixins.toRem(56);
+      padding: mixins.toRem(16);
+      border-radius: mixins.toRem(5);
+      background-color: var(--bg-social-color);
+      box-shadow: none;
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: var(--bg-glass-fill-color);
+        }
+      }
+    }
+  }
+
+  &__legal {
+    display: grid;
+    grid-template-columns: 0.85fr 1.2fr 1.45fr 1.25fr 0.75fr;
+    gap: mixins.toRem(24);
+    color: var(--text-muted-color);
+    font-size: mixins.toRem(14);
+    line-height: math.div(20, 14);
+
+    @include mixins.adaptiveValue("margin-top", 86, 60);
+
+    a {
+      transition: color 0.3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--text-light-color);
+        }
+      }
+    }
+  }
+
+  @media (width < #{mixins.toEm(variables.$tablet)}) {
+    &__container {
+      padding-inline: mixins.toRem(16);
+    }
+
+    &__logo {
+      width: mixins.toRem(116);
+    }
+
+    &__body {
+      display: block;
+      margin-top: mixins.toRem(42);
+    }
+
+    &__nav {
+      &_desktop {
+        display: none;
+      }
+
+      &_mobile {
+        display: block;
+      }
+    }
+
+    &__nav-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: mixins.toRem(22) mixins.toRem(20);
+      font-size: mixins.toRem(15);
+      line-height: math.div(20, 15);
+    }
+
+    &__section {
+      margin-inline: mixins.toRem(-16);
+      padding-inline: mixins.toRem(16);
+      border-top: mixins.toRem(1) solid var(--bg-dark-secondary-color);
+
+      @include mixins.adaptiveValue("padding-top", 42, 32, 768, 320);
+      @include mixins.adaptiveValue("margin-top", 42, 32, 768, 320);
+    }
+
+    &__phones {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: mixins.toRem(20);
+    }
+
+    &__emails {
+      gap: mixins.toRem(28);
+    }
+
+    &__showrooms {
+      gap: mixins.toRem(24);
+    }
+
+    &__phone,
+    &__contact,
+    &__showroom {
+      gap: mixins.toRem(8);
+    }
+
+    &__label {
+      font-size: mixins.toRem(13);
+      line-height: math.div(18, 13);
+    }
+
+    &__value {
+      font-size: mixins.toRem(18);
+      line-height: math.div(24, 18);
+    }
+
+    &__title {
+      font-size: mixins.toRem(22);
+      line-height: math.div(28, 22);
+    }
+
+    &__address {
+      font-size: mixins.toRem(15);
+      line-height: math.div(20, 15);
+    }
+
+    &__socials {
+      margin-top: mixins.toRem(8);
+
+      .action-button_social {
+        width: mixins.toRem(48);
+        padding: mixins.toRem(12);
+      }
+    }
+
+    &__legal {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: mixins.toRem(22);
+      margin-top: mixins.toRem(46);
+      font-size: mixins.toRem(13);
+      line-height: math.div(18, 13);
+    }
+  }
+}
