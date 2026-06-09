@@ -1,0 +1,97 @@
+<!--
+  @fileOverview Страница с реквизитами юридических лиц.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Реквизиты"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+      <main class="inner-page">
+        <section class="section page-intro">
+          <div class="section__container page-intro__container">
+            <div class="section__head page-intro__head">
+              <ul class="section__breadcrumbs breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a href="/pages/home.html" itemprop="item">
+                    <span itemprop="name">Главная</span>
+                  </a>
+                  <meta itemprop="position" content="1">
+                </li>
+                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <span itemprop="name">Реквизиты</span>
+                  <link itemprop="item" href="/pages/requisites.html">
+                  <meta itemprop="position" content="2">
+                </li>
+              </ul>
+              <h1 class="section__title page-intro__title">Реквизиты</h1>
+            </div>
+          </div>
+        </section>
+
+        <section class="section requisites">
+          <div class="section__container requisites__container">
+            <div class="requisites__grid">
+              <article class="requisites-card">
+                <div class="requisites-card__head">
+                  <h2 class="requisites-card__title">ООО «Новолампа опт»</h2>
+                  <a href="#" class="action-button action-button_download" download>
+                    <svg aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg>
+                    <span>Скачать PDF</span>
+                  </a>
+                </div>
+                <div class="requisites-card__body">
+                  <p>
+                    ИНН: 7807243660<br>
+                    КПП: 780701001<br>
+                    ОГРН: 1207800114345<br>
+                    Р/счет: 40702810932000008995<br>
+                    К/счет: 30101810600000000786
+                  </p>
+                  <p>
+                    БИК: 044030786<br>
+                    БАНК: ФИЛИАЛ "САНКТ-ПЕТЕРБУРГСКИЙ" АО "АЛЬФА-БАНК" Г.САНКТ-ПЕТЕРБУРГ
+                  </p>
+                  <p>
+                    Юридический адрес:<br>
+                    198206, г. Санкт-Петербург, шоссе Петергофское, дом 55, корпус 1 Литера А, помещение 4-Н офис №10
+                  </p>
+                </div>
+              </article>
+
+              <article class="requisites-card">
+                <div class="requisites-card__head">
+                  <h2 class="requisites-card__title">ООО «Новолампа»</h2>
+                  <a href="#" class="action-button action-button_download" download>
+                    <svg aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg>
+                    <span>Скачать PDF</span>
+                  </a>
+                </div>
+                <div class="requisites-card__body">
+                  <p>
+                    ИНН: 7840045546<br>
+                    КПП: 780701001<br>
+                    ОГРН: 1167847071039<br>
+                    Р/счет: 40702810632320000973<br>
+                    К/счет: 30101810600000000786
+                  </p>
+                  <p>
+                    БИК: 044030786<br>
+                    БАНК: ФИЛИАЛ "САНКТ-ПЕТЕРБУРГСКИЙ" АО "АЛЬФА-БАНК" Г.САНКТ-ПЕТЕРБУРГ
+                  </p>
+                  <p>
+                    Юридический адрес:<br>
+                    198206, г. Санкт-Петербург, шоссе Петергофское, дом 55, корпус 1 Литера А, помещение 4-Н комната №3
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

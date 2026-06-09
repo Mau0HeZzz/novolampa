@@ -129,3 +129,4 @@ body {
 // Подключение стилей отдельных страниц
 @include meta.load-css("home");
 @include meta.load-css("404");
+@include meta.load-css("inner-pages");

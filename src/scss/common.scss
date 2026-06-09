@@ -1,4 +1,8 @@
 // Заголовки, общие БЄМ блоки и прочее...
+/**
+ * @fileOverview Общие компоненты, типографика и вспомогательные классы проекта.
+ */
+
 @use "base/mixins";
 @use "sass:math";
 @use "sass:list";
@@ -468,4 +472,260 @@ $indent-direction-properties: (
 
 .sqare {
   aspect-ratio: 1;
+}
+
+.section {
+  &__title {
+    color: var(--text-main-color);
+    font-weight: 500;
+  }
+}
+
+.page-intro {
+  max-width: mixins.toRem(1576);
+  margin: mixins.toRem(12) auto;
+  border-radius: mixins.toRem(12);
+  background-color: var(--bg-section-color);
+
+  @media (width < #{mixins.toEm(1600)}) {
+    margin: mixins.toRem(12);
+  }
+
+  &__container {
+    @include mixins.adaptiveValue("padding-top", 28, 20);
+    @include mixins.adaptiveValue("padding-bottom", 46, 26);
+  }
+
+  &__title {
+    margin-top: mixins.toRem(15);
+
+    @include mixins.adaptiveValue("font-size", 44, 28);
+    @include mixins.adaptiveValue("line-height", 54, 36);
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: mixins.toRem(8);
+  color: #c7cbd0;
+  font-size: mixins.toRem(13);
+  line-height: math.div(18, 13);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: mixins.toRem(8);
+
+    &:not(:last-child)::after {
+      content: "–";
+    }
+  }
+
+  a {
+    transition: color 0.3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-secondary-color);
+      }
+    }
+  }
+}
+
+.action-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: mixins.toRem(18);
+  padding: mixins.toRem(10) mixins.toRem(28);
+  border: mixins.toRem(2) solid transparent;
+  border-radius: mixins.toRem(5);
+  font-size: mixins.toRem(15);
+  font-weight: 500;
+  line-height: math.div(22, 15);
+  text-align: center;
+
+  .loaded & {
+    transition:
+      color 0.3s ease 0s,
+      background-color 0.3s ease 0s,
+      border-color 0.3s ease 0s;
+  }
+
+  &_primary {
+    color: var(--btn-green-text-color);
+    background-color: var(--btn-green-color);
+
+    i {
+      width: mixins.toRem(20);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      color: var(--text-green-color);
+      background-color: var(--bg-main-color);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--text-accent-color);
+      }
+    }
+  }
+
+  &_outline {
+    color: var(--text-green-color);
+    border-color: var(--btn-outline-green-color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--btn-green-text-color);
+        background-color: var(--btn-green-color);
+      }
+    }
+  }
+
+  &_social {
+    width: mixins.toRem(56);
+    aspect-ratio: 1;
+    padding: mixins.toRem(12);
+    background-color: var(--bg-main-color);
+    box-shadow: 0 mixins.toRem(4) mixins.toRem(14) var(--shadow-card-color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--bg-section-color);
+      }
+    }
+  }
+
+  &_download {
+    justify-content: flex-start;
+    gap: mixins.toRem(10);
+    padding: 0;
+    border: 0;
+    color: var(--text-green-color);
+    font-size: mixins.toRem(16);
+
+    svg {
+      width: mixins.toRem(24);
+      height: mixins.toRem(24);
+      flex: 0 0 auto;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-accent-color);
+      }
+    }
+  }
+
+  @media (width < #{mixins.toEm(1280)}) {
+    padding-inline: mixins.toRem(14);
+
+    @include mixins.adaptiveValue("font-size", 15, 12, 480, 320);
+
+    &_download {
+      padding-inline: 0;
+      font-size: mixins.toRem(16);
+    }
+  }
+}
+
+._content {
+  color: var(--text-main-color);
+  font-size: mixins.toRem(16);
+  line-height: math.div(24, 16);
+
+  > * + * {
+    margin-top: mixins.toRem(24);
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  h2 {
+    font-size: mixins.toRem(28);
+  }
+
+  h3 {
+    font-size: mixins.toRem(22);
+  }
+
+  h4 {
+    font-size: mixins.toRem(18);
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--text-green-color);
+    transition: color 0.3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-accent-color);
+      }
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: mixins.toRem(24);
+  }
+
+  ul li {
+    list-style: disc;
+  }
+
+  ol li {
+    list-style: decimal;
+  }
+
+  li + li {
+    margin-top: mixins.toRem(4);
+  }
+
+  blockquote {
+    padding-left: mixins.toRem(18);
+    border-left: mixins.toRem(3) solid var(--border-green-color);
+  }
+
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: mixins.toRem(10);
+    border: mixins.toRem(1) solid var(--border-input-color);
+    text-align: left;
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    font-size: mixins.toRem(15);
+    line-height: math.div(22, 15);
+
+    > * + * {
+      margin-top: mixins.toRem(20);
+    }
+  }
 }

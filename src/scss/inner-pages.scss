@@ -1,0 +1,155 @@
+/**
+ * @fileOverview Стили контентных внутренних страниц и карточек реквизитов.
+ */
+
+@use "base/mixins";
+@use "variables";
+@use "sass:math";
+
+.inner-page {
+  background-color: var(--bg-main-color);
+}
+
+.requisites {
+  @include mixins.adaptiveValue("padding-top", 40, 28);
+  @include mixins.adaptiveValue("padding-bottom", 100, 52);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: mixins.toRem(28);
+  }
+
+  @media (width < #{mixins.toEm(variables.$tablet)}) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.requisites-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: mixins.toRem(12);
+  background-color: var(--bg-section-color);
+
+  @include mixins.adaptiveValue("padding", 44, 16);
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: mixins.toRem(20);
+  }
+
+  &__title {
+    color: var(--text-main-color);
+    font-size: mixins.toRem(28);
+    font-weight: 500;
+    line-height: math.div(36, 28);
+  }
+
+  &__body {
+    display: grid;
+    gap: mixins.toRem(28);
+    margin-top: mixins.toRem(34);
+    color: var(--text-secondary-color);
+    font-size: mixins.toRem(16);
+    line-height: math.div(24, 16);
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    &__head {
+      display: contents;
+    }
+
+    &__title {
+      order: -2;
+      font-size: mixins.toRem(24);
+      line-height: math.div(32, 24);
+    }
+
+    &__body {
+      order: -1;
+      gap: mixins.toRem(24);
+      margin-top: mixins.toRem(24);
+      font-size: mixins.toRem(15);
+      line-height: math.div(22, 15);
+      overflow-wrap: anywhere;
+    }
+
+    .action-button_download {
+      margin-top: mixins.toRem(30);
+    }
+  }
+}
+
+.information-page {
+  @include mixins.adaptiveValue("padding-top", 28, 22);
+  @include mixins.adaptiveValue("padding-bottom", 110, 52);
+
+  &__title {
+    font-size: mixins.toRem(25);
+    line-height: math.div(27, 25);
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(0, mixins.toRem(270)) minmax(0, 1fr);
+    gap: mixins.toRem(48);
+    padding-block: mixins.toRem(30);
+    border-bottom: mixins.toRem(1) solid var(--border-light-color);
+
+    &_section {
+      padding-top: mixins.toRem(38);
+
+      .information-page__title {
+        max-width: mixins.toRem(230);
+      }
+    }
+  }
+
+  &__subtitle {
+    color: var(--text-secondary-color);
+    font-size: mixins.toRem(20);
+    font-weight: 500;
+    line-height: math.div(24, 20);
+  }
+
+  &__content {
+    max-width: mixins.toRem(980);
+  }
+
+  @media (width < #{mixins.toEm(variables.$tablet)}) {
+    &__row {
+      grid-template-columns: minmax(0, mixins.toRem(220)) minmax(0, 1fr);
+      gap: mixins.toRem(28);
+    }
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    &__title {
+      font-size: mixins.toRem(24);
+      line-height: math.div(30, 24);
+    }
+
+    &__row {
+      grid-template-columns: 1fr;
+      gap: mixins.toRem(20);
+      padding-block: mixins.toRem(28);
+
+      &_section {
+        padding-top: mixins.toRem(32);
+
+        .information-page__title {
+          max-width: none;
+        }
+      }
+    }
+
+    &__subtitle {
+      font-size: mixins.toRem(16);
+      line-height: math.div(22, 16);
+    }
+  }
+}
