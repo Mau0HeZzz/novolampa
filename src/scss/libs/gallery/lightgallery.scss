@@ -1,7 +1,53 @@
-@use 'lg-variables';
-@use 'lg-mixins';
-@use 'lg-fonts';
-@use 'lg-theme-default';
+/**
+ * @fileOverview Точка подключения и проектное оформление галереи lightGallery.
+ */
+
+@use "../../base/mixins";
+@use "../../variables";
+@use "lg-fonts";
+@use "lg-theme-default";
 
 // Core
-@use 'lightgallery-core';
+@use "lightgallery-core";
+
+.lg-outer {
+  .lg-content {
+    // position: absolute;
+    // inset-block: clamp(mixins.toRem(20), 2.5vw, mixins.toRem(40));
+    // inset-inline: max(mixins.toRem(15), calc((100% - mixins.toRem(1400)) / 2));
+    width: auto;
+    height: auto;
+    padding: mixins.toRem(26) mixins.toRem(30) mixins.toRem(30);
+    border-radius: mixins.toRem(10);
+    background-color: var(--bg-main-color);
+    box-shadow: 0 mixins.toRem(8) mixins.toRem(24) rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+
+  .lg-inner {
+    inset: mixins.toRem(26) mixins.toRem(30) mixins.toRem(30);
+    width: auto;
+  }
+
+  .lg-prev,
+  .lg-next,
+  .lg-components {
+    display: none;
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    .lg-content {
+      inset: mixins.toRem(10);
+      padding: mixins.toRem(42) mixins.toRem(10) mixins.toRem(10);
+    }
+
+    .lg-inner {
+      inset: mixins.toRem(42) mixins.toRem(10) mixins.toRem(10);
+    }
+  }
+}
+
+.lg-backdrop {
+  background-color: rgba(31, 35, 38, 0.2);
+  backdrop-filter: blur(mixins.toRem(5));
+}

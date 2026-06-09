@@ -177,6 +177,28 @@ function initContactsDropdown() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const announcement = document.querySelector("[data-announcement]");
+  const announcementClose = announcement?.querySelector("[data-announcement-close]");
+
+  if (announcement) {
+    const updateAnnouncementOffset = () => {
+      const announcementHeight = announcement.offsetHeight;
+      const announcementOffset = Math.max(announcementHeight - window.scrollY, 0);
+
+      document.body.style.setProperty("--announcement-offset", `${announcementOffset}px`);
+    };
+
+    updateAnnouncementOffset();
+    window.addEventListener("scroll", updateAnnouncementOffset, { passive: true });
+    window.addEventListener("resize", updateAnnouncementOffset);
+
+    announcementClose?.addEventListener("click", () => {
+      announcement.hidden = true;
+      document.body.style.setProperty("--announcement-height", "0px");
+      document.body.style.setProperty("--announcement-offset", "0px");
+    });
+  }
+
   initContactsDropdown();
 
   const catalogPopup = document.querySelector("#catalogPopup");

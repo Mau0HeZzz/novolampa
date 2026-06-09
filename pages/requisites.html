@@ -12,19 +12,10 @@
         <section class="section page-intro">
           <div class="section__container page-intro__container">
             <div class="section__head page-intro__head">
-              <ul class="section__breadcrumbs breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                  <a href="/pages/home.html" itemprop="item">
-                    <span itemprop="name">Главная</span>
-                  </a>
-                  <meta itemprop="position" content="1">
-                </li>
-                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                  <span itemprop="name">Реквизиты</span>
-                  <link itemprop="item" href="/pages/requisites.html">
-                  <meta itemprop="position" content="2">
-                </li>
-              </ul>
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная"], "mainItem": "Реквизиты"}'
+              ></include>
               <h1 class="section__title page-intro__title">Реквизиты</h1>
             </div>
           </div>

@@ -29,6 +29,11 @@
 
 // Стили тега BODY ============================================================================================================================================================================================================================================================================================================================================================================================
 body {
+  --header-height: 0px;
+  --announcement-height: 0px;
+  --announcement-offset: 0px;
+  --bx-panel-height: 0px;
+
 	// Скролл заблокирован
 	.lock & {
 		overflow: hidden;
@@ -45,7 +50,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-  padding-top: calc(var(--header-height) + var(--bx-panel-height));
+  position: relative;
+  padding-top: calc(var(--header-height) + var(--announcement-height) + var(--bx-panel-height));
 
 	@supports (overflow: clip) {
 		overflow: clip;
@@ -130,3 +136,4 @@ body {
 @include meta.load-css("home");
 @include meta.load-css("404");
 @include meta.load-css("inner-pages");
+@include meta.load-css("contacts");

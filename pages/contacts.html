@@ -1,0 +1,167 @@
+<!--
+  @fileOverview Страница контактов компании.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Контакты"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+      <main class="contacts-page">
+        <section class="section page-intro contacts-intro">
+          <div class="section__container page-intro__container contacts-intro__container">
+            <div class="section__head page-intro__head contacts-intro__head">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная"], "mainItem": "Контакты"}'
+              ></include>
+              <div class="contacts-intro__main">
+                <h1 class="section__title page-intro__title contacts-intro__title">Контакты</h1>
+                <p class="contacts-intro__text">Свяжитесь с нами или посетите шоурум</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contacts-summary">
+          <div class="section__container contacts-summary__container">
+            <div class="contacts-summary__grid">
+              <article class="contacts-card">
+                <h2 class="contacts-card__title">Телефоны</h2>
+                <div class="contacts-card__list">
+                  <div class="contacts-card__item">
+                    <span class="contacts-card__label">Бесплатно по всей России</span>
+                    <a href="tel:88007008091" class="contacts-card__value">8 (800) 700-80-91</a>
+                  </div>
+                  <div class="contacts-card__item">
+                    <span class="contacts-card__label">Москва</span>
+                    <a href="tel:+74952122601" class="contacts-card__value">+7 (495) 212-26-01</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="contacts-card">
+                <h2 class="contacts-card__title">Email</h2>
+                <div class="contacts-card__list">
+                  <div class="contacts-card__item">
+                    <span class="contacts-card__label">Для заказов и вопросов по ассортименту<br> в Санкт-Петербурге и по РФ</span>
+                    <a href="mailto:zakaz@novolampa.ru" class="contacts-card__value contacts-card__value_email">zakaz@novolampa.ru</a>
+                  </div>
+                  <div class="contacts-card__item">
+                    <span class="contacts-card__label">Для заказов и вопросов по ассортименту в Москве</span>
+                    <a href="mailto:zakazmsk@novolampa.ru" class="contacts-card__value contacts-card__value_email">zakazmsk@novolampa.ru</a>
+                  </div>
+                  <div class="contacts-card__item">
+                    <span class="contacts-card__label">Для других вопросов и предложений</span>
+                    <a href="mailto:info@novolampa.ru" class="contacts-card__value contacts-card__value_email">info@novolampa.ru</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="contacts-card">
+                <h2 class="contacts-card__title">Для быстрой связи</h2>
+                <div class="contacts-card__socials">
+                  <a href="#" class="contacts-card__social" aria-label="Telegram">
+                    <svg aria-hidden="true"><use xlink:href="/img/colored.svg#telegram"></use></svg>
+                  </a>
+                  <a href="#" class="contacts-card__social" aria-label="MAX">
+                    <svg aria-hidden="true"><use xlink:href="/img/colored.svg#max"></use></svg>
+                  </a>
+                  <a href="#" class="contacts-card__social" aria-label="ВКонтакте">
+                    <svg aria-hidden="true"><use xlink:href="/img/colored.svg#vk"></use></svg>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contacts-showrooms">
+          <div class="section__container contacts-showrooms__container">
+            <h2 class="contacts-showrooms__title">Наши шоурумы</h2>
+            <div class="contacts-showrooms__grid" data-gallery>
+              <a
+                href="https://yandex.ru/map-widget/v1/org/novolampa/77256990436/?indoorLevel=1&l=stv%2Csta&ll=30.304140%2C59.964687&panorama%5Bdirection%5D=248.437863%2C-9.107031&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=30.304355%2C59.964811&panorama%5Bspan%5D=115.088307%2C60.000000&utm_source=share&z=20"
+                class="showroom-card"
+                data-iframe="true"
+                data-iframe-title="Виртуальный тур по шоуруму NOVOLAMPA на Петроградской"
+              >
+                <img
+                  src="/img/contacts/showroom-1.png"
+                  class="showroom-card__image"
+                  alt="Шоурум NOVOLAMPA на Петроградской"
+                >
+                <div class="showroom-card__content">
+                  <h3 class="showroom-card__title">Шоурум м. Петроградская</h3>
+                  <div class="showroom-card__footer">
+                    <div class="showroom-card__info">
+                      <p class="showroom-card__address">ул. Бармалеева, дом 18</p>
+                      <p class="showroom-card__schedule">Работаем Пн–Пт с 10 до 19, Сб с 11 до 18</p>
+                    </div>
+                    <span class="action-button action-button_outline showroom-card__button">Тур по шоуруму</span>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="https://yandex.ru/map-widget/v1/?ll=30.270295%2C59.943431&mode=search&oid=169700749246&ol=biz&panorama%5Bdirection%5D=268.521030%2C-5.894340&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=30.138878%2C59.848465&panorama%5Bspan%5D=107.675257%2C60.000000&sll=30.270295%2C59.943228&source=serp_navig&tab=panorama&text=novolampa&z=11"
+                class="showroom-card"
+                data-iframe="true"
+                data-iframe-title="Виртуальный тур по шоуруму NOVOLAMPA на Проспекте Ветеранов"
+              >
+                <img
+                  src="/img/contacts/showroom-2.png"
+                  class="showroom-card__image"
+                  alt="Шоурум NOVOLAMPA на Проспекте Ветеранов"
+                >
+                <div class="showroom-card__content">
+                  <h3 class="showroom-card__title">Шоурум м.Проспект Ветеранов</h3>
+                  <div class="showroom-card__footer">
+                    <div class="showroom-card__info">
+                      <p class="showroom-card__address">Петергофском шоссе, дом 55, корпус 1</p>
+                      <p class="showroom-card__schedule">Работаем Пн–Пт с 10 до 19</p>
+                    </div>
+                    <span class="action-button action-button_outline showroom-card__button">Тур по шоуруму</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contacts-map">
+          <div class="section__container contacts-map__container">
+            <div class="contacts-map__head">
+              <h2 class="contacts-map__title">Карта</h2>
+              <div class="segmented-control _first-active" role="group" aria-label="Тип объектов на карте" data-map-switcher>
+                <span class="segmented-control__indicator" aria-hidden="true"></span>
+                <button
+                  type="button"
+                  class="segmented-control__button _active"
+                  aria-pressed="true"
+                  data-map-mode="pickup"
+                >
+                  Пункты выдачи
+                </button>
+                <button
+                  type="button"
+                  class="segmented-control__button"
+                  aria-pressed="false"
+                  data-map-mode="showrooms"
+                >
+                  Шоурумы
+                </button>
+              </div>
+            </div>
+            <div class="contacts-map__canvas" data-map>
+              <span class="contacts-map__status">Загрузка карты...</span>
+            </div>
+          </div>
+        </section>
+      </main>
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

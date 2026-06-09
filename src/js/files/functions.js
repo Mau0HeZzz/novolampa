@@ -773,14 +773,31 @@ export function dataMediaQueries(array, dataSetValue) {
 }
 //=====================================================================================
 
-export function setBodyHeightsVars(headerSelector='.header', footerSelector = '.footer') {
+export function setBodyHeightsVars(
+  headerSelector = '.header',
+  footerSelector = '.footer',
+  announcementSelector = '[data-announcement]'
+) {
   document.addEventListener("DOMContentLoaded", () => {
-    setBodyHeightsVar({
+    const updateBodyHeights = () => setBodyHeightsVar({
       headerSelector,
       footerSelector,
+      announcementSelector,
       headerVarName: '--header-height',
-      footerVarName: '--footer-height'
-    })
+      footerVarName: '--footer-height',
+      announcementVarName: '--announcement-height'
+    });
+
+    updateBodyHeights();
+
+    const resizeObserver = new ResizeObserver(updateBodyHeights);
+    const observedElements = [
+      document.querySelector(headerSelector),
+      document.querySelector(footerSelector),
+      document.querySelector(announcementSelector)
+    ].filter(Boolean);
+
+    observedElements.forEach((element) => resizeObserver.observe(element));
 
     setInterval(() => {
       setBodyHeightsVar({
@@ -796,11 +813,16 @@ export function setBodyHeightsVars(headerSelector='.header', footerSelector = '.
 function setBodyHeightsVar({
   headerSelector,
   footerSelector,
+  announcementSelector,
   headerVarName,
-  footerVarName
+  footerVarName,
+  announcementVarName
 }) {
   const header = document.querySelector(headerSelector);
   const footer = document.querySelector(footerSelector);
+  const announcement = announcementSelector
+    ? document.querySelector(announcementSelector)
+    : null;
   const bxPanel = document.querySelector('#bx-panel');
 
   const headerHeight = header?.offsetHeight || 0;
@@ -808,6 +830,11 @@ function setBodyHeightsVar({
 
   const footerHeight = footer?.offsetHeight || 0;
   document.body.style.setProperty(footerVarName, `${footerHeight}px`);
+
+  if (announcementVarName) {
+    const announcementHeight = announcement?.offsetHeight || 0;
+    document.body.style.setProperty(announcementVarName, `${announcementHeight}px`);
+  }
 
   const bxPanelHeight = bxPanel?.offsetHeight || 0;
   document.body.style.setProperty('--bx-panel-height', `${bxPanelHeight}px`);

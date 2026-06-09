@@ -1,0 +1,18 @@
+<!--
+  @fileOverview Переиспользуемая разметка хлебных крошек с микроразметкой Schema.org.
+-->
+
+<ul class="section__breadcrumbs breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <each loop="item, index in items">
+    <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ item === 'Главная' ? '/pages/home.html' : '#' }}" itemprop="item">
+        <span itemprop="name">{{ item }}</span>
+      </a>
+      <meta itemprop="position" content="{{ index + 1 }}">
+    </li>
+  </each>
+  <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+    <span itemprop="name">{{ mainItem }}</span>
+    <meta itemprop="position" content="{{ items.length + 1 }}">
+  </li>
+</ul>

@@ -627,7 +627,7 @@ export function formQuantity() {
 	document.addEventListener("click", function (e) {
 		let targetElement = e.target;
     let disEvt = true;
-		if (targetElement.closest('.quantity__button')) {
+		if (targetElement.closest('.quantity-form__button')) {
       const parent = targetElement.closest('[data-quantity]');
       if (parent) {
         const input = parent.querySelector('input');
@@ -635,9 +635,9 @@ export function formQuantity() {
           let value = parseInt(input.value);
           let max = input.max || Infinity;
           let min = input.min || 1;
-          const plusBtn = parent.querySelector('.quantity__button_plus');
-          const minusBtn = parent.querySelector('.quantity__button_minus');
-          if (targetElement.classList.contains('quantity__button_plus')) {
+          const plusBtn = parent.querySelector('.quantity-form__button_plus');
+          const minusBtn = parent.querySelector('.quantity-form__button_minus');
+          if (targetElement.classList.contains('quantity-form__button_plus')) {
             minusBtn.disabled = false;
             if (value < max) {
               value++;

@@ -1,0 +1,123 @@
+<!--
+  @fileOverview Страница каталога товаров первого уровня.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Каталог"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+      <main class="catalog-page">
+        <section class="section catalog-page__section">
+          <div class="section__container catalog-page__container">
+            <div class="section__head catalog-page__head">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная"], "mainItem": "Каталог товаров"}'
+              ></include>
+              <h1 class="section__title catalog-page__title">Каталог</h1>
+            </div>
+
+            <div class="catalog-page__grid">
+              <a href="#" class="catalog-card catalog-card_logo">
+                <span class="catalog-card__media">
+                  <span class="catalog-card__logo">
+                    <img src="/img/logo-dark.svg" alt="Новолампа">
+                  </span>
+                </span>
+                <span class="catalog-card__title">Продукция ТМ Novolampa</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-2.png" alt="">
+                </span>
+                <span class="catalog-card__title">Светодиодные ленты</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-3.png" alt="">
+                </span>
+                <span class="catalog-card__title">Источники питания</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-4.png" alt="">
+                </span>
+                <span class="catalog-card__title">Алюминиевый профиль</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-5.png" alt="">
+                </span>
+                <span class="catalog-card__title">Светильники для дома и офиса</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-6.png" alt="">
+                </span>
+                <span class="catalog-card__title">Светильники для улицы</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-7.png" alt="">
+                </span>
+                <span class="catalog-card__title">Промышленное освещение</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-8.png" alt="">
+                </span>
+                <span class="catalog-card__title">Светодиодный декор</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-9.png" alt="">
+                </span>
+                <span class="catalog-card__title">Светодиодные лампы</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-10.png" alt="">
+                </span>
+                <span class="catalog-card__title">Светодиоды и модули</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-11.png" alt="">
+                </span>
+                <span class="catalog-card__title">Новые поступления</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-12.png" alt="">
+                </span>
+                <span class="catalog-card__title">Розетки, выключатели, кабель</span>
+              </a>
+
+              <a href="#" class="catalog-card">
+                <span class="catalog-card__media">
+                  <img src="/img/catalog/first-level-13.png" alt="">
+                </span>
+                <span class="catalog-card__title">Стенды, наборы, образцы</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

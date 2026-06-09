@@ -1,10 +1,13 @@
+/**
+ * @fileOverview Элементы управления и типографика темы lightGallery.
+ */
+
+@use "../../base/mixins";
 @use "lg-mixins";
 @use "lg-variables";
 
 .lg-container {
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
-        Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: var(--font-family);
 }
 // default theme
 .lg-next,
@@ -14,9 +17,9 @@
     color: lg-variables.$lg-next-prev-color;
     cursor: pointer;
     display: block;
-    font-size: 22px;
-    margin-top: -10px;
-    padding: 8px 10px 9px;
+    font-size: mixins.toRem(22);
+    margin-top: mixins.toRem(-10);
+    padding: mixins.toRem(8) mixins.toRem(10) mixins.toRem(9);
     position: absolute;
     top: 50%;
     z-index: lg-variables.$zindex-controls;
@@ -37,7 +40,7 @@
 }
 
 .lg-next {
-    right: 20px;
+    right: mixins.toRem(20);
 
     &:before {
         content: '\e095';
@@ -45,7 +48,7 @@
 }
 
 .lg-prev {
-    left: 20px;
+    left: mixins.toRem(20);
 
     &:after {
         content: '\e094';
@@ -58,7 +61,7 @@
     }
 
     50% {
-        left: -30px;
+        left: mixins.toRem(-30);
     }
 
     100% {
@@ -72,7 +75,7 @@
     }
 
     50% {
-        left: 30px;
+        left: mixins.toRem(30);
     }
 
     100% {
@@ -99,10 +102,15 @@
 // lg toolbar
 .lg-toolbar {
     z-index: lg-variables.$zindex-toolbar;
-    left: 0;
     position: absolute;
-    top: 0;
+    inset: 0;
     width: 100%;
+    height: 100%;
+    max-width: mixins.toRem(1380);
+    max-height: mixins.toRem(805);
+    margin: auto;
+    pointer-events: none;
+
     .lg-media-overlap & {
         background-image: lg-variables.$lg-toolbar-bg;
     }
@@ -111,12 +119,12 @@
         color: lg-variables.$lg-toolbar-icon-color;
         cursor: pointer;
         float: right;
-        font-size: 24px;
-        height: 47px;
-        line-height: 27px;
-        padding: 10px 0;
+        font-size: mixins.toRem(24);
+        height: mixins.toRem(42);
+        line-height: 1;
+        padding: 0;
         text-align: center;
-        width: 50px;
+        width: mixins.toRem(42);
         text-decoration: none !important;
         outline: medium none;
         will-change: color;
@@ -124,8 +132,10 @@
         background: none;
         border: none;
         box-shadow: none;
+        pointer-events: auto;
+
         &.lg-icon-18 {
-            font-size: 18px;
+            font-size: mixins.toRem(18);
         }
         &:hover {
             color: lg-variables.$lg-toolbar-icon-hover-color;
@@ -133,15 +143,49 @@
     }
 
     .lg-close {
+        position: relative;
+
+        &::before,
         &:after {
-            content: '\e070';
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: mixins.toRem(15);
+            height: mixins.toRem(2);
+            border-radius: mixins.toRem(2);
+            background-color: var(--text-main-color);
+            transition: background-color 0.2s ease;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &:hover {
+            &::before,
+            &::after {
+                background-color: var(--text-green-color);
+            }
         }
     }
+
     .lg-maximize {
-        font-size: 22px;
+        font-size: mixins.toRem(22);
+
         &:after {
             content: '\e90a';
         }
+    }
+
+    .lg-counter,
+    .lg-download,
+    .lg-maximize {
+        display: none;
     }
 
     .lg-download {
@@ -154,8 +198,8 @@
 // lightGallery title
 .lg-sub-html {
     color: lg-variables.$lg-sub-html-color;
-    font-size: 16px;
-    padding: 10px 40px;
+    font-size: mixins.toRem(16);
+    padding: mixins.toRem(10) mixins.toRem(40);
     text-align: center;
     z-index: lg-variables.$zindex-subhtml;
     opacity: 0;
@@ -163,13 +207,13 @@
 
     h4 {
         margin: 0;
-        font-size: 13px;
+        font-size: mixins.toRem(13);
         font-weight: bold;
     }
 
     p {
-        font-size: 12px;
-        margin: 5px 0 0;
+        font-size: mixins.toRem(12);
+        margin: mixins.toRem(5) 0 0;
     }
     a {
         color: inherit;
@@ -189,7 +233,7 @@
 }
 
 .lg-error-msg {
-    font-size: 14px;
+    font-size: mixins.toRem(14);
     color: #999;
 }
 
@@ -198,10 +242,18 @@
     color: lg-variables.$lg-icon-color;
     display: inline-block;
     font-size: lg-variables.$lg-counter-font-size;
-    padding-left: 20px;
-    padding-top: 12px;
-    height: 47px;
+    padding-left: mixins.toRem(20);
+    padding-top: mixins.toRem(12);
+    height: mixins.toRem(47);
     vertical-align: middle;
+}
+
+@media (width < 47.99875em) {
+    .lg-toolbar {
+        .lg-close {
+            margin-right: mixins.toRem(4);
+        }
+    }
 }
 
 .lg-closing {

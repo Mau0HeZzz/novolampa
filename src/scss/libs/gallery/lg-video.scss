@@ -1,5 +1,10 @@
-@use 'lg-variables';
-@use 'lg-mixins';
+/**
+ * @fileOverview Отображение iframe и видео внутри lightGallery.
+ */
+
+@use "../../base/mixins";
+@use "lg-mixins";
+
 .lg-outer {
     .lg-video-cont {
         text-align: center;
@@ -13,9 +18,16 @@
     }
 
     .lg-has-iframe {
-        .lg-video-cont {
-            -webkit-overflow-scrolling: touch;
-            overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
+
+        .lg-object {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            border: 0;
+            border-radius: mixins.toRem(5);
         }
     }
     .lg-video-object {
@@ -60,12 +72,12 @@
 
     50% {
         stroke-dasharray: 89, 200;
-        stroke-dashoffset: -35px;
+        stroke-dashoffset: -35;
     }
 
     100% {
         stroke-dasharray: 89, 200;
-        stroke-dashoffset: -124px;
+        stroke-dashoffset: -124;
     }
 }
 
@@ -78,7 +90,7 @@
 
 .lg-video-play-button {
     width: 18%;
-    max-width: 140px;
+    max-width: mixins.toRem(140);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -123,7 +135,7 @@
 .lg-video-play-icon {
     position: absolute;
     width: 25%;
-    max-width: 120px;
+    max-width: mixins.toRem(120);
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0);

@@ -1,0 +1,95 @@
+<!--
+  @fileOverview Страница авторизации пользователя без модального окна.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Авторизация"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+      <main class="auth-page">
+        <section class="section auth-page__section">
+          <div class="section__container auth-page__container">
+            <div class="section__head auth-page__head">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная"], "mainItem": "Авторизация"}'
+              ></include>
+              <h1 class="section__title auth-page__title">Авторизация</h1>
+            </div>
+
+            <div class="auth-page__body">
+              <div class="auth-page__card">
+                <div class="auth-page__content">
+                  <h2 class="auth-page__subtitle">Пожалуйста, авторизуйтесь</h2>
+
+                  <div class="auth-page__socials" aria-label="Войти с помощью социальной сети">
+                    <a href="#" class="auth-page__social" aria-label="Войти через Google">
+                      <svg aria-hidden="true"><use xlink:href="/img/colored.svg#auth-google"></use></svg>
+                    </a>
+                    <a href="#" class="auth-page__social" aria-label="Войти через Яндекс">
+                      <svg aria-hidden="true"><use xlink:href="/img/colored.svg#auth-yandex"></use></svg>
+                    </a>
+                    <a href="#" class="auth-page__social" aria-label="Войти через Mail.ru">
+                      <svg aria-hidden="true"><use xlink:href="/img/colored.svg#auth-mailru"></use></svg>
+                    </a>
+                    <a href="#" class="auth-page__social" aria-label="Войти через ВКонтакте">
+                      <svg aria-hidden="true"><use xlink:href="/img/colored.svg#auth-vk"></use></svg>
+                    </a>
+                    <a href="#" class="auth-page__social" aria-label="Войти через Facebook">
+                      <svg aria-hidden="true"><use xlink:href="/img/colored.svg#auth-facebook"></use></svg>
+                    </a>
+                    <a href="#" class="auth-page__social" aria-label="Войти через Одноклассники">
+                      <svg aria-hidden="true"><use xlink:href="/img/colored.svg#auth-odnoklassniki"></use></svg>
+                    </a>
+                  </div>
+
+                  <p class="auth-page__separator">или</p>
+
+                  <form action="" class="form auth-form auth-page__form">
+                    <label class="form__item">
+                      <input type="email" name="email" class="form__input" data-required="email" data-validate data-error="Введите корректный email">
+                      <span class="form__placeholder">Email</span>
+                    </label>
+
+                    <label class="form__item">
+                      <input type="password" name="password" class="form__input" data-required data-error="Введите пароль">
+                      <span class="form__placeholder">Пароль</span>
+                      <i class="form__viewpass">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#eye"></use></svg>
+                      </i>
+                    </label>
+
+                    <div class="auth-form__options">
+                      <label class="form__boxwrap">
+                        <input type="checkbox" name="remember">
+                        <i class="form__box"></i>
+                        <span class="form__label">Запомнить меня</span>
+                      </label>
+                      <a href="#" class="auth-form__link">Забыли пароль?</a>
+                    </div>
+
+                    <button type="submit" class="action-button action-button_primary form__submit">
+                      <span>Войти</span>
+                      <i>
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg>
+                      </i>
+                    </button>
+                  </form>
+
+                  <p class="auth-page__registration">
+                    Если вы впервые на сайте, заполните, пожалуйста, регистрационную форму.
+                    <a href="#">Зарегистрироваться</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

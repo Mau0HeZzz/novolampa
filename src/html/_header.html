@@ -2,6 +2,15 @@
   @fileOverview Разметка шапки и основной навигации.
 -->
 
+<aside class="announcement" data-announcement>
+  <div class="announcement__inner">
+    <p class="announcement__text">График работы в новогодние праздники: 1-9 января не работаем совсем</p>
+    <button type="button" class="announcement__close" aria-label="Закрыть объявление" data-announcement-close>
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><use xlink:href="/img/sprite.svg#close"></use></svg>
+    </button>
+  </div>
+</aside>
+
 <header class="header">
 	<div class="header__container">
     <div class="header__wrapper">
@@ -150,10 +159,11 @@
         <a href="#" data-da="[data-menu-actions], 1025, last">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#up-down"></use></svg>
         </a>
-        <a href="#">
+        <a href="#" aria-label="Корзина">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#basket"></use></svg>
           <i>9</i>
         </a>
+        <include src="src/html/_header_cart.html"></include>
       </div>
       <div class="header__section header__contacts" data-contacts>
         <button type="button" class="header__contacts-toggle" aria-expanded="false" aria-controls="contactsHeader" data-contacts-toggle>
@@ -161,84 +171,7 @@
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="_mmd-1280-dn"><use xlink:href="/img/sprite.svg#handset"></use></svg>
           <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="_md-1280-dn header__contacts-chevron"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
         </button>
-        <div id="contactsHeader" class="header__dropdown contacts-header" data-contacts-panel data-da="body, 1279, last">
-          <div class="contacts-header__content">
-            <button type="button" class="contacts-header__close _mmd-1280-dn" aria-label="Закрыть контакты" data-contacts-close>
-              <svg width="20" height="20" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#close"></use></svg>
-            </button>
-
-            <section class="contacts-header__section contacts-header__section_phones">
-              <h2 class="contacts-header__title">Телефоны</h2>
-              <div class="contacts-header__phones">
-                <div class="contacts-header__contact">
-                  <span class="contacts-header__label">Бесплатно по всей России</span>
-                  <a href="tel:88007008091" class="contacts-header__value">8 (800) 700-80-91</a>
-                </div>
-                <div class="contacts-header__contact">
-                  <span class="contacts-header__label">Москва</span>
-                  <a href="tel:+74952122601" class="contacts-header__value">+7 (495) 212-26-01</a>
-                </div>
-              </div>
-            </section>
-
-            <section class="contacts-header__section contacts-header__section_email">
-              <h2 class="contacts-header__title">Email</h2>
-              <div class="contacts-header__email-list">
-                <div class="contacts-header__contact">
-                  <span class="contacts-header__label">Для заказов и вопросов по ассортименту<br class="_md-1280-dn"> в Санкт-Петербурге и по РФ</span>
-                  <a href="mailto:zakaz@novolampa.ru" class="contacts-header__value">zakaz@novolampa.ru</a>
-                </div>
-                <div class="contacts-header__contact">
-                  <span class="contacts-header__label">Для заказов и вопросов по ассортименту<br class="_md-1280-dn"> в Москве</span>
-                  <a href="mailto:zakazmsk@novolampa.ru" class="contacts-header__value">zakazmsk@novolampa.ru</a>
-                </div>
-                <div class="contacts-header__contact">
-                  <span class="contacts-header__label">Для других вопросов и предложений</span>
-                  <a href="mailto:info@novolampa.ru" class="contacts-header__value">info@novolampa.ru</a>
-                </div>
-              </div>
-            </section>
-
-            <section class="contacts-header__section contacts-header__section_showrooms">
-              <h2 class="contacts-header__title">Шоурумы</h2>
-              <div class="contacts-header__showrooms">
-                <div class="contacts-header__contact">
-                  <span class="contacts-header__address">СПб, ул. Бармалеева, д. 18</span>
-                  <span class="contacts-header__label">Пн-Пт с 10 до 19, Сб с 11 до 18</span>
-                </div>
-                <div class="contacts-header__contact">
-                  <span class="contacts-header__address">СПб, Петергофском шоссе, д. 55, к. 1</span>
-                  <span class="contacts-header__label">Работаем Пн-Пт с 10 до 19</span>
-                </div>
-              </div>
-            </section>
-
-            <div class="contacts-header__socials">
-              <a href="#" class="action-button action-button_social" aria-label="Telegram">
-                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><use xlink:href="/img/colored.svg#telegram"></use></svg>
-              </a>
-              <a href="#" class="action-button action-button_social" aria-label="MAX">
-                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><use xlink:href="/img/colored.svg#max"></use></svg>
-              </a>
-              <a href="#" class="action-button action-button_social" aria-label="ВКонтакте">
-                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><use xlink:href="/img/colored.svg#vk"></use></svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="contacts-header__footer">
-            <p class="contacts-header__prompt">Нужна консультация? Ответим быстро</p>
-            <div class="contacts-header__actions">
-              <a href="#" class="action-button action-button_outline">Все контакты</a>
-              <a href="#" class="action-button action-button_primary contacts-header__request">
-                <span>Запросить подбор</span>
-                <i class="_md-1024-dn">
-                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg>
-                </i>
-              </a>
-            </div>
-          </div>
-        </div>
+        <include src="src/html/_header_contacts.html"></include>
       </div>
     </div>
 	</div>
