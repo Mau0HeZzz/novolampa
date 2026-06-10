@@ -1,0 +1,101 @@
+/**
+ * @fileOverview Стили общей пагинации списков.
+ */
+
+@use "mixins";
+@use "../variables";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: mixins.toRem(34);
+
+  &__arrow {
+    width: mixins.toRem(44);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: mixins.toRem(5);
+    background-color: var(--bg-section-color);
+
+    svg {
+      width: mixins.toRem(16);
+      aspect-ratio: 1;
+    }
+
+    .loaded & {
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-green-color);
+        background-color: var(--bg-menu-color);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: mixins.toRem(4);
+  }
+
+  &__item {
+    width: mixins.toRem(44);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: mixins.toRem(5);
+    // background-color: var(--bg-section-color);
+
+    &._active {
+      font-weight: 500;
+    }
+
+    &:not(&_gap) {
+      transition: all 0.3s ease;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--text-green-color);
+          background-color: var(--bg-section-color);
+        }
+      }
+    }
+  }
+
+  &__mobile-item {
+    display: none;
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    justify-content: space-between;
+    gap: mixins.toRem(12);
+
+    &__arrow {
+      width: mixins.toRem(44);
+    }
+
+    &__list {
+      gap: mixins.toRem(20);
+    }
+
+    &__desktop-item {
+      display: none;
+    }
+
+    &__mobile-item {
+      display: inline;
+    }
+
+    &__item {
+      font-size: mixins.toRem(13);
+    }
+  }
+}

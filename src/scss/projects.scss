@@ -1,0 +1,299 @@
+/**
+ * @fileOverview Стили страницы реализованных проектов.
+ */
+
+@use "base/mixins";
+@use "variables";
+@use "sass:math";
+
+.projects-intro {
+  &__container {
+    padding-bottom: mixins.toRem(28);
+  }
+
+  &__text {
+    margin-top: mixins.toRem(6);
+    color: var(--text-secondary-color);
+    font-size: mixins.toRem(14);
+    line-height: math.div(18, 14);
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    &__container {
+      padding-bottom: mixins.toRem(20);
+    }
+
+    &__title {
+      font-size: mixins.toRem(28);
+      line-height: math.div(34, 28);
+    }
+
+    &__text {
+      max-width: mixins.toRem(310);
+      margin-top: mixins.toRem(6);
+      font-size: mixins.toRem(12);
+      line-height: math.div(17, 12);
+    }
+  }
+}
+
+.projects-filter {
+  display: flex;
+  gap: mixins.toRem(10);
+  margin-top: mixins.toRem(24);
+
+  &__item {
+    padding: mixins.toRem(9) mixins.toRem(16);
+    flex: 0 0 auto;
+    border: mixins.toRem(1) solid transparent;
+    border-radius: mixins.toRem(5);
+    background-color: var(--bg-main-color);
+    font-size: mixins.toRem(14);
+    line-height: math.div(20, 14);
+
+    &._active {
+      color: var(--text-green-color);
+      border-color: var(--border-green-color);
+    }
+
+    .loaded & {
+      transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-green-color);
+        border-color: var(--border-green-color);
+      }
+    }
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    width: calc(100vw - mixins.toRem(15));
+    margin-top: mixins.toRem(16);
+    padding-bottom: mixins.toRem(4);
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__item {
+      padding: mixins.toRem(7) mixins.toRem(14);
+      font-size: mixins.toRem(12);
+      line-height: math.div(18, 12);
+    }
+  }
+}
+
+.projects-list {
+  @include mixins.adaptiveValue("padding-top", 48, 16);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: mixins.toRem(46) mixins.toRem(30);
+  }
+
+  &__more {
+    margin-top: mixins.toRem(48);
+    display: grid;
+    place-items: center;
+    padding-block: mixins.toRem(21);
+    border-radius: mixins.toRem(10);
+    color: var(--text-green-color);
+    background-color: var(--bg-section-color);
+    font-size: mixins.toRem(15);
+    font-weight: 500;
+    line-height: math.div(22, 15);
+
+    .loaded & {
+      transition: background-color 0.3s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--bg-menu-color);
+      }
+    }
+  }
+
+  .pagination {
+    margin-top: mixins.toRem(36);
+  }
+
+  @media (width < #{mixins.toEm(variables.$tablet)}) {
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: mixins.toRem(16);
+    }
+
+    &__more {
+      margin-top: mixins.toRem(20);
+      padding-block: mixins.toRem(18);
+      font-size: mixins.toRem(13);
+    }
+
+    .pagination {
+      margin-top: mixins.toRem(20);
+    }
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: mixins.toRem(10);
+  overflow: hidden;
+  background-color: var(--bg-section-color);
+
+  &__media {
+    position: relative;
+    display: block;
+    aspect-ratio: 440 / 332;
+    overflow: hidden;
+    border-radius: mixins.toRem(10);
+  }
+
+  &__media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    .loaded & {
+      transition: scale 0.5s ease;
+    }
+  }
+
+  &__address,
+  &__title {
+    position: absolute;
+    color: var(--text-light-color);
+    background-color: rgba(31, 35, 38, 0.46);
+    backdrop-filter: blur(mixins.toRem(10));
+  }
+
+  &__address {
+    top: mixins.toRem(28);
+    left: mixins.toRem(20);
+    max-width: calc(100% - mixins.toRem(40));
+    padding: mixins.toRem(8) mixins.toRem(14);
+    border-radius: mixins.toRem(20);
+    font-size: mixins.toRem(13);
+    line-height: math.div(22, 13);
+  }
+
+  &__title {
+    right: mixins.toRem(18);
+    bottom: mixins.toRem(18);
+    left: mixins.toRem(18);
+    width: fit-content;
+    max-width: calc(100% - mixins.toRem(36));
+    padding: mixins.toRem(12) mixins.toRem(16);
+    border-radius: mixins.toRem(5);
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(20);
+    font-weight: 500;
+    line-height: math.div(25, 20);
+    letter-spacing: mixins.toRem(-0.4);
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: mixins.toRem(20) mixins.toRem(34) mixins.toRem(24);
+  }
+
+  &__description {
+    font-size: mixins.toRem(14);
+    line-height: math.div(20, 14);
+  }
+
+  &__area {
+    margin-top: auto;
+    padding-top: mixins.toRem(12);
+    color: var(--text-secondary-color);
+    font-size: mixins.toRem(12);
+    line-height: math.div(22, 12);
+  }
+
+  .loaded & {
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 mixins.toRem(8) mixins.toRem(24) var(--shadow-card-color);
+      transform: translateY(mixins.toRem(-2));
+
+      .project-card__media img {
+        scale: 1.03;
+      }
+    }
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    &__address {
+      top: mixins.toRem(16);
+      left: mixins.toRem(14);
+      padding: mixins.toRem(6) mixins.toRem(10);
+      font-size: mixins.toRem(12);
+      line-height: math.div(22, 12);
+    }
+
+    &__title {
+      right: mixins.toRem(14);
+      bottom: mixins.toRem(14);
+      left: mixins.toRem(14);
+      max-width: calc(100% - mixins.toRem(28));
+      padding: mixins.toRem(10) mixins.toRem(12);
+      font-size: mixins.toRem(18);
+      line-height: math.div(21, 18);
+      letter-spacing: mixins.toRem(-0.36);
+    }
+
+    &__body {
+      padding: mixins.toRem(16) mixins.toRem(14) mixins.toRem(18);
+    }
+
+    &__description {
+      font-size: mixins.toRem(12);
+      line-height: math.div(18, 12);
+    }
+
+    &__area {
+      font-size: mixins.toRem(10);
+      line-height: math.div(16, 10);
+    }
+  }
+}
+
+.projects-request {
+  &__body {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.55fr);
+  }
+
+  &__textarea.feedback-section__textarea.form__input {
+    aspect-ratio: 4.6 / 1;
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    &__textarea.feedback-section__textarea.form__input {
+      aspect-ratio: 1.45 / 1;
+    }
+  }
+}

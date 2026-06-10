@@ -1,0 +1,145 @@
+<!--
+  @fileOverview Страница списка реализованных проектов.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Реализованные проекты"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+      <main class="projects-page">
+        <section class="section page-intro projects-intro">
+          <div class="section__container page-intro__container projects-intro__container">
+            <div class="section__head page-intro__head projects-intro__head">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная"], "mainItem": "Проекты"}'
+              ></include>
+              <h1 class="section__title page-intro__title projects-intro__title">Реализованные проекты</h1>
+              <p class="projects-intro__text">
+                Реализованные объекты с подбором оборудования, расчётом и сопровождением
+              </p>
+              <nav class="projects-filter" aria-label="Категории проектов">
+                <a href="#" class="projects-filter__item _active">Все</a>
+                <a href="#" class="projects-filter__item">Офисы</a>
+                <a href="#" class="projects-filter__item">Ритейл</a>
+                <a href="#" class="projects-filter__item">HoReCa</a>
+                <a href="#" class="projects-filter__item">Квартиры</a>
+                <a href="#" class="projects-filter__item">Дома</a>
+              </nav>
+            </div>
+          </div>
+        </section>
+
+        <section class="section projects-list">
+          <div class="section__container projects-list__container">
+            <div class="projects-list__grid">
+              <include src="src/html/_project_card.html" locals='{"image":"1","address":"СПб, ул. Будапештская, д. 3","title":"Комплексное освещение фитнес-клуба Энкор","description":"Комплексное освещение open-space офиса с линейными системами и умным управлением.","area":"850"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"2","address":"СПб, ул. Крестовская, д. 33","title":"Внутреннее освещение клиники MEDALL","description":"Сценарное освещение зала и декоративная подсветка интерьера.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"3","address":"СПб, ул. Будапештская, д. 3","title":"Внутреннее освещение, Royal Smoke Lounge-Bar","description":"Комплексное освещение open-space офиса с линейными системами и умным управлением.","area":"850"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"4","address":"СПб, Невский просп., д. 25","title":"Внутреннее освещение, офисное пространство Атриум СПб","description":"Комбинация трекового и декоративного освещения.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"5","address":"СПб, Медиков пр., д. 10","title":"Внутреннее освещение кафе-кондитерской «Забыли сахар»","description":"Разработка рабочей документации с составлением расчётов освещённости.","area":"620"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"6","address":"СПб, ул. Медиков пр., д. 10","title":"Умный дом в пентхаусе «Путешествие на лайнере»","description":"Сценарное освещение интерьера и экстерьера.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"7","address":"СПб, Невский просп., д. 25","title":"Внутреннее освещение, офисное пространство Атриум СПб","description":"Комбинация трекового и декоративного освещения.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"8","address":"СПб, ул. Крестовская, д. 33","title":"Внутреннее освещение клиники MEDALL","description":"Сценарное освещение зала и декоративная подсветка интерьера.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"9","address":"Казань, Ленина, д. 48","title":"Умный дом в пентхаусе «Путешествие на лайнере»","description":"Сценарное освещение зала и декоративная подсветка интерьера.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"10","address":"СПб, Невский просп., д. 25","title":"Внутреннее освещение, офисное пространство Атриум СПб","description":"Комбинация трекового и декоративного освещения.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"11","address":"СПб, ул. Крестовская, д. 33","title":"Внутреннее освещение клиники MEDALL","description":"Сценарное освещение зала и декоративная подсветка интерьера.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"12","address":"Казань, Ленина, д. 48","title":"Умный дом в пентхаусе «Путешествие на лайнере»","description":"Сценарное освещение зала и декоративная подсветка интерьера.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"13","address":"СПб, Невский просп., д. 25","title":"Внутреннее освещение, офисное пространство Атриум СПб","description":"Комбинация трекового и декоративного освещения.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"14","address":"СПб, ул. Крестовская, д. 33","title":"Внутреннее освещение клиники MEDALL","description":"Сценарное освещение зала и декоративная подсветка интерьера.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"15","address":"Казань, Ленина, д. 48","title":"Умный дом в пентхаусе «Путешествие на лайнере»","description":"Сценарное освещение зала и декоративная подсветка интерьера.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"16","address":"СПб, Невский просп., д. 25","title":"Внутреннее освещение, офисное пространство Атриум СПб","description":"Комбинация трекового и декоративного освещения.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"17","address":"СПб, ул. Крестовская, д. 33","title":"Внутреннее освещение клиники MEDALL","description":"Сценарное освещение зала и декоративная подсветка интерьера.","area":"420"}'></include>
+              <include src="src/html/_project_card.html" locals='{"image":"18","address":"Казань, Ленина, д. 48","title":"Умный дом в пентхаусе «Путешествие на лайнере»","description":"Сценарное освещение зала и декоративная подсветка интерьера.","area":"420"}'></include>
+            </div>
+
+            <a href="#" class="projects-list__more">Показать ещё 36</a>
+            <include src="src/html/_pagination.html"></include>
+          </div>
+        </section>
+
+        <section class="section feedback-section projects-request">
+          <div class="section__container feedback-section__container">
+            <div class="feedback-section__body projects-request__body">
+              <div class="feedback-section__head">
+                <h2 class="feedback-section__title">Получить быстрый<br> расчёт КП</h2>
+                <p class="feedback-section__text">
+                  Отправьте параметры задачи, и мы подготовим коммерческое предложение,
+                  подбор оборудования и рекомендации по совместимости.
+                </p>
+              </div>
+
+              <form action="" class="form feedback-section__form">
+                <label class="form__item form__item_shadow">
+                  <input type="text" name="name" class="form__input" placeholder=" " data-required data-error="Введите имя">
+                  <span class="form__placeholder">Как вас зовут?</span>
+                </label>
+
+                <div class="feedback-section__fields">
+                  <label class="form__item form__item_shadow">
+                    <input type="tel" name="phone" class="form__input" placeholder=" " data-required="phone" data-error="Введите телефон">
+                    <span class="form__placeholder">Телефон</span>
+                  </label>
+                  <label class="form__item form__item_shadow">
+                    <input type="email" name="email" class="form__input" placeholder=" " data-required="email" data-error="Введите корректный email">
+                    <span class="form__placeholder">Email</span>
+                  </label>
+                </div>
+
+                <div class="feedback-section__fields">
+                  <label class="form__item form__item_shadow">
+                    <input type="text" name="object_type" class="form__input" placeholder=" ">
+                    <span class="form__placeholder">Тип объекта</span>
+                  </label>
+                  <label class="form__item form__item_shadow">
+                    <input type="text" name="area" class="form__input" placeholder=" ">
+                    <span class="form__placeholder">Площадь/объём</span>
+                  </label>
+                </div>
+
+                <label class="form__item form__item_shadow feedback-section__message">
+                  <textarea
+                    name="message"
+                    class="form__input feedback-section__textarea projects-request__textarea"
+                    placeholder=" "
+                    rows="5"
+                    data-required
+                    data-error="Опишите задачу"
+                  ></textarea>
+                  <span class="form__placeholder">
+                    Опишите задачу: что нужно осветить, какие есть требования, нужен ли расчёт,
+                    сертификаты, документы, монтажные рекомендации
+                  </span>
+                </label>
+
+                <label class="form__boxwrap feedback-section__agreement">
+                  <input type="checkbox" name="agreement" data-required data-error="Необходимо ваше согласие">
+                  <i class="form__box"></i>
+                  <span class="form__label">
+                    Я даю согласие на обработку персональных данных и соглашаюсь с
+                    <a href="#">Политикой конфиденциальности</a> и
+                    <a href="#">Пользовательским соглашением</a>
+                  </span>
+                </label>
+
+                <button type="submit" class="action-button action-button_primary form__submit feedback-section__submit">
+                  <span class="feedback-section__submit-desktop">Отправить</span>
+                  <span class="feedback-section__submit-mobile">Запросить расчёт</span>
+                  <i>
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                      <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                    </svg>
+                  </i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

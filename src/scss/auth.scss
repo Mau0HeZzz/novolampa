@@ -29,6 +29,10 @@
     &._form-error {
       border-color: var(--text-error-color);
     }
+
+    &_shadow {
+      box-shadow: 0 mixins.toRem(1) mixins.toRem(1) 0 rgba(57, 72, 84, 0.2) inset;
+    }
   }
 
   &__input {

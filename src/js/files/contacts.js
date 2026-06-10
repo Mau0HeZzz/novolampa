@@ -19,7 +19,7 @@ if (mapElements.length) {
       } = ymaps3;
       const { YMapClusterer, clusterByGrid } = await ymaps3.import("@yandex/ymaps3-clusterer@0.0.1");
 
-      const pickupPoints = window.mhzSettings.CDEK_POINTS || sdekPoints.slice(0, 100).filter(el => el?.geometry?.coordinates?.length);
+      const pickupPoints = window.mhzSettings.CDEK_POINTS || sdekPoints.filter(el => el?.geometry?.coordinates?.length);
       const showroomPoints = [
         { id: "petrogradskaya", coordinates: [30.304540, 59.964678] },
         { id: "veteranov", coordinates: [30.138109, 59.848525] },
