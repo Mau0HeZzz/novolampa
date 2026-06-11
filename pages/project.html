@@ -1,0 +1,302 @@
+<!--
+  @fileOverview Детальная страница реализованного проекта.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Внутреннее освещение клиники MEDALL"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="project-detail">
+        <section class="section page-intro project-detail-intro">
+          <div class="section__container page-intro__container project-detail-intro__container">
+            <div class="section__head page-intro__head project-detail-intro__head">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная", "Проекты"], "mainItem": "Внутреннее освещение клиники «MEDALL»"}'
+              ></include>
+              <h1 class="section__title page-intro__title project-detail-intro__title">
+                Внутреннее освещение клиники «MEDALL»
+              </h1>
+              <a href="projects.html" class="action-button project-detail-intro__back">
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true">
+                  <use xlink:href="/img/sprite.svg#arrow-left"></use>
+                </svg>
+                Вернуться в корзину
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section project-summary">
+          <div class="section__container project-summary__container">
+            <div class="project-summary__body">
+              <div class="project-summary__address">
+                <strong>Санкт-Петербург, наб. канала Грибоедова, 22</strong>
+                <span>Адрес объекта</span>
+              </div>
+              <div class="project-summary__metric">
+                <strong>850&nbsp;м²</strong>
+                <span>Площадь объекта</span>
+              </div>
+              <div class="project-summary__metric">
+                <strong>2025</strong>
+                <span>Год выполнения</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section project-results splide" aria-labelledby="projectResultsTitle" data-gallery>
+          <div class="section__container project-section-head project-results__head">
+            <h2 class="section__title project-section-head__title" id="projectResultsTitle">Результаты работы</h2>
+            <div class="splide__arrows project-slider-arrows">
+              <button class="splide__arrow splide__arrow--prev project-slider-arrows__button" type="button" aria-label="Предыдущий слайд">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <use xlink:href="/img/sprite.svg#pagination-arrow-left"></use>
+                </svg>
+              </button>
+              <button class="splide__arrow splide__arrow--next project-slider-arrows__button" type="button" aria-label="Следующий слайд">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <use xlink:href="/img/sprite.svg#pagination-arrow-right"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="splide__track project-results__track">
+            <ul class="splide__list">
+              <li class="splide__slide project-results__slide">
+                <a href="/img/projects/detail-2.png" class="project-results__link">
+                  <img src="/img/projects/detail-2.png" alt="Стойка регистрации клиники MEDALL">
+                </a>
+              </li>
+              <li class="splide__slide project-results__slide">
+                <a href="/img/projects/detail-3.png" class="project-results__link">
+                  <img src="/img/projects/detail-3.png" alt="Коридор клиники MEDALL">
+                </a>
+              </li>
+              <li class="splide__slide project-results__slide">
+                <a href="/img/projects/detail-1.png" class="project-results__link">
+                  <img src="/img/projects/detail-1.png" alt="Зона ожидания клиники MEDALL">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section project-description">
+          <div class="section__container project-description__container">
+            <article class="project-description__item">
+              <h2>Задача проекта</h2>
+              <p>
+                Разработка рабочей документации с составлением расчётов освещенности,
+                подбор осветительного оборудования по визуализациям дизайнера интерьеров,
+                поставка светотехнического оборудования
+              </p>
+            </article>
+            <article class="project-description__item">
+              <h2>Решение</h2>
+              <p>
+                Светодиодная лента, установленная в алюминиевый анодированный профиль,
+                используется в качестве основного освещения.<br>
+                В профиле используется матовый экран с эффектом «сплошной линии» без видимых
+                "светодиодных точек", что делает более комфортное пребывание персонала в офисном
+                пространстве.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section project-scheme">
+          <div class="section__container project-scheme__container" data-gallery data-gallery-zoom>
+            <h2 class="section__title project-scheme__title">Схема освещения</h2>
+            <a href="/img/projects/scheme-x4.png" class="project-scheme__media">
+              <img src="/img/projects/scheme.png" alt="Схема размещения освещения в клинике MEDALL">
+            </a>
+            <div class="project-scheme__metrics">
+              <div class="project-scheme__metric">
+                <strong>500 lx</strong>
+                <span>Средняя освещенность</span>
+              </div>
+              <div class="project-scheme__metric">
+                <strong>CRI 90+</strong>
+                <span>Качество света</span>
+              </div>
+              <div class="project-scheme__metric">
+                <strong>-35%</strong>
+                <span>Экономия энергии</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section project-equipment splide" aria-labelledby="projectEquipmentTitle">
+          <div class="section__container project-equipment__container">
+            <div class="project-section-head project-equipment__head">
+              <h2 class="section__title project-section-head__title" id="projectEquipmentTitle">Оборудование проекта</h2>
+              <div class="splide__arrows project-slider-arrows">
+                <button class="splide__arrow splide__arrow--prev project-slider-arrows__button" type="button" aria-label="Предыдущие товары">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#pagination-arrow-left"></use>
+                  </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next project-slider-arrows__button" type="button" aria-label="Следующие товары">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#pagination-arrow-right"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="splide__track project-equipment__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"image":"1","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","article":"026886","stock":"Нет в наличии","price":"188.53","quantity":"2"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"image":"2","eyebrow":"4000K • IP20 • для кухни","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","article":"013730","stock":"В наличии 135 шт","price":"26.93","quantity":"1"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"image":"3","eyebrow":"Тёплая • IP65 • для ванной","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","article":"036987","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"image":"4","eyebrow":"4000K • IP20 • для кухни","title":"Лампа AR111-UNIT-G53-12W-Day4000 (WH, 120 deg, 12V) (Arlight, Металл) Arlight...","article":"013730","stock":"В наличии 135 шт","price":"2 774.05","quantity":"1"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"image":"5","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","article":"026886","stock":"Нет в наличии","price":"188.53","quantity":"1"}'></include>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section feedback-section projects-request project-detail-request">
+          <div class="section__container feedback-section__container">
+            <div class="feedback-section__body projects-request__body">
+              <div class="feedback-section__head">
+                <h2 class="feedback-section__title">Получить быстрый<br> расчёт КП</h2>
+                <p class="feedback-section__text">
+                  Отправьте параметры задачи, и мы подготовим коммерческое предложение,
+                  подбор оборудования и рекомендации по совместимости.
+                </p>
+              </div>
+
+              <form action="" class="form feedback-section__form">
+                <label class="form__item form__item_shadow">
+                  <input type="text" name="name" class="form__input" placeholder=" " data-required data-error="Введите имя">
+                  <span class="form__placeholder">Как вас зовут?</span>
+                </label>
+
+                <div class="feedback-section__fields">
+                  <label class="form__item form__item_shadow">
+                    <input type="tel" name="phone" class="form__input" placeholder=" " data-required="phone" data-error="Введите телефон">
+                    <span class="form__placeholder">Телефон</span>
+                  </label>
+                  <label class="form__item form__item_shadow">
+                    <input type="email" name="email" class="form__input" placeholder=" " data-required="email" data-error="Введите корректный email">
+                    <span class="form__placeholder">Email</span>
+                  </label>
+                </div>
+
+                <div class="feedback-section__fields">
+                  <label class="form__item form__item_shadow">
+                    <input type="text" name="object_type" class="form__input" placeholder=" ">
+                    <span class="form__placeholder">Тип объекта</span>
+                  </label>
+                  <label class="form__item form__item_shadow">
+                    <input type="text" name="area" class="form__input" placeholder=" ">
+                    <span class="form__placeholder">Площадь/объём</span>
+                  </label>
+                </div>
+
+                <label class="form__item form__item_shadow feedback-section__message">
+                  <textarea
+                    name="message"
+                    class="form__input feedback-section__textarea projects-request__textarea"
+                    placeholder=" "
+                    rows="5"
+                    data-required
+                    data-error="Опишите задачу"
+                  ></textarea>
+                  <span class="form__placeholder">
+                    Опишите задачу: что нужно осветить, какие есть требования, нужен ли расчёт,
+                    сертификаты, документы, монтажные рекомендации
+                  </span>
+                </label>
+
+                <label class="form__boxwrap feedback-section__agreement">
+                  <input type="checkbox" name="agreement" data-required data-error="Необходимо ваше согласие">
+                  <i class="form__box"></i>
+                  <span class="form__label">
+                    Я даю согласие на обработку персональных данных и соглашаюсь с
+                    <a href="#">Политикой конфиденциальности</a> и
+                    <a href="#">Пользовательским соглашением</a>
+                  </span>
+                </label>
+
+                <button type="submit" class="action-button action-button_primary form__submit feedback-section__submit">
+                  <span class="feedback-section__submit-desktop">Отправить</span>
+                  <span class="feedback-section__submit-mobile">Запросить расчёт</span>
+                  <i>
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                      <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                    </svg>
+                  </i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="section similar-projects splide" aria-labelledby="similarProjectsTitle">
+          <div class="section__container similar-projects__container">
+            <div class="project-section-head similar-projects__head">
+              <h2 class="section__title project-section-head__title" id="similarProjectsTitle">Похожие проекты</h2>
+              <div class="splide__arrows project-slider-arrows">
+                <button class="splide__arrow splide__arrow--prev project-slider-arrows__button" type="button" aria-label="Предыдущие проекты">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#pagination-arrow-left"></use>
+                  </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next project-slider-arrows__button" type="button" aria-label="Следующие проекты">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#pagination-arrow-right"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="splide__track similar-projects__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <include src="src/html/_project_card.html" locals='{"image":"4","address":"СПб, Невский просп., д. 25","title":"Внутреннее освещение, офисное пространство Атриум СПб","description":"Комбинация трекового и декоративного освещения.","area":"420"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_project_card.html" locals='{"image":"5","address":"СПб, Медиков пр., д. 10","title":"Внутреннее освещение кафе-кондитерской «Забыли сахар»","description":"Разработка рабочей документации с составлением расчётов освещённости.","area":"620"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_project_card.html" locals='{"image":"6","address":"СПб, ул. Медиков пр., д. 10","title":"Умный дом в пентхаусе «Путешествие на лайнере»","description":"Сценарное освещение интерьера и экстерьера.","area":"420"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_project_card.html" locals='{"image":"4","address":"СПб, Невский просп., д. 25","title":"Внутреннее освещение, офисное пространство Атриум СПб","description":"Комбинация трекового и декоративного освещения.","area":"420"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_project_card.html" locals='{"image":"5","address":"СПб, Медиков пр., д. 10","title":"Внутреннее освещение кафе-кондитерской «Забыли сахар»","description":"Разработка рабочей документации с составлением расчётов освещённости.","area":"620"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_project_card.html" locals='{"image":"6","address":"СПб, ул. Медиков пр., д. 10","title":"Умный дом в пентхаусе «Путешествие на лайнере»","description":"Сценарное освещение интерьера и экстерьера.","area":"420"}'></include>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

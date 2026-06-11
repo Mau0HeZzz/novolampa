@@ -9,13 +9,13 @@
 .footer {
   color: var(--text-light-color);
   background-color: var(--bg-dark-color);
+  padding-bottom: mixins.toRem(60);
 
-  @include mixins.adaptiveValue("padding-top", 76, 42);
-  @include mixins.adaptiveValue("padding-bottom", 66, 52);
+  @include mixins.adaptiveValue("padding-top", 77, 33);
 
   &__logo {
     display: block;
-    width: mixins.toRem(166);
+    @include mixins.adaptiveValue("width", 166, 116);
 
     img {
       width: 100%;
@@ -24,24 +24,17 @@
 
   &__body {
     display: grid;
-    grid-template-columns: minmax(0, 0.72fr) minmax(0, 0.78fr) minmax(0, 1fr) minmax(0, 0.92fr);
+    grid-template-columns: repeat(4, 1fr);
     align-items: start;
 
-    @include mixins.adaptiveValue("gap", 74, 30, 1410, 992);
-    @include mixins.adaptiveValue("margin-top", 54, 40);
-  }
-
-  &__nav {
-    &_mobile {
-      display: none;
-    }
+    @include mixins.adaptiveValue("gap", 38, 30, 1410, 992);
+    @include mixins.adaptiveValue("margin-top", 37, 20);
   }
 
   &__nav-list {
     display: grid;
-    gap: mixins.toRem(22);
-    font-size: mixins.toRem(16);
-    line-height: math.div(22, 16);
+    font-size: mixins.toRem(15);
+    line-height: math.div(35, 15);
 
     a {
       transition: color 0.3s ease;
@@ -61,35 +54,45 @@
   }
 
   &__phones {
-    gap: mixins.toRem(38);
+    gap: mixins.toRem(16);
   }
 
   &__emails {
-    gap: mixins.toRem(34);
+    gap: mixins.toRem(18);
   }
 
   &__showrooms {
-    gap: mixins.toRem(26);
+    gap: mixins.toRem(7);
   }
 
   &__phone,
   &__contact,
   &__showroom {
     display: grid;
-    gap: mixins.toRem(10);
+  }
+
+  &__showroom {
+    @media (width >= #{mixins.toEm(variables.$tablet)}) {
+      &:not(:nth-last-child(1 of &)) {
+        margin-bottom: mixins.toRem(9);
+      }
+      &:nth-last-child(1 of &) {
+        margin-bottom: mixins.toRem(25);
+      }
+    }
   }
 
   &__label {
     color: var(--text-muted-color);
-    font-size: mixins.toRem(15);
-    line-height: math.div(22, 15);
+    font-size: mixins.toRem(14);
+    line-height: math.div(22, 14);
   }
 
   &__value {
     width: fit-content;
-    font-size: mixins.toRem(22);
+    font-size: mixins.toRem(19);
     font-weight: 500;
-    line-height: math.div(28, 22);
+    line-height: math.div(32, 19);
     transition: color 0.3s ease;
 
     @media (any-hover: hover) {
@@ -100,14 +103,14 @@
   }
 
   &__title {
-    font-size: mixins.toRem(22);
+    font-size: mixins.toRem(19);
     font-weight: 500;
-    line-height: math.div(28, 22);
+    line-height: math.div(32, 19);
   }
 
   &__address {
-    font-size: mixins.toRem(16);
-    line-height: math.div(22, 16);
+    font-size: mixins.toRem(15);
+    line-height: math.div(32, 15);
   }
 
   &__socials {
@@ -117,10 +120,25 @@
 
     .action-button_social {
       width: mixins.toRem(56);
-      padding: mixins.toRem(16);
+      padding: 0;
       border-radius: mixins.toRem(5);
       background-color: var(--bg-social-color);
       box-shadow: none;
+
+      &:nth-child(1) svg {
+        width: mixins.toRem(24);
+        height: auto;
+      }
+
+      &:nth-child(2) svg {
+        width: mixins.toRem(20);
+        height: auto;
+      }
+
+      &:nth-child(3) svg {
+        width: mixins.toRem(26);
+        height: auto;
+      }
 
       @media (any-hover: hover) {
         &:hover {
@@ -132,13 +150,14 @@
 
   &__legal {
     display: grid;
-    grid-template-columns: 0.85fr 1.2fr 1.45fr 1.25fr 0.75fr;
-    gap: mixins.toRem(24);
+    grid-template-columns: 1fr 3.3fr;
+    align-items: center;
+    gap: mixins.toRem(38);
     color: var(--text-muted-color);
-    font-size: mixins.toRem(14);
-    line-height: math.div(20, 14);
+    font-size: mixins.toRem(15);
+    line-height: math.div(26, 15);
 
-    @include mixins.adaptiveValue("margin-top", 86, 60);
+    @include mixins.adaptiveValue("margin-top", 80, 19);
 
     a {
       transition: color 0.3s ease;
@@ -149,11 +168,26 @@
         }
       }
     }
+
+    &-small {
+      display: flex;
+      justify-content: space-between;
+      gap: 0 mixins.toRem(4);
+      font-size: mixins.toRem(13);
+      line-height: math.div(26 , 13);
+
+      @media (width < #{mixins.toEm(variables.$tablet)}) {
+        flex-wrap: wrap;
+      }
+      @media (width < #{mixins.toEm(variables.$mobile)}) {
+        flex-direction: column;
+      }
+    }
   }
 
   @media (width < #{mixins.toEm(variables.$tablet)}) {
     &__container {
-      padding-inline: mixins.toRem(16);
+      padding-inline: mixins.toRem(8);
     }
 
     &__logo {
@@ -162,33 +196,22 @@
 
     &__body {
       display: block;
-      margin-top: mixins.toRem(42);
-    }
-
-    &__nav {
-      &_desktop {
-        display: none;
-      }
-
-      &_mobile {
-        display: block;
-      }
     }
 
     &__nav-list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: mixins.toRem(22) mixins.toRem(20);
+      gap: mixins.toRem(0) mixins.toRem(20);
       font-size: mixins.toRem(15);
-      line-height: math.div(20, 15);
+      line-height: math.div(32, 15);
     }
 
     &__section {
-      margin-inline: mixins.toRem(-16);
-      padding-inline: mixins.toRem(16);
+      padding-inline: mixins.toRem(8);
       border-top: mixins.toRem(1) solid var(--bg-dark-secondary-color);
 
-      @include mixins.adaptiveValue("padding-top", 42, 32, 768, 320);
-      @include mixins.adaptiveValue("margin-top", 42, 32, 768, 320);
+      margin-inline: mixins.toRem(-8);
+      margin-top: mixins.toRem(18);
+      padding-top: mixins.toRem(18);
     }
 
     &__phones {
@@ -197,11 +220,11 @@
     }
 
     &__emails {
-      gap: mixins.toRem(28);
+      gap: mixins.toRem(9);
     }
 
     &__showrooms {
-      gap: mixins.toRem(24);
+      gap: mixins.toRem(6);
     }
 
     &__phone,
@@ -211,23 +234,23 @@
     }
 
     &__label {
-      font-size: mixins.toRem(13);
-      line-height: math.div(18, 13);
+      font-size: mixins.toRem(12);
+      line-height: math.div(16, 12);
     }
 
     &__value {
+      font-size: mixins.toRem(17);
+      line-height: math.div(24, 17);
+    }
+
+    &__title {
       font-size: mixins.toRem(18);
       line-height: math.div(24, 18);
     }
 
-    &__title {
-      font-size: mixins.toRem(22);
-      line-height: math.div(28, 22);
-    }
-
     &__address {
-      font-size: mixins.toRem(15);
-      line-height: math.div(20, 15);
+      font-size: mixins.toRem(14);
+      line-height: math.div(22, 14);
     }
 
     &__socials {
@@ -235,17 +258,17 @@
 
       .action-button_social {
         width: mixins.toRem(48);
-        padding: mixins.toRem(12);
+        padding: 0;
       }
     }
 
     &__legal {
       display: grid;
       grid-template-columns: 1fr;
-      gap: mixins.toRem(22);
-      margin-top: mixins.toRem(46);
+      gap: 0;
+      margin-top: mixins.toRem(19);
       font-size: mixins.toRem(13);
-      line-height: math.div(18, 13);
+      line-height: math.div(26, 13);
     }
   }
 }

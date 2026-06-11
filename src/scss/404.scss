@@ -13,10 +13,12 @@
     overflow: hidden;
     border-radius: mixins.toRem(12);
     background-color: #f5f6f7;
+    max-width: mixins.toRem(1576);
+    margin-inline: auto;
   }
 
   &__container {
-    max-width: mixins.toRem(1120);
+    max-width: mixins.toRem(1170);
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
     align-items: center;
@@ -33,18 +35,22 @@
 
   &__number {
     color: var(--text-green-color);
-    font-size: mixins.toRem(250);
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(260);
     font-weight: 500;
     line-height: 0.76;
-    letter-spacing: -0.08em;
+    letter-spacing: -0.12em;
   }
 
   &__text {
-    max-width: mixins.toRem(500);
+    // max-width: mixins.toRem(500);
     margin-top: mixins.toRem(58);
     color: var(--text-main-color);
-    font-size: mixins.toRem(24);
-    line-height: math.div(34, 24);
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(25);
+    font-weight: 500;
+    line-height: math.div(30, 25);
+    letter-spacing: -0.02em;
 
     p + p {
       margin-top: mixins.toRem(14);
@@ -89,15 +95,15 @@
     }
 
     &__number {
-      font-size: mixins.toRem(128);
+      font-size: mixins.toRem(140);
       line-height: 0.78;
     }
 
     &__text {
       max-width: none;
       margin-top: mixins.toRem(48);
-      font-size: mixins.toRem(24);
-      line-height: math.div(30, 24);
+      font-size: mixins.toRem(22);
+      line-height: math.div(26, 22);
 
       p + p {
         margin-top: mixins.toRem(14);

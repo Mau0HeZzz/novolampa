@@ -150,13 +150,13 @@ export let bodyUnlock = (delay = 500) => {
 }
 export let bodyLock = (delay = 500) => {
 	if (bodyLockStatus) {
-		const lockPaddingElements = document.querySelectorAll("[data-lp]")
-		const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px'
-		lockPaddingElements.forEach(lockPaddingElement => {
-			lockPaddingElement.style.paddingRight = lockPaddingValue
-		});
+		// const lockPaddingElements = document.querySelectorAll("[data-lp]")
+		// const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px'
+		// lockPaddingElements.forEach(lockPaddingElement => {
+		// 	lockPaddingElement.style.paddingRight = lockPaddingValue
+		// });
 
-		document.body.style.paddingRight = lockPaddingValue
+		// document.body.style.paddingRight = lockPaddingValue
 		document.documentElement.classList.add("lock")
 
 		bodyLockStatus = false

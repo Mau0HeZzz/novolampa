@@ -477,18 +477,20 @@ $indent-direction-properties: (
 .section {
   &__title {
     color: var(--text-main-color);
+    font-family: var(--font-tik-tok);
     font-weight: 500;
+    letter-spacing: -0.02em;
   }
 }
 
 .page-intro {
   max-width: mixins.toRem(1576);
-  margin: mixins.toRem(12) auto;
+  margin: 0 auto mixins.toRem(12);
   border-radius: mixins.toRem(12);
   background-color: var(--bg-section-color);
 
   @media (width < #{mixins.toEm(1600)}) {
-    margin: mixins.toRem(12);
+    margin: 0 mixins.toRem(12) mixins.toRem(12);
   }
 
   &__container {
@@ -499,8 +501,8 @@ $indent-direction-properties: (
   &__title {
     margin-top: mixins.toRem(15);
 
-    @include mixins.adaptiveValue("font-size", 44, 28);
-    @include mixins.adaptiveValue("line-height", 54, 36);
+    @include mixins.adaptiveValue("font-size", 40, 21);
+    @include mixins.adaptiveValue("line-height", 39, 23);
   }
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
@@ -658,7 +660,7 @@ $indent-direction-properties: (
     font-size: mixins.toRem(40);
     font-weight: 500;
     line-height: math.div(39, 40);
-    letter-spacing: mixins.toRem(-0.8);
+    letter-spacing: -0.02em;
   }
 
   &__text {
@@ -739,14 +741,14 @@ $indent-direction-properties: (
 
     &__body {
       gap: mixins.toRem(30);
-      padding: mixins.toRem(48) mixins.toRem(24);
+      padding: mixins.toRem(38) mixins.toRem(19);
       border-radius: 0;
     }
 
     &__title {
       font-size: mixins.toRem(30);
       line-height: math.div(29, 30);
-      letter-spacing: mixins.toRem(-0.6);
+      letter-spacing: -0.02em;
     }
 
     &__text {
@@ -789,8 +791,9 @@ $indent-direction-properties: (
 
 ._content {
   color: var(--text-main-color);
-  font-size: mixins.toRem(16);
-  line-height: math.div(24, 16);
+  line-height: math.div(23, 15);
+
+  @include mixins.adaptiveValue("font-size", 15, 14);
 
   > * + * {
     margin-top: mixins.toRem(24);
@@ -868,9 +871,6 @@ $indent-direction-properties: (
   }
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
-    font-size: mixins.toRem(15);
-    line-height: math.div(22, 15);
-
     > * + * {
       margin-top: mixins.toRem(20);
     }

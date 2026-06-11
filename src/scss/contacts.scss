@@ -36,7 +36,7 @@
 }
 
 .contacts-summary {
-  @include mixins.adaptiveValue("padding-top", 48, 16);
+  @include mixins.adaptiveValue("padding-top", 49, 16);
 
   &__grid {
     display: grid;
@@ -47,7 +47,13 @@
   @media (width < #{mixins.toEm(variables.$tablet)}) {
     &__grid {
       grid-template-columns: 1fr;
-      gap: mixins.toRem(16);
+      gap: mixins.toRem(8);
+    }
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    &__container {
+      padding-inline: mixins.toRem(8);
     }
   }
 }
@@ -62,6 +68,7 @@
     font-size: mixins.toRem(25);
     font-weight: 500;
     line-height: math.div(27, 25);
+    letter-spacing: -0.02em;
   }
 
   &__list {
@@ -80,7 +87,7 @@
   &__label {
     color: var(--text-secondary-color);
     font-size: mixins.toRem(14);
-    line-height: math.div(22, 14);
+    line-height: math.div(20, 14);
   }
 
   &__value {
@@ -89,6 +96,7 @@
     font-size: mixins.toRem(25);
     font-weight: 500;
     line-height: math.div(27, 25);
+    letter-spacing: -0.02em;
     overflow-wrap: anywhere;
 
     &_email {
@@ -119,7 +127,7 @@
     aspect-ratio: 1;
     display: grid;
     place-items: center;
-    padding: mixins.toRem(25);
+    padding: 0;
     border-radius: mixins.toRem(5);
     background-color: var(--bg-main-color);
 
@@ -130,8 +138,7 @@
     }
 
     svg {
-      width: 100%;
-      height: 100%;
+      height: auto;
     }
 
     @media (any-hover: hover) {
@@ -151,12 +158,11 @@
 
     &__social {
       width: mixins.toRem(72);
-      padding: mixins.toRem(20);
     }
   }
 
   @media (width < #{mixins.toEm(variables.$tablet)}) {
-    padding: mixins.toRem(20) mixins.toRem(15);
+    padding: mixins.toRem(21) mixins.toRem(15);
 
     &__title {
       font-size: mixins.toRem(21);
@@ -181,13 +187,28 @@
     &__socials {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: mixins.toRem(16);
+      gap: mixins.toRem(10);
       margin-top: mixins.toRem(20);
     }
 
     &__social {
       width: 100%;
-      padding: 27%;
+      padding: 0;
+
+      &:nth-child(1) svg {
+        width: 40%;
+        height: auto;
+      }
+
+      &:nth-child(2) svg {
+        width: 38%;
+        height: auto;
+      }
+
+      &:nth-child(3) svg {
+        width: 44%;
+        height: auto;
+      }
     }
   }
 }
@@ -200,7 +221,7 @@
     font-size: mixins.toRem(40);
     font-weight: 500;
     line-height: math.div(39, 40);
-    letter-spacing: mixins.toRem(-0.8);
+    letter-spacing: -0.02em;
   }
 
   &__grid {
@@ -214,13 +235,19 @@
     &__title {
       font-size: mixins.toRem(30);
       line-height: math.div(33, 30);
-      letter-spacing: mixins.toRem(-0.6);
+      letter-spacing: -0.02em;
     }
 
     &__grid {
       grid-template-columns: 1fr;
       gap: mixins.toRem(20);
       margin-top: mixins.toRem(24);
+    }
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    &__container {
+      padding-inline: mixins.toRem(8);
     }
   }
 }
@@ -248,7 +275,7 @@
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    margin-top: mixins.toRem(27);
+    margin-top: mixins.toRem(29);
   }
 
   &__title {
@@ -256,7 +283,7 @@
     font-size: mixins.toRem(25);
     font-weight: 500;
     line-height: math.div(24, 25);
-    letter-spacing: mixins.toRem(-0.5);
+    letter-spacing: -0.02em;
   }
 
   &__footer {
@@ -264,7 +291,7 @@
     justify-content: space-between;
     align-items: flex-end;
     gap: mixins.toRem(24);
-    margin-top: mixins.toRem(20);
+    margin-top: mixins.toRem(21);
   }
 
   &__info {
@@ -273,14 +300,16 @@
 
   &__address {
     font-size: mixins.toRem(15);
-    line-height: math.div(32, 15);
+    line-height: math.div(22, 15);
   }
 
   &__schedule {
     margin-top: mixins.toRem(4);
     color: var(--text-secondary-color);
     font-size: mixins.toRem(14);
-    line-height: math.div(20, 14);
+    @media (width >= #{mixins.toEm(variables.$tablet)}) {
+      line-height: math.div(45, 14);
+    }
   }
 
   &__button {
@@ -304,27 +333,34 @@
   }
 
   @media (width < #{mixins.toEm(variables.$tablet)}) {
-    padding: mixins.toRem(16);
+    padding: mixins.toRem(18) mixins.toRem(16) mixins.toRem(23) mixins.toRem(16);
 
     &__content {
-      margin-top: mixins.toRem(24);
+      margin-top: mixins.toRem(22);
+    }
+
+    &__title {
+      font-size: mixins.toRem(21);
+      line-height: math.div(24, 21);
     }
 
     &__footer {
       display: block;
-      margin-top: mixins.toRem(10);
+      margin-top: mixins.toRem(7);
     }
 
     &__address {
-      line-height: math.div(22, 15);
+      font-size: mixins.toRem(14);
+      line-height: math.div(22, 14);
     }
 
     &__schedule {
-      margin-top: mixins.toRem(12);
+      margin-top: mixins.toRem(7);
+      line-height: math.div(22 , 14);
     }
 
     &__button {
-      margin-top: mixins.toRem(20);
+      margin-top: mixins.toRem(17);
       padding: mixins.toRem(10) mixins.toRem(20);
     }
   }
@@ -344,7 +380,7 @@
     font-size: mixins.toRem(40);
     font-weight: 500;
     line-height: math.div(39, 40);
-    letter-spacing: mixins.toRem(-0.8);
+    letter-spacing: -0.02em;
   }
 
   &__canvas {
@@ -375,12 +411,12 @@
     &__title {
       font-size: mixins.toRem(30);
       line-height: math.div(33, 30);
-      letter-spacing: mixins.toRem(-0.6);
+      letter-spacing: -0.02em;
     }
 
     &__canvas {
       width: calc(100% + mixins.toRem(30));
-      aspect-ratio: 375 / 620;
+      aspect-ratio: 375 / 397;
       margin-top: mixins.toRem(24);
       margin-inline: mixins.toRem(-15);
       border-radius: 0;

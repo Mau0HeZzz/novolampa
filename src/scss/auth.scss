@@ -37,22 +37,26 @@
 
   &__input {
     width: 100%;
-    padding: mixins.toRem(24) mixins.toRem(50) mixins.toRem(10) mixins.toRem(23);
+    padding-top: mixins.toRem(24);
+    padding-bottom: mixins.toRem(10);
     outline: none;
     color: var(--text-main-color);
     font-size: mixins.toRem(15);
     line-height: math.div(22, 15);
+
+    @include mixins.adaptiveValue("padding-left", 23, 16);
+    @include mixins.adaptiveValue("padding-right", 23, 16);
   }
 
   &__placeholder {
     position: absolute;
     top: 50%;
-    left: mixins.toRem(23);
     translate: 0 -50%;
     pointer-events: none;
     color: var(--text-secondary-color);
     font-size: mixins.toRem(15);
     line-height: math.div(22, 15);
+    @include mixins.adaptiveValue("left", 23, 16);
 
     .loaded & {
       transition:
@@ -354,7 +358,7 @@
     display: flex;
     justify-content: center;
 
-    @include mixins.adaptiveValue("margin-top", 50, 30);
+    @include mixins.adaptiveValue("margin-top", 50, 25, 1600, 767);
   }
 
   &__card {
@@ -367,14 +371,19 @@
 
   &__content {
     width: 100%;
-    max-width: mixins.toRem(324);
-    margin-inline: auto;
+    >*:not(.auth-page__subtitle) {
+      width: 100%;
+      max-width: mixins.toRem(324);
+      margin-inline: auto;
+    }
   }
 
   &__subtitle {
-    font-size: mixins.toRem(24);
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(25);
     font-weight: 500;
-    line-height: math.div(32, 24);
+    line-height: math.div(27, 25);
+    letter-spacing: -0.02em;
     text-align: center;
   }
 

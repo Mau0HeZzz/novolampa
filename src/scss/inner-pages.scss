@@ -170,9 +170,11 @@
 
   &__title {
     color: var(--text-main-color);
-    font-size: mixins.toRem(28);
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(25);
     font-weight: 500;
-    line-height: math.div(36, 28);
+    line-height: math.div(27, 25);
+    letter-spacing: -0.02em;
   }
 
   &__body {
@@ -215,8 +217,15 @@
   @include mixins.adaptiveValue("padding-bottom", 110, 52);
 
   &__title {
+    font-family: var(--font-tik-tok);
     font-size: mixins.toRem(25);
+    font-weight: 500;
     line-height: math.div(27, 25);
+    letter-spacing: -0.02em;
+
+    @media (width >= #{mixins.toEm(variables.$mobile)}) {
+      &:not(:last-child) {margin-bottom: mixins.toRem(13);}
+    }
   }
 
   &__row {
@@ -224,7 +233,10 @@
     grid-template-columns: minmax(0, mixins.toRem(270)) minmax(0, 1fr);
     gap: mixins.toRem(48);
     padding-block: mixins.toRem(30);
-    border-bottom: mixins.toRem(1) solid var(--border-light-color);
+
+    &:not(:last-child) {
+      border-bottom: mixins.toRem(2) solid var(--border-medium-color);
+    }
 
     &_section {
       padding-top: mixins.toRem(38);
@@ -237,9 +249,11 @@
 
   &__subtitle {
     color: var(--text-secondary-color);
+    font-family: var(--font-tik-tok);
     font-size: mixins.toRem(20);
     font-weight: 500;
-    line-height: math.div(24, 20);
+    line-height: math.div(24, 24);
+    letter-spacing: -0.02em;
   }
 
   &__content {
@@ -257,12 +271,18 @@
     &__title {
       font-size: mixins.toRem(24);
       line-height: math.div(30, 24);
+
+      &:not(:last-child) {margin-bottom: mixins.toRem(15);}
     }
 
     &__row {
       grid-template-columns: 1fr;
-      gap: mixins.toRem(20);
-      padding-block: mixins.toRem(28);
+      gap: mixins.toRem(15);
+      padding-bottom: mixins.toRem(30);
+
+      &:not(:first-child) {
+        padding-top: mixins.toRem(30);
+      }
 
       &_section {
         padding-top: mixins.toRem(32);

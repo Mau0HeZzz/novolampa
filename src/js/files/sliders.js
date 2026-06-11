@@ -29,6 +29,90 @@ function initPromoCatalogPopup() {
 function initSliders() {
   initPromoCatalogPopup();
 
+  document.querySelectorAll('.project-results').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    const splide = new Splide(element, {
+      type: 'loop',
+      autoWidth: true,
+      focus: 'center',
+      gap: 30,
+      perMove: 1,
+      arrows: true,
+      pagination: true,
+      breakpoints: {
+        767: {
+          gap: 8,
+          arrows: false,
+        },
+      },
+    });
+
+    splide.on('moved', () => {
+      element.lightGallery?.refresh();
+    });
+
+    splide.mount();
+    element.lightGallery?.refresh();
+  });
+
+  document.querySelectorAll('.project-equipment').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    new Splide(element, {
+      type: 'slide',
+      perPage: 5,
+      perMove: 1,
+      gap: 30,
+      arrows: true,
+      pagination: false,
+      rewind: true,
+      breakpoints: {
+        1199: {
+          perPage: 4,
+          gap: 20,
+        },
+        991: {
+          perPage: 3,
+          gap: 16,
+        },
+        767: {
+          perPage: 2,
+          perMove: 2,
+          gap: 8,
+          arrows: false,
+          pagination: true,
+        },
+      },
+    }).mount();
+  });
+
+  document.querySelectorAll('.similar-projects').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    new Splide(element, {
+      type: 'slide',
+      perPage: 3,
+      perMove: 1,
+      gap: 30,
+      arrows: true,
+      pagination: false,
+      rewind: true,
+      breakpoints: {
+        991: {
+          perPage: 2,
+          gap: 20,
+        },
+        767: {
+          perPage: 1,
+          gap: 8,
+          arrows: false,
+          pagination: true,
+        },
+      },
+    }).mount();
+  });
+
   document.querySelectorAll('.splide:not(.promo-catalog-popup)').forEach((element) => {
     if (element.classList.contains('is-initialized')) return;
 

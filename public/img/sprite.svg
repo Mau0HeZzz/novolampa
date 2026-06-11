@@ -53,7 +53,7 @@
     <line x1="5" y1="9" x2="5" y2="1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
   </symbol>
   <symbol viewBox="0 0 10 2" fill="none" id="minus">
-    <line x1="1" y1="1" x2="9" y2="1" stroke="#667685" stroke-width="2" stroke-linecap="round"/>
+    <line x1="1" y1="1" x2="9" y2="1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
   </symbol>
   <symbol viewBox="0 0 24 24" fill="none" id="calculator">
     <path d="M10 22H14C19 22 21 20 21 15V9C21 4 19 2 14 2H10C5 2 3 4 3 9V15C3 20 5 22 10 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

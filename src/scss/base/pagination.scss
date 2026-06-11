@@ -11,8 +11,14 @@
   justify-content: center;
   gap: mixins.toRem(34);
 
+  --size: #{mixins.toRem(44)};
+  
+  @media (width < #{mixins.toEm(variables.$mobileSmall)}) {
+    --size: #{mixins.toRem(40)};
+  }
+
   &__arrow {
-    width: mixins.toRem(44);
+    width: var(--size);
     aspect-ratio: 1;
     display: grid;
     place-items: center;
@@ -46,7 +52,7 @@
   }
 
   &__item {
-    width: mixins.toRem(44);
+    width: var(--size);
     aspect-ratio: 1;
     display: grid;
     place-items: center;
@@ -76,14 +82,10 @@
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     justify-content: space-between;
-    gap: mixins.toRem(12);
+    gap: mixins.toRem(8);
 
     &__arrow {
-      width: mixins.toRem(44);
-    }
-
-    &__list {
-      gap: mixins.toRem(20);
+      width: var(--size);
     }
 
     &__desktop-item {
