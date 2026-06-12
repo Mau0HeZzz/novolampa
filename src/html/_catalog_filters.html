@@ -1,0 +1,171 @@
+<!--
+  @fileOverview Форма фильтров каталога, переезжающая в мобильный drawer.
+-->
+
+<form action="" method="get" class="catalog-filters" data-catalog-filters data-da=".catalog-filter-drawer__body, 767.98, first">
+  <div class="catalog-filters__scroll" data-spollers data-spollers-speed="300">
+    <details class="catalog-filter" data-open>
+      <summary class="catalog-filter__title">Категории</summary>
+      <div class="catalog-filter__body catalog-filter__body_links">
+        <a href="#">Галогенные</a>
+        <a href="#" class="_active">Диммируемые</a>
+        <a href="#">Накаливания</a>
+        <a href="#">Ретро-лампы</a>
+        <a href="#">Светодиодные</a>
+        <a href="#">Технические</a>
+        <a href="#">Филаментные</a>
+        <a href="#">Энергосберегающие</a>
+      </div>
+    </details>
+
+    <details class="catalog-filter" data-open>
+      <summary class="catalog-filter__title">Подкатегории</summary>
+      <div class="catalog-filter__body catalog-filter__body_checks">
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="subcategory" value="kitchen">
+          <i></i>
+          <span>Для кухни</span>
+        </label>
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="subcategory" value="furniture" checked>
+          <i></i>
+          <span>Для мебели</span>
+        </label>
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="subcategory" value="ceiling">
+          <i></i>
+          <span>Для потолка</span>
+        </label>
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="subcategory" value="bathroom">
+          <i></i>
+          <span>Для ванной (IP65)</span>
+        </label>
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="subcategory" value="rgb">
+          <i></i>
+          <span>RGB/RGBW</span>
+        </label>
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="subcategory" value="high-cri">
+          <i></i>
+          <span>Высокий CRI</span>
+        </label>
+      </div>
+    </details>
+
+    <details class="catalog-filter" data-open data-range-parent>
+      <summary class="catalog-filter__title">Цена, ₽</summary>
+      <div class="catalog-filter__body">
+        <div class="catalog-range__inputs">
+          <label>
+            <input type="text" name="price_min" value="12886" data-min-input>
+          </label>
+          <label>
+            <input type="text" name="price_max" value="86123" data-max-input>
+          </label>
+        </div>
+        <div class="catalog-range" data-range data-min="0" data-max="100000" data-values="12886,86123"></div>
+      </div>
+    </details>
+
+    <details class="catalog-filter" data-open>
+      <summary class="catalog-filter__title">Яркость и мощность</summary>
+      <div class="catalog-filter__body catalog-filter__body_checks">
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="power" value="0-7">
+          <i></i>
+          <span>до 7W</span>
+        </label>
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="power" value="7-14" checked>
+          <i></i>
+          <span>7-14W</span>
+        </label>
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="power" value="14-20">
+          <i></i>
+          <span>14-20W</span>
+        </label>
+        <label class="catalog-checkbox">
+          <input type="checkbox" name="power" value="20-plus">
+          <i></i>
+          <span>20W+</span>
+        </label>
+        <p class="catalog-filter__hint">Для кухни — 9.6-14.4W, для декоративной подсветки — более мягкие варианты.</p>
+      </div>
+    </details>
+
+    <details class="catalog-filter" data-open>
+      <summary class="catalog-filter__title">Степень защиты</summary>
+      <div class="catalog-filter__body catalog-filter__body_checks">
+        <label class="catalog-checkbox"><input type="checkbox" name="ip" value="20"><i></i><span>IP20</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="ip" value="44"><i></i><span>IP44</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="ip" value="65"><i></i><span>IP65</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="ip" value="67"><i></i><span>IP67</span></label>
+        <p class="catalog-filter__hint">IP20 — для сухих помещений, IP65 и выше — для влажных зон и улицы.</p>
+      </div>
+    </details>
+
+    <details class="catalog-filter" data-open>
+      <summary class="catalog-filter__title">Цветовая температура</summary>
+      <div class="catalog-filter__body catalog-filter__body_checks">
+        <label class="catalog-checkbox"><input type="checkbox" name="temperature" value="2700"><i></i><span>2700K</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="temperature" value="3000"><i></i><span>3000K</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="temperature" value="4000"><i></i><span>4000K</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="temperature" value="6000"><i></i><span>6000K</span></label>
+        <p class="catalog-filter__hint">Тёплый свет — для уюта, нейтральный — универсален, холодный — для рабочих зон.</p>
+      </div>
+    </details>
+
+    <details class="catalog-filter" data-open>
+      <summary class="catalog-filter__title">Производитель</summary>
+      <div class="catalog-filter__body catalog-filter__body_checks">
+        <label class="catalog-filter__search">
+          <input type="search" placeholder="Найти" data-catalog-brand-search>
+        </label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="arlight"><i></i><span>Arlight</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="philips"><i></i><span>Philips</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="osram"><i></i><span>Osram</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="gauss"><i></i><span>Gauss</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="jazzway"><i></i><span>Jazzway</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="iek"><i></i><span>IEK</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="navigator"><i></i><span>Navigator</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="feron"><i></i><span>Feron</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="ecola"><i></i><span>Ecola</span></label>
+        <label class="catalog-checkbox"><input type="checkbox" name="brand" value="camelion"><i></i><span>Camelion</span></label>
+      </div>
+    </details>
+
+    <details class="catalog-filter">
+      <summary class="catalog-filter__title">Фильтр свёрнут</summary>
+      <div class="catalog-filter__body catalog-filter__body_checks">
+        <label class="catalog-checkbox"><input type="checkbox" name="extra_a" value="one"><i></i><span>Параметр фильтра</span></label>
+      </div>
+    </details>
+    <details class="catalog-filter">
+      <summary class="catalog-filter__title">Фильтр свёрнут</summary>
+      <div class="catalog-filter__body catalog-filter__body_checks">
+        <label class="catalog-checkbox"><input type="checkbox" name="extra_b" value="one"><i></i><span>Параметр фильтра</span></label>
+      </div>
+    </details>
+    <details class="catalog-filter">
+      <summary class="catalog-filter__title">Фильтр свёрнут</summary>
+      <div class="catalog-filter__body catalog-filter__body_checks">
+        <label class="catalog-checkbox"><input type="checkbox" name="extra_c" value="one"><i></i><span>Параметр фильтра</span></label>
+      </div>
+    </details>
+  </div>
+
+  <div class="catalog-filters__actions">
+    <div class="catalog-filters__actions-inner">
+      <button type="submit" class="catalog-filters__submit">Показать 435 товаров</button>
+      <button type="button" class="catalog-filters__reset" data-catalog-reset>
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <use xlink:href="/img/sprite.svg#close"></use>
+        </svg>
+        Сбросить все фильтры
+      </button>
+    </div>
+  </div>
+</form>

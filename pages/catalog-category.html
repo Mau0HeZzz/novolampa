@@ -1,0 +1,217 @@
+<!--
+  @fileOverview Страница категории каталога с фильтрами и товарной сеткой.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Светодиодные лампы"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="catalog-page">
+        <section class="section page-intro catalog-intro">
+          <div class="section__container page-intro__container catalog-intro__container">
+            <include
+              src="src/html/_breadcrumbs.html"
+              locals='{"items": ["Главная", "Каталог товаров"], "mainItem": "Светодиодные лампы"}'
+            ></include>
+
+            <div class="catalog-intro__heading">
+              <h1 class="section__title page-intro__title catalog-intro__title">Светодиодные лампы</h1>
+              <include
+                src="src/html/_segmented_control.html"
+                locals='{
+                  "tag": "nav",
+                  "role": "",
+                  "modifier": "catalog-intro__audience",
+                  "ariaLabel": "Тип клиента",
+                  "background": "var(--bg-main-color)",
+                  "padding": "0.375rem",
+                  "indicatorBackground": "var(--bg-section-color)",
+                  "buttonPadding": "0.5625rem 1.125rem",
+                  "buttonPaddingMobile": "0.5rem 0.875rem",
+                  "buttonFontSize": "0.9375rem",
+                  "buttonFontSizeMobile": "0.9375rem",
+                  "buttonLineHeight": "1.4666666667",
+                  "buttonLineHeightMobile": "1.4666666667",
+                  "activeColor": "var(--text-accent-color)",
+                  "dataDa": ".catalog-intro__middle, 768, first",
+                  "mapSwitcher": "",
+                  "items": [
+                    {"tag": "a", "text": "Для дома", "href": "#", "value": "", "active": true},
+                    {"tag": "a", "text": "B2B", "href": "#", "value": "", "active": false}
+                  ]
+                }'
+              ></include>
+            </div>
+            <div class="catalog-intro__middle _mmd-768-dn"></div>
+            <div class="catalog-intro__footer">
+              <nav class="catalog-tags" aria-label="Популярные подборки">
+                <a href="#" class="catalog-tags__item">лампочки для кухни</a>
+                <a href="#" class="catalog-tags__item">подсветка мебели</a>
+                <a href="#" class="catalog-tags__item">продукты для потолка</a>
+                <a href="#" class="catalog-tags__item">IP65</a>
+                <a href="#" class="catalog-tags__item">для дачи</a>
+                <a href="#" class="catalog-tags__item">для мебели</a>
+                <a href="#" class="catalog-tags__item">для карниза</a>
+              </nav>
+              <a href="#" class="action-button action-button_outline catalog-intro__selection" data-da=".catalog-intro__middle, 768, last">Подобрать комплект</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section catalog-products">
+          <div class="section__container catalog-products__container">
+            <div class="catalog-toolbar">
+              <strong class="catalog-toolbar__count">19 650 товаров</strong>
+
+              <div class="catalog-toolbar__sort">
+                <select name="sort" data-custom-select aria-label="Сортировка товаров">
+                  <option value="popular" selected>Популярные</option>
+                  <option value="available">По наличию</option>
+                  <option value="price-up">По цене ↑</option>
+                  <option value="price-down">По цене ↓</option>
+                </select>
+              </div>
+
+              <button type="button" class="catalog-toolbar__filter _mmd-768-dn" data-popup="#catalogFilterDrawer" aria-label="Открыть фильтры">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <use xlink:href="/img/sprite.svg#filter-settings"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="catalog-products__layout">
+              <aside class="catalog-products__aside _md-768-dn" aria-label="Фильтры каталога">
+                <include src="src/html/_catalog_filters.html"></include>
+              </aside>
+
+              <div class="catalog-products__content">
+                <div class="catalog-products__grid">
+                  <include src="src/html/_catalog_products.html"></include>
+
+                  <aside class="catalog-consultation">
+                    <div class="catalog-consultation__text">
+                      <strong>Консультация, подбор товара,<br> проектирование освещения под любые задачи!</strong>
+                      <a href="tel:88007008091">8 (800) 700-80-91</a>
+                    </div>
+                    <div class="catalog-consultation__socials">
+                      <a href="#" aria-label="Telegram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                          <use xlink:href="/img/colored.svg#telegram"></use>
+                        </svg>
+                      </a>
+                      <a href="#" aria-label="MAX">
+                        <svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true">
+                          <use xlink:href="/img/colored.svg#max"></use>
+                        </svg>
+                      </a>
+                      <a href="#" aria-label="ВКонтакте">
+                        <svg width="32" height="20" viewBox="0 0 43 27" aria-hidden="true">
+                          <use xlink:href="/img/colored.svg#vk"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </aside>
+
+                  <include src="src/html/_catalog_products.html"></include>
+                </div>
+
+                <a href="#" class="catalog-products__more">Показать ещё 36</a>
+                <include src="src/html/_pagination.html" locals='{"last":"25"}'></include>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section feedback-section projects-request catalog-request">
+          <div class="section__container feedback-section__container">
+            <div class="feedback-section__body projects-request__body">
+              <div class="feedback-section__head">
+                <h2 class="feedback-section__title">Получить быстрый<br> расчёт КП</h2>
+                <p class="feedback-section__text">
+                  Отправьте параметры задачи, и мы подготовим коммерческое предложение,
+                  подбор оборудования и рекомендации по совместимости.
+                </p>
+              </div>
+
+              <form action="" class="form feedback-section__form">
+                <label class="form__item form__item_shadow">
+                  <input type="text" name="name" class="form__input" placeholder=" " data-required data-error="Введите имя">
+                  <span class="form__placeholder">Как вас зовут?</span>
+                </label>
+                <div class="feedback-section__fields">
+                  <label class="form__item form__item_shadow">
+                    <input type="tel" name="phone" class="form__input" placeholder=" " data-required="phone" data-error="Введите телефон">
+                    <span class="form__placeholder">Телефон</span>
+                  </label>
+                  <label class="form__item form__item_shadow">
+                    <input type="email" name="email" class="form__input" placeholder=" " data-required="email" data-error="Введите корректный email">
+                    <span class="form__placeholder">Email</span>
+                  </label>
+                </div>
+                <div class="feedback-section__fields">
+                  <label class="form__item form__item_shadow">
+                    <input type="text" name="object_type" class="form__input" placeholder=" ">
+                    <span class="form__placeholder">Тип объекта</span>
+                  </label>
+                  <label class="form__item form__item_shadow">
+                    <input type="text" name="area" class="form__input" placeholder=" ">
+                    <span class="form__placeholder">Площадь/объём</span>
+                  </label>
+                </div>
+                <label class="form__item form__item_shadow feedback-section__message">
+                  <textarea name="message" class="form__input feedback-section__textarea projects-request__textarea" placeholder=" " rows="5" data-required data-error="Опишите задачу"></textarea>
+                  <span class="form__placeholder">
+                    Опишите задачу: что нужно осветить, какие есть требования, нужен ли расчёт,
+                    сертификаты, документы, монтажные рекомендации
+                  </span>
+                </label>
+                <label class="form__boxwrap feedback-section__agreement">
+                  <input type="checkbox" name="agreement" data-required data-error="Необходимо ваше согласие">
+                  <i class="form__box"></i>
+                  <span class="form__label">
+                    Я даю согласие на обработку персональных данных и соглашаюсь с
+                    <a href="#">Политикой конфиденциальности</a> и
+                    <a href="#">Пользовательским соглашением</a>
+                  </span>
+                </label>
+                <button type="submit" class="action-button action-button_primary form__submit feedback-section__submit">
+                  <span>Запросить расчёт</span>
+                  <i>
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                      <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                    </svg>
+                  </i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+
+    <div id="catalogFilterDrawer" aria-hidden="true" class="popup drawer catalog-filter-drawer _mmd-768-dn" data-nohash>
+      <div class="popup__wrapper">
+        <div class="popup__content">
+          <div class="catalog-filter-drawer__inner">
+            <div class="catalog-filter-drawer__header">
+              <strong>Фильтры</strong>
+              <button data-close type="button" class="catalog-filter-drawer__close" aria-label="Закрыть фильтры">
+                <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <use xlink:href="/img/sprite.svg#close"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="popup__body catalog-filter-drawer__body"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

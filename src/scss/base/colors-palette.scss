@@ -24,16 +24,22 @@
   --bg-placeholder-color: #d9d9d9;
   --bg-menu-color: #E0E4EB;
   --bg-announcement-color: #ffd83d;
+  --bg-catalog-banner-start-color: rgba(247, 248, 250, 0.98);
+  --bg-catalog-banner-end-color: rgba(247, 248, 250, 0.62);
+  --bg-catalog-banner-mobile-start-color: rgba(247, 248, 250, 0.96);
+  --bg-catalog-banner-mobile-end-color: rgba(247, 248, 250, 0.35);
 
   // --- Тексты ---
   --text-main-color: #1f2326;
   --text-secondary-color: #667685;
   --text-muted-color: #798181;
   --text-hint-color: #929292;
+  --text-disabled-color: #aeb7c0;
   --text-light-color: #ffffff;
   --text-green-color: #2dc964;
   --text-accent-color: #3ac170;
   --text-error-color: #d94545;
+  --icon-muted-color: #b9c2cc;
 
   // --- Границы ---
   --border-light-color: #f7f8fa;
@@ -41,6 +47,7 @@
   --border-white-color: #ffffff;
   --border-green-color: #2dc964;
   --border-input-color: #d0d0d0;
+  --border-range-color: #cef4dc;
 
   // --- Кнопки ---
   --btn-green-color: #2dc964;

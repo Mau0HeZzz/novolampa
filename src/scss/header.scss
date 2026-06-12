@@ -80,7 +80,8 @@
   top: var(--announcement-offset);
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
+  background-color: var(--bg-main-color);
   @media (width >= #{mixins.toEm(1280)}) {
     padding: mixins.toRem(12);
   }

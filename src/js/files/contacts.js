@@ -3,6 +3,7 @@
  */
 
 import { yandexMapsPromise } from "./map.js";
+import { updateSegmentedControl } from "./segmented-control.js";
 import sdekPoints from './cdek_spb_points';
 
 const mapElements = document.querySelectorAll(".contacts-map [data-map]");
@@ -93,21 +94,7 @@ if (mapElements.length) {
 
         if (!switcher) return;
 
-        const indicator = switcher.querySelector(".segmented-control__indicator");
-        const updateIndicator = (button) => {
-          const indicatorInset = parseFloat(getComputedStyle(indicator).top);
-
-          switcher.style.setProperty("--segmented-left", `${button.offsetLeft + indicatorInset}px`);
-          switcher.style.setProperty("--segmented-width", `${button.offsetWidth - indicatorInset * 2}px`);
-        };
-
-        updateIndicator(buttons[initialActiveIndex]);
-        switcher.classList.toggle("_first-active", initialActiveIndex === 0);
-        switcher.classList.toggle("_last-active", initialActiveIndex === buttons.length - 1);
-
-        new ResizeObserver(() => {
-          updateIndicator(switcher.querySelector("[data-map-mode]._active"));
-        }).observe(switcher);
+        updateSegmentedControl(switcher);
 
         switcher.addEventListener("click", (event) => {
           const button = event.target.closest("[data-map-mode]");
@@ -120,9 +107,7 @@ if (mapElements.length) {
             item.setAttribute("aria-pressed", isActive);
           });
 
-          updateIndicator(button);
-          switcher.classList.toggle("_first-active", activeIndex === 0);
-          switcher.classList.toggle("_last-active", activeIndex === buttons.length - 1);
+          updateSegmentedControl(switcher);
 
           map.removeChild(activeMapLayer);
           activeMapLayer = button.dataset.mapMode === "showrooms" ? showroomCollection : pickupClusterer;

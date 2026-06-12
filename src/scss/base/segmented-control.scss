@@ -1,0 +1,88 @@
+/**
+ * @fileOverview Стили переиспользуемого сегментированного переключателя.
+ */
+
+@use "mixins";
+@use "../variables";
+@use "sass:math";
+
+.segmented-control {
+  --segmented-bg: var(--bg-main-color);
+  --segmented-padding: #{mixins.toRem(6)};
+  --segmented-indicator-bg: var(--bg-section-color);
+  --segmented-indicator-width: #{mixins.toRem(0)};
+  --segmented-indicator-left: var(--segmented-padding);
+  --segmented-button-padding: #{mixins.toRem(9)} #{mixins.toRem(23)};
+  --segmented-button-padding-mobile: var(--segmented-button-padding);
+  --segmented-button-font-size: #{mixins.toRem(15)};
+  --segmented-button-font-size-mobile: var(--segmented-button-font-size);
+  --segmented-button-line-height: #{math.div(22, 15)};
+  --segmented-button-line-height-mobile: var(--segmented-button-line-height);
+  --segmented-active-color: var(--text-accent-color);
+
+  position: relative;
+  display: flex;
+  padding: var(--segmented-padding);
+  border-radius: calc(1px / 0);
+  background-color: var(--segmented-bg);
+
+  &._first-active {
+    .segmented-control__indicator {
+      border-radius: calc(1px / 0) 0 0 calc(1px / 0);
+    }
+  }
+
+  &._last-active {
+    .segmented-control__indicator {
+      border-radius: 0 calc(1px / 0) calc(1px / 0) 0;
+    }
+  }
+
+  &__indicator {
+    position: absolute;
+    top: var(--segmented-padding);
+    bottom: var(--segmented-padding);
+    left: var(--segmented-indicator-left);
+    width: var(--segmented-indicator-width);
+    background-color: var(--segmented-indicator-bg);
+    box-shadow: 0 mixins.toRem(1) 0 0 #00000026;
+
+    .loaded & {
+      transition:
+        left 0.3s ease 0s,
+        width 0.3s ease 0s,
+        border-radius 0.3s ease 0s;
+    }
+  }
+
+  &__button {
+    position: relative;
+    z-index: 2;
+    padding: var(--segmented-button-padding);
+    font-weight: 500;
+    font-size: var(--segmented-button-font-size);
+    line-height: var(--segmented-button-line-height);
+    text-align: center;
+    flex: 1 1 auto;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      padding: var(--segmented-button-padding-mobile);
+      font-size: var(--segmented-button-font-size-mobile);
+      line-height: var(--segmented-button-line-height-mobile);
+    }
+
+    .loaded & {
+      transition: color 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--segmented-active-color);
+      }
+    }
+
+    &._active {
+      color: var(--segmented-active-color);
+    }
+  }
+}

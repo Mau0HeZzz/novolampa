@@ -196,12 +196,12 @@ body::after {
     border-radius: 0;
     min-height: 100%;
     padding-top: mixins.toRem(24);
-    translate: 15% 0;
+    translate: 150% 0;
     margin-left: auto;
 
     @media (max-width: mixins.toEm(variables.$mobile)) {
       max-width: 100%;
-      translate: 15% 0;
+      translate: 150% 0;
       min-height: 100%;
       border-radius: 0;
     }

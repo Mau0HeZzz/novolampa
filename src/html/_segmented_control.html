@@ -1,0 +1,80 @@
+<!--
+  @fileOverview Переиспользуемый сегментированный переключатель со ссылками или кнопками.
+-->
+
+<if condition="tag === 'nav'">
+  <nav
+    class="segmented-control {{ modifier }}"
+    aria-label="{{ ariaLabel }}"
+    style="
+      --segmented-bg: {{ background }};
+      --segmented-padding: {{ padding }};
+      --segmented-indicator-bg: {{ indicatorBackground }};
+      --segmented-button-padding: {{ buttonPadding }};
+      --segmented-button-padding-mobile: {{ buttonPaddingMobile }};
+      --segmented-button-font-size: {{ buttonFontSize }};
+      --segmented-button-font-size-mobile: {{ buttonFontSizeMobile }};
+      --segmented-button-line-height: {{ buttonLineHeight }};
+      --segmented-button-line-height-mobile: {{ buttonLineHeightMobile }};
+      --segmented-active-color: {{ activeColor }}
+    "
+    data-da="{{ dataDa }}"
+  >
+    <span class="segmented-control__indicator" aria-hidden="true"></span>
+    <each loop="item in items">
+      <if condition="item.tag === 'a'">
+        <a
+          href="{{ item.href }}"
+          class="segmented-control__button {{ item.active ? '_active' : '' }}"
+          aria-current="{{ item.active ? 'page' : false }}"
+        >{{ item.text }}</a>
+      </if>
+      <else>
+        <button
+          type="button"
+          class="segmented-control__button {{ item.active ? '_active' : '' }}"
+          aria-pressed="{{ item.active ? 'true' : 'false' }}"
+        >{{ item.text }}</button>
+      </else>
+    </each>
+  </nav>
+</if>
+<else>
+  <div
+    class="segmented-control {{ modifier }}"
+    role="{{ role }}"
+    aria-label="{{ ariaLabel }}"
+    style="
+      --segmented-bg: {{ background }};
+      --segmented-padding: {{ padding }};
+      --segmented-indicator-bg: {{ indicatorBackground }};
+      --segmented-button-padding: {{ buttonPadding }};
+      --segmented-button-padding-mobile: {{ buttonPaddingMobile }};
+      --segmented-button-font-size: {{ buttonFontSize }};
+      --segmented-button-font-size-mobile: {{ buttonFontSizeMobile }};
+      --segmented-button-line-height: {{ buttonLineHeight }};
+      --segmented-button-line-height-mobile: {{ buttonLineHeightMobile }};
+      --segmented-active-color: {{ activeColor }}
+    "
+    data-map-switcher="{{ mapSwitcher }}"
+  >
+    <span class="segmented-control__indicator" aria-hidden="true"></span>
+    <each loop="item in items">
+      <if condition="item.tag === 'a'">
+        <a
+          href="{{ item.href }}"
+          class="segmented-control__button {{ item.active ? '_active' : '' }}"
+          aria-current="{{ item.active ? 'page' : false }}"
+        >{{ item.text }}</a>
+      </if>
+      <else>
+        <button
+          type="button"
+          class="segmented-control__button {{ item.active ? '_active' : '' }}"
+          aria-pressed="{{ item.active ? 'true' : 'false' }}"
+          data-map-mode="{{ item.value }}"
+        >{{ item.text }}</button>
+      </else>
+    </each>
+  </div>
+</else>

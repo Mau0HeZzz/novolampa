@@ -52,7 +52,7 @@ mhzFunctions.menuInit();
 Документация: https://start-template.ru/modul-spojlery-chertogi-frilansera-v3-0-0/
 Сниппет (HTML): spollers
 */
-// mhzFunctions.spollers();
+mhzFunctions.spollers();
 
 /*
 Модуль "Табы"
@@ -134,7 +134,7 @@ flsForms.formQuantity();
 // flsForms.formRating();
 
 /* Модуль работы с select. */
-// import './libs/select.js'
+import './libs/select.js'
 
 /* Модуль работы с календарем */
 // import './files/forms/datepicker.js'
@@ -155,7 +155,7 @@ import "./files/forms/inputmask.js";
 Документация плагина: https://refreshless.com/nouislider/
 Сниппет (HTML): range
 */
-// import "./files/forms/range.js";
+import "./files/forms/range.js";
 
 /* Модуль работы с подсказками (tippy) */
 /*
@@ -258,7 +258,10 @@ import "./libs/dynamic_adapt.js";
 // Другое ========================================================================================================================================================================================================================================================
 // ========================================================================================================================================================================================================================================================
 /* Подключаем файлы со своим кодом */
+import { segmentedControlsInit } from "./files/segmented-control.js";
 import "./files/header.js";
 import "./files/contacts.js";
+import "./files/catalog.js";
 import "./files/script.js";
+segmentedControlsInit();
 //============================================================================================================================================================================================================================================

@@ -134,25 +134,31 @@
           <div class="section__container contacts-map__container">
             <div class="contacts-map__head">
               <h2 class="contacts-map__title">Карта</h2>
-              <div class="segmented-control _first-active" role="group" aria-label="Тип объектов на карте" data-map-switcher>
-                <span class="segmented-control__indicator" aria-hidden="true"></span>
-                <button
-                  type="button"
-                  class="segmented-control__button _active"
-                  aria-pressed="true"
-                  data-map-mode="pickup"
-                >
-                  Пункты выдачи
-                </button>
-                <button
-                  type="button"
-                  class="segmented-control__button"
-                  aria-pressed="false"
-                  data-map-mode="showrooms"
-                >
-                  Шоурумы
-                </button>
-              </div>
+              <include
+                src="src/html/_segmented_control.html"
+                locals='{
+                  "tag": "div",
+                  "role": "group",
+                  "modifier": "",
+                  "ariaLabel": "Тип объектов на карте",
+                  "background": "var(--bg-section-color)",
+                  "padding": "0.375rem",
+                  "indicatorBackground": "var(--bg-main-color)",
+                  "buttonPadding": "0.5625rem 1.4375rem",
+                  "buttonPaddingMobile": "0.5625rem 1.4375rem",
+                  "buttonFontSize": "0.9375rem",
+                  "buttonFontSizeMobile": "0.9375rem",
+                  "buttonLineHeight": "1.4666666667",
+                  "buttonLineHeightMobile": "1.4666666667",
+                  "activeColor": "var(--text-accent-color)",
+                  "dataDa": "",
+                  "mapSwitcher": "true",
+                  "items": [
+                    {"tag": "button", "text": "Пункты выдачи", "href": "", "value": "pickup", "active": true},
+                    {"tag": "button", "text": "Шоурумы", "href": "", "value": "showrooms", "active": false}
+                  ]
+                }'
+              ></include>
             </div>
             <div class="contacts-map__canvas" data-map>
               <span class="contacts-map__status">Загрузка карты...</span>

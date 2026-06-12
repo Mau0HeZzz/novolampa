@@ -370,7 +370,8 @@
   @include mixins.adaptiveValue("padding-top", 90, 48);
 
   &__head {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: mixins.toRem(30);
   }
@@ -404,6 +405,7 @@
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     &__head {
+      display: flex;
       justify-content: space-between;
       gap: mixins.toRem(12);
     }
@@ -420,73 +422,6 @@
       margin-top: mixins.toRem(24);
       margin-inline: mixins.toRem(-15);
       border-radius: 0;
-    }
-  }
-}
-
-.segmented-control {
-  --segmented-inset: #{mixins.toRem(6)};
-  --segmented-left: var(--segmented-inset);
-  --segmented-width: calc(50% - var(--segmented-inset) * 2);
-
-  position: relative;
-  display: flex;
-  min-width: mixins.toRem(320);
-  margin-inline: auto;
-  border-radius: mixins.toRem(40);
-  background-color: var(--bg-section-color);
-  overflow: hidden;
-
-  &__indicator {
-    position: absolute;
-    inset-block: var(--segmented-inset);
-    left: var(--segmented-left);
-    width: var(--segmented-width);
-    border-radius: 0;
-    background-color: var(--bg-main-color);
-    box-shadow: 0 mixins.toRem(2) mixins.toRem(5) var(--shadow-input-color);
-    transition:
-      left 0.3s ease,
-      width 0.3s ease,
-      border-radius 0.3s ease;
-  }
-
-  &._first-active &__indicator {
-    border-radius: mixins.toRem(40) 0 0 mixins.toRem(40);
-  }
-
-  &._last-active &__indicator {
-    border-radius: 0 mixins.toRem(40) mixins.toRem(40) 0;
-  }
-
-  &__button {
-    position: relative;
-    z-index: 1;
-    flex: 1 1 auto;
-    padding: mixins.toRem(12) mixins.toRem(20);
-    color: var(--text-main-color);
-    font-size: mixins.toRem(15);
-    font-weight: 500;
-    line-height: math.div(22, 15);
-    white-space: nowrap;
-
-    .loaded & {
-      transition: color 0.3s ease;
-    }
-
-    &._active {
-      color: var(--text-green-color);
-    }
-  }
-
-  @media (width < #{mixins.toEm(variables.$mobile)}) {
-    min-width: 0;
-    width: mixins.toRem(240);
-
-    &__button {
-      padding: mixins.toRem(10) mixins.toRem(12);
-      font-size: mixins.toRem(13);
-      line-height: math.div(20, 13);
     }
   }
 }
