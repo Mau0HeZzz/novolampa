@@ -1,0 +1,79 @@
+<!--
+  @fileOverview Общая форма запроса расчёта для тематических страниц.
+-->
+
+<section class="section feedback-section projects-request solutions-request audience-request {{ modifier }}" id="{{ sectionId }}">
+  <div class="section__container feedback-section__container">
+    <div class="feedback-section__body projects-request__body solutions-request__body">
+      <div class="feedback-section__head">
+        <h2 class="feedback-section__title">Получите расчёт<br> освещения за 1 день</h2>
+        <p class="feedback-section__text">
+          Подготовим подбор оборудования и коммерческое предложение.
+        </p>
+      </div>
+
+      <form action="" class="form feedback-section__form">
+        <label class="form__item form__item_shadow">
+          <input type="text" name="name" class="form__input" placeholder=" " data-required data-error="Введите имя">
+          <span class="form__placeholder">Как вас зовут?</span>
+        </label>
+
+        <div class="feedback-section__fields">
+          <label class="form__item form__item_shadow">
+            <input type="tel" name="phone" class="form__input" placeholder=" " data-required="phone" data-error="Введите телефон">
+            <span class="form__placeholder">Телефон</span>
+          </label>
+          <label class="form__item form__item_shadow">
+            <input type="email" name="email" class="form__input" placeholder=" " data-required="email" data-error="Введите корректный email">
+            <span class="form__placeholder">Email</span>
+          </label>
+        </div>
+
+        <div class="feedback-section__fields">
+          <label class="form__item form__item_shadow">
+            <input type="text" name="object_type" class="form__input" placeholder=" ">
+            <span class="form__placeholder">Тип объекта</span>
+          </label>
+          <label class="form__item form__item_shadow">
+            <input type="text" name="area" class="form__input" placeholder=" ">
+            <span class="form__placeholder">Площадь/объём</span>
+          </label>
+        </div>
+
+        <label class="form__item form__item_shadow feedback-section__message">
+          <textarea
+            name="message"
+            class="form__input feedback-section__textarea projects-request__textarea"
+            placeholder=" "
+            rows="5"
+            data-required
+            data-error="Опишите задачу"
+          ></textarea>
+          <span class="form__placeholder">
+            Опишите задачу: что нужно осветить, какие есть требования, нужен ли расчёт,
+            сертификаты, документы, монтажные рекомендации
+          </span>
+        </label>
+
+        <label class="form__boxwrap feedback-section__agreement">
+          <input type="checkbox" name="agreement" data-required data-error="Необходимо ваше согласие">
+          <i class="form__box"></i>
+          <span class="form__label">
+            Я даю согласие на обработку персональных данных и соглашаюсь с
+            <a href="#">Политикой конфиденциальности</a> и
+            <a href="#">Пользовательским соглашением</a>
+          </span>
+        </label>
+
+        <button type="submit" class="action-button action-button_primary form__submit feedback-section__submit">
+          <span>Запросить расчёт</span>
+          <i>
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+              <use xlink:href="/img/sprite.svg#arrow-right"></use>
+            </svg>
+          </i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

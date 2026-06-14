@@ -1,0 +1,523 @@
+/**
+ * @fileOverview Стили страницы решений по освещению.
+ */
+
+@use "base/mixins";
+@use "variables";
+@use "sass:math";
+
+.solutions-page {
+  background-color: var(--bg-main-color);
+}
+
+.solutions-title {
+  font-family: var(--font-tik-tok);
+  font-size: mixins.toRem(40);
+  font-weight: 500;
+  line-height: math.div(44, 40);
+  letter-spacing: -0.02em;
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    font-size: mixins.toRem(30);
+    line-height: math.div(31, 30);
+  }
+}
+
+.solutions-subtitle {
+  margin-top: mixins.toRem(8);
+  color: var(--text-secondary-color);
+  font-size: mixins.toRem(15);
+  line-height: math.div(22, 15);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    margin-top: mixins.toRem(10);
+    font-size: mixins.toRem(14);
+    line-height: math.div(18, 14);
+  }
+}
+
+.solutions-types {
+  padding-top: mixins.toRem(90);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    padding-top: mixins.toRem(60);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, auto));
+    gap: mixins.toRem(30);
+    margin-top: mixins.toRem(34);
+
+    @media (width < #{mixins.toEm(variables.$tablet)}) {
+      gap: mixins.toRem(18);
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+      gap: mixins.toRem(16);
+      margin-top: mixins.toRem(24);
+    }
+  }
+}
+
+.solutions-media-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 440 / 332;
+  overflow: hidden;
+  border-radius: mixins.toRem(10);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    aspect-ratio: 337 / 337;
+    border-radius: mixins.toRem(5);
+  }
+
+  &_tall {
+    grid-row: span 2;
+    aspect-ratio: 440 / 697;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      grid-row: auto;
+      aspect-ratio: 337 / 337;
+    }
+  }
+
+  &_wide {
+    grid-column: span 2;
+    aspect-ratio: 910 / 337;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      grid-column: auto;
+      aspect-ratio: 337 / 337;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    .loaded & {
+      transition: scale 0.5s ease;
+    }
+  }
+
+  span {
+    position: absolute;
+    bottom: mixins.toRem(20);
+    left: mixins.toRem(20);
+    max-width: calc(100% - mixins.toRem(40));
+    padding: mixins.toRem(9) mixins.toRem(18);
+    border-radius: mixins.toRem(5);
+    color: var(--text-light-color);
+    background-color: var(--bg-card-overlay-color);
+    backdrop-filter: blur(mixins.toRem(10));
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(20);
+    font-weight: 500;
+    line-height: math.div(27, 20);
+    letter-spacing: -0.02em;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      right: mixins.toRem(10);
+      bottom: mixins.toRem(13);
+      left: mixins.toRem(10);
+      width: fit-content;
+      max-width: calc(100% - mixins.toRem(20));
+      padding: mixins.toRem(10) mixins.toRem(16);
+      font-size: mixins.toRem(18);
+      line-height: math.div(21, 18);
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover img {
+      scale: 1.03;
+    }
+  }
+}
+
+.solutions-calculator {
+  padding-top: mixins.toRem(112);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    padding-top: mixins.toRem(64);
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // aspect-ratio: 1380 / 202;
+    gap: mixins.toRem(40);
+    padding: mixins.toRem(54) mixins.toRem(50) mixins.toRem(50) mixins.toRem(64);
+    overflow: hidden;
+    border-radius: mixins.toRem(10);
+    background: url("/img/solutions/banner-bg.png") center / cover no-repeat;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      display: block;
+      // aspect-ratio: 337 / 256;
+      padding: mixins.toRem(28) mixins.toRem(16) mixins.toRem(19);
+      border-radius: mixins.toRem(10);
+      background-position: center;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(25);
+    font-weight: 500;
+    line-height: math.div(30, 25);
+    letter-spacing: -0.02em;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      font-size: mixins.toRem(21);
+      line-height: math.div(24, 21);
+    }
+  }
+
+  &__text {
+    margin-top: mixins.toRem(14);
+    color: var(--text-banner-color);
+    font-size: mixins.toRem(15);
+    line-height: math.div(23, 15);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      margin-top: mixins.toRem(10);
+      font-size: mixins.toRem(13);
+      line-height: math.div(18, 13);
+    }
+  }
+
+  &__button {
+    flex: 0 0 mixins.toRem(230);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      width: 100%;
+      margin-top: mixins.toRem(22);
+      padding-block: mixins.toRem(13);
+    }
+  }
+}
+
+.solutions-projects {
+  padding-top: mixins.toRem(112);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    padding-top: mixins.toRem(64);
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: mixins.toRem(30);
+  }
+
+  &__all {
+    min-width: mixins.toRem(136);
+    padding: mixins.toRem(13) mixins.toRem(20);
+    border: mixins.toRem(2) solid var(--border-light-color);
+    border-radius: mixins.toRem(5);
+    color: var(--text-secondary-color);
+    font-size: mixins.toRem(14);
+    line-height: math.div(20, 14);
+    text-align: center;
+
+    .loaded & {
+      transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-green-color);
+        border-color: var(--border-green-color);
+      }
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      width: 100%;
+      padding-block: mixins.toRem(13);
+      color: var(--text-green-color);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: mixins.toRem(30);
+    margin-top: mixins.toRem(42);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      grid-template-columns: 1fr;
+      gap: mixins.toRem(16);
+      margin-top: mixins.toRem(28);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: mixins.toRem(32);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      display: flex;
+      flex-direction: column;
+      gap: mixins.toRem(14);
+      margin-top: mixins.toRem(20);
+    }
+  }
+
+  &__more {
+    min-width: mixins.toRem(202);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      width: 100%;
+      padding-block: mixins.toRem(13);
+    }
+  }
+}
+
+.solutions-project-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 675 / 509;
+  overflow: hidden;
+  border-radius: mixins.toRem(10);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    aspect-ratio: 337 / 253;
+    border-radius: mixins.toRem(7);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    .loaded & {
+      transition: scale 0.5s ease;
+    }
+  }
+
+  span {
+    position: absolute;
+    right: mixins.toRem(34);
+    bottom: mixins.toRem(34);
+    left: mixins.toRem(34);
+    width: fit-content;
+    max-width: calc(100% - mixins.toRem(68));
+    padding: mixins.toRem(16) mixins.toRem(20);
+    border-radius: mixins.toRem(5);
+    color: var(--text-light-color);
+    background-color: var(--bg-card-overlay-color);
+    backdrop-filter: blur(mixins.toRem(10));
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(20);
+    font-weight: 500;
+    line-height: math.div(25, 20);
+    letter-spacing: -0.02em;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      right: mixins.toRem(14);
+      bottom: mixins.toRem(14);
+      left: mixins.toRem(14);
+      max-width: calc(100% - mixins.toRem(28));
+      padding: mixins.toRem(10) mixins.toRem(16);
+      font-size: mixins.toRem(18);
+      line-height: math.div(21, 18);
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover img {
+      scale: 1.03;
+    }
+  }
+}
+
+.solutions-process {
+  padding-top: mixins.toRem(88);
+  padding-bottom: mixins.toRem(118);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    padding-top: mixins.toRem(64);
+    padding-bottom: mixins.toRem(64);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: mixins.toRem(30);
+    margin-top: mixins.toRem(36);
+
+    @media (width < #{mixins.toEm(variables.$tablet)}) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      grid-template-columns: 1fr;
+      gap: mixins.toRem(14);
+      margin-top: mixins.toRem(26);
+    }
+  }
+
+  &__list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: mixins.toRem(16);
+    padding: mixins.toRem(43) mixins.toRem(33);
+    border-radius: mixins.toRem(8);
+    background-color: var(--bg-section-color);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      aspect-ratio: auto;
+      gap: mixins.toRem(20);
+      padding: mixins.toRem(20) mixins.toRem(15);
+      border-radius: mixins.toRem(5);
+    }
+  }
+
+  &__list strong {
+    color: var(--text-secondary-color);
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(40);
+    font-weight: 500;
+    line-height: 1;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      flex: 0 0 mixins.toRem(46);
+      font-size: mixins.toRem(30);
+    }
+  }
+
+  &__list span {
+    color: var(--text-secondary-color);
+    font-size: mixins.toRem(15);
+    line-height: math.div(22, 15);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      font-size: mixins.toRem(14);
+      line-height: math.div(18, 14);
+    }
+  }
+}
+
+.solutions-popular {
+  padding-top: mixins.toRem(90);
+  padding-bottom: mixins.toRem(98);
+  border-radius: mixins.toRem(10);
+  background-color: var(--bg-section-color);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    padding-top: mixins.toRem(54);
+    padding-bottom: mixins.toRem(64);
+    border-radius: 0;
+  }
+
+  &__subtitle {
+    max-width: mixins.toRem(850);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: mixins.toRem(30);
+    margin-top: mixins.toRem(38);
+
+    @media (width < #{mixins.toEm(variables.$tablet)}) {
+      gap: mixins.toRem(16);
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      grid-template-columns: 1fr;
+      gap: mixins.toRem(14);
+      margin-top: mixins.toRem(28);
+    }
+  }
+}
+
+.solutions-popular-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  aspect-ratio: 440 / 192;
+  overflow: hidden;
+  padding: mixins.toRem(24) mixins.toRem(48);
+  border: mixins.toRem(2) solid transparent;
+  border-radius: mixins.toRem(10);
+  background-color: var(--bg-main-color);
+  box-shadow: 0 mixins.toRem(8) mixins.toRem(24) var(--shadow-card-color);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    aspect-ratio: 337 / 133;
+    padding: mixins.toRem(20) mixins.toRem(16);
+    border-radius: mixins.toRem(5);
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(20);
+    font-weight: 500;
+    line-height: math.div(26, 20);
+    letter-spacing: -0.02em;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      max-width: mixins.toRem(130);
+      font-size: mixins.toRem(18);
+      line-height: math.div(22, 18);
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    object-fit: contain;
+    object-position: var(--object-position, right center);
+    pointer-events: none;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      width: 50%;
+    }
+  }
+
+  .loaded & {
+    transition:
+      border-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: var(--border-green-color);
+      transform: translateY(mixins.toRem(-2));
+    }
+  }
+}
+
+.solutions-request {
+  &__body {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.55fr);
+
+    @media (width < #{mixins.toEm(variables.$tablet)}) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

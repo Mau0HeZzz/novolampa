@@ -113,6 +113,98 @@ function initSliders() {
     }).mount();
   });
 
+  document.querySelectorAll('.solution-zones__slider').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    new Splide(element, {
+      type: 'slide',
+      perPage: 3,
+      perMove: 1,
+      gap: 30,
+      arrows: false,
+      pagination: false,
+      rewind: true,
+      breakpoints: {
+        767: {
+          fixedWidth: '250px',
+          gap: 12,
+          pagination: true,
+        },
+      },
+    }).mount();
+  });
+
+  document.querySelectorAll('.solution-other__slider').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    new Splide(element, {
+      type: 'slide',
+      perPage: 3,
+      perMove: 1,
+      gap: 30,
+      arrows: false,
+      pagination: false,
+      rewind: true,
+      breakpoints: {
+        767: {
+          fixedWidth: '225px',
+          gap: 12,
+          pagination: true,
+        },
+      },
+    }).mount();
+  });
+
+  document.querySelectorAll('.audience-process__slider').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    new Splide(element, {
+      type: 'slide',
+      perPage: 4,
+      perMove: 1,
+      gap: 30,
+      arrows: false,
+      pagination: false,
+      rewind: true,
+      breakpoints: {
+        991: {
+          perPage: 2,
+          gap: 20,
+        },
+        767: {
+          fixedWidth: '252px',
+          gap: 10,
+          pagination: true,
+        },
+      },
+    }).mount();
+  });
+
+  document.querySelectorAll('.about-slider').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    new Splide(element, {
+      type: 'slide',
+      perPage: Number(element.dataset.aboutPerPage),
+      perMove: 1,
+      gap: 30,
+      arrows: false,
+      pagination: false,
+      rewind: true,
+      breakpoints: {
+        991: {
+          perPage: 2,
+          gap: 20,
+        },
+        767: {
+          fixedWidth: '252px',
+          gap: 10,
+          pagination: true,
+        },
+      },
+    }).mount();
+  });
+
   document.querySelectorAll('.splide:not(.promo-catalog-popup)').forEach((element) => {
     if (element.classList.contains('is-initialized')) return;
 

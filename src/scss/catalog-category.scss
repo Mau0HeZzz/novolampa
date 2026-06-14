@@ -271,7 +271,9 @@
     .select {
       position: relative;
       z-index: 3;
-      min-width: mixins.toRem(214);
+      @media (width >= #{mixins.toEm(variables.$mobile)}) {
+        min-width: mixins.toRem(214);
+      }
     }
 
     .select__title {
@@ -347,7 +349,6 @@
 }
 
 .product-mini-card_catalog {
-  padding: mixins.toRem(14) mixins.toRem(14) mixins.toRem(16);
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     padding: mixins.toRem(9) mixins.toRem(8) mixins.toRem(10);
@@ -386,15 +387,15 @@
   }
 
   .product-mini-card__media {
-    aspect-ratio: 220 / 175;
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      aspect-ratio: 151 / 126;
-    }
-
     img {
-      max-width: 90%;
-      max-height: 88%;
+      width: 100%;
+      aspect-ratio: 220 / 175;
+      object-fit: contain;
+      object-position: center;
+
+      @media (width < #{mixins.toEm(variables.$mobile)}) {
+        aspect-ratio: 151 / 126;
+      }
     }
   }
 
@@ -503,7 +504,7 @@
       }
     }
 
-    svg {
+    :is(svg, img) {
       max-width: 60%;
       max-height: 60%;
     }
@@ -675,7 +676,7 @@
   }
 
   &__body {
-    padding: 0 mixins.toRem(14) mixins.toRem(16);
+    padding: 0 mixins.toRem(20) mixins.toRem(25);
 
     &_links {
       display: grid;

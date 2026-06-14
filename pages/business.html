@@ -1,0 +1,140 @@
+<!--
+  @fileOverview Страница предложений для бизнеса и проектных организаций.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Бизнесу"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="audience-page business-page">
+        <include
+          src="src/html/_audience_hero.html"
+          locals='{
+            "modifier": "business-hero",
+            "breadcrumb": "Бизнесу",
+            "imagePath": "/img/business/hero-bg.png",
+            "title": "Освещение для бизнеса<br>и проектных поставок",
+            "text": "Комплексные поставки освещения для коммерческих<br class=\"_md-768-dn\"> объектов. Работаем с девелоперами, подрядчиками<br class=\"_md-768-dn\"> и проектными организациями.",
+            "primaryText": "Получить КП",
+            "primaryHref": "#businessRequest",
+            "secondaryText": "Отправить проект",
+            "secondaryHref": "#businessRequest"
+          }'
+        ></include>
+
+        <section class="section business-stats">
+          <div class="section__container business-stats__container">
+            <div class="business-stats__grid">
+              <div class="project-scheme__metric"><strong>500+</strong><span>реализованных объектов</span></div>
+              <div class="project-scheme__metric"><strong>10 000+</strong><span>поставленных светильников</span></div>
+              <div class="project-scheme__metric"><strong>200+</strong><span>партнеров</span></div>
+              <div class="project-scheme__metric"><strong>5 лет</strong><span>работы с проектами</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section business-opportunities">
+          <div class="section__container business-opportunities__container">
+            <h2 class="solutions-title">Возможности для бизнеса</h2>
+            <div class="business-opportunities__grid">
+              <div class="business-opportunities__list">
+                <article><h3>Проектные поставки</h3><p>Комплектация объектов освещением под проект.</p></article>
+                <article><h3>Тендеры</h3><p>Участвуем в тендерах и конкурсных процедурах.</p></article>
+                <article><h3>Госзакупки</h3><p>Работаем по 44-ФЗ и 223-ФЗ.</p></article>
+                <article><h3>КП за 2 часа</h3><p>Готовим коммерческое предложение в день обращения.</p></article>
+                <article><h3>Документы</h3><p>Сертификаты, паспорта и техническая документация.</p></article>
+              </div>
+              <div class="business-opportunities__media">
+                <img src="/img/business/opportunities-1.png" alt="Подготовка проектной документации">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section business-industries">
+          <div class="section__container business-industries__container">
+            <h2 class="solutions-title">Отрасли</h2>
+            <div class="business-industries__grid">
+              <a href="#" class="business-industry-card business-industry-card_wide">
+                <img src="/img/business/industries-1.png" alt="">
+                <span>Жилые комплексы</span>
+              </a>
+              <a href="#" class="business-industry-card">
+                <img src="/img/business/industries-2.png" alt="">
+                <span>Офисы</span>
+              </a>
+              <a href="#" class="business-industry-card">
+                <img src="/img/business/industries-3.png" alt="">
+                <span>Ритейл</span>
+              </a>
+              <a href="#" class="business-industry-card">
+                <img src="/img/business/industries-4.png" alt="">
+                <span>HoReCa</span>
+              </a>
+              <a href="#" class="business-industry-card">
+                <img src="/img/business/industries-5.png" alt="">
+                <span>Архитектурное<br> освещение</span>
+              </a>
+              <a href="#" class="business-industry-card business-industry-card_wide">
+                <img src="/img/business/industries-6.png" alt="">
+                <span>Коммерческая<br> недвижимость</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section audience-process business-process">
+          <div class="section__container audience-process__container">
+            <h2 class="solutions-title">Как мы работаем</h2>
+            <div class="splide audience-process__slider" aria-label="Этапы работы с бизнесом">
+              <div class="splide__track audience-process__track">
+                <ol class="splide__list">
+                  <li class="splide__slide audience-process-card">
+                    <strong>01</strong>
+                    <h3>Получаем проект</h3>
+                    <p>Вы присылаете планировку или спецификацию.</p>
+                  </li>
+                  <li class="splide__slide audience-process-card">
+                    <strong>02</strong>
+                    <h3>Подбор оборудования</h3>
+                    <p>Подбираем светильники под задачи проекта.</p>
+                  </li>
+                  <li class="splide__slide audience-process-card">
+                    <strong>03</strong>
+                    <h3>Коммерческое предложение</h3>
+                    <p>Готовим смету и техническую документацию.</p>
+                  </li>
+                  <li class="splide__slide audience-process-card">
+                    <strong>04</strong>
+                    <h3>Реализация</h3>
+                    <p>Комплектация объекта и сопровождение.</p>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <include
+          src="src/html/_audience_projects.html"
+          locals='{
+            "modifier": "business-projects",
+            "sectionId": "businessProjects",
+            "actionsClass": "business-projects__actions"
+          }'
+        ></include>
+
+        <include
+          src="src/html/_audience_request.html"
+          locals='{"modifier": "business-request", "sectionId": "businessRequest"}'
+        ></include>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

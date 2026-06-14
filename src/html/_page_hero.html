@@ -1,0 +1,28 @@
+<!--
+  @fileOverview Универсальный hero-блок внутренних страниц.
+-->
+
+<section class="page-hero {{ modifier }}" style="--page-hero-image: url('{{ imagePath }}')">
+  <div class="page-hero__body">
+    <if condition="showBreadcrumbs">
+      <ul class="section__breadcrumbs breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <each loop="item, index in items">
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ item === 'Главная' ? '/pages/home.html' : '#' }}" itemprop="item">
+              <span itemprop="name">{{ item }}</span>
+            </a>
+            <meta itemprop="position" content="{{ index + 1 }}">
+          </li>
+        </each>
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">{{ mainItem }}</span>
+          <meta itemprop="position" content="{{ items.length + 1 }}">
+        </li>
+      </ul>
+    </if>
+    <div class="page-hero__content {{ contentClass }}">
+      <h1 class="page-hero__title {{ titleClass }}">{{{ title }}}</h1>
+      <p class="page-hero__text {{ textClass }}"><span>{{{ text }}}</span></p>
+    </div>
+  </div>
+</section>

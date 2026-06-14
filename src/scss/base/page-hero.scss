@@ -1,0 +1,103 @@
+/**
+ * @fileOverview Стили универсального hero-блока внутренних страниц.
+ */
+
+@use "mixins";
+@use "../variables";
+@use "sass:math";
+
+.page-hero {
+  position: relative;
+  width: calc(100% - mixins.toRem(24));
+  max-width: mixins.toRem(1576);
+  margin-inline: auto;
+  border-radius: mixins.toRem(10);
+  color: var(--text-light-color);
+  background: var(--page-hero-image) center / cover no-repeat;
+  
+  @media (width >= #{mixins.toEm(variables.$mobile)}) {
+    overflow: hidden;
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    width: 100%;
+    border-radius: 0;
+    background-position: 51% center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: mixins.toRem(24) mixins.toRem(100) mixins.toRem(36);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      padding: mixins.toRem(16) mixins.toRem(15) 0;
+    }
+  }
+
+  .breadcrumbs {
+    color: var(--text-light-muted-color);
+  }
+
+  &__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: mixins.toRem(60) mixins.toRem(86);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      justify-content: space-between;
+      padding-top: mixins.toRem(54);
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-tik-tok);
+    font-size: mixins.toRem(40);
+    font-weight: 500;
+    line-height: math.div(39, 40);
+    letter-spacing: -0.02em;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      font-size: mixins.toRem(30);
+      line-height: math.div(32, 30);
+    }
+  }
+
+  &__text {
+    span {
+      margin-top: mixins.toRem(36);
+      font-size: mixins.toRem(16);
+      font-weight: 500;
+      line-height: math.div(24, 16);
+      display: block;
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      position: relative;
+      span {
+        // margin-inline: mixins.toRem(-7);
+        margin-top: auto;
+        margin-bottom: mixins.toRem(-28);
+        padding: mixins.toRem(20) mixins.toRem(20) mixins.toRem(22);
+        border-radius: mixins.toRem(5);
+        background: var(--bg-header-glass-color);
+        backdrop-filter: blur(mixins.toRem(10));
+        font-size: mixins.toRem(15);
+        line-height: math.div(21, 15);
+      }
+
+      &::before {
+        content:'';
+        position: absolute;
+        inset: mixins.toRem(-6);
+        border-radius: mixins.toRem(10);
+        background: linear-gradient(111.49deg, rgba(255, 255, 255, 0.08) -8.95%, rgba(255, 255, 255, 0.002) 114%);
+        backdrop-filter: blur(mixins.toRem(20));
+        height: calc(100% + mixins.toRem(12) + mixins.toRem(28));
+      }
+    }
+  }
+}

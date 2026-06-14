@@ -1,0 +1,87 @@
+<!--
+  @fileOverview Страница списка статей базы знаний NOVOLAMPA.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Статьи"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="knowledge-page knowledge-articles-page">
+        <section class="section page-intro knowledge-intro">
+          <div class="section__container page-intro__container knowledge-intro__container">
+            <div class="section__head page-intro__head">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная", "База знаний"], "mainItem": "Статьи"}'
+              ></include>
+              <h1 class="section__title page-intro__title">Статьи</h1>
+              <include
+                src="src/html/_knowledge_tabs.html"
+                locals='{"articlesClass":"_active","selectionClass":"","toolsClass":"","iesClass":""}'
+              ></include>
+            </div>
+          </div>
+        </section>
+
+        <section class="section knowledge-articles">
+          <div class="section__container knowledge-articles__container">
+            <nav class="knowledge-filters" aria-label="Темы статей">
+              <a href="#" class="knowledge-filters__item _active">Все</a>
+              <div class="knowledge-filters__list _md-768-dn">
+                <a href="#" class="knowledge-filters__item">Полезная техническая информация</a>
+                <a href="#" class="knowledge-filters__item">Инструкции по замене оборудования</a>
+                <a href="#" class="knowledge-filters__item">Светодиодная лента</a>
+                <a href="#" class="knowledge-filters__item">Внутреннее освещение</a>
+              </div>
+              <a href="#" class="knowledge-filters__all">
+                <span>Показать все</span>
+              </a>
+            </nav>
+
+            <article class="knowledge-featured">
+              <div class="knowledge-featured__content">
+                <h2>Низкая цветопередача: почему свет так важен для кухни и продуктов</h2>
+                <p>
+                  Что обеспечит качество светодиодной ленты? Ответ прост: качество может гарантировать надежный производитель,
+                  который в состоянии обеспечить высокий уровень сборки, бирирование, и дать официальную гарантию от 5 лет.
+                </p>
+                <p>
+                  Качество светодиодной ленты вы можете распознать визуально и изучив информацию о производителе.
+                </p>
+                <a href="/pages/knowledge-base-article.html" class="action-button action-button_outline knowledge-featured__button">Читать статью</a>
+              </div>
+              <a href="/pages/knowledge-base-article.html" class="knowledge-featured__media">
+                <img src="/img/knowlege-base/item-1.png" alt="Освещение кухни">
+                <span class="knowledge-featured__tag">Нормы освещения</span>
+                <mark>Новая статья</mark>
+              </a>
+            </article>
+
+            <div class="knowledge-articles__grid">
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"2","tag":"Управление светом","title":"Освещение детских дошкольных и школьных учреждений: современные требования и решения","description":"Особую роль при выборе светильников играет качество освещения, его соответствие всем требованиям СанПиН, экономичность и безопасность."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"3","tag":"Нормы освещения","title":"Как правильно подобрать уличное освещение","description":"Качественное уличное освещение обеспечивает безопасность, эстетику и комфорт, позволяя эффективно использовать пространство после заката."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"4","tag":"Энергосервисный контракт","title":"Промышленное освещение","description":"Проработанные решения по обеспечению предприятия освещением, в ходе выполнения проектных работ и правильный выбор оборудования."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"5","tag":"Управление светом","title":"Охранное освещение","description":"Охранное освещение представляет собой комплексную систему, состоящую из светотехнического и электротехнического оборудования."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"6","tag":"Нормы освещения","title":"Использование теплого и холодного освещения","description":"Искусственный свет значительно влияет на самочувствие людей, на их комфортное ощущение от пребывания в помещении."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"7","tag":"Энергосервисный контракт","title":"Почему светодиодные лампы продолжают светиться после выключения и как это исправить","description":"Светодиодные лампы завоевали популярность благодаря своей энергоэффективности, долговечности и экологической безопасности."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"8","tag":"Управление светом","title":"Освещение детских дошкольных и школьных учреждений: современные требования и решения","description":"Особую роль при выборе светильников играет качество освещения, его соответствие всем требованиям СанПиН."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"9","tag":"Нормы освещения","title":"Как правильно подобрать уличное освещение","description":"Качественное уличное освещение обеспечивает безопасность, эстетику и комфорт, позволяя эффективно использовать пространство."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"10","tag":"Энергосервисный контракт","title":"Промышленное освещение","description":"Проработанные решения по обеспечению предприятия освещением и правильный выбор осветительного оборудования."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"11","tag":"Управление светом","title":"Охранное освещение","description":"Охранное освещение представляет собой комплексную систему, состоящую из светотехнического и электротехнического оборудования."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"12","tag":"Нормы освещения","title":"Использование теплого и холодного освещения","description":"Искусственный свет значительно влияет на самочувствие людей, на их комфортное ощущение от пребывания в помещении."}'></include>
+              <include src="src/html/_knowledge_article_card.html" locals='{"image":"13","tag":"Энергосервисный контракт","title":"Почему светодиодные лампы продолжают светиться после выключения и как это исправить","description":"Светодиодные лампы завоевали популярность благодаря своей энергоэффективности, долговечности и экологической безопасности."}'></include>
+            </div>
+
+            <include src="src/html/_pagination.html" locals='{"last":"25"}'></include>
+          </div>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

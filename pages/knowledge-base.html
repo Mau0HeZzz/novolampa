@@ -1,0 +1,86 @@
+<!--
+  @fileOverview Главная страница базы знаний NOVOLAMPA.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "База знаний"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="knowledge-page">
+        <section class="section page-intro knowledge-intro">
+          <div class="section__container page-intro__container knowledge-intro__container">
+            <div class="section__head page-intro__head">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная"], "mainItem": "База знаний"}'
+              ></include>
+              <h1 class="section__title page-intro__title">База знаний</h1>
+              <include
+                src="src/html/_knowledge_tabs.html"
+                locals='{"articlesClass":"","selectionClass":"","toolsClass":"","iesClass":""}'
+              ></include>
+            </div>
+          </div>
+        </section>
+
+        <section class="section knowledge-overview">
+          <div class="section__container knowledge-overview__container">
+            <div class="knowledge-overview__hero">
+              <h2>Экспертная база знаний<br> по освещению</h2>
+              <p>
+                Гайды, схемы света, расчеты освещения, видео,<br class="_md-768-dn">
+                IES файлы и практические инструменты<br class="_md-768-dn">
+                для дизайнеров, архитекторов и владельцев квартир.
+              </p>
+            </div>
+
+            <div class="knowledge-overview__grid">
+              <a href="/pages/knowledge-base-articles.html" class="knowledge-category-card">
+                <svg width="45" height="45" viewBox="0 0 45 45" aria-hidden="true">
+                  <use xlink:href="/img/colored.svg#knowlege-base-1"></use>
+                </svg>
+                <div>
+                  <h2>Статьи</h2>
+                  <p>Экспертные материалы о видах освещения, выборе ламп и трендах светодизайна.</p>
+                </div>
+              </a>
+              <a href="#" class="knowledge-category-card">
+                <svg width="45" height="45" viewBox="0 0 45 45" aria-hidden="true">
+                  <use xlink:href="/img/colored.svg#knowlege-base-2"></use>
+                </svg>
+                <div>
+                  <h2>Подбор по задачам</h2>
+                  <p>Помогаем выбрать освещение для конкретного помещения или проекта — быстро и точно.</p>
+                </div>
+              </a>
+              <a href="#" class="knowledge-category-card">
+                <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+                  <use xlink:href="/img/colored.svg#knowlege-base-3"></use>
+                </svg>
+                <div>
+                  <h2>Инструменты</h2>
+                  <p>Калькуляторы, онлайн-расчёты и сервисы для проектирования световых сценариев</p>
+                </div>
+              </a>
+              <a href="#" class="knowledge-category-card">
+                <svg width="49" height="49" viewBox="0 0 49 49" aria-hidden="true">
+                  <use xlink:href="/img/colored.svg#knowlege-base-4"></use>
+                </svg>
+                <div>
+                  <h2>EIS</h2>
+                  <p>Система управления освещением: интеграция, настройка и документация для специалистов.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

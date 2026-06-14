@@ -1,0 +1,326 @@
+<!--
+  @fileOverview Страница о компании NOVOLAMPA.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "О компании"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="about-page">
+        <section class="about-hero">
+          <div class="page-hero about-hero__media" style="--page-hero-image: url('/img/about/hero-bg.png')">
+            <div class="page-hero__body about-hero__body">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная"], "mainItem": "О компании"}'
+              ></include>
+
+              <div class="about-hero__content">
+                <h1 class="page-hero__title about-hero__title">
+                  Светотехническая компания<br class="_md-768-dn"> полного цикла
+                </h1>
+                <p class="about-hero__description">
+                  Мы проектируем и поставляем светодиодные решения для бизнеса, архитектуры и интерьеров.
+                  Помогаем создать правильный свет — от идеи и расчета до реализации проекта.
+                </p>
+                <div class="about-hero__actions">
+                  <a href="#aboutRequest" class="action-button action-button_primary about-hero__button">
+                    Обсудить проект
+                    <i>
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                        <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                      </svg>
+                    </i>
+                  </a>
+                  <a href="/pages/projects.html" class="action-button about-hero__button about-hero__button_outline">
+                    Наши проекты
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="solution-detail-hero__metrics"
+            data-da=".about-hero__metrics-slot, 768, last"
+          >
+            <div class="solution-detail-hero__metrics-body">
+              <div class="solution-detail-hero__metric">
+                <strong>10+</strong>
+                <span>лет опыта</span>
+              </div>
+              <div class="solution-detail-hero__metric">
+                <strong>1000+</strong>
+                <span>проектов</span>
+              </div>
+              <div class="solution-detail-hero__metric">
+                <strong>50+</strong>
+                <span>брендов</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="about-hero__metrics-slot"></div>
+
+        <section class="section contacts-showrooms about-showrooms">
+          <div class="section__container contacts-showrooms__container about-showrooms__container">
+            <h2 class="solutions-title">Наши шоурумы</h2>
+            <p class="solutions-subtitle _md-768-dn">
+              Вы можете посмотреть световые решения вживую в наших шоурумах в Санкт-Петербурге или пройти виртуальный тур.
+            </p>
+
+            <div class="contacts-showrooms__grid about-showrooms__grid" data-gallery>
+              <a
+                href="https://yandex.ru/map-widget/v1/org/novolampa/77256990436/?indoorLevel=1&l=stv%2Csta&ll=30.304140%2C59.964687&panorama%5Bdirection%5D=248.437863%2C-9.107031&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=30.304355%2C59.964811&panorama%5Bspan%5D=115.088307%2C60.000000&utm_source=share&z=20"
+                class="showroom-card"
+                data-iframe="true"
+                data-iframe-title="Виртуальный тур по шоуруму NOVOLAMPA на Петроградской"
+              >
+                <img
+                  src="/img/contacts/showroom-1.png"
+                  class="showroom-card__image"
+                  alt="Шоурум NOVOLAMPA на Петроградской"
+                >
+                <div class="showroom-card__content">
+                  <h3 class="showroom-card__title">Шоурум м. Петроградская</h3>
+                  <div class="showroom-card__footer">
+                    <div class="showroom-card__info">
+                      <p class="showroom-card__address">ул. Бармалеева, дом 18</p>
+                      <p class="showroom-card__schedule">Работаем Пн–Пт с 10 до 19, Сб с 11 до 18</p>
+                    </div>
+                    <span class="action-button action-button_outline showroom-card__button">Тур по шоуруму</span>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="https://yandex.ru/map-widget/v1/?ll=30.270295%2C59.943431&mode=search&oid=169700749246&ol=biz&panorama%5Bdirection%5D=268.521030%2C-5.894340&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=30.138878%2C59.848465&panorama%5Bspan%5D=107.675257%2C60.000000&sll=30.270295%2C59.943228&source=serp_navig&tab=panorama&text=novolampa&z=11"
+                class="showroom-card"
+                data-iframe="true"
+                data-iframe-title="Виртуальный тур по шоуруму NOVOLAMPA на Проспекте Ветеранов"
+              >
+                <img
+                  src="/img/contacts/showroom-2.png"
+                  class="showroom-card__image"
+                  alt="Шоурум NOVOLAMPA на Проспекте Ветеранов"
+                >
+                <div class="showroom-card__content">
+                  <h3 class="showroom-card__title">Шоурум м.Проспект Ветеранов</h3>
+                  <div class="showroom-card__footer">
+                    <div class="showroom-card__info">
+                      <p class="showroom-card__address">Петергофском шоссе, дом 55, корпус 1</p>
+                      <p class="showroom-card__schedule">Работаем Пн–Пт с 10 до 19</p>
+                    </div>
+                    <span class="action-button action-button_outline showroom-card__button">Тур по шоуруму</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section about-services">
+          <div class="section__container about-services__container">
+            <h2 class="solutions-title">Чем мы занимаемся</h2>
+            <p class="solutions-subtitle _md-768-dn">
+              Мы объединяем экспертизу в проектировании света и поставках оборудования, чтобы создавать эффективные и красивые световые решения.
+            </p>
+
+            <div class="splide about-slider about-services__slider" data-about-per-page="3">
+              <div class="splide__track about-services__track">
+                <ul class="splide__list">
+                  <li class="splide__slide about-info-card">
+                    <svg width="41" height="41" viewBox="0 0 41 41" aria-hidden="true">
+                      <use xlink:href="/img/colored.svg#what-we-do-1"></use>
+                    </svg>
+                    <h3>Проектирование освещения</h3>
+                    <p>Светотехнические расчеты, подбор оборудования, разработка концепций освещения.</p>
+                  </li>
+                  <li class="splide__slide about-info-card">
+                    <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+                      <use xlink:href="/img/colored.svg#what-we-do-2"></use>
+                    </svg>
+                    <h3>Поставка оборудования</h3>
+                    <p>Ленты, профили, драйверы, светильники и системы управления освещением от ведущих производителей.</p>
+                  </li>
+                  <li class="splide__slide about-info-card">
+                    <svg width="37" height="37" viewBox="0 0 37 37" aria-hidden="true">
+                      <use xlink:href="/img/colored.svg#what-we-do-3"></use>
+                    </svg>
+                    <h3>Комплексные проекты</h3>
+                    <p>Освещение офисов, магазинов, фасадов, складов и архитектурных объектов.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <include
+          src="src/html/_audience_projects.html"
+          locals='{
+            "modifier": "about-projects",
+            "sectionId": "aboutProjects",
+            "actionsClass": "about-projects__actions"
+          }'
+        ></include>
+
+        <section class="section about-brands">
+          <div class="section__container about-brands__container">
+            <h2 class="solutions-title">Поставщики и бренды</h2>
+            <p class="solutions-subtitle">Мы работаем с проверенными производителями светодиодного оборудования</p>
+
+            <div class="about-brands__grid">
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-1.png" alt="Arlight"></span>
+                <small>www.arlight.ru</small>
+              </a>
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-2.png" alt="Maytoni"></span>
+                <small>www.maytoni.ru</small>
+              </a>
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-3.png" alt="Voltum"></span>
+                <small>www.voltum.ru</small>
+              </a>
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-4.png" alt="Freya"></span>
+                <small>www.freya-light.com</small>
+              </a>
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-5.png" alt="Voltega"></span>
+                <small>Voltega</small>
+              </a>
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-6.png" alt="Isonex"></span>
+                <small>www.isonex.ru</small>
+              </a>
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-7.png" alt="Lightstar Group"></span>
+                <small>www.lightstar.ru</small>
+              </a>
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-8.png" alt="Geniled"></span>
+                <small>www.geniled.ru</small>
+              </a>
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-9.png" alt="LedMonster"></span>
+                <small>www.ledmonster.ru</small>
+              </a>
+              <a href="#" class="about-brand-card">
+                <span><img src="/img/about/brands-10.png" alt="SVT"></span>
+                <small>www.gcsvt.ru</small>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section about-team">
+          <div class="section__container about-team__container">
+            <h2 class="solutions-title">Наша команда</h2>
+            <p class="solutions-subtitle">
+              Над проектами освещения работают инженеры, проектировщики и специалисты по подбору оборудования.
+            </p>
+
+            <div class="splide about-slider about-team__slider" data-about-per-page="4">
+              <div class="splide__track about-team__track">
+                <ul class="splide__list">
+                  <li class="splide__slide about-team-card">
+                    <div class="about-team-card__image">
+                      <img src="/img/about/command-1.png" alt="Иван Иванов">
+                    </div>
+                    <h3>Иван Иванов</h3>
+                    <p>Светотехнический инженер</p>
+                  </li>
+                  <li class="splide__slide about-team-card">
+                    <div class="about-team-card__image">
+                      <img src="/img/about/command-2.png" alt="Сергей Константинов">
+                    </div>
+                    <h3>Сергей Константинов</h3>
+                    <p>Проектировщик освещения</p>
+                  </li>
+                  <li class="splide__slide about-team-card">
+                    <div class="about-team-card__image">
+                      <img src="/img/about/command-3.png" alt="Василий Петрович">
+                    </div>
+                    <h3>Василий Петрович</h3>
+                    <p>Специалист по оборудованию</p>
+                  </li>
+                  <li class="splide__slide about-team-card">
+                    <div class="about-team-card__image">
+                      <img src="/img/about/command-4.png" alt="Дарья Соловьёва">
+                    </div>
+                    <h3>Дарья Соловьёва</h3>
+                    <p>Технический консультант</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section about-clients">
+          <div class="section__container about-clients__container">
+            <h2 class="solutions-title">Наши клиенты</h2>
+            <p class="solutions-subtitle">Мы работаем с профессионалами индустрии и бизнесом</p>
+
+            <div class="about-clients__body">
+              <div class="about-clients__list">
+                <article>Дизайнеры интерьеров</article>
+                <article>Архитекторы</article>
+                <article>Строительные компании</article>
+                <article>Коммерческие<br class="_md-768-dn"> объекты</article>
+              </div>
+              <img src="/img/about/clients-image.png" class="about-clients__image" alt="Архитектурное освещение здания">
+            </div>
+          </div>
+        </section>
+
+        <section class="section about-warranty">
+          <div class="section__container about-warranty__container">
+            <h2 class="solutions-title">Гарантии и надежность</h2>
+
+            <div class="splide about-slider about-warranty__slider" data-about-per-page="3">
+              <div class="splide__track about-warranty__track">
+                <ul class="splide__list">
+                  <li class="splide__slide about-info-card">
+                    <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+                      <use xlink:href="/img/colored.svg#about-warranty-1"></use>
+                    </svg>
+                    <h3>Гарантия производителя</h3>
+                    <p>На оборудование предоставляется официальная гарантия</p>
+                  </li>
+                  <li class="splide__slide about-info-card">
+                    <svg width="41" height="41" viewBox="0 0 41 41" aria-hidden="true">
+                      <use xlink:href="/img/colored.svg#about-warranty-2"></use>
+                    </svg>
+                    <h3>Подбор света</h3>
+                    <p>Формируем список оборудования и световую концепцию.</p>
+                  </li>
+                  <li class="splide__slide about-info-card">
+                    <svg width="42" height="40" viewBox="0 0 42 40" aria-hidden="true">
+                      <use xlink:href="/img/colored.svg#about-warranty-3"></use>
+                    </svg>
+                    <h3>Спецификация</h3>
+                    <p>Готовим коммерческое предложение и IES файлы.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <include
+          src="src/html/_audience_request.html"
+          locals='{"modifier": "about-request", "sectionId": "aboutRequest"}'
+        ></include>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

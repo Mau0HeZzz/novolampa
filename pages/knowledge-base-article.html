@@ -1,0 +1,255 @@
+<!--
+  @fileOverview Шаблон детальной страницы статьи базы знаний NOVOLAMPA.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Низкая цветопередача: почему свет так важен для кухни и продуктов"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="knowledge-page knowledge-article-page">
+        <section class="section page-intro knowledge-article-intro">
+          <div class="section__container page-intro__container knowledge-article-intro__container">
+            <div class="section__head page-intro__head knowledge-article-intro__head">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная", "База знаний", "Статьи"], "mainItem": "Низкая цветопередача: почему свет так важен для кухни и продуктов"}'
+              ></include>
+              <div class="knowledge-article-intro__main">
+                <h1 class="section__title page-intro__title knowledge-article-intro__title">
+                  Низкая цветопередача: почему свет так важен для кухни и продуктов
+                </h1>
+                <a href="/pages/knowledge-base-articles.html" class="action-button project-detail-intro__back">
+                  <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#arrow-left"></use>
+                  </svg>
+                  К статьям
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section knowledge-article">
+          <div class="section__container knowledge-article__container">
+            <div class="knowledge-article__content _content">
+              <figure>
+                <img src="/img/knowlege-base/article-1.png" alt="Фрукты на кухне с тёплым освещением">
+                <figcaption>Нормы освещения</figcaption>
+              </figure>
+
+              <p>
+                <strong>
+                  Замечали, что купленные в магазине спелые, сочные фрукты дома вдруг кажутся несвежими?
+                  Причина может скрываться в освещении с низкой цветопередачей.
+                </strong>
+              </p>
+
+              <h2>Что такое индекс цветопередачи? H2</h2>
+              <p>
+                Освещение в детских дошкольных и школьных учреждениях играет решающую роль в формировании безопасной и
+                комфортной среды, которая непосредственно влияет на здоровье, концентрацию и общий уровень успеваемости детей.
+                Проектирование и эксплуатация систем освещения в образовательных организациях занимаются специалисты,
+                руководствующиеся рядом актуальных нормативных актов, включая своды правил (СП), национальные стандарты (ГОСТ),
+                санитарные требования и правила. При этом устройства электроустановок (ПУЭ), нормы рассмотрения основных
+                требований к освещению, а также значимость нормирования и влияние старых светильников.
+              </p>
+
+              <hr>
+
+              <h3>Пример таблицы</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>RT</td>
+                    <td>2&gt;</td>
+                    <td>5000</td>
+                    <td>12V</td>
+                    <td>Blue</td>
+                    <td></td>
+                    <td>3528</td>
+                    <td>300 LED</td>
+                    <td>LUX</td>
+                  </tr>
+                  <tr>
+                    <td>RTW</td>
+                    <td>2&gt;</td>
+                    <td>5000PPS</td>
+                    <td>12V</td>
+                    <td>Day White</td>
+                    <td>2x</td>
+                    <td>3528</td>
+                    <td>600 LED</td>
+                    <td>W</td>
+                  </tr>
+                  <tr>
+                    <td>RT</td>
+                    <td>2&gt;</td>
+                    <td>5000</td>
+                    <td>24V</td>
+                    <td>RGB</td>
+                    <td>2x2</td>
+                    <td>5060</td>
+                    <td>720 LED</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div>
+                <section>
+                  <h3>Маркированный список</h3>
+                  <ul>
+                    <li>Административные здания</li>
+                    <li>Учебные заведения</li>
+                    <li>Офисы</li>
+                    <li>Промышленные предприятия</li>
+                    <li>Медицинские организации</li>
+                    <li>Производственные помещения объектов</li>
+                    <li>Торговые центры и залы</li>
+                    <li>Складские помещения</li>
+                  </ul>
+                </section>
+                <section>
+                  <h3>Нумерованный список</h3>
+                  <ol>
+                    <li>Административные здания</li>
+                    <li>Учебные заведения</li>
+                    <li>Офисы</li>
+                    <li>Промышленные предприятия</li>
+                    <li>Медицинские организации</li>
+                    <li>Производственные помещения объектов</li>
+                    <li>Торговые центры и залы</li>
+                    <li>Складские помещения</li>
+                  </ol>
+                </section>
+              </div>
+
+              <hr>
+
+              <h3>Пример картинки</h3>
+              <figure>
+                <img src="/img/knowlege-base/article-2.png" alt="Кривая излучения чёрного тела">
+                <figcaption>Подпись под картинкой</figcaption>
+              </figure>
+
+              <hr>
+
+              <h3>Подзаголовок</h3>
+              <p>
+                Освещение в детских дошкольных и школьных учреждениях играет решающую роль в формировании безопасной и
+                комфортной среды, которая непосредственно влияет на здоровье, концентрацию и общий уровень успеваемости детей.
+                Проектирование и эксплуатация систем освещения в образовательных организациях занимаются специалисты,
+                руководствующиеся рядом актуальных нормативных актов, включая своды правил (СП), национальные стандарты (ГОСТ),
+                санитарные требования и правила. При этом устройства электроустановок (ПУЭ), нормы рассмотрения основных
+                требований к освещению, а также значимость нормирования и влияние старых светильников.
+              </p>
+
+              <h3>Полезная мысль</h3>
+              <blockquote>
+                <p>Освещение с высокой цветопередачей — залог аппетитного вида продуктов и визуального комфорта на кухне.</p>
+                <p>
+                  Приобретая оборудование с CRI&gt;90, вы обеспечите качественное и естественное восприятие цветов,
+                  что не только повышает настроение и желание готовить, но и делает ваш интерьер более привлекательным.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section class="section knowledge-share">
+          <div class="section__container knowledge-share__container">
+            <div class="knowledge-share__body">
+              <span>Поделиться:</span>
+              <a href="#" aria-label="Поделиться в Telegram">
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                  <use xlink:href="/img/colored.svg#telegram"></use>
+                </svg>
+              </a>
+              <a href="#" aria-label="Поделиться в MAX">
+                <img src="/img/max.svg" width="20" height="20" alt="" aria-hidden="true">
+              </a>
+              <a href="#" aria-label="Поделиться во ВКонтакте">
+                <svg width="32" height="20" viewBox="0 0 43 27" aria-hidden="true">
+                  <use xlink:href="/img/colored.svg#vk"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section knowledge-products">
+          <div class="section__container knowledge-products__container">
+            <h2 class="knowledge-section-title">Лента товаров</h2>
+            <div class="knowledge-products__grid">
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-1.png","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H","article":"026886","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include>
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-2.png","eyebrow":"4000K • IP20 • для кухни","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V Arlight","article":"013730","stock":"В наличии 135 шт","price":"26.93","quantity":"1"}'></include>
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-3.png","eyebrow":"Тёплая • IP65 • для ванной","title":"Светодиодная лампа E14 CR-DP-G60 6W White Arlight","article":"036987","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include>
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-4.png","eyebrow":"4000K • IP20 • для кухни","title":"Лампа AR111-UNIT-G53-12W-Day4000 White Arlight","article":"013730","stock":"В наличии 135 шт","price":"2 774.05","quantity":"1"}'></include>
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-5.png","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W White","article":"026886","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include>
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-4.png","eyebrow":"4000K • IP20 • для кухни","title":"Лампа AR111-UNIT-G53-12W-Day4000 White Arlight","article":"013730","stock":"В наличии 135 шт","price":"2 774.05","quantity":"1"}'></include>
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-2.png","eyebrow":"4000K • IP20 • для кухни","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V Arlight","article":"013730","stock":"В наличии 135 шт","price":"26.93","quantity":"1"}'></include>
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-3.png","eyebrow":"Тёплая • IP65 • для ванной","title":"Светодиодная лампа E14 CR-DP-G60 6W White Arlight","article":"036987","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include>
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-1.png","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL","article":"026886","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include>
+              <include src="src/html/_product_mini_card.html" locals='{"modifier":"product-mini-card_article","inCart":"false","imagePath":"/img/common/similar-5.png","eyebrow":"Тёплая • IP65 • для ванной","title":"Светодиодная лампа E14 CR-DP-G60 6W White","article":"036987","stock":"В наличии 135 шт","price":"999","quantity":"1"}'></include>
+            </div>
+          </div>
+        </section>
+
+        <section class="section similar-projects knowledge-related splide" aria-labelledby="knowledgeRelatedTitle">
+          <div class="section__container knowledge-related__container">
+            <div class="project-section-head knowledge-related__head">
+              <h2 class="knowledge-section-title" id="knowledgeRelatedTitle">Похожие статьи</h2>
+              <div class="splide__arrows project-slider-arrows">
+                <button class="splide__arrow splide__arrow--prev project-slider-arrows__button" type="button" aria-label="Предыдущие статьи">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#pagination-arrow-left"></use>
+                  </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next project-slider-arrows__button" type="button" aria-label="Следующие статьи">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#pagination-arrow-right"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="splide__track knowledge-related__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <include src="src/html/_knowledge_article_card.html" locals='{"image":"8","tag":"Управление светом","title":"Освещение детских дошкольных и школьных учреждений: современные требования и решения","description":"Особую роль при выборе светильников играет качество освещения, его соответствие всем требованиям СанПиН."}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_knowledge_article_card.html" locals='{"image":"9","tag":"Нормы освещения","title":"Как правильно подобрать уличное освещение","description":"Качественное уличное освещение обеспечивает безопасность, эстетику и комфорт."}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_knowledge_article_card.html" locals='{"image":"10","tag":"Энергосервисный контракт","title":"Промышленное освещение","description":"Проработанные решения по обеспечению предприятия освещением и правильный выбор оборудования."}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_knowledge_article_card.html" locals='{"image":"13","tag":"Управление светом","title":"Использование теплого и холодного освещения","description":"Искусственный свет значительно влияет на самочувствие и комфорт людей."}'></include>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

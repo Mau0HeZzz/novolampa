@@ -1,0 +1,384 @@
+<!--
+  @fileOverview Детальная страница решения по освещению.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Освещение ресторанов и HoReCa"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="solution-detail">
+        <section class="solution-detail-hero">
+          <div
+            class="page-hero solution-detail-hero__media"
+            style="--page-hero-image: url('/img/solutions/detail-hero-bg.png')"
+          >
+            <div class="page-hero__body solution-detail-hero__body">
+              <include
+                src="src/html/_breadcrumbs.html"
+                locals='{"items": ["Главная", "Решения", "Решения по освещению"], "mainItem": "Освещение ресторанов и HoReCa"}'
+              ></include>
+
+              <div class="solution-detail-hero__content">
+                <h1 class="page-hero__title solution-detail-hero__title">
+                  Освещение ресторанов<br class="_md-768-dn"> и HoReCa
+                </h1>
+                <p class="solution-detail-hero__text">
+                  Создаём атмосферное освещение для ресторанов, баров и кафе:
+                  акцентный, декоративный и функциональный свет.
+                </p>
+                <div class="solution-detail-hero__actions">
+                  <a href="#solutionRequest" class="action-button action-button_primary solution-detail-hero__button">
+                    Получить проект
+                    <i>
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                        <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                      </svg>
+                    </i>
+                  </a>
+                  <a href="#solutionProjects" class="action-button solution-detail-hero__button solution-detail-hero__button_outline">
+                    <span class="_md-768-dn">Смотреть примеры</span>
+                    <span class="_mmd-768-dn">Примеры</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="solution-detail-hero__metrics"
+            data-da=".solution-detail-hero__metrics-slot, 768, last"
+          >
+            <div class="solution-detail-hero__metrics-body">
+              <div class="solution-detail-hero__metric">
+                <strong>500</strong>
+                <span>проектов</span>
+              </div>
+              <div class="solution-detail-hero__metric">
+                <strong>10</strong>
+                <span>лет опыта</span>
+              </div>
+              <div class="solution-detail-hero__metric">
+                <strong>24 ч</strong>
+                <span>расчёт проекта</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="solution-detail-hero__metrics-slot"></div>
+
+        <section class="section solution-zones">
+          <div class="section__container solution-zones__container">
+            <h2 class="solutions-title">Типовые зоны освещения</h2>
+            <p class="solutions-subtitle">
+              Реализованные объекты с подбором оборудования, расчётом и сопровождением
+            </p>
+
+            <div class="splide solution-zones__slider" aria-label="Типовые зоны освещения">
+              <div class="splide__track solution-zones__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <article class="solution-zone-card">
+                      <img src="/img/solutions/detail-types-1.png" alt="Освещение зала ресторана">
+                      <h3>Зал</h3>
+                    </article>
+                  </li>
+                  <li class="splide__slide">
+                    <article class="solution-zone-card">
+                      <img src="/img/solutions/detail-types-2.png" alt="Освещение бара">
+                      <h3>Бар</h3>
+                    </article>
+                  </li>
+                  <li class="splide__slide">
+                    <article class="solution-zone-card">
+                      <img src="/img/solutions/detail-types-3.png" alt="Освещение кухни ресторана">
+                      <h3>Кухня</h3>
+                    </article>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section solutions-popular solution-detail-popular">
+          <div class="section__container solutions-popular__container">
+            <h2 class="solutions-title">
+              <span class="_md-768-dn">Рекомендуемые решения</span>
+              <span class="_mmd-768-dn">Популярные решения</span>
+            </h2>
+            <p class="solutions-subtitle solutions-popular__subtitle">
+              Используем профессиональные системы освещения для создания комфортного и энергоэффективного света.
+            </p>
+            <div class="solutions-popular__grid">
+              <a href="#" class="solutions-popular-card">
+                <span>Трековые<br> системы</span>
+                <img src="/img/solutions/popular-1.png" alt="">
+              </a>
+              <a href="#" class="solutions-popular-card" style="--object-position: right top">
+                <span>Подвесные<br> светильники</span>
+                <img src="/img/solutions/popular-2.png" alt="">
+              </a>
+              <a href="#" class="solutions-popular-card">
+                <span>LED-лента</span>
+                <img src="/img/solutions/popular-3.png" alt="">
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section solutions-projects solution-detail-projects" id="solutionProjects">
+          <div class="section__container solutions-projects__container">
+            <div class="solutions-projects__head">
+              <div>
+                <h2 class="solutions-title">Реализованные проекты</h2>
+                <p class="solutions-subtitle">
+                  Реальные объекты, где применены наши решения освещения.
+                </p>
+              </div>
+              <a
+                href="/pages/projects.html"
+                class="solutions-projects__all"
+                data-da=".solution-detail-projects__actions, 768, last"
+              >Все проекты</a>
+            </div>
+
+            <div class="solutions-projects__grid">
+              <a href="/pages/project.html" class="solutions-project-card">
+                <img src="/img/solutions/projects-1.png" alt="">
+                <span>Комплексное освещение фитнес-клуба Энкор</span>
+              </a>
+              <a href="/pages/project.html" class="solutions-project-card">
+                <img src="/img/solutions/projects-2.png" alt="">
+                <span>Внутреннее освещение клиники MEDALL</span>
+              </a>
+            </div>
+
+            <div class="solutions-projects__actions solution-detail-projects__actions">
+              <a href="#" class="action-button action-button_outline solutions-projects__more">Показать ещё</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section solutions-process solution-detail-process _mmd-768-dn">
+          <div class="section__container solutions-process__container">
+            <h2 class="solutions-title">Как мы работаем</h2>
+            <ol class="solutions-process__list">
+              <li><strong>01</strong><span>Вы оставляете заявку</span></li>
+              <li><strong>02</strong><span>Мы анализируем объект</span></li>
+              <li><strong>03</strong><span>Подбираем оборудование</span></li>
+              <li><strong>04</strong><span>Отправляем проект и смету</span></li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section solutions-popular solution-detail-popular solution-detail-popular_mobile _mmd-768-dn">
+          <div class="section__container solutions-popular__container">
+            <h2 class="solutions-title">Популярные решения</h2>
+            <p class="solutions-subtitle solutions-popular__subtitle">
+              Используем профессиональные системы освещения для создания комфортного и энергоэффективного света.
+            </p>
+            <div class="solutions-popular__grid">
+              <a href="#" class="solutions-popular-card">
+                <span>Трековые<br> системы</span>
+                <img src="/img/solutions/popular-1.png" alt="">
+              </a>
+              <a href="#" class="solutions-popular-card" style="--object-position: right top">
+                <span>Подвесные<br> светильники</span>
+                <img src="/img/solutions/popular-2.png" alt="">
+              </a>
+              <a href="#" class="solutions-popular-card">
+                <span>LED-лента</span>
+                <img src="/img/solutions/popular-3.png" alt="">
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section project-equipment solution-products splide" aria-labelledby="solutionProductsTitle">
+          <div class="section__container project-equipment__container">
+            <div class="project-section-head project-equipment__head">
+              <div>
+                <h2 class="solutions-title" id="solutionProductsTitle">Подходящие светильники</h2>
+                <p class="solutions-subtitle">Популярные категории оборудования для данного типа объекта.</p>
+              </div>
+              <div class="splide__arrows project-slider-arrows">
+                <button class="splide__arrow splide__arrow--prev project-slider-arrows__button" type="button" aria-label="Предыдущие товары">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#pagination-arrow-left"></use>
+                  </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next project-slider-arrows__button" type="button" aria-label="Следующие товары">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#pagination-arrow-right"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="splide__track project-equipment__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-1.png","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...)","article":"026886","stock":"Нет в наличии","price":"188.53","quantity":"2"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"true","imagePath":"/img/common/similar-2.png","eyebrow":"4000K • IP20 • для кухни","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","article":"013730","stock":"В наличии 135 шт","price":"26.93","quantity":"1"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-3.png","eyebrow":"Тёплая • IP65 • для ванной","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","article":"036987","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-4.png","eyebrow":"4000K • IP20 • для кухни","title":"Лампа AR111-UNIT-G53-12W-Day4000 (WH, 120 deg, 12V) (Arlight, Металл) Arlight...","article":"013730","stock":"В наличии 135 шт","price":"2 774.05","quantity":"1"}'></include>
+                </li>
+                <li class="splide__slide">
+                  <include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-5.png","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...)","article":"026886","stock":"Нет в наличии","price":"188.53","quantity":"1"}'></include>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section solutions-calculator solution-detail-calculator">
+          <div class="section__container solutions-calculator__container">
+            <div class="solutions-calculator__body">
+              <div class="solutions-calculator__content">
+                <h2 class="solutions-calculator__title">
+                  Калькулятор светодиодной ленты —<br>
+                  подбор оборудования для светодиодной подсветки
+                </h2>
+                <p class="solutions-calculator__text">
+                  Экономьте время — получите готовое решение для вашей задачи
+                </p>
+              </div>
+              <a href="#" class="action-button action-button_primary solutions-calculator__button">
+                Рассчитать ленту
+                <i>
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                  </svg>
+                </i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section feedback-section projects-request solutions-request solution-detail-request" id="solutionRequest">
+          <div class="section__container feedback-section__container">
+            <div class="feedback-section__body projects-request__body solutions-request__body">
+              <div class="feedback-section__head">
+                <h2 class="feedback-section__title">Получите расчёт<br> освещения за 1 день</h2>
+                <p class="feedback-section__text">
+                  Подготовим подбор оборудования и коммерческое предложение.
+                </p>
+              </div>
+
+              <form action="" class="form feedback-section__form">
+                <label class="form__item form__item_shadow">
+                  <input type="text" name="name" class="form__input" placeholder=" " data-required data-error="Введите имя">
+                  <span class="form__placeholder">Как вас зовут?</span>
+                </label>
+
+                <div class="feedback-section__fields">
+                  <label class="form__item form__item_shadow">
+                    <input type="tel" name="phone" class="form__input" placeholder=" " data-required="phone" data-error="Введите телефон">
+                    <span class="form__placeholder">Телефон</span>
+                  </label>
+                  <label class="form__item form__item_shadow">
+                    <input type="email" name="email" class="form__input" placeholder=" " data-required="email" data-error="Введите корректный email">
+                    <span class="form__placeholder">Email</span>
+                  </label>
+                </div>
+
+                <div class="feedback-section__fields">
+                  <label class="form__item form__item_shadow">
+                    <input type="text" name="object_type" class="form__input" placeholder=" ">
+                    <span class="form__placeholder">Тип объекта</span>
+                  </label>
+                  <label class="form__item form__item_shadow">
+                    <input type="text" name="area" class="form__input" placeholder=" ">
+                    <span class="form__placeholder">Площадь/объём</span>
+                  </label>
+                </div>
+
+                <label class="form__item form__item_shadow feedback-section__message">
+                  <textarea
+                    name="message"
+                    class="form__input feedback-section__textarea projects-request__textarea"
+                    placeholder=" "
+                    rows="5"
+                    data-required
+                    data-error="Опишите задачу"
+                  ></textarea>
+                  <span class="form__placeholder">
+                    Опишите задачу: что нужно осветить, какие есть требования, нужен ли расчёт,
+                    сертификаты, документы, монтажные рекомендации
+                  </span>
+                </label>
+
+                <label class="form__boxwrap feedback-section__agreement">
+                  <input type="checkbox" name="agreement" data-required data-error="Необходимо ваше согласие">
+                  <i class="form__box"></i>
+                  <span class="form__label">
+                    Я даю согласие на обработку персональных данных и соглашаюсь с
+                    <a href="#">Политикой конфиденциальности</a> и
+                    <a href="#">Пользовательским соглашением</a>
+                  </span>
+                </label>
+
+                <button type="submit" class="action-button action-button_primary form__submit feedback-section__submit">
+                  <span>Запросить расчёт</span>
+                  <i>
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                      <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                    </svg>
+                  </i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="section solution-other">
+          <div class="section__container solution-other__container">
+            <h2 class="solutions-title">Другие решения</h2>
+            <div class="splide solution-other__slider" aria-label="Другие решения">
+              <div class="splide__track solution-other__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <a href="#" class="solution-other-card">
+                      <span>Освещение<br> квартиры и домов</span>
+                      <svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+                        <use xlink:href="/img/colored.svg#solution-apartment"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="splide__slide">
+                    <a href="#" class="solution-other-card">
+                      <span>Освещение<br> офиса и БЦ</span>
+                      <svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+                        <use xlink:href="/img/colored.svg#solution-office"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="splide__slide">
+                    <a href="#" class="solution-other-card">
+                      <span>Освещение<br> складов</span>
+                      <svg width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+                        <use xlink:href="/img/colored.svg#solution-warehouse"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

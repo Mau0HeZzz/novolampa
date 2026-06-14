@@ -780,6 +780,10 @@
       border-radius: mixins.toRem(2);
       color: var(--text-secondary-color);
       background-color: var(--bg-main-color);
+
+      * {
+        pointer-events: none;
+      }
     }
 
     .quantity-form__input {
@@ -797,7 +801,19 @@
     }
   }
 
+  &__pre-cart-quantity {
+    display: none;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      display: flex;
+    }
+  }
+
   &._in-cart {
+    .product-mini-card__pre-cart-quantity {
+      display: none;
+    }
+
     .product-mini-card__desktop-cart_add {
       display: none;
     }
