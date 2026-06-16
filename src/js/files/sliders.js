@@ -118,7 +118,7 @@ function initSliders() {
 
     new Splide(element, {
       type: 'slide',
-      perPage: 3,
+      autoWidth: true,
       perMove: 1,
       gap: 30,
       arrows: false,
@@ -126,7 +126,6 @@ function initSliders() {
       rewind: true,
       breakpoints: {
         767: {
-          fixedWidth: '250px',
           gap: 12,
           pagination: true,
         },
@@ -139,7 +138,7 @@ function initSliders() {
 
     new Splide(element, {
       type: 'slide',
-      perPage: 3,
+      autoWidth: true,
       perMove: 1,
       gap: 30,
       arrows: false,
@@ -147,7 +146,6 @@ function initSliders() {
       rewind: true,
       breakpoints: {
         767: {
-          fixedWidth: '225px',
           gap: 12,
           pagination: true,
         },

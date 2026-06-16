@@ -40,7 +40,21 @@
     </div>
 
     <div class="product-mini-card__desktop-actions">
-      <div class="quantity-form product-mini-card__desktop-quantity product-mini-card__pre-cart-quantity" data-quantity>
+      <a href="#" class="product-mini-card__desktop-cart product-mini-card__desktop-cart_add" aria-label="Добавить товар в корзину">
+        <span class="_md-768-dn">В корзину</span>
+        <svg class="_mmd-768-dn" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <use xlink:href="/img/sprite.svg#basket-full"></use>
+        </svg>
+      </a>
+
+      <a href="#" class="product-mini-card__desktop-cart product-mini-card__desktop-cart_in-cart" aria-label="Товар в корзине">
+        <span class="_md-768-dn">В корзине</span>
+        <svg class="_mmd-768-dn" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <use xlink:href="/img/sprite.svg#basket-full"></use>
+        </svg>
+      </a>
+
+      <div class="quantity-form product-mini-card__desktop-quantity" data-quantity>
         <button type="button" class="quantity-form__button quantity-form__button_minus" aria-label="Уменьшить количество">
           <svg width="10" height="2" viewBox="0 0 10 2" fill="none" aria-hidden="true">
             <use xlink:href="/img/sprite.svg#minus"></use>
@@ -54,38 +68,6 @@
             <use xlink:href="/img/sprite.svg#plus"></use>
           </svg>
         </button>
-      </div>
-
-      <a href="#" class="product-mini-card__desktop-cart product-mini-card__desktop-cart_add" aria-label="Добавить товар в корзину">
-        <span class="_md-768-dn">В корзину</span>
-        <svg class="_mmd-768-dn" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <use xlink:href="/img/sprite.svg#basket"></use>
-        </svg>
-      </a>
-
-      <div class="product-mini-card__in-cart-actions">
-        <a href="#" class="product-mini-card__desktop-cart" aria-label="Товар в корзине">
-          <span class="_md-768-dn">В корзине</span>
-          <svg class="_mmd-768-dn" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <use xlink:href="/img/sprite.svg#basket"></use>
-          </svg>
-        </a>
-
-        <div class="quantity-form product-mini-card__desktop-quantity" data-quantity>
-          <button type="button" class="quantity-form__button quantity-form__button_minus" aria-label="Уменьшить количество">
-            <svg width="10" height="2" viewBox="0 0 10 2" fill="none" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#minus"></use>
-            </svg>
-          </button>
-          <div class="quantity-form__input">
-            <input autocomplete="off" type="text" name="quantity" value="{{ quantity }}" aria-label="Количество товара">
-          </div>
-          <button type="button" class="quantity-form__button quantity-form__button_plus" aria-label="Увеличить количество">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-              <use xlink:href="/img/sprite.svg#plus"></use>
-            </svg>
-          </button>
-        </div>
       </div>
     </div>
   </div>

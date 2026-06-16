@@ -1,0 +1,35 @@
+<!--
+  @fileOverview Общий интро-блок страниц раздела базы знаний.
+-->
+
+<section class="section page-intro knowledge-intro">
+  <div class="section__container page-intro__container knowledge-intro__container">
+    <div class="section__head page-intro__head">
+      <ul class="section__breadcrumbs breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/pages/home.html" itemprop="item">
+            <span itemprop="name">Главная</span>
+          </a>
+          <meta itemprop="position" content="1">
+        </li>
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/pages/knowledge-base.html" itemprop="item">
+            <span itemprop="name">База знаний</span>
+          </a>
+          <meta itemprop="position" content="2">
+        </li>
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">{{ mainItem }}</span>
+          <meta itemprop="position" content="3">
+        </li>
+      </ul>
+      <h1 class="section__title page-intro__title">{{ title }}</h1>
+      <nav class="projects-filter" aria-label="Разделы базы знаний">
+        <a href="/pages/knowledge-base-articles.html" class="projects-filter__item {{ articlesClass }}">Статьи</a>
+        <a href="/pages/knowledge-base-selection.html" class="projects-filter__item {{ selectionClass }}">Подбор по задачам</a>
+        <a href="/pages/knowledge-base-tools.html" class="projects-filter__item {{ toolsClass }}">Инструменты</a>
+        <a href="/pages/knowledge-base-ies.html" class="projects-filter__item {{ iesClass }}">IES</a>
+      </nav>
+    </div>
+  </div>
+</section>

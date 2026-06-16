@@ -11,17 +11,26 @@
 
       <main class="audience-page designers-page">
         <include
-          src="src/html/_audience_hero.html"
+          src="src/html/_page_hero.html"
           locals='{
-            "modifier": "designers-hero",
-            "breadcrumb": "Дизайнерам",
+            "modifier": "page-hero_audience designers-hero",
+            "showBreadcrumbs": true,
+            "items": ["Главная"],
+            "mainItem": "Дизайнерам",
             "imagePath": "/img/designers/hero-bg.png",
+            "backgroundPosition": "center",
+            "minHeight": "400px",
             "title": "Проектное освещение<br>для дизайнеров и архитекторов",
             "text": "Помогаем реализовать световую концепцию проекта.<br>Подбираем оборудование, делаем расчеты, сопровождаем<br class=\"_md-768-dn\"> проект до монтажа.",
             "primaryText": "Запросить подбор и расчёт",
             "primaryHref": "#designersRequest",
+            "primaryGoto": "#designersRequest",
             "secondaryText": "",
-            "secondaryHref": ""
+            "secondaryHref": "",
+            "secondaryGoto": "",
+            "showMetrics": false,
+            "metricsSlotClass": "",
+            "metrics": []
           }'
         ></include>
 
@@ -97,9 +106,7 @@
         <include
           src="src/html/_audience_projects.html"
           locals='{
-            "modifier": "designers-projects",
-            "sectionId": "designersProjects",
-            "actionsClass": "designers-projects__actions"
+            "sectionId": "designersProjects"
           }'
         ></include>
 

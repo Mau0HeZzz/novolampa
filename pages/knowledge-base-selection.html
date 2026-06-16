@@ -1,0 +1,53 @@
+<!--
+  @fileOverview Страница подбора световых решений по задачам.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Подбор по задачам"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="knowledge-page knowledge-selection-page">
+        <include
+          src="src/html/_knowledge_intro.html"
+          locals='{
+            "mainItem": "Подбор по задачам",
+            "title": "Подбор по задачам",
+            "articlesClass": "",
+            "selectionClass": "_active",
+            "toolsClass": "",
+            "iesClass": ""
+          }'
+        ></include>
+
+        <section class="section solutions-types knowledge-selection">
+          <div class="section__container solutions-types__container">
+            <div class="solutions-types__grid">
+              <a href="/pages/solution.html" class="solutions-media-card solutions-media-card_tall">
+                <img src="/img/solutions/types-1.png" alt="">
+                <span>Освещение ресторанов<br> и HoReCa</span>
+              </a>
+              <a href="/pages/solution.html" class="solutions-media-card solutions-media-card_wide">
+                <img src="/img/solutions/types-2.png" alt="">
+                <span>Освещение квартир и домов</span>
+              </a>
+              <a href="/pages/solution.html" class="solutions-media-card">
+                <img src="/img/solutions/types-3.png" alt="">
+                <span>Освещение офиса и БЦ</span>
+              </a>
+              <a href="/pages/solution.html" class="solutions-media-card">
+                <img src="/img/solutions/types-4.png" alt="">
+                <span>Освещение складов</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

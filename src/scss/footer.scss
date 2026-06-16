@@ -186,9 +186,6 @@
   }
 
   @media (width < #{mixins.toEm(variables.$tablet)}) {
-    &__container {
-      padding-inline: mixins.toRem(8);
-    }
 
     &__logo {
       width: mixins.toRem(116);

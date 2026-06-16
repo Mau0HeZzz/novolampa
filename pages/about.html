@@ -10,60 +10,33 @@
       <include src="src/html/_header.html"></include>
 
       <main class="about-page">
-        <section class="about-hero">
-          <div class="page-hero about-hero__media" style="--page-hero-image: url('/img/about/hero-bg.png')">
-            <div class="page-hero__body about-hero__body">
-              <include
-                src="src/html/_breadcrumbs.html"
-                locals='{"items": ["Главная"], "mainItem": "О компании"}'
-              ></include>
-
-              <div class="about-hero__content">
-                <h1 class="page-hero__title about-hero__title">
-                  Светотехническая компания<br class="_md-768-dn"> полного цикла
-                </h1>
-                <p class="about-hero__description">
-                  Мы проектируем и поставляем светодиодные решения для бизнеса, архитектуры и интерьеров.
-                  Помогаем создать правильный свет — от идеи и расчета до реализации проекта.
-                </p>
-                <div class="about-hero__actions">
-                  <a href="#aboutRequest" class="action-button action-button_primary about-hero__button">
-                    Обсудить проект
-                    <i>
-                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-                        <use xlink:href="/img/sprite.svg#arrow-right"></use>
-                      </svg>
-                    </i>
-                  </a>
-                  <a href="/pages/projects.html" class="action-button about-hero__button about-hero__button_outline">
-                    Наши проекты
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="solution-detail-hero__metrics"
-            data-da=".about-hero__metrics-slot, 768, last"
-          >
-            <div class="solution-detail-hero__metrics-body">
-              <div class="solution-detail-hero__metric">
-                <strong>10+</strong>
-                <span>лет опыта</span>
-              </div>
-              <div class="solution-detail-hero__metric">
-                <strong>1000+</strong>
-                <span>проектов</span>
-              </div>
-              <div class="solution-detail-hero__metric">
-                <strong>50+</strong>
-                <span>брендов</span>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div class="about-hero__metrics-slot"></div>
+        <include
+          src="src/html/_page_hero.html"
+          locals='{
+            "modifier": "page-hero_metrics about-hero",
+            "showBreadcrumbs": true,
+            "items": ["Главная"],
+            "mainItem": "О компании",
+            "imagePath": "/img/about/hero-bg.png",
+            "backgroundPosition": "center",
+            "minHeight": "400px",
+            "title": "Светотехническая компания<br class=\"_md-768-dn\"> полного цикла",
+            "text": "Мы проектируем и поставляем светодиодные решения для бизнеса, архитектуры и интерьеров. Помогаем создать правильный свет — от идеи и расчета до реализации проекта.",
+            "primaryText": "Обсудить проект",
+            "primaryHref": "#aboutRequest",
+            "primaryGoto": "#aboutRequest",
+            "secondaryText": "Наши проекты",
+            "secondaryHref": "/pages/projects.html",
+            "secondaryGoto": "",
+            "showMetrics": true,
+            "metricsSlotClass": "about-hero__metrics-slot",
+            "metrics": [
+              {"value": "10+", "label": "лет опыта"},
+              {"value": "1000+", "label": "проектов"},
+              {"value": "50+", "label": "брендов"}
+            ]
+          }'
+        ></include>
 
         <section class="section contacts-showrooms about-showrooms">
           <div class="section__container contacts-showrooms__container about-showrooms__container">
@@ -162,9 +135,7 @@
         <include
           src="src/html/_audience_projects.html"
           locals='{
-            "modifier": "about-projects",
-            "sectionId": "aboutProjects",
-            "actionsClass": "about-projects__actions"
+            "sectionId": "aboutProjects"
           }'
         ></include>
 

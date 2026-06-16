@@ -13,8 +13,10 @@
   margin-inline: auto;
   border-radius: mixins.toRem(10);
   color: var(--text-light-color);
-  background: var(--page-hero-image) center / cover no-repeat;
-  
+  background: var(--page-hero-image) var(--page-hero-bg-position, center) / cover no-repeat;
+  min-height: var(--min-height, mixins.toRem(400));
+  display: flex;
+
   @media (width >= #{mixins.toEm(variables.$mobile)}) {
     overflow: hidden;
   }
@@ -22,7 +24,20 @@
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     width: 100%;
     border-radius: 0;
-    background-position: 51% center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.2);
+    }
+
+    >* {
+      position: relative;
+    }
   }
 
   &__body {
@@ -78,7 +93,6 @@
     @media (width < #{mixins.toEm(variables.$mobile)}) {
       position: relative;
       span {
-        // margin-inline: mixins.toRem(-7);
         margin-top: auto;
         margin-bottom: mixins.toRem(-28);
         padding: mixins.toRem(20) mixins.toRem(20) mixins.toRem(22);
@@ -90,13 +104,286 @@
       }
 
       &::before {
-        content:'';
+        content: '';
         position: absolute;
         inset: mixins.toRem(-6);
         border-radius: mixins.toRem(10);
         background: linear-gradient(111.49deg, rgba(255, 255, 255, 0.08) -8.95%, rgba(255, 255, 255, 0.002) 114%);
         backdrop-filter: blur(mixins.toRem(20));
         height: calc(100% + mixins.toRem(12) + mixins.toRem(28));
+      }
+    }
+  }
+
+  &__actions {
+    width: fit-content;
+    display: flex;
+    gap: mixins.toRem(12);
+    margin-top: mixins.toRem(50);
+    padding: mixins.toRem(11);
+    border-radius: mixins.toRem(10);
+    background:
+      linear-gradient(111.49deg, rgba(255, 255, 255, 0.08) -8.95%, rgba(255, 255, 255, 0.002) 114%),
+      rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(mixins.toRem(20));
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      width: calc(100% + mixins.toRem(12));
+      order: 2;
+      gap: mixins.toRem(6);
+      margin: mixins.toRem(64) mixins.toRem(-6) 0;
+      padding: mixins.toRem(6);
+    }
+  }
+
+  &__button {
+    min-width: mixins.toRem(246);
+    padding-block: mixins.toRem(11);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      min-width: 0;
+      flex: 1 1 auto;
+      padding: mixins.toRem(10) mixins.toRem(8);
+      font-size: mixins.toRem(13);
+    }
+
+    &_secondary {
+      min-width: mixins.toRem(160);
+
+      @media (width < #{mixins.toEm(variables.$mobile)}) {
+        min-width: 0;
+      }
+    }
+  }
+}
+
+.page-hero_metrics {
+  overflow: visible;
+  margin-bottom: mixins.toRem(42);
+
+  @media (width < #{mixins.toEm(1150)}) {
+    margin-bottom: 0;
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    --page-hero-bg-position: 58% center;
+  }
+
+  .page-hero__body {
+    padding-bottom: mixins.toRem(80);
+
+    @media (width < #{mixins.toEm(1150)}) {
+      padding-bottom: mixins.toRem(36);
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      padding-bottom: 0;
+    }
+  }
+
+  .page-hero__content {
+    width: min(100%, mixins.toRem(570));
+    flex: 0 1 auto;
+    justify-content: flex-start;
+    padding-block: 0;
+    padding-top: mixins.toRem(74);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      width: 100%;
+      padding-top: mixins.toRem(36);
+    }
+  }
+
+  .page-hero__title {
+    font-size: mixins.toRem(40);
+    line-height: math.div(39, 40);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      max-width: mixins.toRem(310);
+      font-size: mixins.toRem(30);
+      line-height: math.div(32, 30);
+    }
+  }
+
+  .page-hero__text {
+    &::before {
+      content: none;
+    }
+
+    span {
+      margin-top: mixins.toRem(26);
+      font-size: mixins.toRem(16);
+      font-weight: 500;
+      line-height: math.div(24, 16);
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      order: 3;
+      margin: mixins.toRem(29) mixins.toRem(-6) mixins.toRem(-21);
+
+      span {
+        margin: 0;
+        padding: mixins.toRem(20) mixins.toRem(21);
+        border: mixins.toRem(6) solid var(--bg-glass-color);
+        border-radius: mixins.toRem(10);
+        background-color: var(--bg-header-glass-color);
+        background-clip: padding-box;
+        backdrop-filter: blur(mixins.toRem(20));
+        font-size: mixins.toRem(15);
+        line-height: math.div(21, 15);
+      }
+    }
+  }
+}
+
+.page-hero_audience {
+  .page-hero__body {
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      padding: mixins.toRem(16) mixins.toRem(15) 0;
+    }
+  }
+
+  .page-hero__content {
+    width: min(100%, mixins.toRem(650));
+    padding-block: mixins.toRem(55) mixins.toRem(62);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      width: 100%;
+      justify-content: flex-start;
+      padding-top: mixins.toRem(40);
+      padding-bottom: 0;
+    }
+  }
+
+  .page-hero__text {
+    max-width: mixins.toRem(560);
+
+    &::before {
+      content: none;
+    }
+
+    span {
+      margin-top: mixins.toRem(28);
+      font-size: mixins.toRem(16);
+      font-weight: 500;
+      line-height: math.div(24, 16);
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      order: 2;
+      max-width: none;
+      margin-bottom: mixins.toRem(-28);
+
+      span {
+        margin-top: mixins.toRem(12);
+        padding: mixins.toRem(24) mixins.toRem(20);
+        border: mixins.toRem(6) solid var(--bg-glass-color);
+        border-radius: mixins.toRem(10);
+        background-color: var(--bg-header-glass-color);
+        background-clip: padding-box;
+        backdrop-filter: blur(mixins.toRem(20));
+        font-size: mixins.toRem(15);
+        line-height: math.div(21, 15);
+      }
+    }
+  }
+
+  .page-hero__actions {
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      width: 100%;
+      order: 1;
+      margin: mixins.toRem(38) 0 0;
+    }
+  }
+
+  .page-hero__button {
+    &_secondary {
+      min-width: mixins.toRem(204);
+
+      @media (width < #{mixins.toEm(variables.$mobile)}) {
+        min-width: 0;
+      }
+    }
+  }
+
+  .breadcrumbs {
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      width: max-content;
+      flex-wrap: nowrap;
+      font-size: mixins.toRem(12);
+      line-height: math.div(17, 12);
+    }
+  }
+}
+
+.hero-metrics {
+  position: absolute;
+  z-index: 2;
+  right: max(calc((100% - mixins.toRem(1380)) / 2), mixins.toRem(78));
+  bottom: mixins.toRem(-42);
+  width: min(44%, mixins.toRem(688));
+  padding: mixins.toRem(12);
+  border-radius: mixins.toRem(10);
+  background:
+    linear-gradient(111.49deg, rgba(255, 255, 255, 0.08) -8.95%, rgba(255, 255, 255, 0.002) 114%),
+    var(--bg-overlay-light-color);
+  backdrop-filter: blur(mixins.toRem(20));
+
+  @media (width < #{mixins.toEm(1150)}) {
+    position: static;
+    width: auto;
+    margin: mixins.toRem(50) mixins.toRem(15) 0;
+    padding: 0;
+    border-radius: mixins.toRem(5);
+    background: none;
+    backdrop-filter: none;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: mixins.toRem(20);
+    padding: mixins.toRem(48) mixins.toRem(52);
+    border-radius: mixins.toRem(5);
+    background-color: var(--bg-section-color);
+
+    @media (width < #{mixins.toEm(1150)}) {
+      padding-inline: mixins.toRem(34);
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      gap: mixins.toRem(12);
+      padding: mixins.toRem(25) mixins.toRem(14);
+    }
+  }
+
+  &__item {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: mixins.toRem(3);
+
+    strong {
+      color: var(--text-main-color);
+      font-family: var(--font-tik-tok);
+      font-size: mixins.toRem(50);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.02em;
+
+      @media (width < #{mixins.toEm(variables.$mobile)}) {
+        font-size: mixins.toRem(30);
+      }
+    }
+
+    span {
+      color: var(--text-secondary-color);
+      font-size: mixins.toRem(14);
+      line-height: math.div(20, 14);
+
+      @media (width < #{mixins.toEm(variables.$mobile)}) {
+        font-size: mixins.toRem(12);
+        line-height: math.div(17, 12);
       }
     }
   }

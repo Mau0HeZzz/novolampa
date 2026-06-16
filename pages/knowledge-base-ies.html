@@ -1,0 +1,104 @@
+<!--
+  @fileOverview Страница IES-файлов базы знаний.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "IES"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="knowledge-page knowledge-ies-page">
+        <include
+          src="src/html/_knowledge_intro.html"
+          locals='{
+            "mainItem": "IES",
+            "title": "IES",
+            "articlesClass": "",
+            "selectionClass": "",
+            "toolsClass": "",
+            "iesClass": "_active"
+          }'
+        ></include>
+
+        <section class="section knowledge-ies">
+          <form action="" class="knowledge-ies-search" role="search">
+            <div class="section__container knowledge-ies-search__container">
+              <label class="knowledge-ies-search__field">
+                <input type="search" name="q" placeholder="Поиск по артикулу или названию">
+              </label>
+              <button type="submit" aria-label="Найти">
+                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+                  <use xlink:href="/img/sprite.svg#loopa"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <div class="section__container knowledge-ies__container">
+            <div class="knowledge-ies__sort _mmd-768-dn">
+              <select name="ies-sort" data-custom-select aria-label="Сортировка IES">
+                <option value="article" selected>Сортировать по артикулу</option>
+                <option value="name">Сортировать по названию</option>
+                <option value="brand">Сортировать по производителю</option>
+              </select>
+            </div>
+
+            <div class="ies-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+                      <a href="#">Артикул <span>↓</span></a>
+                    </th>
+                    <th>
+                      <a href="#">Название <span>↓</span></a>
+                    </th>
+                    <th>
+                      <a href="#">Производитель <span>↓</span></a>
+                    </th>
+                    <th>Скачать</th>
+                    <th>Карточка товара</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <include src="src/html/_ies_row.html" locals='{"article":"016508","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","brand":"Arlight"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"3453463","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","brand":"Geniled"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"035343","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","brand":"Сонекс"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"016508","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","brand":"Lightstar"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"3453463","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","brand":"Uniel"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"035343","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","brand":"Сонекс"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"016508","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","brand":"Arlight"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"3453463","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","brand":"Geniled"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"035343","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","brand":"Сонекс"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"016508","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","brand":"Lightstar"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"3453463","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","brand":"Uniel"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"035343","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","brand":"Сонекс"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"016508","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","brand":"Arlight"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"3453463","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","brand":"Geniled"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"035343","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","brand":"Сонекс"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"016508","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","brand":"Lightstar"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"3453463","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","brand":"Uniel"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"035343","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","brand":"Сонекс"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"016508","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","brand":"Lightstar"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"3453463","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","brand":"Geniled"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"035343","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","brand":"Сонекс"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"016508","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","brand":"Lightstar"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"3453463","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","brand":"Uniel"}'></include>
+                  <include src="src/html/_ies_row.html" locals='{"article":"035343","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H (в компл...","brand":"Сонекс"}'></include>
+                </tbody>
+              </table>
+            </div>
+
+            <a href="#" class="knowledge-ies__more">Показать ещё 40</a>
+            <include src="src/html/_pagination.html" locals='{"last":"25"}'></include>
+          </div>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

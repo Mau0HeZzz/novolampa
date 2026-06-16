@@ -1,3 +1,7 @@
+/**
+ * @fileOverview Общие небольшие DOM-утилиты проекта.
+ */
+
 // Подключение функционала "Чертоги Фрилансера"
 import { debounce, isMobile } from "./functions.js";
 // Подключение списка активных модулей
@@ -5,7 +9,28 @@ import { mhzModules } from "./modules.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   applyResponsiveDnStyles();
+
+  document.querySelectorAll("[data-show-hidden]").forEach((block) => {
+    const button = block.querySelector("[data-show-hidden-button]");
+    if (!button) return;
+
+    button.hidden = !block.querySelector("[data-show-hidden-item][hidden]");
+  });
 })
+
+document.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-show-hidden-button]");
+  if (!button) return;
+
+  const block = button.closest("[data-show-hidden]");
+  if (!block) return;
+
+  event.preventDefault();
+  block.querySelectorAll("[data-show-hidden-item][hidden]").forEach((item) => {
+    item.hidden = false;
+  });
+  button.hidden = true;
+});
 
 
 
@@ -165,6 +190,14 @@ function applyResponsiveDnStyles() {
       render: (match, cls) => {
         const [, value] = match;
         return `${getClassSelector(cls)} { width: calc(var(--base-indent) * ${value}); }`;
+      },
+    },
+    {
+      selector: '[class*="h-"]',
+      classRe: /^h-(\d+)$/,
+      render: (match, cls) => {
+        const [, value] = match;
+        return `${getClassSelector(cls)} { height: calc(var(--base-indent) * ${value}); }`;
       },
     },
     {

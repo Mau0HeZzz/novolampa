@@ -10,128 +10,8 @@
   background-color: var(--bg-main-color);
 }
 
-.about-hero {
-  position: relative;
-  padding-bottom: mixins.toRem(42);
-
-  @media (width < #{mixins.toEm(variables.$mobile)}) {
-    padding-bottom: 0;
-  }
-
-  &__media {
-    overflow: visible;
-    background-position: center;
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      background-position: 58% center;
-    }
-  }
-
-  &__body {
-    padding-bottom: mixins.toRem(80);
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      padding-bottom: 0;
-    }
-  }
-
-  &__content {
-    width: min(100%, mixins.toRem(570));
-    display: flex;
-    flex-direction: column;
-    padding-top: mixins.toRem(74);
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      width: 100%;
-      padding-top: mixins.toRem(36);
-    }
-  }
-
-  &__title {
-    font-size: mixins.toRem(40);
-    line-height: math.div(39, 40);
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      max-width: mixins.toRem(310);
-      font-size: mixins.toRem(30);
-      line-height: math.div(32, 30);
-    }
-  }
-
-  &__description {
-    margin-top: mixins.toRem(26);
-    font-size: mixins.toRem(16);
-    font-weight: 500;
-    line-height: math.div(24, 16);
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      position: relative;
-      order: 3;
-      margin: mixins.toRem(29) mixins.toRem(-6) mixins.toRem(-21);
-      padding: mixins.toRem(20) mixins.toRem(21);
-      border: mixins.toRem(6) solid var(--bg-glass-color);
-      border-radius: mixins.toRem(10);
-      background-color: var(--bg-header-glass-color);
-      background-clip: padding-box;
-      backdrop-filter: blur(mixins.toRem(20));
-      font-size: mixins.toRem(15);
-      line-height: math.div(21, 15);
-    }
-  }
-
-  &__actions {
-    width: fit-content;
-    display: flex;
-    gap: mixins.toRem(12);
-    margin-top: mixins.toRem(50);
-    padding: mixins.toRem(11);
-    border-radius: mixins.toRem(10);
-    background:
-      linear-gradient(111.49deg, rgba(255, 255, 255, 0.08) -8.95%, rgba(255, 255, 255, 0.002) 114%),
-      rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(mixins.toRem(20));
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      width: calc(100% + mixins.toRem(12));
-      order: 2;
-      gap: mixins.toRem(6);
-      margin: mixins.toRem(64) mixins.toRem(-6) 0;
-      padding: mixins.toRem(6);
-    }
-  }
-
-  &__button {
-    min-width: mixins.toRem(246);
-    padding-block: mixins.toRem(11);
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      min-width: 0;
-      flex: 1 1 auto;
-      padding: mixins.toRem(10) mixins.toRem(8);
-      font-size: mixins.toRem(13);
-    }
-
-    &_outline {
-      min-width: mixins.toRem(160);
-      color: var(--text-light-color);
-      border-color: var(--border-white-color);
-
-      @media (width < #{mixins.toEm(variables.$mobile)}) {
-        min-width: 0;
-      }
-
-      @media (any-hover: hover) {
-        &:hover {
-          color: var(--text-main-color);
-          background-color: var(--bg-main-color);
-        }
-      }
-    }
-  }
-}
-
 .about-showrooms {
-  padding-top: mixins.toRem(61);
+  padding-top: mixins.toRem(57);
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     padding-top: mixins.toRem(37);
@@ -153,7 +33,7 @@
 }
 
 .about-services {
-  padding-top: mixins.toRem(96);
+  padding-top: mixins.toRem(100);
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     padding-top: mixins.toRem(61);
@@ -266,25 +146,15 @@
   }
 }
 
-.about-projects {
-  padding-top: mixins.toRem(98);
-
-  @media (width < #{mixins.toEm(variables.$mobile)}) {
-    padding-top: mixins.toRem(59);
-  }
-}
-
 .about-brands {
-  width: min(100%, mixins.toRem(1600));
   margin-top: mixins.toRem(120);
   margin-inline: auto;
-  padding-block: mixins.toRem(88) mixins.toRem(96);
-  border-radius: mixins.toRem(10);
+  padding-block: mixins.toRem(62) mixins.toRem(80);
   background-color: var(--bg-section-color);
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     margin-top: mixins.toRem(47);
-    padding-block: mixins.toRem(39);
+    padding-block: mixins.toRem(40);
     border-radius: 0;
   }
 

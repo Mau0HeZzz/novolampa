@@ -66,7 +66,7 @@ mhzFunctions.tabs();
 Документация: https://start-template.ru/modul-pokazat-eshhe-chertogi-frilansera-v3-0-0/
 Сниппет (HTML): showmore
 */
-// mhzFunctions.showMore();
+mhzFunctions.showMore();
 
 /*
 Модуль "До/После"
@@ -193,7 +193,7 @@ import "./files/sliders.js";
 // Документация по работе в шаблоне: https://start-template.ru/modul-lenivaya-podgruzka-lazy-loading-chertogi-frilansera-v3-0-0/
 // Документация плагина: https://github.com/verlok/vanilla-lazyload
 // Сниппет(HTML):
-// import './files/scroll/lazyload.js';
+import './files/scroll/lazyload.js';
 
 // Наблюдатель объектов с атрибутом data-watch
 // Документация: https://start-template.ru/modul-nablyudatel-po-poyavleniyu-elementov-pri-prokrutke-straniczy-skrolle-chertogi-frilansera-v3-0-0/
@@ -215,7 +215,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
 // Документация: https://start-template.ru/modul-prokrutka-k-nuzhnomu-bloku-plavnaya-navigacziya-po-stranicze-chertogi-frilansera-v3-0-0/
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 
 // Функциональность добавления классов в хеддер при прокрутке
 // Документация: https://start-template.ru/modul-dobavleniya-klassov-v-shapku-pri-prokrutke-straniczy-chertogi-frilansera-v3-0-0/

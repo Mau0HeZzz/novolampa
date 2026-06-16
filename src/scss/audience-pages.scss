@@ -10,125 +10,12 @@
   background-color: var(--bg-main-color);
 }
 
-.audience-hero {
-  &__body {
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      padding: mixins.toRem(16) mixins.toRem(15) 0;
-    }
-  }
-
-  &__content {
-    width: min(100%, mixins.toRem(650));
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-block: mixins.toRem(55) mixins.toRem(62);
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      width: 100%;
-      justify-content: flex-start;
-      padding-top: mixins.toRem(40);
-      padding-bottom: 0;
-    }
-  }
-
-  &__title {
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      font-size: mixins.toRem(30);
-      line-height: math.div(32, 30);
-    }
-  }
-
-  &__text {
-    max-width: mixins.toRem(560);
-    margin-top: mixins.toRem(28);
-    font-size: mixins.toRem(16);
-    font-weight: 500;
-    line-height: math.div(24, 16);
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      order: 2;
-      max-width: none;
-      margin-top: mixins.toRem(12);
-      margin-bottom: mixins.toRem(-28);
-      padding: mixins.toRem(24) mixins.toRem(20);
-      border: mixins.toRem(6) solid var(--bg-glass-color);
-      border-radius: mixins.toRem(10);
-      background-color: var(--bg-header-glass-color);
-      background-clip: padding-box;
-      backdrop-filter: blur(mixins.toRem(20));
-      font-size: mixins.toRem(15);
-      line-height: math.div(21, 15);
-    }
-  }
-
-  &__actions {
-    width: fit-content;
-    display: flex;
-    gap: mixins.toRem(12);
-    margin-top: mixins.toRem(50);
-    padding: mixins.toRem(11);
-    border-radius: mixins.toRem(10);
-    background:
-      linear-gradient(111.49deg, rgba(255, 255, 255, 0.08) -8.95%, rgba(255, 255, 255, 0.002) 114%),
-      rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(mixins.toRem(20));
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      width: 100%;
-      order: 1;
-      gap: mixins.toRem(6);
-      margin-top: mixins.toRem(38);
-      padding: mixins.toRem(6);
-    }
-  }
-
-  &__button {
-    min-width: mixins.toRem(246);
-    padding-block: mixins.toRem(11);
-
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      min-width: 0;
-      flex: 1 1 auto;
-      padding: mixins.toRem(10) mixins.toRem(12);
-      font-size: mixins.toRem(13);
-    }
-
-    &_outline {
-      min-width: mixins.toRem(204);
-      color: var(--text-light-color);
-      border-color: var(--border-white-color);
-
-      @media (any-hover: hover) {
-        &:hover {
-          color: var(--text-main-color);
-          background-color: var(--bg-main-color);
-        }
-      }
-
-      @media (width < #{mixins.toEm(variables.$mobile)}) {
-        min-width: 0;
-      }
-    }
-  }
-
-  .breadcrumbs {
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      width: max-content;
-      flex-wrap: nowrap;
-      font-size: mixins.toRem(12);
-      line-height: math.div(17, 12);
-    }
-  }
-}
-
 .designers-hero {
-  .audience-hero__content {
+  .page-hero__content {
     width: min(100%, mixins.toRem(660));
   }
 
-  .audience-hero__button {
+  .page-hero__button {
     min-width: mixins.toRem(334);
 
     @media (width < #{mixins.toEm(variables.$mobile)}) {
@@ -136,31 +23,25 @@
     }
   }
 
-  .audience-hero__media {
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      background-position: 54% center;
-    }
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    --page-hero-bg-position: 54% center;
   }
 }
 
 .business-hero {
-  .audience-hero__content {
+  .page-hero__content {
     width: min(100%, mixins.toRem(500));
-  }
 
-  .audience-hero__media {
-    @media (width < #{mixins.toEm(variables.$mobile)}) {
-      background-position: 52% center;
-    }
-  }
-
-  .audience-hero__content {
     @media (width < #{mixins.toEm(variables.$mobile)}) {
       padding-top: mixins.toRem(38);
     }
   }
 
-  .audience-hero__actions {
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    --page-hero-bg-position: 52% center;
+  }
+
+  .page-hero__actions {
     @media (width < #{mixins.toEm(variables.$mobile)}) {
       margin-top: mixins.toRem(48);
     }
@@ -369,14 +250,6 @@
       font-size: mixins.toRem(13);
       line-height: math.div(18, 13);
     }
-  }
-}
-
-.audience-projects {
-  padding-top: mixins.toRem(98);
-
-  @media (width < #{mixins.toEm(variables.$mobile)}) {
-    padding-top: mixins.toRem(62);
   }
 }
 
@@ -626,14 +499,6 @@
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     padding-top: mixins.toRem(58);
-  }
-}
-
-.business-projects {
-  padding-top: mixins.toRem(94);
-
-  @media (width < #{mixins.toEm(variables.$mobile)}) {
-    padding-top: mixins.toRem(62);
   }
 }
 

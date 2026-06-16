@@ -11,17 +11,26 @@
 
       <main class="audience-page business-page">
         <include
-          src="src/html/_audience_hero.html"
+          src="src/html/_page_hero.html"
           locals='{
-            "modifier": "business-hero",
-            "breadcrumb": "Бизнесу",
+            "modifier": "page-hero_audience business-hero",
+            "showBreadcrumbs": true,
+            "items": ["Главная"],
+            "mainItem": "Бизнесу",
             "imagePath": "/img/business/hero-bg.png",
+            "backgroundPosition": "center",
+            "minHeight": "400px",
             "title": "Освещение для бизнеса<br>и проектных поставок",
             "text": "Комплексные поставки освещения для коммерческих<br class=\"_md-768-dn\"> объектов. Работаем с девелоперами, подрядчиками<br class=\"_md-768-dn\"> и проектными организациями.",
             "primaryText": "Получить КП",
             "primaryHref": "#businessRequest",
+            "primaryGoto": "#businessRequest",
             "secondaryText": "Отправить проект",
-            "secondaryHref": "#businessRequest"
+            "secondaryHref": "#businessRequest",
+            "secondaryGoto": "#businessRequest",
+            "showMetrics": false,
+            "metricsSlotClass": "",
+            "metrics": []
           }'
         ></include>
 
@@ -121,9 +130,7 @@
         <include
           src="src/html/_audience_projects.html"
           locals='{
-            "modifier": "business-projects",
-            "sectionId": "businessProjects",
-            "actionsClass": "business-projects__actions"
+            "sectionId": "businessProjects"
           }'
         ></include>
 

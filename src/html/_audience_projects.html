@@ -2,7 +2,7 @@
   @fileOverview Общий блок реализованных проектов для тематических страниц.
 -->
 
-<section class="section solutions-projects audience-projects {{ modifier }}" id="{{ sectionId }}">
+<section class="section solutions-projects" id="{{ sectionId }}" data-show-hidden>
   <div class="section__container solutions-projects__container">
     <div class="solutions-projects__head">
       <div>
@@ -14,7 +14,7 @@
       <a
         href="/pages/projects.html"
         class="solutions-projects__all"
-        data-da=".{{ actionsClass }}, 768, last"
+        data-da="#{{ sectionId }} .solutions-projects__actions, 768, last"
       >Все проекты</a>
     </div>
 
@@ -27,10 +27,18 @@
         <img src="/img/solutions/projects-2.png" alt="">
         <span>Внутреннее освещение клиники MEDALL</span>
       </a>
+      <a href="/pages/project.html" class="solutions-project-card" hidden data-show-hidden-item>
+        <img src="/img/solutions/projects-1.png" alt="">
+        <span>Архитектурное освещение частного интерьера</span>
+      </a>
+      <a href="/pages/project.html" class="solutions-project-card" hidden data-show-hidden-item>
+        <img src="/img/solutions/projects-2.png" alt="">
+        <span>Световое решение для коммерческого пространства</span>
+      </a>
     </div>
 
-    <div class="solutions-projects__actions {{ actionsClass }}">
-      <a href="#" class="action-button action-button_outline solutions-projects__more _mmd-768-dn">Показать ещё</a>
+    <div class="solutions-projects__actions">
+      <a href="#" class="action-button action-button_outline solutions-projects__more" data-show-hidden-button>Показать ещё</a>
     </div>
   </div>
 </section>

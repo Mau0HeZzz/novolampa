@@ -10,64 +10,33 @@
       <include src="src/html/_header.html"></include>
 
       <main class="solution-detail">
-        <section class="solution-detail-hero">
-          <div
-            class="page-hero solution-detail-hero__media"
-            style="--page-hero-image: url('/img/solutions/detail-hero-bg.png')"
-          >
-            <div class="page-hero__body solution-detail-hero__body">
-              <include
-                src="src/html/_breadcrumbs.html"
-                locals='{"items": ["Главная", "Решения", "Решения по освещению"], "mainItem": "Освещение ресторанов и HoReCa"}'
-              ></include>
-
-              <div class="solution-detail-hero__content">
-                <h1 class="page-hero__title solution-detail-hero__title">
-                  Освещение ресторанов<br class="_md-768-dn"> и HoReCa
-                </h1>
-                <p class="solution-detail-hero__text">
-                  Создаём атмосферное освещение для ресторанов, баров и кафе:
-                  акцентный, декоративный и функциональный свет.
-                </p>
-                <div class="solution-detail-hero__actions">
-                  <a href="#solutionRequest" class="action-button action-button_primary solution-detail-hero__button">
-                    Получить проект
-                    <i>
-                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-                        <use xlink:href="/img/sprite.svg#arrow-right"></use>
-                      </svg>
-                    </i>
-                  </a>
-                  <a href="#solutionProjects" class="action-button solution-detail-hero__button solution-detail-hero__button_outline">
-                    <span class="_md-768-dn">Смотреть примеры</span>
-                    <span class="_mmd-768-dn">Примеры</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="solution-detail-hero__metrics"
-            data-da=".solution-detail-hero__metrics-slot, 768, last"
-          >
-            <div class="solution-detail-hero__metrics-body">
-              <div class="solution-detail-hero__metric">
-                <strong>500</strong>
-                <span>проектов</span>
-              </div>
-              <div class="solution-detail-hero__metric">
-                <strong>10</strong>
-                <span>лет опыта</span>
-              </div>
-              <div class="solution-detail-hero__metric">
-                <strong>24 ч</strong>
-                <span>расчёт проекта</span>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div class="solution-detail-hero__metrics-slot"></div>
+        <include
+          src="src/html/_page_hero.html"
+          locals='{
+            "modifier": "page-hero_metrics solution-hero",
+            "showBreadcrumbs": true,
+            "items": ["Главная", "Решения", "Решения по освещению"],
+            "mainItem": "Освещение ресторанов и HoReCa",
+            "imagePath": "/img/solutions/detail-hero-bg.png",
+            "backgroundPosition": "center",
+            "minHeight": "400px",
+            "title": "Освещение ресторанов<br class=\"_md-768-dn\"> и HoReCa",
+            "text": "Создаём атмосферное освещение для ресторанов, баров и кафе: акцентный, декоративный и функциональный свет.",
+            "primaryText": "Получить проект",
+            "primaryHref": "#solutionRequest",
+            "primaryGoto": "#solutionRequest",
+            "secondaryText": "<span class=\"_md-768-dn\">Смотреть примеры</span><span class=\"_mmd-768-dn\">Примеры</span>",
+            "secondaryHref": "#solutionProjects",
+            "secondaryGoto": "#solutionProjects",
+            "showMetrics": true,
+            "metricsSlotClass": "solution-hero__metrics-slot",
+            "metrics": [
+              {"value": "500", "label": "проектов"},
+              {"value": "10", "label": "лет опыта"},
+              {"value": "24 ч", "label": "расчёт проекта"}
+            ]
+          }'
+        ></include>
 
         <section class="section solution-zones">
           <div class="section__container solution-zones__container">

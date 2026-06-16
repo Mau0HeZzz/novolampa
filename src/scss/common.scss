@@ -595,6 +595,18 @@ $indent-direction-properties: (
     }
   }
 
+  &_light-outline {
+    color: var(--text-light-color);
+    border-color: var(--border-white-color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-main-color);
+        background-color: var(--bg-main-color);
+      }
+    }
+  }
+
   &_social {
     width: mixins.toRem(56);
     aspect-ratio: 1;

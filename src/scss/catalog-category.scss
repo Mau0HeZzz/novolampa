@@ -362,14 +362,14 @@
   .product-mini-card__compare {
     position: absolute;
     z-index: 2;
-    top: mixins.toRem(12);
-    left: mixins.toRem(12);
+    top: mixins.toRem(17);
+    left: mixins.toRem(21);
     display: flex;
     color: var(--icon-muted-color);
 
     @media (width < #{mixins.toEm(variables.$mobile)}) {
-      top: mixins.toRem(9);
-      left: mixins.toRem(8);
+      top: mixins.toRem(15);
+      left: mixins.toRem(13);
     }
 
     svg {
@@ -380,9 +380,8 @@
 
   .product-mini-card__favorite {
     @media (width < #{mixins.toEm(variables.$mobile)}) {
-      top: mixins.toRem(9);
-      right: mixins.toRem(8);
-      width: mixins.toRem(11);
+      top: mixins.toRem(15);
+      right: mixins.toRem(13);
     }
   }
 
