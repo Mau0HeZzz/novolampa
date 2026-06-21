@@ -152,19 +152,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // aspect-ratio: 1380 / 202;
     gap: mixins.toRem(40);
     padding: mixins.toRem(54) mixins.toRem(50) mixins.toRem(50) mixins.toRem(64);
     overflow: hidden;
     border-radius: mixins.toRem(10);
-    background: url("/img/solutions/banner-bg.png") center / cover no-repeat;
+    background: var(--bg-url, url("/img/solutions/banner-bg.png")) center / cover no-repeat;
 
     @media (width < #{mixins.toEm(variables.$mobile)}) {
       display: block;
-      // aspect-ratio: 337 / 256;
       padding: mixins.toRem(28) mixins.toRem(16) mixins.toRem(19);
-      border-radius: mixins.toRem(10);
-      background-position: center;
     }
   }
 

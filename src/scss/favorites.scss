@@ -1,0 +1,103 @@
+/**
+ * @fileOverview Стили страницы избранных товаров.
+ */
+
+@use "base/mixins";
+@use "variables";
+@use "sass:math";
+
+.favorites-page {
+  background-color: var(--bg-main-color);
+}
+
+.favorites-intro {
+  &__container {
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      padding-top: mixins.toRem(18);
+      padding-bottom: mixins.toRem(26);
+    }
+  }
+
+  &__title {
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      margin-top: mixins.toRem(14);
+      font-size: mixins.toRem(21);
+      line-height: math.div(26, 21);
+    }
+  }
+}
+
+.favorites-products {
+  padding-top: mixins.toRem(14);
+  padding-bottom: mixins.toRem(132);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    padding-top: mixins.toRem(24);
+    padding-bottom: mixins.toRem(62);
+  }
+
+  &__container {
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      padding-inline: mixins.toRem(16);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: stretch;
+    gap: mixins.toRem(30);
+
+    @media (width < #{mixins.toEm(1300)}) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @media (width < #{mixins.toEm(variables.$tablet)}) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: mixins.toRem(18);
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: mixins.toRem(12) mixins.toRem(8);
+    }
+  }
+}
+
+.product-mini-card_favorite {
+
+  .product-mini-card__remove {
+    position: absolute;
+    z-index: 2;
+    top: mixins.toRem(13);
+    right: mixins.toRem(13);
+    width: mixins.toRem(20);
+    height: mixins.toRem(20);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--text-secondary-color);
+    background-color: var(--bg-section-color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-main-color);
+      }
+    }
+
+    .loaded & {
+      transition: color 0.3s ease;
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      top: mixins.toRem(9);
+      right: mixins.toRem(8);
+    }
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    .product-mini-card__documentation {
+      display: none;
+    }
+  }
+}

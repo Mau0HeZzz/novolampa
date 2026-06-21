@@ -1,5 +1,5 @@
 <!--
-  @fileOverview Переиспользуемая компактная карточка товара для слайдеров и подборок.
+  @fileOverview Переиспользуемая компактная карточка товара для каталогов, слайдеров и подборок.
 -->
 
 <article class="product-mini-card {{ modifier }} {{ inCart === 'true' ? '_in-cart' : '' }}">
@@ -11,11 +11,20 @@
     </svg>
   </button>
 
-  <button type="button" class="product-mini-card__favorite" aria-label="Добавить товар в избранное">
-    <svg width="14" height="19" viewBox="0 0 14 19" fill="none" aria-hidden="true">
-      <use xlink:href="/img/sprite.svg#zakladka"></use>
-    </svg>
-  </button>
+  <if condition="typeof showRemoveButton !== 'undefined' && showRemoveButton">
+    <button type="button" class="product-mini-card__remove" aria-label="Удалить товар из избранного">
+      <svg width="10" height="10" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <use xlink:href="/img/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </if>
+  <else>
+    <button type="button" class="product-mini-card__favorite" aria-label="Добавить товар в избранное">
+      <svg width="14" height="19" viewBox="0 0 14 19" fill="none" aria-hidden="true">
+        <use xlink:href="/img/sprite.svg#zakladka"></use>
+      </svg>
+    </button>
+  </else>
 
   <div class="product-mini-card__media">
     <img src="{{ imagePath }}" alt="{{ title }}">

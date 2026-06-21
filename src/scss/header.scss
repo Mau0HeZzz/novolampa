@@ -460,55 +460,6 @@
 
   .quantity-form {
     width: mixins.toRem(94);
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: center;
-    padding: mixins.toRem(3);
-    border-radius: mixins.toRem(5);
-    background-color: var(--bg-main-color);
-
-    &__button {
-      width: 100%;
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      border-radius: mixins.toRem(2);
-      color: var(--text-secondary-color);
-      background-color: var(--bg-section-color);
-
-      .loaded & {
-        transition:
-          color 0.3s ease,
-          background-color 0.3s ease;
-      }
-
-      @media (any-hover: hover) {
-        &:hover {
-          color: var(--text-main-color);
-          background-color: var(--bg-menu-color);
-        }
-      }
-
-      svg {
-        display: block;
-        color: currentColor;
-      }
-
-      * {
-        pointer-events: none;
-      }
-    }
-
-    &__input {
-      min-width: 0;
-
-      input {
-        width: 100%;
-        outline: none;
-        font-size: mixins.toRem(14);
-        text-align: center;
-      }
-    }
   }
 
   &__remove {

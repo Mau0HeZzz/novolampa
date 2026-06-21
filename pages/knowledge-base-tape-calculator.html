@@ -1,0 +1,637 @@
+<!--
+  @fileOverview Страница калькулятора светодиодной ленты.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Калькулятор светодиодной ленты"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="knowledge-page knowledge-calculator-page">
+        <section class="section page-intro knowledge-intro knowledge-calculator-intro">
+          <div class="section__container page-intro__container knowledge-intro__container">
+            <div class="section__head page-intro__head">
+              <ul class="section__breadcrumbs breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a href="/pages/home.html" itemprop="item">
+                    <span itemprop="name">Главная</span>
+                  </a>
+                  <meta itemprop="position" content="1">
+                </li>
+                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a href="/pages/knowledge-base.html" itemprop="item">
+                    <span itemprop="name">База знаний</span>
+                  </a>
+                  <meta itemprop="position" content="2">
+                </li>
+                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a href="/pages/knowledge-base-tools.html" itemprop="item">
+                    <span itemprop="name">Инструменты</span>
+                  </a>
+                  <meta itemprop="position" content="3">
+                </li>
+                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <span itemprop="name">Калькулятор светодиодной ленты</span>
+                  <meta itemprop="position" content="4">
+                </li>
+              </ul>
+              <h1 class="section__title page-intro__title">Калькулятор светодиодной ленты</h1>
+            </div>
+          </div>
+        </section>
+
+        <section class="section tape-calculator" data-calculator>
+          <div class="section__container tape-calculator__container">
+            <div class="tape-calculator__layout">
+              <div class="tape-calculator__main">
+                <div class="tape-calculator__forms" data-calculator-forms></div>
+                <div class="tape-calculator__actions" data-calculator-actions>
+                  <button type="button" class="action-button action-button_primary tape-calculator__submit" data-calculator-submit>
+                    Подобрать ленту
+                    <i>
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                        <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                      </svg>
+                    </i>
+                  </button>
+                  <button type="button" class="action-button action-button_outline tape-calculator__clear" data-calculator-clear>
+                    Очистить
+                  </button>
+                </div>
+                <div class="tape-calculator__result" data-calculator-result></div>
+                <div class="tape-calculator__info" data-calculator-info hidden></div>
+              </div>
+
+              <a href="https://www.youtube.com/watch?v=JIthIaJUmD4&ab_channel=novolampa.ru" target="_blank" class="tape-calculator__video _md-1150-dn" aria-label="Видеоинструкция">
+                <h2 class="tape-calculator__video-title">
+                  Ничего не понятно? Посмотрите видеоинструкцию
+                </h2>
+                <i class="tape-calculator__video-play" aria-label="Смотреть видеоинструкцию">
+                  <svg width="81" height="81" viewBox="0 0 81 81" aria-hidden="true">
+                    <use xlink:href="/img/colored.svg#play-icon"></use>
+                  </svg>
+                </i>
+              </a>
+            </div>
+          </div>
+
+          <template data-calculator-template="segment">
+            <form class="tape-segment" method="post" enctype="multipart/form-data" data-calculator-segment>
+              <input type="hidden" name="sessid" data-calculator-field="sessid">
+              <input type="hidden" name="FORM_ID" data-calculator-field="FORM_ID">
+              <input type="hidden" name="init" value="Y" data-calculator-init>
+              <input type="hidden" name="room_name" data-calculator-room-hidden>
+              <input type="hidden" name="CART" data-calculator-cart hidden>
+
+              <div class="tape-segment__head" data-calculator-segment-head>
+                <div class="tape-segment__room" data-calculator-room>
+                  <span class="tape-segment__room-label">Название помещения</span>
+                  <button type="button" class="tape-segment__room-name" data-calculator-room-name></button>
+                  <div class="tape-segment__room-edit" data-calculator-room-edit hidden>
+                    <label class="form__item form__item_shadow tape-segment__room-field">
+                      <input type="text" class="form__input" data-calculator-room-input>
+                      <span class="form__placeholder">Название помещения</span>
+                    </label>
+                    <button type="button" class="tape-segment__room-submit" data-calculator-room-submit>Ок</button>
+                    <button type="button" class="tape-segment__room-cancel" data-calculator-room-cancel>Отмена</button>
+                  </div>
+                </div>
+
+                <div class="tape-segment__actions">
+                  <button type="button" class="action-button action-button_outline tape-segment__add" data-calculator-add-segment>
+                    <span class="_md3dn">Добавить помещение</span>
+                    <svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true" class="_mmd3dn">
+                      <use xlink:href="/img/sprite.svg#plus"></use>
+                    </svg>
+                  </button>
+                  <button type="button" class="tape-segment__delete" aria-label="Удалить помещение" data-calculator-delete-segment hidden>
+                    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                      <use xlink:href="/img/sprite.svg#trash-delete"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="tape-segment__body" data-calculator-segment-body>
+                <div class="tape-segment__sections" data-calculator-sections></div>
+              </div>
+            </form>
+          </template>
+
+          <template data-calculator-template="section-sizes">
+            <section class="tape-option tape-option_sizes" data-calculator-section>
+              <h2 class="tape-option__title">
+                <span data-calculator-section-index></span>
+                <span data-calculator-section-title></span>
+                <button type="button" class="tape-option__hint" data-calculator-tooltip aria-label="Показать подсказку">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#question-message"></use>
+                  </svg>
+                </button>
+              </h2>
+              <div class="tape-option__sizes">
+                <div class="tape-option__sizes-main" data-calculator-size-fields></div>
+                <span class="tape-option__sizes-separator">или</span>
+                <div class="tape-option__sizes-total" data-calculator-total-field></div>
+              </div>
+            </section>
+          </template>
+
+          <template data-calculator-template="section-options">
+            <section class="tape-option" data-calculator-section>
+              <h2 class="tape-option__title">
+                <span data-calculator-section-index></span>
+                <span data-calculator-section-title></span>
+                <button type="button" class="tape-option__hint" data-calculator-tooltip aria-label="Показать подсказку">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#question-message"></use>
+                  </svg>
+                </button>
+              </h2>
+              <div class="tape-option__items" data-calculator-options></div>
+            </section>
+          </template>
+
+          <template data-calculator-template="field">
+            <label class="form__item form__item_shadow tape-field" data-calculator-field-wrap>
+              <input type="text" class="form__input" data-calculator-input>
+              <span class="form__placeholder" data-calculator-field-label></span>
+            </label>
+          </template>
+
+          <template data-calculator-template="radio">
+            <label class="form__radiowrap" data-calculator-radio-wrap>
+              <input type="radio" data-calculator-input>
+              <i class="form__radio"></i>
+              <span class="form__label" data-calculator-radio-label></span>
+            </label>
+          </template>
+
+          <template data-calculator-template="result">
+            <div class="tape-result" data-calculator-result-card>
+              <h2 class="tape-result__title">Смотрите что у нас получилось!</h2>
+              <div class="tape-result__head">
+                <span>Товар</span>
+                <span>Вес</span>
+                <span>Цена</span>
+                <span>Кол-во</span>
+                <span>Сумма</span>
+              </div>
+              <div class="tape-result__rooms" data-calculator-result-rooms></div>
+              <div class="tape-result__footer">
+                <button type="button" class="action-button action-button_download tape-result__pdf" data-calculator-pdf>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <use xlink:href="/img/sprite.svg#download"></use>
+                  </svg>
+                  Экспорт в PDF
+                </button>
+                <div class="tape-result__summary">
+                  <span>Итого:</span>
+                  <strong data-calculator-total-sum></strong>
+                  <button type="button" class="action-button action-button_primary tape-result__cart" data-calculator-add-cart>
+                    Добавить все товары в корзину
+                    <i>
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                        <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                      </svg>
+                    </i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template data-calculator-template="result-room">
+            <section class="tape-result-room" data-calculator-result-room>
+              <h3 class="tape-result-room__title" data-calculator-result-room-title></h3>
+              <div class="tape-result-room__items" data-calculator-result-items></div>
+            </section>
+          </template>
+
+          <template data-calculator-template="result-item">
+            <article class="tape-result-item" data-calculator-result-item>
+              <a href="#" class="tape-result-item__image-link" data-calculator-product-link>
+                <img src="" alt="" class="tape-result-item__image" data-calculator-product-image>
+              </a>
+              <div class="tape-result-item__content">
+                <a href="#" class="tape-result-item__title" data-calculator-product-title></a>
+                <div class="tape-result-item__meta">
+                  <span>Арт: <span data-calculator-product-article></span></span>
+                  <span class="tape-result-item__stock" data-calculator-product-stock></span>
+                </div>
+              </div>
+              <div class="tape-result-item__weight" data-label="Вес" data-calculator-product-weight></div>
+              <div class="tape-result-item__price" data-label="Цена" data-calculator-product-price></div>
+              <div class="tape-result-item__quantity" data-label="Кол-во" data-calculator-product-quantity></div>
+              <div class="tape-result-item__sum" data-label="Сумма" data-calculator-product-sum></div>
+            </article>
+          </template>
+
+          <template data-calculator-template="info">
+            <i class="tape-calculator__info-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <use xlink:href="/img/colored.svg#minus-plus"></use>
+              </svg>
+            </i>
+            <div class="tape-calculator__info-content">
+              <p>
+                <strong>Уважаемый покупатель, данный подбор оборудования имеет рекомендательный характер.</strong>
+              </p>
+              <p>
+                Для проверки результатов подбора и уточнения сроков поставки товара Вы можете связаться с нашими
+                специалистами любым удобным для Вас способом. Информация для связи доступна в разделе контактов.
+              </p>
+            </div>
+          </template>
+
+          <template data-calculator-template="pdf">
+            <div class="tape-pdf" data-calculator-pdf-document>
+              <table class="tape-pdf__header">
+                <tbody>
+                  <tr>
+                    <td><img src="" alt="" data-calculator-pdf-logo></td>
+                    <td data-calculator-pdf-requisites></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="tape-pdf__table">
+                <thead>
+                  <tr>
+                    <th>Наименование</th>
+                    <th>Кол-во</th>
+                    <th>Ед.изм.</th>
+                    <th>Цена</th>
+                    <th>Сумма</th>
+                    <th>Фото</th>
+                  </tr>
+                </thead>
+                <tbody data-calculator-pdf-rows></tbody>
+                <tfoot>
+                  <tr>
+                    <th colspan="4">Итого:</th>
+                    <th colspan="2" data-calculator-pdf-total></th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </template>
+
+          <template data-calculator-template="pdf-room">
+            <tr class="tape-pdf__room" data-calculator-pdf-room>
+              <th colspan="6" data-calculator-pdf-room-title></th>
+            </tr>
+          </template>
+
+          <template data-calculator-template="pdf-row">
+            <tr class="tape-pdf__row" data-calculator-pdf-row>
+              <td data-calculator-pdf-product-title></td>
+              <td data-calculator-pdf-product-quantity></td>
+              <td data-calculator-pdf-product-measure></td>
+              <td data-calculator-pdf-product-price></td>
+              <td data-calculator-pdf-product-sum></td>
+              <td><img src="" alt="" data-calculator-pdf-product-image></td>
+            </tr>
+          </template>
+
+          <script>
+            window.calculatorSettings = {
+              storageKey: "NOVOLAMPA_TAPE_CALCULATOR",
+              initialSegment: {
+                FORM_ID: "FORM_1",
+                init: "Y",
+                room_name: "Комната 1"
+              },
+              endpoints: {
+                calculate: "/bitrix/services/main/ajax.php?mode=class&c=novolampa.calculator%3Aform&action=ajax",
+                addToCart: "/bitrix/services/main/ajax.php?mode=class&c=novolampa.calculator%3Aform&action=addToCart"
+              },
+              request: {
+                rootField: "post",
+                csrfHeader: "x-bitrix-csrf-token",
+                siteIdHeader: "x-bitrix-site-id",
+                siteId: "s1"
+              },
+              validation: {
+                dimensions: {
+                  fields: ["length", "width", "height"],
+                  alternativeField: "general_length"
+                },
+                messages: {
+                  dimensions: "Укажите длину, ширину и высоту или общую длину подсветки",
+                  request: "Не удалось выполнить расчёт. Попробуйте ещё раз.",
+                  addSegment: ""
+                }
+              },
+              messages: {
+                cleared: "Калькулятор очищен",
+                roomAdded: "Помещение добавлено",
+                resultReady: "Подбор оборудования готов",
+                addedToCart: "Товары добавлены в корзину",
+                pdfReady: "PDF сформирован"
+              },
+              demo: {
+                delay: 450,
+                logging: true,
+                sameProductsForEachRoom: true,
+                defaultResultOnInit: false,
+                products: [
+                  {
+                    ID: "demo-1",
+                    NAME: "Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый...)",
+                    ARTICLE: "013730",
+                    PREVIEW_PICTURE: "/img/catalog/item-1.png",
+                    DETAIL_PAGE_URL: "/pages/catalog-category.html",
+                    WEIGHT: "122 г",
+                    PRICE: 21188.53,
+                    PRICE_FORMATTED: "21 188.53 ₽",
+                    QUANTITY: 2,
+                    MEASURE: "шт.",
+                    SUM: 42367.03,
+                    SUM_FORMATTED: "42 367.03 ₽",
+                    STOCK: "В наличии 135 шт"
+                  },
+                  {
+                    ID: "demo-2",
+                    NAME: "940414 Лампа LED 220V T20 G4 6W-60W 492LM 360G CL 4000K ...",
+                    ARTICLE: "013730",
+                    PREVIEW_PICTURE: "/img/catalog/item-2.png",
+                    DETAIL_PAGE_URL: "/pages/catalog-category.html",
+                    WEIGHT: "98 г",
+                    PRICE: 5500,
+                    PRICE_FORMATTED: "5 500 ₽",
+                    QUANTITY: 2,
+                    MEASURE: "шт.",
+                    SUM: 11000,
+                    SUM_FORMATTED: "11 000 ₽",
+                    STOCK: "В наличии 135 шт"
+                  },
+                  {
+                    ID: "demo-3",
+                    NAME: "Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990",
+                    ARTICLE: "013730",
+                    PREVIEW_PICTURE: "/img/catalog/item-3.png",
+                    DETAIL_PAGE_URL: "/pages/catalog-category.html",
+                    WEIGHT: "84 г",
+                    PRICE: 5500,
+                    PRICE_FORMATTED: "5 500 ₽",
+                    QUANTITY: 2,
+                    MEASURE: "шт.",
+                    SUM: 11000,
+                    SUM_FORMATTED: "11 000 ₽",
+                    STOCK: "В наличии 135 шт"
+                  }
+                ],
+                total: {
+                  SUM: 298000,
+                  SUM_FORMATTED: "298 000 ₽"
+                }
+              },
+              pdf: {
+                fileName: "novolampa-tape-calculator.pdf",
+                partnerLogo: "/img/logo-dark.svg",
+                partnerRequisite: "ООО \"Новолампа\", т. 8 (800) 700-80-91, zakaz@novolampa.ru. СПб, Петергофское ш., 55, к. 1"
+              },
+              sections: {
+                order: ["SIZES", "LED_RIBBON", "DEGREE_OF_PROTECTION", "GLOW_COLOR", "LIGHT_CONTROL", "PROFILE"],
+                SIZES: {
+                  TITLE: "Габариты помещения",
+                  DESCRIPTION: "<p>Для подбора необходимого оборудования, пожалуйста, укажите длину, ширину и высоту Вашего помещения. Либо укажите общий метраж необходимой подсветки и высоту помещения.</p>",
+                  ITEMS: {
+                    LENGTH: {
+                      TYPE: "text",
+                      NAME: "length",
+                      VALUE: "",
+                      LABEL: "Длина, м",
+                      ACTIVE: true
+                    },
+                    WIDTH: {
+                      TYPE: "text",
+                      NAME: "width",
+                      VALUE: "",
+                      LABEL: "Ширина, м",
+                      ACTIVE: true
+                    },
+                    HEIGHT: {
+                      TYPE: "text",
+                      NAME: "height",
+                      VALUE: "",
+                      LABEL: "Высота, м",
+                      ACTIVE: true
+                    },
+                    GENERAL_LENGTH: {
+                      TYPE: "text",
+                      NAME: "general_length",
+                      VALUE: "",
+                      LABEL: "Общ. длина подсветки, м",
+                      ACTIVE: true
+                    }
+                  }
+                },
+                LED_RIBBON: {
+                  TITLE: "Тип освещения",
+                  SELECTED: "dekorativnaya-podsvetka-belaya-yarkaya",
+                  DESCRIPTION: "<p><strong>Выберите один из вариантов необходимого освещения для поставленной задачи:</strong></p><p><strong>Декоративная подсветка</strong> - маломощная лента, для акцентной подсветки. Мощность ленты - 4,8вт/м.</p><p><strong>Декоративная подсветка, яркая</strong> - маломощная лента с плотным количеством светодиодов, для равномерной и яркой засветки. Мощность ленты - 9,6вт/м.</p><p><strong>Дополнительное освещение</strong> - лента средней мощности с яркими светодиодами, для создания полноценного дополнительного света в помещении. Мощность ленты - 14,4вт/м.</p><p><strong>Основное освещение</strong> - мощная лента с большим количеством светодиодов, для создания полноценного основного света в помещении. Мощность ленты - 27вт/м.</p><p><strong>Декоративная подсветка, цветная</strong> - лента средней мощности, для создания акцентной подсветки с различными оттенками света. Мощность ленты - 14,4вт/м.</p><p><strong>Декоративная подсветка, цветная + белый</strong> - яркая цветная лента с дополнительным белым светом. Мощность ленты - 32вт/м.</p>",
+                  ITEMS: [
+                    {
+                      CODE: "dekorativnaya-podsvetka-belaya",
+                      TYPE: "radio",
+                      NAME: "LED_RIBBON",
+                      VALUE: "dekorativnaya-podsvetka-belaya",
+                      LABEL: "Декоративная подсветка, белая",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "dekorativnaya-podsvetka-belaya-yarkaya",
+                      TYPE: "radio",
+                      NAME: "LED_RIBBON",
+                      VALUE: "dekorativnaya-podsvetka-belaya-yarkaya",
+                      LABEL: "Декоративная подсветка, белая яркая",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "dopolnitelnoe-osveshchenie",
+                      TYPE: "radio",
+                      NAME: "LED_RIBBON",
+                      VALUE: "dopolnitelnoe-osveshchenie",
+                      LABEL: "Дополнительное освещение",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "osnovnoe-osveshchenie",
+                      TYPE: "radio",
+                      NAME: "LED_RIBBON",
+                      VALUE: "osnovnoe-osveshchenie",
+                      LABEL: "Основное освещение",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "dekorativnaya-podsvetka-tsvetnaya",
+                      TYPE: "radio",
+                      NAME: "LED_RIBBON",
+                      VALUE: "dekorativnaya-podsvetka-tsvetnaya",
+                      LABEL: "Декоративная подсветка, цветная",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "dekorativnaya-podsvetka-tsvetnaya-belyy",
+                      TYPE: "radio",
+                      NAME: "LED_RIBBON",
+                      VALUE: "dekorativnaya-podsvetka-tsvetnaya-belyy",
+                      LABEL: "Декоративная подсветка, цветная + белый",
+                      ACTIVE: true
+                    }
+                  ]
+                },
+                DEGREE_OF_PROTECTION: {
+                  TITLE: "Защита ленты от влаги",
+                  SELECTED: "N",
+                  DESCRIPTION: "<p>Укажите, нужна ли защита от пыли и влаги для ленты.</p>",
+                  ITEMS: [
+                    {
+                      CODE: "N",
+                      TYPE: "radio",
+                      NAME: "DEGREE_OF_PROTECTION",
+                      VALUE: "N",
+                      LABEL: "Нет",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "Y",
+                      TYPE: "radio",
+                      NAME: "DEGREE_OF_PROTECTION",
+                      VALUE: "Y",
+                      LABEL: "Да",
+                      ACTIVE: true
+                    }
+                  ]
+                },
+                GLOW_COLOR: {
+                  TITLE: "Цвет свечения",
+                  SELECTED: "belyy_dnevnoy",
+                  DESCRIPTION: "<p><strong>Укажите, какой цвет свечения ленты будет оптимальным для Вашего помещения:</strong></p><p><strong>RGB (разноцветный)</strong> - 3 основных цвета (красный, зеленый и синий), при помощи которых можно создать любой оттенок.</p><p><strong>Белый (теплый)</strong> - аналогичен свету стандартной лампы накаливания, мягкий желтый свет. Оптимально подходит для спальни, детской.</p><p><strong>Белый (дневной)</strong> - яркий белый свет без оттенков. Оптимально подходит для hi-tech дизайна.</p><p><strong>Белый (холодный)</strong> - свет с небольшим синим оттенком. Оптимально подходит для подсветки рабочей зоны на кухне или для нежилых помещений.</p><p><strong>Красный, синий, зеленый, желтый, розовый и оранжевый</strong> - одноцветная лента с соответствующим светом. Оптимально подходит для декоративной и акцентной подсветки различных инсталляций.</p><p><strong>RGB (разноцветный) + белый свет</strong> - 3 основных цвета (красный, зеленый и синий) + дополнительный белый свет, при помощи которых можно создать любой оттенок, либо включить их по отдельности.</p>",
+                  ITEMS: [
+                    {
+                      CODE: "belyy_teplyy",
+                      TYPE: "radio",
+                      NAME: "GLOW_COLOR",
+                      VALUE: "belyy_teplyy",
+                      LABEL: "Белый (теплый)",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "belyy_dnevnoy",
+                      TYPE: "radio",
+                      NAME: "GLOW_COLOR",
+                      VALUE: "belyy_dnevnoy",
+                      LABEL: "Белый (дневной)",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "belyy_kholodnyy",
+                      TYPE: "radio",
+                      NAME: "GLOW_COLOR",
+                      VALUE: "belyy_kholodnyy",
+                      LABEL: "Белый (холодный)",
+                      ACTIVE: true
+                    }
+                  ]
+                },
+                LIGHT_CONTROL: {
+                  TITLE: "Управление светом",
+                  SELECTED: "net",
+                  DESCRIPTION: "<p><strong>Выберите оптимальный для Вас способ управления лентой:</strong></p><p><strong>Пульт (многофункциональный)</strong> - стильный и современный дизайн, наличие сенсорного кольца. Пульт с возможностью управления несколькими зонами, установкой пользовательских режимов и выбора автоматических изменений яркости и цвета свечения.</p><p><strong>Пульт (бюджетный)</strong> - сенсорный многозонный пульт, без пользовательских и автоматических режимов с малой пропускной мощностью контроллера.</p><p><strong>Настенная панель</strong> - накладная поворотная панель, с управлением по радиоканалу.</p>",
+                  ITEMS: [
+                    {
+                      CODE: "multi",
+                      TYPE: "radio",
+                      NAME: "LIGHT_CONTROL",
+                      VALUE: "multi",
+                      LABEL: "Пульт (многофункциональный)",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "econom",
+                      TYPE: "radio",
+                      NAME: "LIGHT_CONTROL",
+                      VALUE: "econom",
+                      LABEL: "Пульт (бюджетный)",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "panel",
+                      TYPE: "radio",
+                      NAME: "LIGHT_CONTROL",
+                      VALUE: "panel",
+                      LABEL: "Настенная панель",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "net",
+                      TYPE: "radio",
+                      NAME: "LIGHT_CONTROL",
+                      VALUE: "net",
+                      LABEL: "Нет",
+                      ACTIVE: true
+                    }
+                  ]
+                },
+                PROFILE: {
+                  TITLE: "Использование алюминиевого профиля",
+                  SELECTED: "polosa-teplootvod",
+                  DESCRIPTION: "<p><strong>Выберите оптимальный тип алюминиевого профиля:</strong></p><p><strong>Прямоугольный профиль, низкий</strong> - универсальный накладной профиль.</p><p><strong>Полоса (Теплоотвод)</strong> - минимальная по высоте основа для отвода тепла от ленты.</p><p><strong>Угловой профиль</strong> - профиль для монтажа в углах и нишах.</p><p><strong>Встраиваемый профиль</strong> - декоративное решение для аккуратного монтажа в поверхность.</p>",
+                  ITEMS: [
+                    {
+                      CODE: "pryamougolnyy-profil-nizkiy",
+                      TYPE: "radio",
+                      NAME: "PROFILE",
+                      VALUE: "pryamougolnyy-profil-nizkiy",
+                      LABEL: "Прямоугольный профиль, низкий",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "polosa-teplootvod",
+                      TYPE: "radio",
+                      NAME: "PROFILE",
+                      VALUE: "polosa-teplootvod",
+                      LABEL: "Полоса (Теплоотвод)",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "uglovoy-16-16",
+                      TYPE: "radio",
+                      NAME: "PROFILE",
+                      VALUE: "uglovoy-16-16",
+                      LABEL: "Угловой, 16*16",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "vstraivaemyy-profil-dekorativnyy",
+                      TYPE: "radio",
+                      NAME: "PROFILE",
+                      VALUE: "vstraivaemyy-profil-dekorativnyy",
+                      LABEL: "Встраиваемый профиль, декоративный",
+                      ACTIVE: true
+                    },
+                    {
+                      CODE: "net",
+                      TYPE: "radio",
+                      NAME: "PROFILE",
+                      VALUE: "net",
+                      LABEL: "Нет",
+                      ACTIVE: true
+                    }
+                  ]
+                }
+              }
+            };
+          </script>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

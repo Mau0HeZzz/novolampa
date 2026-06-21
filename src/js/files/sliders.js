@@ -29,6 +29,53 @@ function initPromoCatalogPopup() {
 function initSliders() {
   initPromoCatalogPopup();
 
+  document.querySelectorAll('[data-product-gallery-main]').forEach((mainElement) => {
+    if (mainElement.classList.contains('is-initialized')) return;
+
+    const gallery = mainElement.closest('.product-gallery');
+    const thumbnailsElement = gallery?.querySelector('[data-product-gallery-thumbs]');
+
+    if (!thumbnailsElement) return;
+
+    const main = new Splide(mainElement, {
+      type: 'fade',
+      rewind: true,
+      pagination: false,
+      arrows: false,
+      breakpoints: {
+        767: {
+          pagination: true,
+        },
+      },
+    });
+    const thumbnails = new Splide(thumbnailsElement, {
+      direction: 'ttb',
+      height: 'auto',
+      fixedWidth: 68,
+      fixedHeight: 68,
+      gap: 10,
+      rewind: true,
+      pagination: false,
+      arrows: true,
+      isNavigation: true,
+      breakpoints: {
+        767: {
+          destroy: true,
+        },
+      },
+    });
+
+    main.sync(thumbnails);
+    main.on('moved', () => {
+      mainElement.lightGallery?.refresh();
+    });
+    main.mount();
+    thumbnails.mount();
+    mainElement.splide = main;
+    thumbnailsElement.splide = thumbnails;
+    mainElement.lightGallery?.refresh();
+  });
+
   document.querySelectorAll('.project-results').forEach((element) => {
     if (element.classList.contains('is-initialized')) return;
 
@@ -59,9 +106,9 @@ function initSliders() {
   document.querySelectorAll('.project-equipment').forEach((element) => {
     if (element.classList.contains('is-initialized')) return;
 
-    new Splide(element, {
+    const splide = new Splide(element, {
       type: 'slide',
-      perPage: 5,
+      autoWidth: true,
       perMove: 1,
       gap: 30,
       arrows: true,
@@ -69,28 +116,52 @@ function initSliders() {
       rewind: true,
       breakpoints: {
         1199: {
-          perPage: 4,
           gap: 20,
         },
         991: {
-          perPage: 3,
           gap: 16,
         },
         767: {
-          perPage: 2,
-          perMove: 2,
           gap: 8,
           arrows: false,
           pagination: true,
         },
       },
-    }).mount();
+    });
+
+    splide.mount();
+    element.splide = splide;
+  });
+
+  document.querySelectorAll('.product-projects').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    const splide = new Splide(element, {
+      type: 'slide',
+      perPage: 2,
+      perMove: 1,
+      gap: 30,
+      arrows: true,
+      pagination: false,
+      rewind: true,
+      breakpoints: {
+        767: {
+          perPage: 1,
+          gap: 8,
+          arrows: false,
+          pagination: true,
+        },
+      },
+    });
+
+    splide.mount();
+    element.splide = splide;
   });
 
   document.querySelectorAll('.similar-projects').forEach((element) => {
     if (element.classList.contains('is-initialized')) return;
 
-    new Splide(element, {
+    const splide = new Splide(element, {
       type: 'slide',
       perPage: 3,
       perMove: 1,
@@ -110,7 +181,10 @@ function initSliders() {
           pagination: true,
         },
       },
-    }).mount();
+    });
+
+    splide.mount();
+    element.splide = splide;
   });
 
   document.querySelectorAll('.solution-zones__slider').forEach((element) => {

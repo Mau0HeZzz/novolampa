@@ -16,6 +16,100 @@ img {
   max-width: 100%;
 }
 
+.splide__pagination {
+  position: static;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: mixins.toRem(5);
+  padding: 0;
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    display: flex;
+    margin-top: mixins.toRem(20);
+  }
+
+  li {
+    display: flex;
+  }
+}
+
+.splide__pagination__page {
+  width: mixins.toRem(3);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: mixins.toRem(4);
+  background-color: var(--bg-pagination-color);
+  opacity: 1;
+
+  &.is-active {
+    width: mixins.toRem(13);
+    aspect-ratio: 13 / 3;
+    background-color: var(--bg-green-color);
+    transform: none;
+  }
+}
+
+.quantity-form {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  gap: mixins.toRem(2);
+  padding: mixins.toRem(3);
+  overflow: hidden;
+  border-radius: mixins.toRem(5);
+  background-color: var(--bg-section-color);
+
+  &__button {
+    width: mixins.toRem(22);
+    height: mixins.toRem(35);
+    display: grid;
+    place-items: center;
+    flex: 0 0 mixins.toRem(22);
+    border-radius: mixins.toRem(2);
+    color: var(--text-secondary-color);
+    background-color: var(--bg-main-color);
+
+    .loaded & {
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-main-color);
+        background-color: var(--bg-menu-color);
+      }
+    }
+
+    svg {
+      display: block;
+      color: currentColor;
+    }
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &__input {
+    min-width: 0;
+    flex: 1 1 auto;
+    display: grid;
+    place-items: center;
+
+    input {
+      min-width: 0;
+      width: 100%;
+      outline: none;
+      font-size: mixins.toRem(13);
+      text-align: center;
+    }
+  }
+}
+
 [hidden] {
   display: none !important;
 }
@@ -624,8 +718,7 @@ $indent-direction-properties: (
   &_download {
     justify-content: flex-start;
     gap: mixins.toRem(10);
-    padding: 0;
-    border: 0;
+    border-color: transparent;
     color: var(--text-green-color);
     font-size: mixins.toRem(16);
 
@@ -638,6 +731,7 @@ $indent-direction-properties: (
     @media (any-hover: hover) {
       &:hover {
         color: var(--text-accent-color);
+        border-color: var(--text-accent-color);
       }
     }
   }
@@ -886,5 +980,11 @@ $indent-direction-properties: (
     > * + * {
       margin-top: mixins.toRem(20);
     }
+  }
+}
+
+.splide__slide {
+  .product-mini-card {
+    height: 100%;
   }
 }

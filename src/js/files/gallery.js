@@ -21,6 +21,7 @@ import lightGallery from 'lightgallery';
 // lgZoom, lgAutoplay, lgComment, lgFullscreen, lgHash, lgPager, lgRotate, lgShare, lgThumbnail, lgVideo, lgMediumZoom
 // import lgThumbnail от 'lightgallery/plugins/thumbnail/lg-thumbnail.min.js'
 import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.min.js'
+import lgVideo from 'lightgallery/plugins/video/lg-video.min.js'
 
 // Базовые стили
 import '/src/scss/libs/gallery/lightgallery.scss';
@@ -51,6 +52,10 @@ if (galleries.length) {
       plugins.push(lgZoom)
     }
 
+    if (galleryEl.hasAttribute('data-gallery-video')) {
+      plugins.push(lgVideo)
+    }
+
     const galleryClass = lightGallery(galleryEl, {
       selector: 'a',
       mobileSettings: {
@@ -73,7 +78,6 @@ if (galleries.length) {
 	// Добавляем в объект модулей
 	mhzModules.gallery = galleyItems;
 }
-
 
 
 

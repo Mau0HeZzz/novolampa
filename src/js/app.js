@@ -164,7 +164,7 @@ import "./files/forms/range.js";
 Документация плагина: https://atomiks.github.io/tippyjs/
 Сниппет (HTML): tip (добавляет атрибут с подсказкой для HTML тега)
 */
-// import "./files/tippy.js";
+import "./files/tippy.js";
 
 // ========================================================================================================================================================================================================================================================
 // Работа со слайдером (Swiper) ========================================================================================================================================================================================================================================================
@@ -198,7 +198,7 @@ import './files/scroll/lazyload.js';
 // Наблюдатель объектов с атрибутом data-watch
 // Документация: https://start-template.ru/modul-nablyudatel-po-poyavleniyu-elementov-pri-prokrutke-straniczy-skrolle-chertogi-frilansera-v3-0-0/
 // Сниппет(HTML):
-// import './libs/watcher.js'
+import './libs/watcher.js'
 
 // / / Модуль по экранной прокрутке
 // Документация: https://start-template.ru/modul-ekrannoj-prokrutki-straniczy-fullpage-chertogi-frilansera-v3-0-0/
@@ -262,6 +262,8 @@ import { segmentedControlsInit } from "./files/segmented-control.js";
 import "./files/header.js";
 import "./files/contacts.js";
 import "./files/catalog.js";
+import "./files/calculator.js";
+import "./files/product.js";
 import "./files/script.js";
 segmentedControlsInit();
 //============================================================================================================================================================================================================================================
