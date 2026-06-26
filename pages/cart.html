@@ -1,0 +1,82 @@
+<!--
+  @fileOverview Страница корзины с товарами, промокодом и итоговой стоимостью.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Корзина"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+
+      <main class="cart-page">
+        <section class="section page-intro cart-intro">
+          <div class="section__container page-intro__container cart-intro__container">
+            <include
+              src="src/html/_breadcrumbs.html"
+              locals='{"items": ["Главная"], "mainItem": "Ваша корзина"}'
+            ></include>
+            <div class="cart-intro__heading">
+              <h1 class="section__title page-intro__title cart-intro__title">Корзина</h1>
+              <div class="cart-intro__actions">
+                <button type="button" class="cart-intro__action">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg>
+                  <span class="_md-768-dn">Экспорт в PDF</span>
+                  <span class="_mmd-768-dn">В PDF</span>
+                </button>
+                <button type="button" class="cart-intro__action">
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#close-sqare"></use></svg>
+                  <span class="_md-768-dn">Очистить корзину</span>
+                  <span class="_mmd-768-dn">Очистить</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section cart-content">
+          <div class="section__container cart-content__container">
+            <div class="cart-list">
+              <include src="src/html/_cart_item.html" locals='{"imagePath":"/img/catalog/item-1.png","title":"Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый) Arlight 013730","article":"013730","stock":"В наличии 135 шт","price":"21 188.53","quantity":"2","total":"42 367.03"}'></include>
+              <include src="src/html/_cart_item.html" locals='{"imagePath":"/img/catalog/item-2.png","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H","article":"013730","stock":"В наличии 135 шт","price":"5 500","quantity":"2","total":"11 000"}'></include>
+              <include src="src/html/_cart_item.html" locals='{"imagePath":"/img/catalog/item-3.png","title":"Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990","article":"013730","stock":"В наличии 135 шт","price":"21 188.53","quantity":"2","total":"42 367.03"}'></include>
+              <include src="src/html/_cart_item.html" locals='{"imagePath":"/img/catalog/item-7.png","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K 20000H","article":"013730","stock":"В наличии 135 шт","price":"5 500","quantity":"2","total":"11 000"}'></include>
+            </div>
+
+            <aside class="product-purchase cart-summary" aria-label="Итоги корзины">
+              <div class="product-purchase__card">
+                <div class="product-purchase__inner cart-summary__inner">
+                  <h2 class="cart-summary__title">Ваша корзина</h2>
+
+                  <div class="form__item form__item_shadow cart-summary__promo">
+                    <input type="text" name="promo" class="form__input" placeholder=" " aria-label="Промокод на скидку">
+                    <span class="form__placeholder">Промокод на скидку</span>
+                    <button type="submit" aria-label="Применить промокод">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg>
+                    </button>
+                  </div>
+
+                  <div class="cart-summary__discount">
+                    <div><span>4 товара 3885 г</span><strong>4 889.50 ₽</strong></div>
+                    <div><span>Скидка по промокоду:</span><strong>900 ₽</strong></div>
+                    <div class="cart-summary__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div>
+                  </div>
+                </div>
+
+                <div class="cart-summary__footer">
+                  <a href="/pages/checkout-person.html" class="action-button action-button_primary cart-summary__checkout">
+                    <span>Перейти к оформлению</span>
+                    <i><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg></i>
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

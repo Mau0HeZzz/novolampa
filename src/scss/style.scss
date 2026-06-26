@@ -136,7 +136,6 @@ body {
 @include meta.load-css("footer");
 
 // Подключение стилей отдельных страниц
-@include meta.load-css("home");
 @include meta.load-css("404");
 @include meta.load-css("inner-pages");
 @include meta.load-css("contacts");
@@ -151,3 +150,9 @@ body {
 @include meta.load-css("./tape-calculator");
 @include meta.load-css("./product");
 @include meta.load-css("./favorites");
+@include meta.load-css("./comparison");
+@include meta.load-css("./cart");
+@include meta.load-css("./checkout");
+@include meta.load-css("./cookie-consent");
+@include meta.load-css("./account-orders");
+@include meta.load-css("home");

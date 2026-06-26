@@ -3,17 +3,293 @@
 -->
 
 <!DOCTYPE html>
-<html lang="en">
-	<include src="src/html/_head.html" locals='{"title": "HomePage"}'></include>
-	<body>
-		<div class="wrapper">
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "NovoLampa"}'></include>
+  <body>
+    <div class="wrapper">
       <include src="src/html/_header.html"></include>
-			<main class="page">
-        <img src="/img/cover.jpg" alt="Image">
-        main
-			</main>
+
+      <main class="home-page">
+        <include
+          src="src/html/_page_hero.html"
+          locals='{
+            "modifier": "home-page-hero",
+            "imagePath": "/img/home/hero-bg.png",
+            "backgroundPosition": "center",
+            "minHeight": "540px",
+            "showBreadcrumbs": false,
+            "items": [],
+            "mainItem": "",
+            "title": "Профессиональное<br> LED-освещение<br> для дома и бизнеса",
+            "text": "Полный цикл: подбор, расчёт, комплектация и сопровождение проекта.<br>От одной ленты до комплексного освещения объекта.",
+            "primaryText": "Подобрать решение",
+            "primaryHref": "/pages/knowledge-base-selection.html",
+            "primaryGoto": "",
+            "secondaryText": "Перейти в каталог",
+            "secondaryHref": "/pages/catalog.html",
+            "secondaryGoto": "",
+            "showMetrics": false,
+            "metricsSlotClass": "",
+            "metrics": []
+          }'
+        ></include>
+
+        <section class="home-audience" aria-label="Разделы для клиентов" data-home-audience>
+          <div class="home-audience__container">
+            <a href="/pages/designers.html" class="home-audience-card">
+              <span class="home-audience-card__body">
+                <span class="home-audience-card__content">
+                  <strong data-home-audience-title>Дизайнерам<br> и архитекторам</strong>
+                  <small>BIM / IES файлы, подбор под концепцию, агентская программа</small>
+                </span>
+                <span class="home-audience-card__image">
+                  <img src="/img/home/subhero-1.png" alt="">
+                </span>
+                <span class="action-button action-button_outline home-audience-card__button">Подробнее</span>
+              </span>
+            </a>
+            <a href="/pages/business.html" class="home-audience-card">
+              <span class="home-audience-card__body">
+                <span class="home-audience-card__content">
+                  <strong data-home-audience-title>Бизнесу<br> и девелоперам</strong>
+                  <small>Проектные поставки, тендеры, сопровождение объектов</small>
+                </span>
+                <span class="home-audience-card__image">
+                  <img src="/img/home/subhero-2.png" alt="">
+                </span>
+                <span class="action-button action-button_outline home-audience-card__button">Подробнее</span>
+              </span>
+            </a>
+            <a href="/pages/solutions.html" class="home-audience-card">
+              <span class="home-audience-card__body">
+                <span class="home-audience-card__content">
+                  <strong data-home-audience-title>Частным клиентам</strong>
+                  <small>Готовые решения для квартиры, дома, кухни и мебели</small>
+                </span>
+                <span class="home-audience-card__image">
+                  <img src="/img/home/subhero-3.png" alt="">
+                </span>
+                <span class="action-button action-button_outline home-audience-card__button">Смотреть решения</span>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <section class="section home-projects">
+          <div class="section__container">
+            <div class="home-section-head home-projects__head">
+              <div>
+                <h2 class="home-section-head__title">Наши проекты</h2>
+                <p>Реализованные объекты с подбором оборудования, расчётом и сопровождением</p>
+              </div>
+              <a href="/pages/projects.html" class="home-section-head__link">Все проекты</a>
+            </div>
+            <div class="splide home-projects__slider" aria-label="Наши проекты">
+              <div class="splide__track home-projects__track">
+                <ul class="splide__list home-projects__list">
+                  <li class="splide__slide home-projects__slide home-projects__slide_tall">
+                    <a href="/pages/project.html" class="solutions-media-card solutions-media-card_tall home-project-card">
+                      <img src="/img/projects/list-item-1.png" alt="">
+                      <span>Комплексное освещение<br> фитнес-клуба Энкор</span>
+                    </a>
+                  </li>
+                  <li class="splide__slide home-projects__slide home-projects__slide_wide">
+                    <a href="/pages/project.html" class="solutions-media-card solutions-media-card_wide home-project-card">
+                      <img src="/img/projects/list-item-2.png" alt="">
+                      <span>Внутреннее освещение клиники MEDALL</span>
+                    </a>
+                  </li>
+                  <li class="splide__slide home-projects__slide">
+                    <a href="/pages/project.html" class="solutions-media-card home-project-card">
+                      <img src="/img/projects/list-item-3.png" alt="">
+                      <span>НИИ Скорой помощи<br> им. И.И. Джанелидзе</span>
+                    </a>
+                  </li>
+                  <li class="splide__slide home-projects__slide">
+                    <a href="/pages/project.html" class="solutions-media-card home-project-card">
+                      <img src="/img/projects/list-item-4.png" alt="">
+                      <span>Внутреннее освещение<br> Royal Smoke Lounge-Bar</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <a href="/pages/projects.html" class="home-projects__mobile-link">Все проекты</a>
+          </div>
+        </section>
+
+        <section class="section home-why">
+          <div class="section__container">
+            <div class="home-section-head home-why__head">
+              <div>
+                <h2 class="home-section-head__title">Почему выбирают нас</h2>
+                <p>Мы не просто продаём свет. Мы решаем технические и проектные задачи под ключ</p>
+              </div>
+            </div>
+            <div class="home-why__grid">
+              <article class="home-why-card home-why-card_main">
+                <div class="home-why-card__content">
+                  <strong>50 000+</strong>
+                  <h3>позиций в наличии</h3>
+                  <p>Ленты, профили, блоки питания, управление и готовые светильники — от среднего до премиум сегмента</p>
+                </div>
+                <div class="home-why-card__image">
+                  <img src="/img/home/whywe-1.png" alt="">
+                  <a href="/pages/catalog.html" class="action-button">Перейти в каталог</a>
+                </div>
+              </article>
+              <article class="home-why-card">
+                <svg width="40" height="40" aria-hidden="true"><use xlink:href="/img/colored.svg#whywe-1"></use></svg>
+                <h3>Экспертная техническая поддержка</h3>
+                <p>Помогаем рассчитать мощность, подобрать совместимость компонентов и подготовить спецификацию.</p>
+              </article>
+              <article class="home-why-card">
+                <svg width="42" height="40" aria-hidden="true"><use xlink:href="/img/colored.svg#whywe-2"></use></svg>
+                <h3>Документы и сертификаты</h3>
+                <p>Паспорта, декларации и сертификаты — для проектных организаций и государственных закупок.</p>
+              </article>
+              <article class="home-why-card">
+                <svg width="44" height="44" aria-hidden="true"><use xlink:href="/img/colored.svg#whywe-3"></use></svg>
+                <h3>Проектные поставки и тендеры</h3>
+                <p>Работаем с девелоперами, подрядчиками и участниками 44-ФЗ / 223-ФЗ.</p>
+              </article>
+              <article class="home-why-card">
+                <svg width="41" height="41" aria-hidden="true"><use xlink:href="/img/colored.svg#whywe-4"></use></svg>
+                <h3>Скорость и логистика</h3>
+                <p>Складские остатки, быстрые отгрузки и прозрачные сроки поставки.</p>
+              </article>
+              <article class="home-why-card home-why-card_cta">
+                <svg width="41" height="41" aria-hidden="true"><use xlink:href="/img/colored.svg#whywe-5"></use></svg>
+                <div class="home-why-card__content">
+                  <h3>От идеи до реализации</h3>
+                  <p>Визуализация, расчёт в Dialux, подбор оборудования и сопровождение до монтажа.</p>
+                </div>
+                <a href="/pages/contacts.html" class="action-button action-button_primary home-why-card__button">
+                  <span>Получить КП</span>
+                  <i>
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                      <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                    </svg>
+                  </i>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section home-promos">
+          <div class="section__container">
+            <div class="home-section-head home-promos__head">
+              <div>
+                <h2 class="home-section-head__title">Акции и спецпредложения</h2>
+                <p>Сезонные скидки, специальные условия и предложения от официальных брендов</p>
+              </div>
+              <a href="/pages/catalog.html" class="home-section-head__link">Все акции</a>
+            </div>
+            <div class="home-promos__grid">
+              <a href="/pages/catalog.html" class="home-promo-card home-promo-card_big">
+                <img src="/img/home/promos-1.png" alt="">
+                <span class="home-promo-card__content">
+                  <strong>Скидка до 15% на LED-ленты</strong>
+                  <small>Популярные позиции для кухни и мебели</small>
+                </span>
+              </a>
+              <a href="/pages/payment-delivery.html" class="home-promo-card">
+                <img src="/img/home/promos-2.png" alt="">
+                <span class="home-promo-card__content">
+                  <strong>Бесплатная доставка</strong>
+                  <small>При заказе от 30 000 ₽ по России</small>
+                </span>
+              </a>
+              <a href="/pages/catalog.html" class="home-promo-card">
+                <img src="/img/home/promos-3.png" alt="">
+                <span class="home-promo-card__content">
+                  <strong>Спецусловия на Arlight</strong>
+                  <small>Официальный дилер — гарантия и поддержка</small>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section home-news">
+          <div class="section__container">
+            <div class="home-section-head home-news__head">
+              <div>
+                <h2 class="home-section-head__title">Новости и статьи</h2>
+                <p>Экспертные материалы, гайды по подбору и новости рынка освещения</p>
+              </div>
+              <a href="/pages/knowledge-base.html" class="home-section-head__link home-news__link" data-da=".home-news>.section__container, 768, last">Перейти в базу знаний</a>
+            </div>
+            <div class="home-news__grid">
+              <a href="/pages/knowledge-base-article.html" class="home-news-mediacard">
+                <img src="/img/home/news-1.png" alt="">
+                <strong>Как выбрать LED-ленту для кухни</strong>
+                <small>Работаем с девелоперами, подрядчиками и участниками 44-ФЗ / 223-ФЗ.</small>
+                <time datetime="2026-01-12">12 января 2026</time>
+              </a>
+              <a href="/pages/knowledge-base-article.html" class="home-news-mediacard">
+                <img src="/img/home/news-2.png" alt="">
+                <strong>Освещение офиса: нормы и UGR</strong>
+                <small>Как обеспечить комфорт и соответствие стандартам</small>
+                <time datetime="2026-02-22">22 февраля 2026</time>
+              </a>
+              <div class="home-news-list">
+                <a href="/pages/knowledge-base-article.html" class="home-news-card">
+                  <strong>Выбор светодиодных лент: на что обратить внимание</strong>
+                  <small>Советы по подбору освещения для дома и офиса</small>
+                  <time datetime="2026-02-12">12 февраля 2026</time>
+                </a>
+                <a href="/pages/knowledge-base-article.html" class="home-news-card">
+                  <strong>Тренды офисного освещения 2026</strong>
+                  <small>Как создать комфортную рабочую среду и соблюсти стандарты</small>
+                  <time datetime="2026-01-28">28 января 2026</time>
+                </a>
+                <a href="/pages/knowledge-base-article.html" class="home-news-card">
+                  <strong>Энергосбережение с LED-светильниками</strong>
+                  <small>Снижаем счета за электричество без потери яркости</small>
+                  <time datetime="2026-01-17">17 января 2026</time>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section home-clients">
+          <div class="section__container">
+            <div class="home-section-head home-clients__head">
+              <h2 class="home-section-head__title">Наши клиенты</h2>
+            </div>
+            <div class="splide home-clients__slider" aria-label="Клиенты NovoLampa">
+              <div class="splide__track home-clients__track">
+                <ul class="splide__list home-clients__list">
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-1.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-2.png" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-3.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-4.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-5.png" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-6.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-7.png" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-8.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-9.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-10.png" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-11.png" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-12.png" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-13.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-14.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-15.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-16.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-17.svg" alt=""></span></li>
+                  <li class="splide__slide home-clients__slide"><span><img src="/img/home/clients-18.svg" alt=""></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
       <include src="src/html/_footer.html"></include>
-		</div>
+    </div>
     <include src="src/html/_js.html"></include>
-	</body>
+  </body>
 </html>

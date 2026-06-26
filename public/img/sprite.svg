@@ -128,4 +128,11 @@
     <path d="M10 2.5V12.5M10 12.5L6.25 8.75M10 12.5L13.75 8.75" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M3.75 13.75V15C3.75 16.3807 4.86929 17.5 6.25 17.5H13.75C15.1307 17.5 16.25 16.3807 16.25 15V13.75" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
   </symbol>
+  <symbol viewBox="0 0 21 21" fill="none" id="revert">
+    <path d="M10.5 19.25C15.3325 19.25 19.25 15.3325 19.25 10.5C19.25 5.66751 15.3325 1.75 10.5 1.75C5.66751 1.75 1.75 5.66751 1.75 10.5C1.75 15.3325 5.66751 19.25 10.5 19.25Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M7.00781 12.6964C7.16531 12.9589 7.35781 13.204 7.57656 13.4227C9.18656 15.0327 11.8028 15.0327 13.4216 13.4227C14.0778 12.7665 14.4541 11.9352 14.5766 11.0864" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6.42188 9.91391C6.54438 9.05641 6.92063 8.23387 7.57688 7.57762C9.18688 5.96762 11.8031 5.96762 13.4219 7.57762C13.6494 7.80512 13.8331 8.05013 13.9906 8.30388" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6.84375 15.0325V12.6963H9.17999" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14.1565 5.96753V8.30376H11.8203" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>

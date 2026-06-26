@@ -42,7 +42,7 @@
           </div>
         </section>
 
-        <section class="section tape-calculator" data-calculator>
+        <section class="section tape-calculator" data-calculator data-demo>
           <div class="section__container tape-calculator__container">
             <div class="tape-calculator__layout">
               <div class="tape-calculator__main">
@@ -156,7 +156,7 @@
 
           <template data-calculator-template="field">
             <label class="form__item form__item_shadow tape-field" data-calculator-field-wrap>
-              <input type="text" class="form__input" data-calculator-input>
+              <input type="text" inputmode="decimal" class="form__input" data-calculator-input data-only-digits-input>
               <span class="form__placeholder" data-calculator-field-label></span>
             </label>
           </template>
@@ -311,7 +311,8 @@
                 rootField: "post",
                 csrfHeader: "x-bitrix-csrf-token",
                 siteIdHeader: "x-bitrix-site-id",
-                siteId: "s1"
+                siteId: "s1",
+                crsf: ""
               },
               validation: {
                 dimensions: {

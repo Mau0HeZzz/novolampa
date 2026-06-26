@@ -1,0 +1,90 @@
+/**
+ * @fileOverview Стили фиксированной панели согласия на использование файлов cookie.
+ */
+
+@use "base/mixins";
+@use "variables";
+@use "sass:math";
+
+.cookie-consent {
+  position: fixed;
+  z-index: 100;
+  right: mixins.toRem(24);
+  bottom: mixins.toRem(20);
+  width: min(calc(100% - #{mixins.toRem(32)}), mixins.toRem(328));
+  padding: mixins.toRem(28);
+  border: mixins.toRem(2) solid var(--border-input-color);
+  border-radius: mixins.toRem(10);
+  background-color: var(--bg-section-color);
+  box-shadow: 0 mixins.toRem(8) mixins.toRem(30) var(--shadow-card-color);
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 mixins.toRem(20);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    translate 0.3s ease;
+
+  &[hidden] {
+    display: none;
+  }
+
+  &._visible {
+    opacity: 1;
+    visibility: visible;
+    translate: 0;
+  }
+
+  &__title {
+    font-size: mixins.toRem(20);
+    font-weight: 500;
+    line-height: math.div(26, 20);
+    letter-spacing: mixins.toRem(-0.5);
+  }
+
+  &__text {
+    margin-top: mixins.toRem(8);
+    color: var(--text-secondary-color);
+    font-size: mixins.toRem(13);
+    line-height: math.div(18, 13);
+
+    a {
+      color: var(--text-green-color);
+    }
+  }
+
+  &__button {
+    width: 100%;
+    min-height: mixins.toRem(48);
+    margin-top: mixins.toRem(20);
+    border: mixins.toRem(2) solid var(--border-green-color);
+    border-radius: mixins.toRem(5);
+    color: var(--text-green-color);
+    font-size: mixins.toRem(15);
+    font-weight: 500;
+    line-height: math.div(22, 15);
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    right: mixins.toRem(16);
+    bottom: mixins.toRem(16);
+    padding: mixins.toRem(18);
+
+    &__title {
+      font-size: mixins.toRem(16);
+      line-height: math.div(22, 16);
+    }
+
+    &__text {
+      margin-top: mixins.toRem(6);
+      font-size: mixins.toRem(12);
+      line-height: math.div(17, 12);
+    }
+
+    &__button {
+      margin-top: mixins.toRem(16);
+      font-size: mixins.toRem(14);
+      line-height: math.div(20, 14);
+    }
+  }
+}

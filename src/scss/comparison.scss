@@ -1,0 +1,272 @@
+/**
+ * @fileOverview Стили страницы сравнения товаров и синхронных областей характеристик.
+ */
+
+@use "base/mixins";
+@use "variables";
+@use "sass:math";
+
+.comparison-page {
+  background-color: var(--bg-main-color);
+}
+
+.comparison-intro {
+  &__container {
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      padding-top: mixins.toRem(18);
+      padding-bottom: mixins.toRem(20);
+    }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: mixins.toRem(24);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      margin-top: mixins.toRem(14);
+      gap: mixins.toRem(12);
+    }
+  }
+
+  &__title {
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      margin-top: 0;
+      font-size: mixins.toRem(21);
+      line-height: math.div(26, 21);
+    }
+  }
+
+  &__clear {
+    min-height: mixins.toRem(40);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: mixins.toRem(10);
+    flex: 0 0 auto;
+    padding: mixins.toRem(9) mixins.toRem(15);
+    border-radius: mixins.toRem(5);
+    background-color: var(--bg-main-color);
+    font-size: mixins.toRem(14);
+    font-weight: 500;
+    line-height: math.div(20, 14);
+
+    svg {
+      color: var(--icon-muted-color);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-green-color);
+      }
+    }
+
+    .loaded & {
+      transition: color 0.3s ease;
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      min-height: mixins.toRem(34);
+      gap: mixins.toRem(7);
+      padding: mixins.toRem(7) mixins.toRem(10);
+      font-size: mixins.toRem(13);
+      line-height: math.div(18, 13);
+    }
+  }
+}
+
+.comparison {
+  padding-bottom: mixins.toRem(110);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    padding-bottom: mixins.toRem(50);
+  }
+
+  &__container {
+    --comparison-columns-gap: #{mixins.toRem(30)};
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      --comparison-columns-gap: #{mixins.toRem(8)};
+      padding-inline: mixins.toRem(15);
+    }
+  }
+
+  &__top,
+  &__bottom {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: stretch;
+    gap: var(--comparison-columns-gap);
+  }
+
+  &__top {
+    padding-top: mixins.toRem(14);
+    padding-bottom: mixins.toRem(30);
+    background-color: var(--bg-main-color);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      padding-top: mixins.toRem(20);
+      padding-bottom: mixins.toRem(20);
+    }
+  }
+
+  &__bottom {
+    padding-top: mixins.toRem(20);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      padding-top: 0;
+    }
+  }
+}
+
+.comparison-filter,
+.comparison-properties {
+  @include mixins.adaptiveValue("width", 252, 160, 1600, 375);
+}
+
+.comparison-filter {
+  padding: mixins.toRem(26) mixins.toRem(20);
+  border: mixins.toRem(1) solid var(--border-medium-color);
+  border-radius: mixins.toRem(8);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    padding: mixins.toRem(5) mixins.toRem(8);
+    border: 0;
+    border-radius: 0;
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: mixins.toRem(12);
+    font-size: mixins.toRem(15);
+    line-height: math.div(17, 15);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      font-size: mixins.toRem(13);
+      line-height: math.div(18, 13);
+    }
+  }
+
+  &__options {
+    display: grid;
+    gap: mixins.toRem(8);
+  }
+
+  .form__radiowrap {
+    gap: mixins.toRem(10);
+    color: var(--text-main-color);
+    font-size: mixins.toRem(15);
+    font-weight: 400;
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      font-size: mixins.toRem(13);
+    }
+  }
+
+  .form__radio {
+    width: mixins.toRem(20);
+
+    &::after {
+      width: mixins.toRem(14);
+      height: mixins.toRem(14);
+    }
+  }
+}
+
+.comparison-products,
+.comparison-values {
+  min-width: 0;
+
+  .splide__track {
+    overflow: hidden;
+  }
+
+  .splide__slide {
+    @include mixins.adaptiveValue("width", 252, 168, 1600, 375);
+    min-width: 0;
+  }
+}
+
+.comparison-products {
+  .splide__list {
+    align-items: stretch;
+  }
+
+  .splide__slide {
+    display: flex;
+  }
+
+  .product-mini-card {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.product-mini-card_comparison {
+  .product-mini-card__compare-remove {
+    position: absolute;
+    z-index: 2;
+    top: mixins.toRem(13);
+    right: mixins.toRem(13);
+    width: mixins.toRem(20);
+    height: mixins.toRem(20);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--text-secondary-color);
+    background-color: var(--bg-section-color);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--text-main-color);
+      }
+    }
+
+    .loaded & {
+      transition: color 0.3s ease;
+    }
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      top: mixins.toRem(9);
+      right: mixins.toRem(8);
+    }
+  }
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    .product-mini-card__documentation {
+      display: none;
+    }
+  }
+}
+
+.comparison-properties,
+.comparison-values__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.comparison-properties__item,
+.comparison-values__cell {
+  padding-bottom: mixins.toRem(7);
+  overflow: hidden;
+  font-size: mixins.toRem(15);
+  line-height: math.div(22, 15);
+
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    min-height: mixins.toRem(27);
+    padding-bottom: mixins.toRem(6);
+    font-size: mixins.toRem(12);
+    line-height: math.div(18, 12);
+  }
+}
+
+.comparison-properties__item {
+  padding-right: mixins.toRem(10);
+  color: var(--text-secondary-color);
+}
+
+.comparison-values__cell {
+  padding-right: mixins.toRem(8);
+  color: var(--text-main-color);
+}

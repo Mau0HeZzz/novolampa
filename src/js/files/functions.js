@@ -983,6 +983,31 @@ export function copyHiddensInPopup(hiddensParent, form) {
   }
 }
 
+export function setMinHeightBySelector(selector) {
+  const elements = Array.from(document.querySelectorAll(selector));
+
+  if (!elements.length) return;
+
+  const updateMinHeight = () => {
+    elements.forEach((element) => {
+      element.style.removeProperty('min-height');
+    });
+
+    const minHeight = Math.ceil(Math.max(...elements.map((element) => element.getBoundingClientRect().height)));
+
+    elements.forEach((element) => {
+      element.style.minHeight = `${minHeight}px`;
+    });
+  };
+
+  const debouncedUpdateMinHeight = debounce(updateMinHeight, 100);
+
+  window.addEventListener('load', updateMinHeight);
+  window.addEventListener('resize', debouncedUpdateMinHeight);
+  document.fonts?.ready.then(updateMinHeight);
+  updateMinHeight();
+}
+
 export const debounce = (callback, interval = 0) => {
   let prevTimeoutId;
 

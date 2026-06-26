@@ -506,6 +506,10 @@
     display: none;
   }
 
+  &__compare-remove {
+    display: none;
+  }
+
   &__favorite {
     position: absolute;
     z-index: 2;

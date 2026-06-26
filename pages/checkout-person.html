@@ -1,0 +1,248 @@
+<!--
+  @fileOverview Оформление заказа незарегистрированным физическим лицом.
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+  <include src="src/html/_head.html" locals='{"title": "Оформление заказа"}'></include>
+  <body>
+    <div class="wrapper">
+      <include src="src/html/_header.html"></include>
+      <main class="checkout-page" data-checkout="">
+        <section class="section page-intro checkout-intro">
+          <div class="section__container page-intro__container checkout-intro__container">
+            <!--
+        @fileOverview Переиспользуемая разметка хлебных крошек с микроразметкой Schema.org.
+      -->
+      
+      <ul class="section__breadcrumbs breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+        
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+            <a href="/pages/home.html" itemprop="item">
+              <span itemprop="name">Главная</span>
+            </a>
+            <meta itemprop="position" content="1">
+          </li>
+        
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+            <a href="#" itemprop="item">
+              <span itemprop="name">Ваша корзина</span>
+            </a>
+            <meta itemprop="position" content="2">
+          </li>
+        
+        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Оформление заказа</span>
+          <meta itemprop="position" content="3">
+        </li>
+      </ul>
+      
+            <div class="checkout-intro__heading">
+              <h1 class="section__title page-intro__title checkout-intro__title">Оформление заказа</h1>
+              <a href="/pages/cart.html" class="checkout-intro__back">
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#arrow-left"></use></svg>
+                <span class="_md-768-dn">Вернуться в корзину</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      
+        <section class="section checkout-content">
+          <div class="section__container checkout-content__container">
+            <form action="#" class="checkout-layout">
+              <div class="checkout-layout__main">
+                <section class="checkout-panel checkout-cart " data-checkout-cart="">
+                  <div class="checkout-cart__head">
+                    <div><h2>Корзина</h2><span>У вас 4 товара 3885 г</span></div>
+                    <button type="button" data-checkout-cart-toggle="" aria-expanded="false">
+                      <span class="checkout-cart__expand">Развернуть</span>
+                      <span class="checkout-cart__collapse">Свернуть</span>
+                    </button>
+                  </div>
+                  <div class="checkout-cart__body">
+                    <!--
+        @fileOverview Компактная строка товара в раскрытой корзине оформления заказа.
+      -->
+      
+      <article class="checkout-cart-item">
+        <div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)"></div>
+        <div class="checkout-cart-item__info">
+          <a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)</a>
+          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+        </div>
+        <div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div>
+        <div class="checkout-cart-item__quantity">2 шт.</div>
+        <div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div>
+      </article>
+      
+                    <!--
+        @fileOverview Компактная строка товара в раскрытой корзине оформления заказа.
+      -->
+      
+      <article class="checkout-cart-item">
+        <div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K"></div>
+        <div class="checkout-cart-item__info">
+          <a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K</a>
+          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+        </div>
+        <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
+        <div class="checkout-cart-item__quantity">2 шт.</div>
+        <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
+      </article>
+      
+                    <!--
+        @fileOverview Компактная строка товара в раскрытой корзине оформления заказа.
+      -->
+      
+      <article class="checkout-cart-item">
+        <div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР)"></div>
+        <div class="checkout-cart-item__info">
+          <a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР)</a>
+          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+        </div>
+        <div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div>
+        <div class="checkout-cart-item__quantity">2 шт.</div>
+        <div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div>
+      </article>
+      
+                  </div>
+                </section>
+      
+                
+                  <section class="checkout-panel checkout-auth">
+                    <div><h2>Вы не авторизованы</h2><p>Войдите и получите дополнительную скидку на заказ 5%</p></div>
+                    <button type="button" class="checkout-auth__button" data-popup="#authDrawer">Войти</button>
+                  </section>
+      
+                  <section class="checkout-panel checkout-person-type">
+                    <h2>Продолжить оформление как</h2>
+                    <div class="segmented-control checkout-person-type__control">
+                      <i class="segmented-control__indicator"></i>
+                      <a href="/pages/checkout-person.html" class="segmented-control__button _active">Физическое лицо</a>
+                      <a href="/pages/checkout-legal.html" class="segmented-control__button ">Юридическое лицо</a>
+                    </div>
+                  </section>
+                <section class="checkout-panel checkout-contacts">
+                  <h2>Контактные данные</h2>
+                  <div class="checkout-fields">
+                    <label class="form__item form__item_shadow checkout-field checkout-field_wide ">
+                      <input type="text" name="fullName" class="form__input " value="" placeholder=" " required="">
+                      <span class="form__placeholder">ФИО *</span>
+                    </label>
+                    <label class="form__item form__item_shadow checkout-field _form-input">
+                      <input type="email" name="email" class="form__input _form-input" value="vasya@mail.ru" placeholder=" " required="">
+                      <span class="form__placeholder">Email *</span>
+                    </label>
+                    <label class="form__item form__item_shadow checkout-field ">
+                      <input type="tel" name="phone" class="form__input " value="" placeholder=" " inputmode="tel" data-inputmask="'mask': '+7 (999) 999-99-99'" required="">
+                      <span class="form__placeholder">Телефон *</span>
+                    </label>
+      
+                    </div>
+      
+                  <fieldset class="checkout-city">
+                    <legend>Город *</legend>
+                    <div class="checkout-city__options">
+                      <label><input type="radio" name="quickCity" value="Москва"><span>Москва</span></label>
+                      <label><input type="radio" name="quickCity" value="Санкт-Петербург"><span>Санкт-Петербург</span></label>
+                      <label><input type="radio" name="quickCity" value="Калуга"><span>Калуга</span></label>
+                      <label><input type="radio" name="quickCity" value="Воронеж"><span>Воронеж</span></label>
+                      <label><input type="radio" name="quickCity" value="Краснодар"><span>Краснодар</span></label>
+                      <label><input type="radio" name="quickCity" value="Сочи"><span>Сочи</span></label>
+                      <label><input type="radio" name="quickCity" value="Самара"><span>Самара</span></label>
+                      <label><input type="radio" name="quickCity" value="Ростов-на-Дону"><span>Ростов-на-Дону</span></label>
+                      <label><input type="radio" name="quickCity" value="Ставрополь"><span>Ставрополь</span></label>
+                      <label><input type="radio" name="quickCity" value="Пятигорск"><span>Пятигорск</span></label>
+                      <label><input type="radio" name="quickCity" value="Казань"><span>Казань</span></label>
+                      <label><input type="radio" name="quickCity" value="Нижний Новгород"><span>Нижний Новгород</span></label>
+                      <label><input type="radio" name="quickCity" value="Уфа"><span>Уфа</span></label>
+                    </div>
+                  </fieldset>
+      
+                  <div class="checkout-addresses">
+                    <div class="form__item form__item_shadow checkout-address " data-address-field="">
+                      <input type="text" name="city" class="form__input " value="" placeholder=" " autocomplete="off" data-address-suggest="city" aria-autocomplete="list" aria-controls="checkout-city-suggestions">
+                      <span class="form__placeholder">Введите название города</span>
+                      <svg width="21" height="21" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#loopa"></use></svg>
+                      <div class="checkout-suggestions" id="checkout-city-suggestions" role="listbox" data-address-suggestions="" hidden=""></div>
+                    </div>
+                    <div class="form__item form__item_shadow checkout-address " data-address-field="">
+                      <input type="text" name="deliveryAddress" class="form__input " value="" placeholder=" " autocomplete="off" data-address-suggest="address" aria-autocomplete="list" aria-controls="checkout-address-suggestions">
+                      <span class="form__placeholder">Адрес доставки</span>
+                      <div class="checkout-suggestions" id="checkout-address-suggestions" role="listbox" data-address-suggestions="" hidden=""></div>
+                    </div>
+                  </div>
+                </section>
+      
+                <section class="checkout-panel checkout-delivery">
+                  <h2>Выберите удобный вариант</h2>
+                  <fieldset><legend>Доставка</legend><div class="checkout-options">
+                    <label class="checkout-option"><input type="radio" name="delivery" value="courier"><span><i></i><strong>Доставка по Санкт-Петербургу</strong><b>от 2 до 3 дней</b><small>Фирменным авто компании</small><em>0 ₽</em></span></label>
+                    <label class="checkout-option"><input type="radio" name="delivery" value="transport" checked=""><span><i></i><strong>Доставка транспортной компанией</strong><b>от 1 до 5 дней</b><small>Сдэк, Деловые Линии, Мэйджер Экспресс, Байкал Сервис, ПЭК</small><em>0 ₽</em></span></label>
+                  </div></fieldset>
+                  <fieldset><legend>Самовывоз</legend><div class="checkout-options">
+                    <label class="checkout-option"><input type="radio" name="delivery" value="pickup-barmaleeva"><span><i></i><strong>Бармалеева, 18</strong><b>от 2 до 3 дней</b><small>Магазин на ул. Бармалеева, 18, м. Петроградская</small><em>0 ₽</em></span></label>
+                    <label class="checkout-option"><input type="radio" name="delivery" value="pickup-petergofskoe"><span><i></i><strong>Петергофское ш., 55, кор.1</strong><b>от 2 до 3 дней</b><small>Магазин на Петергофское шоссе, 55, корп.1, м. пр. Ветеранов</small><em>0 ₽</em></span></label>
+                  </div></fieldset>
+                </section>
+      
+                <section class="checkout-panel checkout-comment">
+                  <h2>Комментарий к заказу</h2>
+                  <textarea name="comment" placeholder="Хотите что-то написать к заказу?"></textarea>
+                </section>
+              </div>
+      
+              <!--
+        @fileOverview Итоговый блок корзины на странице оформления заказа.
+      -->
+      
+      <aside class="product-purchase cart-summary checkout-summary" aria-label="Итоги заказа">
+        <div class="product-purchase__card">
+          <div class="product-purchase__inner cart-summary__inner checkout-summary__inner">
+            <h2 class="cart-summary__title">Ваша корзина</h2>
+      
+            <div class="form__item form__item_shadow cart-summary__promo">
+              <input type="text" name="promo" class="form__input" placeholder=" " aria-label="Промокод на скидку">
+              <span class="form__placeholder">Промокод на скидку</span>
+              <button type="button" aria-label="Применить промокод">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg>
+              </button>
+            </div>
+      
+            <div class="cart-summary__discount checkout-summary__prices">
+              <div><span>4 товара 3885 г</span><strong>4 889.50 ₽</strong></div>
+              <div><span>Скидка по промокоду:</span><strong>900 ₽</strong></div>
+              <div><span>Доставка:</span><strong>0 ₽</strong></div>
+              <div class="cart-summary__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div>
+            </div>
+          </div>
+      
+          <div class="checkout-summary__order">
+            <label class="form__boxwrap checkout-summary__agreement">
+              <input type="checkbox" name="agreement" required="">
+              <i class="form__box"></i>
+              <span class="form__label">Я даю согласие на обработку персональных данных и соглашаюсь с Политикой конфиденциальности и Пользовательским соглашением</span>
+            </label>
+            <button type="submit" class="action-button action-button_primary checkout-summary__submit">
+              <span>Перейти к оплате</span>
+              <i><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#arrow-right"></use></svg></i>
+            </button>
+          </div>
+      
+          <div class="checkout-summary__bot">
+            <span>Для получения уведомлений, перейдите в бота и нажмите «Старт»</span>
+            <a href="#" aria-label="Telegram"><svg width="22" height="20" viewBox="0 0 22 20" aria-hidden="true"><use xlink:href="/img/colored.svg#telegram"></use></svg></a>
+            <a href="#" aria-label="MAX"><img src="/img/max.svg" alt="" aria-hidden="true"></a>
+          </div>
+        </div>
+      </aside>
+      
+            </form>
+          </div>
+        </section>
+      </main>
+      <include src="src/html/_footer.html"></include>
+    </div>
+    <include src="src/html/_js.html"></include>
+  </body>
+</html>

@@ -277,6 +277,46 @@ function initSliders() {
     }).mount();
   });
 
+  document.querySelectorAll('.home-projects__slider').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    new Splide(element, {
+      type: 'slide',
+      autoWidth: true,
+      perMove: 1,
+      gap: 8,
+      arrows: false,
+      pagination: true,
+      rewind: true,
+      mediaQuery: 'min',
+      breakpoints: {
+        768: {
+          destroy: true,
+        },
+      },
+    }).mount();
+  });
+
+  document.querySelectorAll('.home-clients__slider').forEach((element) => {
+    if (element.classList.contains('is-initialized')) return;
+
+    new Splide(element, {
+      type: 'slide',
+      autoWidth: true,
+      perMove: 1,
+      gap: 8,
+      arrows: false,
+      pagination: true,
+      rewind: true,
+      mediaQuery: 'min',
+      breakpoints: {
+        768: {
+          destroy: true,
+        },
+      },
+    }).mount();
+  });
+
   document.querySelectorAll('.splide:not(.promo-catalog-popup)').forEach((element) => {
     if (element.classList.contains('is-initialized')) return;
 
