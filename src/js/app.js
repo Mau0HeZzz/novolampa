@@ -31,7 +31,6 @@ import * as mhzFunctions from "./files/functions.js";
 
 mhzFunctions.setBodyHeightsVars();
 mhzFunctions.dragCloseActions();
-mhzFunctions.setMinHeightBySelector("[data-home-audience-title]");
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 /* (i) необходимо для корректного отображения webp из css  */

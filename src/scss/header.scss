@@ -81,7 +81,7 @@
   left: 0;
   width: 100%;
   z-index: 5;
-  background-color: var(--bg-main-color);
+  // background-color: var(--bg-main-color);
 
   &__container {
     max-width: mixins.toRem(1600);
@@ -113,9 +113,10 @@
       --size: #{mixins.toRem(66)};
       border-radius: mixins.toRem(10);
       background-color: var(--bg-header-glass-color);
+      
       background: 
-        linear-gradient(111.49deg, rgba(255, 255, 255, 0.08) -8.95%, rgba(255, 255, 255, 0.002) 114%), 
-        linear-gradient(0deg, rgba(30, 38, 48, 0.8), rgba(30, 38, 48, 0.8));
+        linear-gradient(111.49deg, rgba(255, 255, 255, 0.08) -8.95%, rgba(255, 255, 255, 0.002) 114%),
+        linear-gradient(0deg, rgba(30, 38, 48, 0.6), rgba(30, 38, 48, 0.6));
     }
   }
 
@@ -608,6 +609,7 @@
       overflow: hidden;
       pointer-events: none;
       translate: -120% 0;
+      z-index: 100;
 
       .loaded & {
         transition: translate 0.3s ease 0s;
@@ -1554,6 +1556,11 @@ body {
     padding: 0;
     background-color: var(--bg-main-color);
     overflow: hidden;
+
+    @media (width < #{mixins.toEm(870)}) {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
   }
 
   &__body {

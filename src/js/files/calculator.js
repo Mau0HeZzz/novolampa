@@ -1449,7 +1449,7 @@ class TapeCalculator {
       },
       placement: "top",
       theme: "tape-calculator",
-      trigger: "click"
+      // trigger: "click"
     });
   }
 
@@ -1460,14 +1460,40 @@ class TapeCalculator {
   }
 
   showToast(message) {
+    const toastGap = 15;
+    const toastifyTop = 15;
+    const topOverlayBottom = ["#bx-panel", "[data-announcement]", ".header"].reduce((bottom, selector) => {
+      const element = document.querySelector(selector);
+
+      if (!element || element.hidden) return bottom;
+
+      const style = window.getComputedStyle(element);
+
+      if (style.display === "none" || style.visibility === "hidden") return bottom;
+
+      const rect = element.getBoundingClientRect();
+
+      if (rect.bottom <= 0 || rect.top >= window.innerHeight) return bottom;
+
+      return Math.max(bottom, Math.min(rect.bottom, window.innerHeight));
+    }, 0);
+
     Toastify({
       text: message,
       duration: 3500,
       close: true,
-      gravity: "bottom",
-      position: "left",
+      gravity: "top",
+      position: "right",
       stopOnFocus: true,
-      className: "toastify_error"
+      className: "toastify-calculator",
+      offset: {
+        y: Math.max(topOverlayBottom + toastGap - toastifyTop, toastGap)
+      },
+      style: {
+        background: "linear-gradient(111.49deg, rgba(255, 255, 255, 0.08) -8.95%, rgba(255, 255, 255, 0.002) 114%), linear-gradient(0deg, rgba(30, 38, 48, 0.6), rgba(30, 38, 48, 0.6))",
+        color: "#fff",
+        borderRadius: "10px",
+      }
     }).showToast();
   }
 

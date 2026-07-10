@@ -55,6 +55,18 @@ body {
 	overflow: hidden;
   position: relative;
   padding-top: calc(var(--header-height) + var(--announcement-height) + var(--bx-panel-height));
+  
+  &:has(.home-page-hero) {
+    padding-top: calc(mixins.toRem(4) + var(--announcement-height) + var(--bx-panel-height));
+
+    .header {
+      background-color: transparent;
+    }
+
+    .header__section {
+
+    }
+  }
 
 	@supports (overflow: clip) {
 		overflow: clip;

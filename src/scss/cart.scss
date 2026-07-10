@@ -99,7 +99,7 @@
     gap: mixins.toRem(20);
     
     @media (width >= #{mixins.toEm(1100)}) {
-      grid-template-columns: minmax(0, 1fr) mixins.toRem(384);
+      grid-template-columns: minmax(0, 1fr) mixins.toRem(440);
       gap: mixins.toRem(30);
     }
 
@@ -472,6 +472,16 @@
 
   &__checkout {
     width: 100%;
+    justify-content: space-between;
+    padding-inline: mixins.toRem(20);
+
+    &::before {
+      content:'';
+      display: block;
+      width: mixins.toRem(20);
+      height: mixins.toRem(20);
+      flex: 0 0 mixins.toRem(20);
+    }
   }
 
 }

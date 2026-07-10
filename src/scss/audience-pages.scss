@@ -51,10 +51,6 @@
 .designers-services {
   padding-top: mixins.toRem(72);
 
-  @media (width < #{mixins.toEm(variables.$mobile)}) {
-    padding-top: mixins.toRem(62);
-  }
-
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));

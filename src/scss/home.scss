@@ -13,8 +13,25 @@
 .home-page-hero {
   width: calc(100% - mixins.toRem(24));
   max-width: mixins.toRem(1576);
-  min-height: var(--min-height, mixins.toRem(540));
+  min-height: var(--min-height, mixins.toRem(640));
   margin-top: mixins.toRem(8);
+  background: none;
+
+  @media (width >= #{mixins.toEm(1576)}) {
+    overflow: visible;
+
+    &::after {
+      content:'';
+      position: absolute;
+      top: calc(100% - mixins.toRem(10));
+      left: 0;
+      right: 0;
+      height: mixins.toRem(393);
+      background-color: var(--bg-section-color);
+      border-radius: 0 0 mixins.toRem(10) mixins.toRem(10);
+      pointer-events: none;
+    }
+  }
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     width: 100%;
@@ -27,6 +44,9 @@
     width: 100%;
     padding-top: mixins.toRem(75);
     padding-bottom: mixins.toRem(64);
+    position: relative;
+    z-index: 2;
+    background: var(--page-hero-image);
 
     @include mixins.adaptiveValue("padding-left", 148, 15, 1600, 767);
     @include mixins.adaptiveValue("padding-right", 148, 15, 1600, 767);
@@ -143,8 +163,8 @@
 
       @media (width < #{mixins.toEm(variables.$mobile)}) {
         padding: mixins.toRem(16) mixins.toRem(14);
-        font-size: mixins.toRem(13);
-        line-height: math.div(18, 13);
+        font-size: mixins.toRem(15);
+        line-height: math.div(21, 15);
       }
     }
   }
@@ -154,7 +174,7 @@
   position: relative;
   z-index: 2;
   margin-top: mixins.toRem(-51);
-  padding-bottom: mixins.toRem(24);
+  padding-bottom: mixins.toRem(53);
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     margin-top: mixins.toRem(37);
@@ -341,6 +361,11 @@
     color: var(--text-secondary-color);
     font-size: mixins.toRem(15);
     line-height: math.div(22, 15);
+
+    @media (width < #{mixins.toEm(variables.$mobile)}) {
+      font-size: mixins.toRem(14);
+      line-height: math.div(18 , 14);
+    }
   }
 
   &__link {
@@ -378,7 +403,7 @@
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     padding-top: mixins.toRem(34);
-    padding-bottom: mixins.toRem(44);
+    padding-bottom: mixins.toRem(25);
   }
 
   &__slider {
@@ -660,7 +685,7 @@
   padding-bottom: mixins.toRem(74);
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
-    padding-top: mixins.toRem(52);
+    padding-top: mixins.toRem(25);
     padding-bottom: mixins.toRem(52);
   }
 
@@ -712,6 +737,9 @@
     padding: mixins.toRem(16);
   }
 
+  &:first-child {
+    border-top: mixins.toRem(2) solid var(--border-light-color);
+  }
   &:not(:last-child) {
     border-bottom: mixins.toRem(2) solid var(--border-light-color);
   }
@@ -805,7 +833,7 @@
 
 .home-clients {
   padding-top: mixins.toRem(76);
-  padding-bottom: mixins.toRem(78);
+  padding-bottom: mixins.toRem(117);
   background-color: var(--bg-section-color);
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {

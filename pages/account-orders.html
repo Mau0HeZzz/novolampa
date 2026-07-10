@@ -23,463 +23,464 @@
         <section class="section account-orders">
           <div class="section__container account-orders__container">
             <aside class="account-nav" aria-label="Навигация личного кабинета">
-              <a href="#" class="account-nav__link">Мой профиль</a>
+              <a href="/pages/account-orders.html" class="account-nav__link">Мой профиль</a>
               <a href="/pages/account-orders.html" class="account-nav__link _active" aria-current="page">История заказов</a>
-              <a href="#" class="account-nav__link">Выйти</a>
+              <a href="/pages/auth.html" class="account-nav__link">Выйти</a>
             </aside>
 
             <label class="account-nav-select">
               <select name="accountSection" data-custom-select data-class-modif="account-nav" aria-label="Раздел личного кабинета">
-                <option value="profile" data-href="#">Мой профиль</option>
-                <option value="orders" data-href="#" selected>Мои заказы</option>
-                <option value="logout" data-href="#">Выйти</option>
+                <option value="profile" data-href="/pages/account-orders.html">Мой профиль</option>
+                <option value="orders" data-href="/pages/account-orders.html" selected>Мои заказы</option>
+                <option value="logout" data-href="/pages/auth.html">Выйти</option>
               </select>
             </label>
 
-            <div class="account-orders__content">
-              <nav class="segmented-control account-orders-tabs" aria-label="Фильтр заказов">
-                <span class="segmented-control__indicator" aria-hidden="true"></span>
-                <a href="#" class="segmented-control__button _active" aria-current="page">Актуальные (2)</a>
-                <a href="#" class="segmented-control__button">Завершенные (16)</a>
-              </nav>
-
-              <div class="account-orders-list" data-spollers data-spollers-speed="300">
-                <details class="account-order">
-                  <summary class="account-order__summary">
-                    <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
-                    <strong class="account-order__price">22 920 ₽</strong>
-                    <span class="account-order__status account-order__status_warning">В сборке</span>
-                    <span class="account-order__toggle">
-                      <span class="account-order__toggle-open">Развернуть</span>
-                      <span class="account-order__toggle-close">Свернуть</span>
-                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
-                    </span>
-                  </summary>
-                  <div class="account-order__details">
-                    <div class="account-order-info">
-                      <div class="account-order-info__block">
-                        <h2>Информация о пользователе</h2>
-                        <p>Логин: Roman</p>
-                        <p>Email: roman@novolampa.ru</p>
-                        <p>Тип плательщика: Физическое лицо</p>
-                      </div>
-                      <div class="account-order-info__block">
-                        <p>Город: Россия, Санкт-Петербург</p>
-                        <p>Контактный телефон: 791134534365</p>
-                      </div>
-                    </div>
-                    <div class="account-order-info account-order-info_delivery">
-                      <div class="account-order-info__block">
-                        <h2>Счет №6058/1 от 01.09.2022, банковская карта</h2>
-                        <p>Счет №6058/1 от 01.09.2022</p>
-                      </div>
-                      <div class="account-order-info__block">
-                        <h2>Параметры доставки</h2>
-                        <p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p>
-                      </div>
-                    </div>
-                    <section class="account-order-products" aria-label="Состав заказа">
-                      <h2>Состав заказа</h2>
-                      <article class="checkout-cart-item">
-                        <div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div>
-                        <div class="checkout-cart-item__info">
-                          <a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a>
-                          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+            <div class="account-orders__contentwrap">
+              <div class="account-orders__content">
+                <nav class="segmented-control account-orders-tabs" aria-label="Фильтр заказов">
+                  <span class="segmented-control__indicator" aria-hidden="true"></span>
+                  <a href="#" class="segmented-control__button _active" aria-current="page">Актуальные (2)</a>
+                  <a href="#" class="segmented-control__button">Завершенные (16)</a>
+                </nav>
+  
+                <div class="account-orders-list" data-spollers data-spollers-speed="300">
+                  <details class="account-order">
+                    <summary class="account-order__summary">
+                      <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
+                      <strong class="account-order__price">22 920 ₽</strong>
+                      <span class="account-order__status account-order__status_warning">В сборке</span>
+                      <span class="account-order__toggle">
+                        <span class="account-order__toggle-open">Развернуть</span>
+                        <span class="account-order__toggle-close">Свернуть</span>
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
+                      </span>
+                    </summary>
+                    <div class="account-order__details">
+                      <div class="account-order-info">
+                        <div class="account-order-info__block">
+                          <h2>Информация о пользователе</h2>
+                          <p>Логин: Roman</p>
+                          <p>Email: roman@novolampa.ru</p>
+                          <p>Тип плательщика: Физическое лицо</p>
                         </div>
-                        <div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div>
-                        <div class="checkout-cart-item__quantity">2 шт.</div>
-                        <div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div>
-                      </article>
-                      <article class="checkout-cart-item">
-                        <div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div>
-                        <div class="checkout-cart-item__info">
-                          <a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a>
-                          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                        <div class="account-order-info__block">
+                          <p>Город: Россия, Санкт-Петербург</p>
+                          <p>Контактный телефон: 791134534365</p>
                         </div>
-                        <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
-                        <div class="checkout-cart-item__quantity">2 шт.</div>
-                        <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
-                      </article>
-                      <article class="checkout-cart-item">
-                        <div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div>
-                        <div class="checkout-cart-item__info">
-                          <a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a>
-                          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                      </div>
+                      <div class="account-order-info account-order-info_delivery">
+                        <div class="account-order-info__block">
+                          <h2>Счет №6058/1 от 01.09.2022, банковская карта</h2>
+                          <p>Счет №6058/1 от 01.09.2022</p>
                         </div>
-                        <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
-                        <div class="checkout-cart-item__quantity">2 шт.</div>
-                        <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
-                      </article>
-                    </section>
-                    <div class="account-order-total">
-                      <div><span>Общий вес:</span><strong>14 122 г</strong></div>
-                      <div><span>Доставка:</span><strong>0 ₽</strong></div>
-                      <div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div>
-                    </div>
-                    <button type="button" class="account-order-repeat">
-                      <svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg>
-                      <span>Повторить заказ</span>
-                    </button>
-                  </div>
-                </details>
-
-                <details class="account-order">
-                  <summary class="account-order__summary">
-                    <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
-                    <strong class="account-order__price">122 700 ₽</strong>
-                    <span class="account-order__status account-order__status_success">Заказ комплектуется</span>
-                    <span class="account-order__toggle">
-                      <span class="account-order__toggle-open">Развернуть</span>
-                      <span class="account-order__toggle-close">Свернуть</span>
-                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
-                    </span>
-                  </summary>
-                  <div class="account-order__details">
-                    <div class="account-order-info">
-                      <div class="account-order-info__block">
-                        <h2>Информация о пользователе</h2>
-                        <p>Логин: Roman</p>
-                        <p>Email: roman@novolampa.ru</p>
-                        <p>Тип плательщика: Физическое лицо</p>
-                      </div>
-                      <div class="account-order-info__block">
-                        <p>Город: Россия, Санкт-Петербург</p>
-                        <p>Контактный телефон: 791134534365</p>
-                      </div>
-                    </div>
-                    <div class="account-order-info account-order-info_delivery">
-                      <div class="account-order-info__block">
-                        <h2>Счет №6058/1 от 01.09.2022, банковская карта</h2>
-                        <p>Счет №6058/1 от 01.09.2022</p>
-                      </div>
-                      <div class="account-order-info__block">
-                        <h2>Параметры доставки</h2>
-                        <p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p>
-                      </div>
-                    </div>
-                    <section class="account-order-products" aria-label="Состав заказа">
-                      <h2>Состав заказа</h2>
-                      <article class="checkout-cart-item">
-                        <div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div>
-                        <div class="checkout-cart-item__info">
-                          <a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a>
-                          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                        <div class="account-order-info__block">
+                          <h2>Параметры доставки</h2>
+                          <p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p>
                         </div>
-                        <div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div>
-                        <div class="checkout-cart-item__quantity">2 шт.</div>
-                        <div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div>
-                      </article>
-                      <article class="checkout-cart-item">
-                        <div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div>
-                        <div class="checkout-cart-item__info">
-                          <a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a>
-                          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
-                        </div>
-                        <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
-                        <div class="checkout-cart-item__quantity">2 шт.</div>
-                        <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
-                      </article>
-                      <article class="checkout-cart-item">
-                        <div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div>
-                        <div class="checkout-cart-item__info">
-                          <a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a>
-                          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
-                        </div>
-                        <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
-                        <div class="checkout-cart-item__quantity">2 шт.</div>
-                        <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
-                      </article>
-                    </section>
-                    <div class="account-order-total">
-                      <div><span>Общий вес:</span><strong>14 122 г</strong></div>
-                      <div><span>Доставка:</span><strong>0 ₽</strong></div>
-                      <div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div>
-                    </div>
-                    <button type="button" class="account-order-repeat">
-                      <svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg>
-                      <span>Повторить заказ</span>
-                    </button>
-                  </div>
-                </details>
-
-                <details class="account-order" data-open>
-                  <summary class="account-order__summary">
-                    <span class="account-order__number">Заказ №12368 от 01.04.2025</span>
-                    <strong class="account-order__price">22 700 ₽</strong>
-                    <span class="account-order__status account-order__status_warning">Доставлен в пункт самовывоза</span>
-                    <span class="account-order__toggle">
-                      <span class="account-order__toggle-open">Развернуть</span>
-                      <span class="account-order__toggle-close">Свернуть</span>
-                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
-                    </span>
-                  </summary>
-
-                  <div class="account-order__details">
-                    <div class="account-order-info">
-                      <div class="account-order-info__block">
-                        <h2>Информация о пользователе</h2>
-                        <p>Логин: Roman</p>
-                        <p>Email: roman@novolampa.ru</p>
-                        <p>Тип плательщика: Физическое лицо</p>
                       </div>
-                      <div class="account-order-info__block">
-                        <p>Город: Россия, Санкт-Петербург</p>
-                        <p>Контактный телефон: 791134534365</p>
+                      <section class="account-order-products" aria-label="Состав заказа">
+                        <h2>Состав заказа</h2>
+                        <article class="checkout-cart-item">
+                          <div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div>
+                          <div class="checkout-cart-item__info">
+                            <a href="/pages/product.html">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a>
+                            <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                          </div>
+                          <div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div>
+                          <div class="checkout-cart-item__quantity">2 шт.</div>
+                          <div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div>
+                        </article>
+                        <article class="checkout-cart-item">
+                          <div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div>
+                          <div class="checkout-cart-item__info">
+                            <a href="/pages/product.html">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a>
+                            <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                          </div>
+                          <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
+                          <div class="checkout-cart-item__quantity">2 шт.</div>
+                          <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
+                        </article>
+                        <article class="checkout-cart-item">
+                          <div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div>
+                          <div class="checkout-cart-item__info">
+                            <a href="/pages/product.html">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a>
+                            <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                          </div>
+                          <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
+                          <div class="checkout-cart-item__quantity">2 шт.</div>
+                          <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
+                        </article>
+                      </section>
+                      <div class="account-order-total">
+                        <div><span>Общий вес:</span><strong>14 122 г</strong></div>
+                        <div><span>Доставка:</span><strong>0 ₽</strong></div>
+                        <div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div>
                       </div>
+                      <button type="button" class="account-order-repeat">
+                        <svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg>
+                        <span>Повторить заказ</span>
+                      </button>
                     </div>
-
-                    <div class="account-order-info account-order-info_delivery">
-                      <div class="account-order-info__block">
-                        <h2>Счет №6058/1 от 01.09.2022, банковская карта</h2>
-                        <p>Счет №6058/1 от 01.09.2022</p>
+                  </details>
+  
+                  <details class="account-order">
+                    <summary class="account-order__summary">
+                      <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
+                      <strong class="account-order__price">122 700 ₽</strong>
+                      <span class="account-order__status account-order__status_success">Заказ комплектуется</span>
+                      <span class="account-order__toggle">
+                        <span class="account-order__toggle-open">Развернуть</span>
+                        <span class="account-order__toggle-close">Свернуть</span>
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
+                      </span>
+                    </summary>
+                    <div class="account-order__details">
+                      <div class="account-order-info">
+                        <div class="account-order-info__block">
+                          <h2>Информация о пользователе</h2>
+                          <p>Логин: Roman</p>
+                          <p>Email: roman@novolampa.ru</p>
+                          <p>Тип плательщика: Физическое лицо</p>
+                        </div>
+                        <div class="account-order-info__block">
+                          <p>Город: Россия, Санкт-Петербург</p>
+                          <p>Контактный телефон: 791134534365</p>
+                        </div>
                       </div>
-                      <div class="account-order-info__block">
-                        <h2>Параметры доставки</h2>
-                        <p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p>
+                      <div class="account-order-info account-order-info_delivery">
+                        <div class="account-order-info__block">
+                          <h2>Счет №6058/1 от 01.09.2022, банковская карта</h2>
+                          <p>Счет №6058/1 от 01.09.2022</p>
+                        </div>
+                        <div class="account-order-info__block">
+                          <h2>Параметры доставки</h2>
+                          <p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p>
+                        </div>
                       </div>
+                      <section class="account-order-products" aria-label="Состав заказа">
+                        <h2>Состав заказа</h2>
+                        <article class="checkout-cart-item">
+                          <div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div>
+                          <div class="checkout-cart-item__info">
+                            <a href="/pages/product.html">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a>
+                            <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                          </div>
+                          <div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div>
+                          <div class="checkout-cart-item__quantity">2 шт.</div>
+                          <div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div>
+                        </article>
+                        <article class="checkout-cart-item">
+                          <div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div>
+                          <div class="checkout-cart-item__info">
+                            <a href="/pages/product.html">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a>
+                            <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                          </div>
+                          <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
+                          <div class="checkout-cart-item__quantity">2 шт.</div>
+                          <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
+                        </article>
+                        <article class="checkout-cart-item">
+                          <div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div>
+                          <div class="checkout-cart-item__info">
+                            <a href="/pages/product.html">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a>
+                            <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                          </div>
+                          <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
+                          <div class="checkout-cart-item__quantity">2 шт.</div>
+                          <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
+                        </article>
+                      </section>
+                      <div class="account-order-total">
+                        <div><span>Общий вес:</span><strong>14 122 г</strong></div>
+                        <div><span>Доставка:</span><strong>0 ₽</strong></div>
+                        <div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div>
+                      </div>
+                      <button type="button" class="account-order-repeat">
+                        <svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg>
+                        <span>Повторить заказ</span>
+                      </button>
                     </div>
-
-                    <section class="account-order-products" aria-label="Состав заказа">
-                      <h2>Состав заказа</h2>
-
-                      <article class="checkout-cart-item">
-                        <div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div>
-                        <div class="checkout-cart-item__info">
-                          <a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a>
-                          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                  </details>
+  
+                  <details class="account-order" data-open>
+                    <summary class="account-order__summary">
+                      <span class="account-order__number">Заказ №12368 от 01.04.2025</span>
+                      <strong class="account-order__price">22 700 ₽</strong>
+                      <span class="account-order__status account-order__status_warning">Доставлен в пункт самовывоза</span>
+                      <span class="account-order__toggle">
+                        <span class="account-order__toggle-open">Развернуть</span>
+                        <span class="account-order__toggle-close">Свернуть</span>
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
+                      </span>
+                    </summary>
+  
+                    <div class="account-order__details">
+                      <div class="account-order-info">
+                        <div class="account-order-info__block">
+                          <h2>Информация о пользователе</h2>
+                          <p>Логин: Roman</p>
+                          <p>Email: roman@novolampa.ru</p>
+                          <p>Тип плательщика: Физическое лицо</p>
                         </div>
-                        <div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div>
-                        <div class="checkout-cart-item__quantity">2 шт.</div>
-                        <div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div>
-                      </article>
-
-                      <article class="checkout-cart-item">
-                        <div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div>
-                        <div class="checkout-cart-item__info">
-                          <a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a>
-                          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                        <div class="account-order-info__block">
+                          <p>Город: Россия, Санкт-Петербург</p>
+                          <p>Контактный телефон: 791134534365</p>
                         </div>
-                        <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
-                        <div class="checkout-cart-item__quantity">2 шт.</div>
-                        <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
-                      </article>
-
-                      <article class="checkout-cart-item">
-                        <div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div>
-                        <div class="checkout-cart-item__info">
-                          <a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a>
-                          <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                      </div>
+  
+                      <div class="account-order-info account-order-info_delivery">
+                        <div class="account-order-info__block">
+                          <h2>Счет №6058/1 от 01.09.2022, банковская карта</h2>
+                          <p>Счет №6058/1 от 01.09.2022</p>
                         </div>
-                        <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
-                        <div class="checkout-cart-item__quantity">2 шт.</div>
-                        <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
-                      </article>
-                    </section>
-
-                    <div class="account-order-total">
-                      <div><span>Общий вес:</span><strong>14 122 г</strong></div>
-                      <div><span>Доставка:</span><strong>0 ₽</strong></div>
-                      <div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div>
+                        <div class="account-order-info__block">
+                          <h2>Параметры доставки</h2>
+                          <p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p>
+                        </div>
+                      </div>
+  
+                      <section class="account-order-products" aria-label="Состав заказа">
+                        <h2>Состав заказа</h2>
+  
+                        <article class="checkout-cart-item">
+                          <div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div>
+                          <div class="checkout-cart-item__info">
+                            <a href="/pages/product.html">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a>
+                            <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                          </div>
+                          <div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div>
+                          <div class="checkout-cart-item__quantity">2 шт.</div>
+                          <div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div>
+                        </article>
+  
+                        <article class="checkout-cart-item">
+                          <div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div>
+                          <div class="checkout-cart-item__info">
+                            <a href="/pages/product.html">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a>
+                            <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                          </div>
+                          <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
+                          <div class="checkout-cart-item__quantity">2 шт.</div>
+                          <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
+                        </article>
+  
+                        <article class="checkout-cart-item">
+                          <div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div>
+                          <div class="checkout-cart-item__info">
+                            <a href="/pages/product.html">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a>
+                            <div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div>
+                          </div>
+                          <div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div>
+                          <div class="checkout-cart-item__quantity">2 шт.</div>
+                          <div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div>
+                        </article>
+                      </section>
+  
+                      <div class="account-order-total">
+                        <div><span>Общий вес:</span><strong>14 122 г</strong></div>
+                        <div><span>Доставка:</span><strong>0 ₽</strong></div>
+                        <div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div>
+                      </div>
+  
+                      <button type="button" class="account-order-repeat">
+                        <svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg>
+                        <span>Повторить заказ</span>
+                      </button>
                     </div>
-
-                    <button type="button" class="account-order-repeat">
-                      <svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg>
-                      <span>Повторить заказ</span>
-                    </button>
-                  </div>
-                </details>
-
-                <details class="account-order">
-                  <summary class="account-order__summary">
-                    <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
-                    <strong class="account-order__price">22 920 ₽</strong>
-                    <span class="account-order__status account-order__status_warning">Оплачен при получении</span>
-                    <span class="account-order__toggle">
-                      <span class="account-order__toggle-open">Развернуть</span>
-                      <span class="account-order__toggle-close">Свернуть</span>
-                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
-                    </span>
-                  </summary>
-                  <div class="account-order__details">
-                    <div class="account-order-info">
-                      <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
-                      <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
+                  </details>
+  
+                  <details class="account-order">
+                    <summary class="account-order__summary">
+                      <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
+                      <strong class="account-order__price">22 920 ₽</strong>
+                      <span class="account-order__status account-order__status_warning">Оплачен при получении</span>
+                      <span class="account-order__toggle">
+                        <span class="account-order__toggle-open">Развернуть</span>
+                        <span class="account-order__toggle-close">Свернуть</span>
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
+                      </span>
+                    </summary>
+                    <div class="account-order__details">
+                      <div class="account-order-info">
+                        <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
+                        <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
+                      </div>
+                      <div class="account-order-info account-order-info_delivery">
+                        <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
+                        <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
+                      </div>
+                      <section class="account-order-products" aria-label="Состав заказа">
+                        <h2>Состав заказа</h2>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                      </section>
+                      <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
+                      <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
                     </div>
-                    <div class="account-order-info account-order-info_delivery">
-                      <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
-                      <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
+                  </details>
+  
+                  <details class="account-order">
+                    <summary class="account-order__summary">
+                      <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
+                      <strong class="account-order__price">122 700 ₽</strong>
+                      <span class="account-order__status account-order__status_success">Выполнен</span>
+                      <span class="account-order__toggle">
+                        <span class="account-order__toggle-open">Развернуть</span>
+                        <span class="account-order__toggle-close">Свернуть</span>
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
+                      </span>
+                    </summary>
+                    <div class="account-order__details">
+                      <div class="account-order-info">
+                        <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
+                        <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
+                      </div>
+                      <div class="account-order-info account-order-info_delivery">
+                        <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
+                        <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
+                      </div>
+                      <section class="account-order-products" aria-label="Состав заказа">
+                        <h2>Состав заказа</h2>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                      </section>
+                      <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
+                      <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
                     </div>
-                    <section class="account-order-products" aria-label="Состав заказа">
-                      <h2>Состав заказа</h2>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                    </section>
-                    <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
-                    <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
-                  </div>
-                </details>
-
-                <details class="account-order">
-                  <summary class="account-order__summary">
-                    <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
-                    <strong class="account-order__price">122 700 ₽</strong>
-                    <span class="account-order__status account-order__status_success">Выполнен</span>
-                    <span class="account-order__toggle">
-                      <span class="account-order__toggle-open">Развернуть</span>
-                      <span class="account-order__toggle-close">Свернуть</span>
-                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
-                    </span>
-                  </summary>
-                  <div class="account-order__details">
-                    <div class="account-order-info">
-                      <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
-                      <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
+                  </details>
+  
+                  <details class="account-order">
+                    <summary class="account-order__summary">
+                      <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
+                      <strong class="account-order__price">22 920 ₽</strong>
+                      <span class="account-order__status account-order__status_warning">В сборке</span>
+                      <span class="account-order__toggle">
+                        <span class="account-order__toggle-open">Развернуть</span>
+                        <span class="account-order__toggle-close">Свернуть</span>
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
+                      </span>
+                    </summary>
+                    <div class="account-order__details">
+                      <div class="account-order-info">
+                        <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
+                        <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
+                      </div>
+                      <div class="account-order-info account-order-info_delivery">
+                        <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
+                        <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
+                      </div>
+                      <section class="account-order-products" aria-label="Состав заказа">
+                        <h2>Состав заказа</h2>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                      </section>
+                      <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
+                      <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
                     </div>
-                    <div class="account-order-info account-order-info_delivery">
-                      <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
-                      <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
+                  </details>
+  
+                  <details class="account-order">
+                    <summary class="account-order__summary">
+                      <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
+                      <strong class="account-order__price">122 700 ₽</strong>
+                      <span class="account-order__status account-order__status_danger">Возврат</span>
+                      <span class="account-order__toggle">
+                        <span class="account-order__toggle-open">Развернуть</span>
+                        <span class="account-order__toggle-close">Свернуть</span>
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
+                      </span>
+                    </summary>
+                    <div class="account-order__details">
+                      <div class="account-order-info">
+                        <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
+                        <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
+                      </div>
+                      <div class="account-order-info account-order-info_delivery">
+                        <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
+                        <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
+                      </div>
+                      <section class="account-order-products" aria-label="Состав заказа">
+                        <h2>Состав заказа</h2>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                      </section>
+                      <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
+                      <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
                     </div>
-                    <section class="account-order-products" aria-label="Состав заказа">
-                      <h2>Состав заказа</h2>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                    </section>
-                    <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
-                    <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
-                  </div>
-                </details>
-
-                <details class="account-order">
-                  <summary class="account-order__summary">
-                    <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
-                    <strong class="account-order__price">22 920 ₽</strong>
-                    <span class="account-order__status account-order__status_warning">В сборке</span>
-                    <span class="account-order__toggle">
-                      <span class="account-order__toggle-open">Развернуть</span>
-                      <span class="account-order__toggle-close">Свернуть</span>
-                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
-                    </span>
-                  </summary>
-                  <div class="account-order__details">
-                    <div class="account-order-info">
-                      <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
-                      <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
+                  </details>
+  
+                  <details class="account-order">
+                    <summary class="account-order__summary">
+                      <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
+                      <strong class="account-order__price">22 920 ₽</strong>
+                      <span class="account-order__status account-order__status_error">Отменен</span>
+                      <span class="account-order__toggle">
+                        <span class="account-order__toggle-open">Развернуть</span>
+                        <span class="account-order__toggle-close">Свернуть</span>
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
+                      </span>
+                    </summary>
+                    <div class="account-order__details">
+                      <div class="account-order-info">
+                        <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
+                        <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
+                      </div>
+                      <div class="account-order-info account-order-info_delivery">
+                        <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
+                        <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
+                      </div>
+                      <section class="account-order-products" aria-label="Состав заказа">
+                        <h2>Состав заказа</h2>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                      </section>
+                      <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
+                      <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
                     </div>
-                    <div class="account-order-info account-order-info_delivery">
-                      <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
-                      <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
+                  </details>
+  
+                  <details class="account-order">
+                    <summary class="account-order__summary">
+                      <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
+                      <strong class="account-order__price">122 700 ₽</strong>
+                      <span class="account-order__status account-order__status_success">Выполнен</span>
+                      <span class="account-order__toggle">
+                        <span class="account-order__toggle-open">Развернуть</span>
+                        <span class="account-order__toggle-close">Свернуть</span>
+                        <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
+                      </span>
+                    </summary>
+                    <div class="account-order__details">
+                      <div class="account-order-info">
+                        <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
+                        <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
+                      </div>
+                      <div class="account-order-info account-order-info_delivery">
+                        <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
+                        <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
+                      </div>
+                      <section class="account-order-products" aria-label="Состав заказа">
+                        <h2>Состав заказа</h2>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                        <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="/pages/product.html">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
+                      </section>
+                      <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
+                      <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
                     </div>
-                    <section class="account-order-products" aria-label="Состав заказа">
-                      <h2>Состав заказа</h2>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                    </section>
-                    <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
-                    <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
-                  </div>
-                </details>
-
-                <details class="account-order">
-                  <summary class="account-order__summary">
-                    <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
-                    <strong class="account-order__price">122 700 ₽</strong>
-                    <span class="account-order__status account-order__status_danger">Возврат</span>
-                    <span class="account-order__toggle">
-                      <span class="account-order__toggle-open">Развернуть</span>
-                      <span class="account-order__toggle-close">Свернуть</span>
-                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
-                    </span>
-                  </summary>
-                  <div class="account-order__details">
-                    <div class="account-order-info">
-                      <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
-                      <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
-                    </div>
-                    <div class="account-order-info account-order-info_delivery">
-                      <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
-                      <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
-                    </div>
-                    <section class="account-order-products" aria-label="Состав заказа">
-                      <h2>Состав заказа</h2>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                    </section>
-                    <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
-                    <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
-                  </div>
-                </details>
-
-                <details class="account-order">
-                  <summary class="account-order__summary">
-                    <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
-                    <strong class="account-order__price">22 920 ₽</strong>
-                    <span class="account-order__status account-order__status_error">Отменен</span>
-                    <span class="account-order__toggle">
-                      <span class="account-order__toggle-open">Развернуть</span>
-                      <span class="account-order__toggle-close">Свернуть</span>
-                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
-                    </span>
-                  </summary>
-                  <div class="account-order__details">
-                    <div class="account-order-info">
-                      <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
-                      <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
-                    </div>
-                    <div class="account-order-info account-order-info_delivery">
-                      <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
-                      <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
-                    </div>
-                    <section class="account-order-products" aria-label="Состав заказа">
-                      <h2>Состав заказа</h2>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                    </section>
-                    <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
-                    <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
-                  </div>
-                </details>
-
-                <details class="account-order">
-                  <summary class="account-order__summary">
-                    <span class="account-order__number">Заказ №5564 от 12.06.2025</span>
-                    <strong class="account-order__price">122 700 ₽</strong>
-                    <span class="account-order__status account-order__status_success">Выполнен</span>
-                    <span class="account-order__toggle">
-                      <span class="account-order__toggle-open">Развернуть</span>
-                      <span class="account-order__toggle-close">Свернуть</span>
-                      <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#chevron-down"></use></svg>
-                    </span>
-                  </summary>
-                  <div class="account-order__details">
-                    <div class="account-order-info">
-                      <div class="account-order-info__block"><h2>Информация о пользователе</h2><p>Логин: Roman</p><p>Email: roman@novolampa.ru</p><p>Тип плательщика: Физическое лицо</p></div>
-                      <div class="account-order-info__block"><p>Город: Россия, Санкт-Петербург</p><p>Контактный телефон: 791134534365</p></div>
-                    </div>
-                    <div class="account-order-info account-order-info_delivery">
-                      <div class="account-order-info__block"><h2>Счет №6058/1 от 01.09.2022, банковская карта</h2><p>Счет №6058/1 от 01.09.2022</p></div>
-                      <div class="account-order-info__block"><h2>Параметры доставки</h2><p>Служба доставки: Самовывоз, СПБ, Петергофское ш., 55., к. 1</p></div>
-                    </div>
-                    <section class="account-order-products" aria-label="Состав заказа">
-                      <h2>Состав заказа</h2>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-1.png" alt="Светодиодная лампа AR-G9 2.5W 2360 White 220V"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа AR-G9 2.5W 2360 White 220V (Arlight, Открытый)...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>21 188.53 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>42 367.03 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-2.png" alt="940414 Лампа LED 220V T20 G4 6W=60W"></div><div class="checkout-cart-item__info"><a href="#">940414 Лампа LED 220V T20 G4 6W=60W 492LM 360G CL 4000K ...</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                      <article class="checkout-cart-item"><div class="checkout-cart-item__image"><img src="/img/catalog/item-3.png" alt="Светодиодная лампа E14 CR-DP-G60 6W White"></div><div class="checkout-cart-item__info"><a href="#">Светодиодная лампа E14 CR-DP-G60 6W White (Arlight, ШАР) Arlight 015990</a><div><span>Арт: 013730</span><span class="checkout-cart-item__stock">В наличии 135 шт</span></div></div><div class="checkout-cart-item__price"><strong>5 500 ₽</strong><span>за 1 шт.</span></div><div class="checkout-cart-item__quantity">2 шт.</div><div class="checkout-cart-item__total"><strong>11 000 ₽</strong><span>за 2 шт.</span></div></article>
-                    </section>
-                    <div class="account-order-total"><div><span>Общий вес:</span><strong>14 122 г</strong></div><div><span>Доставка:</span><strong>0 ₽</strong></div><div class="account-order-total__result"><span>Итого:</span><strong>3 889.50 ₽</strong></div></div>
-                    <button type="button" class="account-order-repeat"><svg width="18" height="18" viewBox="0 0 21 21" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#revert"></use></svg><span>Повторить заказ</span></button>
-                  </div>
-                </details>
+                  </details>
+                </div>
+              </div>
+              <div class="section__container account-orders__pagination">
+                <include src="src/html/_pagination.html" locals='{"last":"25"}'></include>
               </div>
             </div>
-          </div>
-
-          <div class="section__container account-orders__pagination">
-            <include src="src/html/_pagination.html" locals='{"last":"25"}'></include>
           </div>
         </section>
       </main>

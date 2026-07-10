@@ -175,8 +175,9 @@
   box-shadow: 0 mixins.toRem(8) mixins.toRem(24) var(--shadow-card-color);
 
   @media (width < #{mixins.toEm(variables.$mobile)}) {
-    padding: mixins.toRem(28) mixins.toRem(18);
+    padding: mixins.toRem(28) mixins.toRem(15);
     border-radius: mixins.toRem(5);
+    gap: mixins.toRem(0);
   }
 
   @media (any-hover: hover) {
@@ -197,8 +198,8 @@
     letter-spacing: -0.02em;
 
     @media (width < #{mixins.toEm(variables.$mobile)}) {
-      font-size: mixins.toRem(17);
-      line-height: math.div(22, 17);
+      font-size: mixins.toRem(16);
+      line-height: math.div(20, 16);
     }
   }
 

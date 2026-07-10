@@ -107,6 +107,10 @@
       margin-bottom: mixins.toRem(12);
     }
   }
+
+  &__container > .product-tabs__body {
+    grid-column: 1 / -1;
+  }
 }
 
 .product-gallery {
@@ -530,14 +534,6 @@
           transition: all 0.3s ease 0s;
         }
       }
-
-      @media (any-hover: hover) {
-        &:hover{
-          >* {
-            scale: 1.1;
-          }
-        }
-      }
     }
   }
 
@@ -672,6 +668,7 @@
 
   &__container {
     min-width: 0;
+    padding-inline: 0;
   }
 
   &__navigation {
@@ -800,6 +797,18 @@
 }
 
 .product-characteristics {
+  border-top: mixins.toRem(2) solid var(--border-medium-color);
+  border-bottom: mixins.toRem(2) solid var(--border-medium-color);
+
+  @media (width >= #{mixins.toEm(variables.$mobile)}) {
+    margin-top: mixins.toRem(37);
+    padding-bottom: mixins.toRem(42);
+  }
+  @media (width < #{mixins.toEm(variables.$mobile)}) {
+    margin-top: mixins.toRem(18);
+    padding-bottom: mixins.toRem(35);
+  }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -822,7 +831,7 @@
       &::before {
         content:'';
         position: absolute;
-        bottom: mixins.toRem(2);
+        bottom: mixins.toRem(4);
         left: 0;
         width: 100%;
         border-bottom: mixins.toRem(1) dashed var(--icon-muted-color);
@@ -830,17 +839,25 @@
     }
 
     dd, dt {
-      background-color: var(--bg-main-color);
       position: relative;
-    }
-
-    dd {
-      padding-left: mixins.toRem(5);
+      span {
+        background-color: var(--bg-main-color);
+      }
     }
 
     dt {
-      padding-right: mixins.toRem(5);
       color: var(--text-secondary-color);
+      span {
+        padding-right: mixins.toRem(5);
+      }
+    }
+
+    dd {
+      text-align: right;
+
+      span {
+        padding-left: mixins.toRem(5);
+      }
     }
   }
 }

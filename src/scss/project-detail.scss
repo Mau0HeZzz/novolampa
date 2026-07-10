@@ -815,7 +815,7 @@
 .project-detail-request {
   @media (width < #{mixins.toEm(variables.$mobile)}) {
     padding-top: mixins.toRem(50);
-    padding-bottom: mixins.toRem(45);
+    padding-bottom: 0;
   }
 }
 

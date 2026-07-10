@@ -169,8 +169,9 @@
                 <button
                   type="button"
                   class="product-about__all"
-                  data-product-tab-index="1"
-                  data-goto=".product-tabs"
+                  data-goto="#productCharacteristics"
+                  data-goto-header
+                  data-goto-top="20"
                 >
                   <span>Все характеристики</span>
                   <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/img/sprite.svg#chevron-right"></use></svg>
@@ -178,10 +179,10 @@
               </section>
 
               <div class="product-tags">
-                <a href="#">Подходит для кухни</a>
-                <a href="#">Есть в наличии</a>
-                <a href="#">Простой подбор блока питания</a>
-                <a href="#">Высокая цветопередача</a>
+                <a href="/pages/catalog-category.html">Подходит для кухни</a>
+                <a href="/pages/catalog-category.html">Есть в наличии</a>
+                <a href="/pages/knowledge-base-tape-calculator.html">Простой подбор блока питания</a>
+                <a href="/pages/catalog-category.html">Высокая цветопередача</a>
               </div>
             </div>
 
@@ -225,8 +226,8 @@
                   </div>
                 </div>
                 <div class="product-purchase__links">
-                  <a href="#">Нашли дешевле?</a>
-                  <a href="#">Как купить</a>
+                  <a href="/pages/contacts.html">Нашли дешевле?</a>
+                  <a href="/pages/payment-delivery.html">Как купить</a>
                 </div>
               </div>
 
@@ -241,7 +242,7 @@
                 </div>
                 <div>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#box"></use></svg>
-                  <p>Доставка (2–4 дня) — Бесплатно<br><a href="#">Подробнее</a></p>
+                  <p>Доставка (2–4 дня) — Бесплатно<br><a href="/pages/payment-delivery.html">Подробнее</a></p>
                 </div>
               </div>
 
@@ -260,19 +261,19 @@
               </a>
             </aside>
 
-            <section class="product-tabs" data-tabs data-tabs-animate="300">
+            <section class="product-tabs">
               <div class="product-tabs__container">
-                <nav class="product-tabs__navigation" data-tabs-titles aria-label="Информация о товаре">
-                  <button type="button" class="product-tabs__title _tab-active">Описание</button>
-                  <button type="button" class="product-tabs__title">Характеристики</button>
-                  <button type="button" class="product-tabs__title">Документы</button>
-                  <button type="button" class="product-tabs__title">Доставка и оплата</button>
-                  <button type="button" class="product-tabs__title">Покупают вместе</button>
+                <nav class="product-tabs__navigation" aria-label="Информация о товаре">
+                  <button type="button" class="product-tabs__title _navigator-active" data-goto="#productDescription" data-goto-header data-goto-top="20">Описание</button>
+                  <button type="button" class="product-tabs__title" data-goto="#productCharacteristics" data-goto-header data-goto-top="20">Характеристики</button>
+                  <button type="button" class="product-tabs__title" data-goto="#productDocuments" data-goto-header data-goto-top="20">Документы</button>
+                  <button type="button" class="product-tabs__title" data-goto="#productDeliveryPayment" data-goto-header data-goto-top="20">Доставка и оплата</button>
+                  <button type="button" class="product-tabs__title" data-goto="#productTogether" data-goto-header data-goto-top="20">Покупают вместе</button>
                   <span class="product-tabs__indicator" data-product-tabs-indicator aria-hidden="true"></span>
                 </nav>
     
-                <div class="product-tabs__content" data-tabs-body>
-                  <section class="product-tabs__body product-description" data-showmore>
+                <div class="product-tabs__content">
+                  <section class="product-tabs__body product-description" id="productDescription" data-showmore data-watch="navigator">
                     <h2>Описание</h2>
                     <div class="_content" data-showmore-content="250">
                       <p>Светодиодная лента RT-A120-8mm 24V Day4000 от Arlight - это  высококачественное и функциональное решение для освещения и декоративного освещения.</p>
@@ -292,104 +293,159 @@
                     </button>
                   </section>
     
-                  <section class="product-tabs__body product-characteristics" id="productCharacteristics">
-                    <h2>Характеристики</h2>
-                    <dl class="product-characteristics__list">
-                      <div><dt>Штрихкод</dt><dd>4620024048763</dd></div>
-                      <div><dt>Предельное отклонение напряжения</dt><dd>± 0,5 В</dd></div>
-                      <div><dt>Гарантийный срок</dt><dd>24 мес.</dd></div>
-                      <div><dt>Диапазон рабочих температур</dt><dd>−30 °C; макс. 45 °C</dd></div>
-                      <div><dt>Минимальный отрезок</dt><dd>100 мм</dd></div>
-                      <div><dt>Место применения</dt><dd>Только в помещении</dd></div>
-                      <div><dt>Класс пылевлагозащиты</dt><dd>IP65</dd></div>
-                      <div><dt>Каналы управления</dt><dd>1 CH</dd></div>
-                      <div><dt>Типоразмер светодиода</dt><dd>SMD 5060</dd></div>
-                      <div><dt>Входной сигнал</dt><dd>PWM</dd></div>
-                      <div><dt>Плотность светодиодов</dt><dd>30 шт/м</dd></div>
-                      <div><dt>Тип управления</dt><dd>PWM</dd></div>
-                      <div><dt>Гарантийный срок</dt><dd>2 года</dd></div>
-                      <div><dt>Высота</dt><dd>2.7 мм</dd></div>
-                      <div><dt>Длина волны</dt><dd>тип. 525 нм</dd></div>
-                      <div><dt>Сертификат CE</dt><dd>CE</dd></div>
-                      <div><dt>Угол излучения</dt><dd>тип. 120°</dd></div>
-                      <div><dt>Макс. длина подключения</dt><dd>5 м</dd></div>
-                    </dl>
-                  </section>
-    
-                  <section class="product-tabs__body product-documents">
-                    <h2>Документы</h2>
-                    <div class="product-documents__grid">
-                      <a href="#" download><strong>Паспорт изделия</strong><span>Технический документ</span><small>PDF • 14.8 МБ</small><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg></a>
-                      <a href="#" download><strong>Сертификат соответствия</strong><span>Технический документ</span><small>PDF • 14.8 МБ</small><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg></a>
-                      <a href="#" download><strong>Декларация независимости</strong><span>Разрешительные документы</span><small>PDF • 14.8 МБ</small><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg></a>
-                      <a href="#" download><strong>Инструкция по монтажу</strong><span>Рекомендации по установке</span><small>PDF • 14.8 МБ</small><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg></a>
-                    </div>
-                    <div class="product-documents__request">
-                      <div>
-                        <p>Для проектировщиков и закупок</p>
-                        <span>По запросу подготовим расширенный комплект документов для B2B, проектных поставок и закупочных процедур: спецификации, официальные реквизиты,  подтверждение характеристик и сопроводительные материалы.</s>
-                      </div>
-                      <a href="#" class="action-button">Запросить комплект документов</a>
-                    </div>
-                  </section>
-    
-                  <section class="product-tabs__body product-delivery-payment">
-                    <h2>Доставка и оплата</h2>
-                    <div class="product-delivery-payment__grid">
-                      <article class="product-delivery-payment__delivery">
-                        <h3>Доставка</h3>
-                        <div>
-                          <h4>Санкт-Петербург</h4>
-                          <p>Самовывоз, 
-                            Петергофское ш., 55, кор.1 2–4 дня, бесплатно
-                            Доставка по городу 1–2 дня, бесплатно</p>
-                        </div>
-                        <div>
-                          <h4>Москва</h4>
-                          <p>Самовывоз, 
-                            4-я Магистральная ул., 11, БЦ «Магистраль» 2–4 дня, бесплатно</p>
-                        </div>
-                        <div>
-                          <h4>Доставка по России</h4>
-                          <p>СДЭК — до двери или до пункта самовывоза Бесплатно при заказе от 10 000₽
-                            По отдельным позициям возможна поставка под заказ. Сроки подтверждаются менеджером после оформления заказа.</p>
-                        </div>
-                      </article>
-
-                      <article>
-                        <h3>Оплата</h3>
-                        <div class="_content">
-                          <p>Доступна оплата банковской картой, безналичный расчёт и оплата при получении.</p>
-                          <ul>
-                            <li>Банковской картой на сайте через ЮKassa</li>
-                            <li>Картой в шоу-руме или при получении</li>
-                            <li>Безналичный расчёт для юридических лиц</li>
-                            <li>Счёт и закрывающие документы для B2B</li>
-                          </ul>
-                          <p>При необходимости подготовим коммерческое предложение и согласуем удобный формат отгрузки и документооборота.</p>
-                        </div>
-                      </article>
-                    </div>
-                  </section>
-    
-                  <section class="product-tabs__body project-equipment product-related splide" aria-labelledby="productTogetherTitle">
-                    <div class="project-section-head project-equipment__head product-related__head">
-                      <h2 class="section__title project-section-head__title" id="productTogetherTitle">Покупают вместе</h2>
-                      <div class="splide__arrows project-slider-arrows">
-                        <button class="splide__arrow splide__arrow--prev project-slider-arrows__button" type="button" aria-label="Предыдущие товары"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#pagination-arrow-left"></use></svg></button>
-                        <button class="splide__arrow splide__arrow--next project-slider-arrows__button" type="button" aria-label="Следующие товары"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#pagination-arrow-right"></use></svg></button>
-                      </div>
-                    </div>
-                    <div class="splide__track project-equipment__track"><ul class="splide__list">
-                      <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-1.png","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM","article":"026886","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include></li>
-                      <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-2.png","eyebrow":"4000K • IP20 • для кухни","title":"Светодиодная лампа AR-G9 2.5W 2360 White","article":"013730","stock":"В наличии 135 шт","price":"26.93","quantity":"1"}'></include></li>
-                      <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-3.png","eyebrow":"Тёплая • IP65 • для ванной","title":"Светодиодная лампа E14 CR-DP-G60 6W White","article":"036987","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include></li>
-                      <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-4.png","eyebrow":"4000K • IP20 • для кухни","title":"Лампа AR111-UNIT-G53-12W-Day4000 White","article":"013730","stock":"В наличии 135 шт","price":"2 774.05","quantity":"1"}'></include></li>
-                      <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-5.png","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W White","article":"026886","stock":"Нет в наличии","price":"999","quantity":"1"}'></include></li>
-                    </ul></div>
-                  </section>
                 </div>
               </div>
+            </section>
+
+            <section class="product-tabs__body product-characteristics" id="productCharacteristics" data-watch="navigator">
+              <h2>Характеристики</h2>
+              <dl class="product-characteristics__list">
+                <div>
+                  <dt><span>Штрихкод</span></dt>
+                  <dd><span>4620024048763</span></dd>
+                </div>
+                <div>
+                  <dt><span>Предельное отклонение напряжения</span></dt>
+                  <dd><span>± 0,5 В</span></dd>
+                </div>
+                <div>
+                  <dt><span>Гарантийный срок</span></dt>
+                  <dd><span>24 мес.</span></dd>
+                </div>
+                <div>
+                  <dt><span>Диапазон рабочих температур</span></dt>
+                  <dd><span>−30 °C; макс. 45 °C</span></dd>
+                </div>
+                <div>
+                  <dt><span>Минимальный отрезок</span></dt>
+                  <dd><span>100 мм</span></dd>
+                </div>
+                <div>
+                  <dt><span>Место применения</span></dt>
+                  <dd><span>Только в помещении</span></dd>
+                </div>
+                <div>
+                  <dt><span>Класс пылевлагозащиты</span></dt>
+                  <dd><span>IP65</span></dd>
+                </div>
+                <div>
+                  <dt><span>Каналы управления</span></dt>
+                  <dd><span>1 CH</span></dd>
+                </div>
+                <div>
+                  <dt><span>Типоразмер светодиода</span></dt>
+                  <dd><span>SMD 5060</span></dd>
+                </div>
+                <div>
+                  <dt><span>Входной сигнал</span></dt>
+                  <dd><span>PWM</span></dd>
+                </div>
+                <div>
+                  <dt><span>Плотность светодиодов</span></dt>
+                  <dd><span>30 шт/м</span></dd>
+                </div>
+                <div>
+                  <dt><span>Тип управления</span></dt>
+                  <dd><span>PWM</span></dd>
+                </div>
+                <div>
+                  <dt><span>Гарантийный срок</span></dt>
+                  <dd><span>2 года</span></dd>
+                </div>
+                <div>
+                  <dt><span>Высота</span></dt>
+                  <dd><span>2.7 мм</span></dd>
+                </div>
+                <div>
+                  <dt><span>Длина волны</span></dt>
+                  <dd><span>тип. 525 нм</span></dd>
+                </div>
+                <div>
+                  <dt><span>Сертификат CE</span></dt>
+                  <dd><span>CE</span></dd>
+                </div>
+                <div>
+                  <dt><span>Угол излучения</span></dt>
+                  <dd><span>тип. 120°</span></dd>
+                </div>
+                <div>
+                  <dt><span>Макс. длина подключения</span></dt>
+                  <dd><span>5 м</span></dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="product-tabs__body product-documents" id="productDocuments" data-watch="navigator">
+              <h2>Документы</h2>
+              <div class="product-documents__grid">
+                <a href="#" download><strong>Паспорт изделия</strong><span>Технический документ</span><small>PDF • 14.8 МБ</small><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg></a>
+                <a href="#" download><strong>Сертификат соответствия</strong><span>Технический документ</span><small>PDF • 14.8 МБ</small><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg></a>
+                <a href="#" download><strong>Декларация независимости</strong><span>Разрешительные документы</span><small>PDF • 14.8 МБ</small><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg></a>
+                <a href="#" download><strong>Инструкция по монтажу</strong><span>Рекомендации по установке</span><small>PDF • 14.8 МБ</small><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#download"></use></svg></a>
+              </div>
+              <div class="product-documents__request">
+                <div>
+                  <p>Для проектировщиков и закупок</p>
+                  <span>По запросу подготовим расширенный комплект документов для B2B, проектных поставок и закупочных процедур: спецификации, официальные реквизиты,  подтверждение характеристик и сопроводительные материалы.</s>
+                </div>
+                <a href="#" class="action-button">Запросить комплект документов</a>
+              </div>
+            </section>
+
+            <section class="product-tabs__body product-delivery-payment" id="productDeliveryPayment" data-watch="navigator">
+              <h2>Доставка и оплата</h2>
+              <div class="product-delivery-payment__grid">
+                <article class="product-delivery-payment__delivery">
+                  <h3>Доставка</h3>
+                  <div>
+                    <h4>Санкт-Петербург</h4>
+                    <p>Самовывоз,
+                      Петергофское ш., 55, кор.1 2–4 дня, бесплатно
+                      Доставка по городу 1–2 дня, бесплатно</p>
+                  </div>
+                  <div>
+                    <h4>Москва</h4>
+                    <p>Самовывоз,
+                      4-я Магистральная ул., 11, БЦ «Магистраль» 2–4 дня, бесплатно</p>
+                  </div>
+                  <div>
+                    <h4>Доставка по России</h4>
+                    <p>СДЭК — до двери или до пункта самовывоза Бесплатно при заказе от 10 000₽
+                      По отдельным позициям возможна поставка под заказ. Сроки подтверждаются менеджером после оформления заказа.</p>
+                  </div>
+                </article>
+
+                <article>
+                  <h3>Оплата</h3>
+                  <div class="_content">
+                    <p>Доступна оплата банковской картой, безналичный расчёт и оплата при получении.</p>
+                    <ul>
+                      <li>Банковской картой на сайте через ЮKassa</li>
+                      <li>Картой в шоу-руме или при получении</li>
+                      <li>Безналичный расчёт для юридических лиц</li>
+                      <li>Счёт и закрывающие документы для B2B</li>
+                    </ul>
+                    <p>При необходимости подготовим коммерческое предложение и согласуем удобный формат отгрузки и документооборота.</p>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="product-tabs__body project-equipment product-related splide" id="productTogether" data-watch="navigator" aria-labelledby="productTogetherTitle">
+              <div class="project-section-head project-equipment__head product-related__head">
+                <h2 class="section__title project-section-head__title" id="productTogetherTitle">Покупают вместе</h2>
+                <div class="splide__arrows project-slider-arrows">
+                  <button class="splide__arrow splide__arrow--prev project-slider-arrows__button" type="button" aria-label="Предыдущие товары"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#pagination-arrow-left"></use></svg></button>
+                  <button class="splide__arrow splide__arrow--next project-slider-arrows__button" type="button" aria-label="Следующие товары"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><use xlink:href="/img/sprite.svg#pagination-arrow-right"></use></svg></button>
+                </div>
+              </div>
+              <div class="splide__track project-equipment__track"><ul class="splide__list">
+                <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-1.png","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W=60W 492LM","article":"026886","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include></li>
+                <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-2.png","eyebrow":"4000K • IP20 • для кухни","title":"Светодиодная лампа AR-G9 2.5W 2360 White","article":"013730","stock":"В наличии 135 шт","price":"26.93","quantity":"1"}'></include></li>
+                <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-3.png","eyebrow":"Тёплая • IP65 • для ванной","title":"Светодиодная лампа E14 CR-DP-G60 6W White","article":"036987","stock":"В наличии 135 шт","price":"188.53","quantity":"1"}'></include></li>
+                <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-4.png","eyebrow":"4000K • IP20 • для кухни","title":"Лампа AR111-UNIT-G53-12W-Day4000 White","article":"013730","stock":"В наличии 135 шт","price":"2 774.05","quantity":"1"}'></include></li>
+                <li class="splide__slide"><include src="src/html/_product_mini_card.html" locals='{"modifier":"","inCart":"false","imagePath":"/img/common/similar-5.png","eyebrow":"Тёплая • IP65 • для ванной","title":"940414 Лампа LED 220V T20 G4 6W White","article":"026886","stock":"Нет в наличии","price":"999","quantity":"1"}'></include></li>
+              </ul></div>
             </section>
           </div>
         </section>

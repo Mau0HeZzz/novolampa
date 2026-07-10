@@ -3,12 +3,16 @@
  */
 
 // Подключение функционала "Чертоги Фрилансера"
-import { debounce, isMobile } from "./functions.js";
+import { debounce, isMobile, setMinHeightBySelector } from "./functions.js";
 // Подключение списка активных модулей
 import { mhzModules } from "./modules.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   applyResponsiveDnStyles();
+  
+  if (window.matchMedia('(width >= 767px)').matches) {
+    setMinHeightBySelector("[data-home-audience-title]");
+  }
 
   document.querySelectorAll("[data-show-hidden]").forEach((block) => {
     const button = block.querySelector("[data-show-hidden-button]");

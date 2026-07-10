@@ -4,6 +4,7 @@
 
 @use "sass:math";
 @use "/src/scss/base/mixins.scss";
+@use "/src/scss/variables.scss";
 
 .form {
   display: flex;
@@ -215,8 +216,8 @@
   }
 
   &__label {
-    font-size: mixins.toRem(15);
-    line-height: math.div(20, 15);
+    font-size: mixins.toRem(13);
+    line-height: math.div(19, 13);
   }
 
   &__submit {
@@ -476,10 +477,6 @@
     svg {
       width: 100%;
       height: 100%;
-    }
-
-    &:nth-child(2) svg {
-      width: 42%;
     }
 
     @media (any-hover: hover) {
