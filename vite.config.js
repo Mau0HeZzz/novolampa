@@ -79,7 +79,7 @@ export default defineConfig({
       sourceDir: 'public/fonts',
       destDir: 'public/fonts',
       cssFile: 'src/scss/fonts/fonts.scss',
-      preload: true,
+      preload: false,
       logs: true,
     }),
     ViteImageOptimizer(DEFAULT_OPTIONS),

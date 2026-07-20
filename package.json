@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run copy:svg",
+    "build-prod": "npm run build && node scripts/replace-font-path.js",
     "copy:svg": "node scripts/copy-public-svg.js",
     "preview": "vite preview",
     "figma:export": "node scripts/export-figma.mjs"
