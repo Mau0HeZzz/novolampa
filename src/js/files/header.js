@@ -183,7 +183,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (announcement) {
     const updateAnnouncementOffset = () => {
       const announcementHeight = announcement.offsetHeight;
-      const announcementOffset = Math.max(announcementHeight - window.scrollY, 0);
+      const bxPanel = document.querySelector("#bx-panel");
+      const bxPanelHeight = bxPanel?.offsetHeight || 0;
+      const announcementScrollOffset = bxPanel && !bxPanel.classList.contains("bx-panel-fixed")
+        ? Math.max(window.scrollY - bxPanelHeight, 0)
+        : window.scrollY;
+      const announcementOffset = Math.max(announcementHeight - announcementScrollOffset, 0);
 
       document.body.style.setProperty("--announcement-offset", `${announcementOffset}px`);
     };

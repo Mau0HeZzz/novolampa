@@ -789,6 +789,7 @@ export function setBodyHeightsVars(
     });
 
     updateBodyHeights();
+    window.addEventListener("scroll", updateBodyHeights, { passive: true });
 
     const resizeObserver = new ResizeObserver(updateBodyHeights);
     const observedElements = [
@@ -837,7 +838,13 @@ function setBodyHeightsVar({
   }
 
   const bxPanelHeight = bxPanel?.offsetHeight || 0;
-  document.body.style.setProperty('--bx-panel-height', `${bxPanelHeight}px`);
+  const isBxPanelFixed = bxPanel?.classList.contains('bx-panel-fixed');
+  const bxPanelOffset = isBxPanelFixed
+    ? bxPanelHeight
+    : Math.max(bxPanelHeight - window.scrollY, 0);
+
+  document.body.style.setProperty('--bx-panel-height', `${isBxPanelFixed ? bxPanelHeight : 0}px`);
+  document.body.style.setProperty('--bx-panel-offset', `${bxPanelOffset}px`);
 }
 
 export function wrap(el, tagName = 'div',  className = 'wrapper', dopHTML = null, dopHTMLPlacement='beforeend') {
