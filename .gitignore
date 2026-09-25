@@ -25,3 +25,5 @@ design
 *.njsproj
 *.sln
 *.sw?
+.claude/launch.json
+novolampa.zip

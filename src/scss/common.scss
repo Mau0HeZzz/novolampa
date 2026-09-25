@@ -812,6 +812,13 @@ $indent-direction-properties: (
         top: mixins.toRem(8);
       }
     }
+
+    // Поле заполнено браузером (см. auth.scss .form__placeholder)
+    &:has(:-webkit-autofill) {
+      .form__placeholder {
+        top: mixins.toRem(8);
+      }
+    }
   }
 
   &__textarea.form__input {

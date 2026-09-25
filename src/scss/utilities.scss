@@ -1,0 +1,27 @@
+/**
+ * @fileOverview Статические стили утилитарных классов, которые иначе генерирует applyResponsiveDnStyles (src/js/files/script.js).
+ * Нужны, чтобы классы работали до выполнения JS и скрытые элементы не мелькали при загрузке.
+ * Функция остаётся фолбэком для классов, добавленных позже в обход этого файла.
+ */
+
+// Скрытие до/от брейкпоинта: _md-N-dn — при ширине < N, _mmd-N-dn — при ширине >= N
+@media (width < 768px) { ._md-768-dn { display: none !important; } }
+@media (width >= 768px) { ._mmd-768-dn { display: none !important; } }
+@media (width < 993px) { ._md-993-dn { display: none !important; } }
+@media (width >= 993px) { ._mmd-993-dn { display: none !important; } }
+@media (width < 1024px) { ._md-1024-dn { display: none !important; } }
+@media (width < 1025px) { ._md-1025-dn { display: none !important; } }
+@media (width >= 1025px) { ._mmd-1025-dn { display: none !important; } }
+@media (width < 1150px) { ._md-1150-dn { display: none !important; } }
+@media (width < 1280px) { ._md-1280-dn { display: none !important; } }
+@media (width >= 1280px) { ._mmd-1280-dn { display: none !important; } }
+@media (width < 1400px) { ._md-1400-dn { display: none !important; } }
+@media (width >= 1400px) { ._mmd-1400-dn { display: none !important; } }
+
+// Размеры в шагах --base-indent, префикс ! — с !important
+.\!w-5 { width: calc(var(--base-indent) * 5) !important; }
+.\!w-6 { width: calc(var(--base-indent) * 6) !important; }
+.\!w-8 { width: calc(var(--base-indent) * 8) !important; }
+.\!h-5 { height: calc(var(--base-indent) * 5) !important; }
+.\!h-6 { height: calc(var(--base-indent) * 6) !important; }
+.\!h-8 { height: calc(var(--base-indent) * 8) !important; }

@@ -42,7 +42,22 @@
   </div>
 
   <div class="product-mini-card__body">
-    <span class="product-mini-card__eyebrow">{{ eyebrow }}</span>
+    <if condition="typeof colorName !== 'undefined' && colorName">
+      <div class="product-mini-card__specs">
+        <span class="product-mini-card__color" style="--bg: {{ typeof colorBg !== 'undefined' ? colorBg : '' }}"><span>{{ typeof colorName !== 'undefined' ? colorName : '' }}</span></span>
+        <if condition="typeof voltage !== 'undefined' && voltage">
+          <span class="product-mini-card__voltage">
+            <svg width="12" height="16" viewBox="0 0 12 16" fill="none" aria-hidden="true">
+              <use xlink:href="/img/sprite.svg#bolt"></use>
+            </svg>
+            {{ typeof voltage !== 'undefined' ? voltage : '' }}
+          </span>
+        </if>
+      </div>
+    </if>
+    <else>
+      <span class="product-mini-card__eyebrow">{{ eyebrow }}</span>
+    </else>
     <span class="product-mini-card__title">{{ title }}</span>
     <a href="/pages/product.html" class="product-mini-card__documentation">Документация</a>
 

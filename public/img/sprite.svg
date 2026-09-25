@@ -135,4 +135,7 @@
     <path d="M6.84375 15.0325V12.6963H9.17999" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M14.1565 5.96753V8.30376H11.8203" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+  <symbol viewBox="0 0 12 16" fill="none" id="bolt">
+    <path d="M7.25 1L1.5 9.25H5.75L4.75 15L10.5 6.75H6.25L7.25 1Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+  </symbol>
 </svg>

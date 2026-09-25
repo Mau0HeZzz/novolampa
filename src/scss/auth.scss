@@ -72,6 +72,14 @@
       translate: none;
       font-size: mixins.toRem(11);
     }
+
+    // Автозаполнение не вызывает focus/input, а Chrome до взаимодействия не отдаёт value в JS — ловим только CSS.
+    // Отдельным правилом, чтобы неподдерживаемый псевдокласс не сломал селекторы выше.
+    .form__item:has(:-webkit-autofill) & {
+      top: mixins.toRem(8);
+      translate: none;
+      font-size: mixins.toRem(11);
+    }
   }
 
   &__viewpass {

@@ -169,3 +169,6 @@ body {
 @include meta.load-css("./cookie-consent");
 @include meta.load-css("./account-orders");
 @include meta.load-css("home");
+
+// Утилитарные классы (статическая копия стилей applyResponsiveDnStyles) — последними, чтобы перебивать компонентные стили
+@include meta.load-css("utilities");

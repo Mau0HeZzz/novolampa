@@ -471,6 +471,7 @@
     font-weight: 500;
     line-height: math.div(26, 20);
     letter-spacing: -0.02em;
+    max-width: 50%;
 
     @media (width < #{mixins.toEm(variables.$mobile)}) {
       max-width: mixins.toRem(130);

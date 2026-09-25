@@ -61,6 +61,19 @@ export function formFieldsInit(options = { viewPass: false }) {
 			}
 		}
 	});
+	// Значение подставлено без фокуса (автозаполнение в Firefox/Safari, выбор из подсказки браузера)
+	document.body.addEventListener("input", function (e) {
+		const targetElement = e.target;
+		if ((targetElement.tagName === 'INPUT' || targetElement.tagName === 'TEXTAREA') && !targetElement.hasAttribute('data-no-focus-classes')) {
+			if (targetElement.value.trim()) {
+				targetElement.classList.add('_form-input');
+				targetElement.parentElement.classList.add('_form-input');
+			} else if (document.activeElement !== targetElement) {
+				targetElement.classList.remove('_form-input');
+				targetElement.parentElement.classList.remove('_form-input');
+			}
+		}
+	});
 
 	// Если включено, добавляем функционал "Показать пароль"
 	if (options.viewPass) {
